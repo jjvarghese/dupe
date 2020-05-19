@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5YU-iq-uwr">
-                    <rect key="frame" x="20" y="266" width="374" height="374"/>
+                    <rect key="frame" x="40" y="286" width="334" height="334"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="5YU-iq-uwr" secondAttribute="height" multiplier="1:1" id="ytA-f4-6x3"/>
                     </constraints>
@@ -49,9 +49,9 @@
             <constraints>
                 <constraint firstItem="LMz-yb-0Rf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Iw6-3Z-Z1A"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LMz-yb-0Rf" secondAttribute="trailing" constant="127" id="Pbe-rB-qYf"/>
-                <constraint firstItem="5YU-iq-uwr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="R0v-nF-IvR"/>
+                <constraint firstItem="5YU-iq-uwr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="R0v-nF-IvR"/>
                 <constraint firstItem="LMz-yb-0Rf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="127" id="f5w-Hb-mal"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5YU-iq-uwr" secondAttribute="trailing" constant="20" id="hrp-NA-SKr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5YU-iq-uwr" secondAttribute="trailing" constant="40" id="hrp-NA-SKr"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iY2-EC-wdG"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="lAj-Ac-Wl1"/>
             </constraints>

@@ -19,6 +19,8 @@
 		A49B974924747859007BF29A /* GameViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B974824747859007BF29A /* GameViewController+UICollectionViewDelegateFlowLayout.swift */; };
 		A49B974B247479AA007BF29A /* GameViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B974A247479AA007BF29A /* GameViewController+UICollectionViewDelegate.swift */; };
 		A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B974C247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift */; };
+		A49B975224747B7B007BF29A /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B975024747B7B007BF29A /* GridCell.swift */; };
+		A49B975324747B7B007BF29A /* GridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49B975124747B7B007BF29A /* GridCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		A49B974824747859007BF29A /* GameViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		A49B974A247479AA007BF29A /* GameViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		A49B974C247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		A49B975024747B7B007BF29A /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		A49B975124747B7B007BF29A /* GridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +111,7 @@
 		A49B97112474556D007BF29A /* Dupe */ = {
 			isa = PBXGroup;
 			children = (
-				A49B97122474556D007BF29A /* AppDelegate.swift */,
-				A49B97142474556D007BF29A /* SceneDelegate.swift */,
-				A49B974324745B4A007BF29A /* Controllers */,
+				A49B974F24747AE3007BF29A /* Source */,
 				A49B974224745B16007BF29A /* Resources */,
 			);
 			path = Dupe;
@@ -154,6 +156,26 @@
 				A49B974524745BA1007BF29A /* GameViewController.xib */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A49B974E24747ABF007BF29A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A49B975024747B7B007BF29A /* GridCell.swift */,
+				A49B975124747B7B007BF29A /* GridCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A49B974F24747AE3007BF29A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A49B97122474556D007BF29A /* AppDelegate.swift */,
+				A49B97142474556D007BF29A /* SceneDelegate.swift */,
+				A49B974E24747ABF007BF29A /* Views */,
+				A49B974324745B4A007BF29A /* Controllers */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A49B974724745BA1007BF29A /* GameViewController.xib in Resources */,
+				A49B975324747B7B007BF29A /* GridCell.xib in Resources */,
 				A49B971F24745570007BF29A /* LaunchScreen.storyboard in Resources */,
 				A49B971C24745570007BF29A /* Assets.xcassets in Resources */,
 				A49B971A2474556D007BF29A /* Main.storyboard in Resources */,
@@ -291,6 +314,7 @@
 				A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */,
 				A49B974B247479AA007BF29A /* GameViewController+UICollectionViewDelegate.swift in Sources */,
 				A49B974924747859007BF29A /* GameViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
+				A49B975224747B7B007BF29A /* GridCell.swift in Sources */,
 				A49B97132474556D007BF29A /* AppDelegate.swift in Sources */,
 				A49B974624745BA1007BF29A /* GameViewController.swift in Sources */,
 				A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */,

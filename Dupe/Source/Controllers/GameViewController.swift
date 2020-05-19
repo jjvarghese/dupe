@@ -31,8 +31,17 @@ class GameViewController: UIViewController {
     }
     
     private func configureCollectionViews() {
-        smallGrid?.delegate = self
-        bigGrid?.delegate = self
+        configure(grid: smallGrid)
+        configure(grid: bigGrid)
+    }
+    
+    private func configure(grid: UICollectionView?) {
+        grid?.register(UINib.init(nibName: GridCell.NibName,
+                                  bundle: nil),
+                       forCellWithReuseIdentifier: GridCell.CellIdentifier)
+        grid?.delegate = self
+        grid?.dataSource = self
+        grid?.backgroundColor = .clear
     }
 
 }
