@@ -9,11 +9,30 @@
 import UIKit
 
 class GameViewController: UIViewController {
-
+    
+    @IBOutlet weak var smallGrid: UICollectionView?
+    @IBOutlet weak var bigGrid: UICollectionView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        configureSubviews()
+        configureNavigationBar()
+    }
+    
+    // MARK: - Configuration -
+    
+    private func configureSubviews() {
+        configureCollectionViews()
+    }
+    
+    private func configureNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func configureCollectionViews() {
+        smallGrid?.delegate = self
+        bigGrid?.delegate = self
     }
 
 }
