@@ -9,13 +9,7 @@ extension GameViewController: UICollectionViewDelegate {
             return
         }
         
-        if bigGrid.selectedIndexPaths.contains(indexPath) {
-            bigGrid.selectedIndexPaths.removeAll(where: { (selectedIndexPath) -> Bool in
-                return selectedIndexPath == indexPath
-            })
-        } else {
-            bigGrid.selectedIndexPaths.append(indexPath)
-        }
+        bigGrid.selectedIndexPaths.toggle(element: indexPath)
         
         collectionView.reloadItems(at: [indexPath])
     }
