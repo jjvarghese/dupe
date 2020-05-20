@@ -5,7 +5,7 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size: CGFloat = (collectionView.frame.size.width / 4) - 2
+        let size: CGFloat = (collectionView.frame.size.width / 4) - 3
 
         return CGSize(width: size,
                       height: size)

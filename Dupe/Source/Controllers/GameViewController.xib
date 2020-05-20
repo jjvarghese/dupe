@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5YU-iq-uwr" customClass="GridCollectionView" customModule="Dupe" customModuleProvider="target">
-                    <rect key="frame" x="40" y="286" width="334" height="334"/>
+                    <rect key="frame" x="40" y="508" width="334" height="334"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="5YU-iq-uwr" secondAttribute="height" multiplier="1:1" id="ytA-f4-6x3"/>
                     </constraints>
@@ -32,7 +32,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LMz-yb-0Rf" customClass="GridCollectionView" customModule="Dupe" customModuleProvider="target">
-                    <rect key="frame" x="127" y="54" width="160" height="160"/>
+                    <rect key="frame" x="127" y="304" width="160" height="160"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="LMz-yb-0Rf" secondAttribute="height" multiplier="1:1" id="aHw-jc-fNv"/>
@@ -45,15 +45,15 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="LMz-yb-0Rf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Iw6-3Z-Z1A"/>
+                <constraint firstItem="5YU-iq-uwr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-20" id="DOh-jD-Kzs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LMz-yb-0Rf" secondAttribute="trailing" constant="127" id="Pbe-rB-qYf"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="R0v-nF-IvR"/>
                 <constraint firstItem="LMz-yb-0Rf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="127" id="f5w-Hb-mal"/>
+                <constraint firstItem="5YU-iq-uwr" firstAttribute="top" secondItem="LMz-yb-0Rf" secondAttribute="bottom" constant="44" id="hL8-zV-DCL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5YU-iq-uwr" secondAttribute="trailing" constant="40" id="hrp-NA-SKr"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iY2-EC-wdG"/>
-                <constraint firstItem="5YU-iq-uwr" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="lAj-Ac-Wl1"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
