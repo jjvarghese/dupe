@@ -23,6 +23,8 @@
 		A49B975324747B7B007BF29A /* GridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49B975124747B7B007BF29A /* GridCell.xib */; };
 		A49B97552475BC9B007BF29A /* GridCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97542475BC9B007BF29A /* GridCollectionView.swift */; };
 		A49B97582475BF5D007BF29A /* [IndexPath]+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97572475BF5D007BF29A /* [IndexPath]+Operations.swift */; };
+		A49B975A2475C3EB007BF29A /* GridCollectionView+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97592475C3EB007BF29A /* GridCollectionView+UIGestureRecognizerDelegate.swift */; };
+		A49B975C2475C467007BF29A /* GameViewController+GridCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B975B2475C467007BF29A /* GameViewController+GridCollectionViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		A49B975124747B7B007BF29A /* GridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCell.xib; sourceTree = "<group>"; };
 		A49B97542475BC9B007BF29A /* GridCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionView.swift; sourceTree = "<group>"; };
 		A49B97572475BF5D007BF29A /* [IndexPath]+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[IndexPath]+Operations.swift"; sourceTree = "<group>"; };
+		A49B97592475C3EB007BF29A /* GridCollectionView+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GridCollectionView+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
+		A49B975B2475C467007BF29A /* GameViewController+GridCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+GridCollectionViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 		A49B974324745B4A007BF29A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A49B975B2475C467007BF29A /* GameViewController+GridCollectionViewDelegate.swift */,
 				A49B974C247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift */,
 				A49B974A247479AA007BF29A /* GameViewController+UICollectionViewDelegate.swift */,
 				A49B974824747859007BF29A /* GameViewController+UICollectionViewDelegateFlowLayout.swift */,
@@ -167,6 +172,7 @@
 			children = (
 				A49B975024747B7B007BF29A /* GridCell.swift */,
 				A49B975124747B7B007BF29A /* GridCell.xib */,
+				A49B97592475C3EB007BF29A /* GridCollectionView+UIGestureRecognizerDelegate.swift */,
 				A49B97542475BC9B007BF29A /* GridCollectionView.swift */,
 			);
 			path = Views;
@@ -334,6 +340,8 @@
 				A49B97132474556D007BF29A /* AppDelegate.swift in Sources */,
 				A49B974624745BA1007BF29A /* GameViewController.swift in Sources */,
 				A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */,
+				A49B975C2475C467007BF29A /* GameViewController+GridCollectionViewDelegate.swift in Sources */,
+				A49B975A2475C3EB007BF29A /* GridCollectionView+UIGestureRecognizerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

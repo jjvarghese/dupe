@@ -35,13 +35,14 @@ class GameViewController: UIViewController {
         configure(grid: bigGrid)
     }
     
-    private func configure(grid: UICollectionView?) {
+    private func configure(grid: GridCollectionView?) {
         grid?.register(UINib.init(nibName: GridCell.NibName,
                                   bundle: nil),
                        forCellWithReuseIdentifier: GridCell.CellIdentifier)
         grid?.delegate = self
         grid?.dataSource = self
         grid?.backgroundColor = .clear
+        grid?.gridDelegate = self 
     }
 
 }

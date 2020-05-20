@@ -21,7 +21,6 @@ class GridCell: UICollectionViewCell {
         super.awakeFromNib()
         
         isUserInteractionEnabled = true
-
     }
     
     // MARK: - Updating -
