@@ -21,6 +21,7 @@
 		A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B974C247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift */; };
 		A49B975224747B7B007BF29A /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B975024747B7B007BF29A /* GridCell.swift */; };
 		A49B975324747B7B007BF29A /* GridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49B975124747B7B007BF29A /* GridCell.xib */; };
+		A49B97552475BC9B007BF29A /* GridCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97542475BC9B007BF29A /* GridCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		A49B974C247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		A49B975024747B7B007BF29A /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		A49B975124747B7B007BF29A /* GridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCell.xib; sourceTree = "<group>"; };
+		A49B97542475BC9B007BF29A /* GridCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				A49B975024747B7B007BF29A /* GridCell.swift */,
 				A49B975124747B7B007BF29A /* GridCell.xib */,
+				A49B97542475BC9B007BF29A /* GridCollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A49B97552475BC9B007BF29A /* GridCollectionView.swift in Sources */,
 				A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */,
 				A49B974B247479AA007BF29A /* GameViewController+UICollectionViewDelegate.swift in Sources */,
 				A49B974924747859007BF29A /* GameViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,

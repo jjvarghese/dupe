@@ -10,8 +10,8 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    @IBOutlet weak var smallGrid: UICollectionView?
-    @IBOutlet weak var bigGrid: UICollectionView?
+    @IBOutlet weak var smallGrid: GridCollectionView?
+    @IBOutlet weak var bigGrid: GridCollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,6 +14,12 @@ extension GameViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
+        if collectionView == bigGrid, let bigGrid = bigGrid {
+            let isSelected = bigGrid.selectedIndexPaths.contains(indexPath)
+            
+            gridCell.update(asSelected: isSelected)
+        }
+                
         return gridCell
     }
     

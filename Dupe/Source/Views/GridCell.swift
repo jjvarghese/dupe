@@ -10,16 +10,24 @@ import UIKit
 
 class GridCell: UICollectionViewCell {
 
+    @IBOutlet private weak var square: UIView?
+    
     static let CellIdentifier = "GridCellIdentifier"
     static let NibName = "GridCell"
     
-    var index = 0
     var isBeingTouchDragged: Bool = false
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         
         isUserInteractionEnabled = true
+
+    }
+    
+    // MARK: - Updating -
+    
+    func update(asSelected selected: Bool) {
+        square?.backgroundColor = selected ? .white : .blue
     }
 
 }
