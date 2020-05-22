@@ -25,7 +25,8 @@ class GridCollectionView: UICollectionView {
 
     var gridDelegate: GridCollectionViewDelegate?
     var selectedIndexPaths: [IndexPath] = []
-    var isActivelyTouchPanning: Bool = false
+    
+    private var swipeToggledIndexPaths: [IndexPath] = []
     
     // MARK: - UIView -
     
@@ -38,27 +39,11 @@ class GridCollectionView: UICollectionView {
     // MARK: - Updating -
     
     func touch(indexPath: IndexPath) {
-        if let touchedCell: GridCell = cellForItem(at: indexPath) as? GridCell {
-            if !touchedCell.isBeingTouchDragged {
-                selectedIndexPaths.toggle(element: indexPath)
-            }
-            
-            if isActivelyTouchPanning {
-                touchedCell.isBeingTouchDragged = true
-            } else {
-                touchedCell.isBeingTouchDragged = false
-            }
-            
-            reloadItems(at: [indexPath])
-        }
-    }
-    
-    private func resetDragStates() {
-        for cell in visibleCells {
-            if let gridCell = cell as? GridCell {
-                gridCell.isBeingTouchDragged = false
-            }
-        }
+        guard !swipeToggledIndexPaths.contains(indexPath) else { return }
+        
+        selectedIndexPaths.toggle(element: indexPath)
+
+        reloadItems(at: [indexPath])
     }
     
     // MARK: - Gesture Handling -
@@ -67,8 +52,6 @@ class GridCollectionView: UICollectionView {
         let location = touchGesture.location(in: self)
         
         if let indexPath = indexPathForItem(at: location) {
-            resetDragStates()
-
             gridDelegate?.gridCollectionView(collectionView: self,
                                              didSelect: indexPath)
         }
@@ -78,15 +61,19 @@ class GridCollectionView: UICollectionView {
         let location = panGesture.location(in: self)
         
         if let indexPath = indexPathForItem(at: location) {
-            if panGesture.state == .began || panGesture.state == .changed {
-                isActivelyTouchPanning = true
+            if panGesture.state == .began {
+                gridDelegate?.gridCollectionView(collectionView: self,
+                                                 didSelect: indexPath)
                 
+                swipeToggledIndexPaths.addIfNotAlreadyThere(element: indexPath)
+            } else if panGesture.state == .changed {
                 gridDelegate?.gridCollectionView(collectionView: self,
                                                  didPanAt: indexPath)
-            } else if panGesture.state == .ended {
-                isActivelyTouchPanning = false
                 
-                resetDragStates()
+                swipeToggledIndexPaths.addIfNotAlreadyThere(element: indexPath)
+            } else if panGesture.state == .ended {
+
+                swipeToggledIndexPaths = []
                 
                 gridDelegate?.gridCollectionView(collectionView: self,
                                                  didEndPanningAt: indexPath)

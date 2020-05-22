@@ -11,5 +11,11 @@ extension Array where Element == IndexPath {
             append(element)
         }
     }
+    
+    mutating func addIfNotAlreadyThere(element: IndexPath) {
+        if !contains(element) {
+            append(element)
+        }
+    }
 }
 

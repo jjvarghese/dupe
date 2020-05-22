@@ -12,12 +12,11 @@ class GridCell: UICollectionViewCell {
 
     @IBOutlet private weak var square: UIView?
     @IBOutlet private weak var cornerHeightLayoutConstraint: NSLayoutConstraint?
-    @IBOutlet private weak var cornerWidthLayoutConstraint: NSLayoutConstraint?
     
     static let CellIdentifier = "GridCellIdentifier"
     static let NibName = "GridCell"
     
-    var isBeingTouchDragged: Bool = false
+//    var isBeingTouchDragged: Bool = false
     
     private let baseColor: UIColor = UIColor.init(red: 61/255,
                                            green: 142/255,
@@ -31,8 +30,7 @@ class GridCell: UICollectionViewCell {
         isUserInteractionEnabled = true
         
         square?.backgroundColor = baseColor
-        cornerWidthLayoutConstraint?.constant = 4
-        cornerHeightLayoutConstraint?.constant = 4
+        cornerHeightLayoutConstraint?.constant = 2
     }
     
     // MARK: - Updating -
