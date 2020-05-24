@@ -28,7 +28,6 @@ extension GameViewController: GridCollectionViewDelegate {
 
         if selectedIndexes.sorted().elementsEqual(smallGridIndexPaths) {
             triggerMatch()
-            
         }
     }
     

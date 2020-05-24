@@ -51,19 +51,27 @@ class GridCollectionView: UICollectionView {
         gridDelegate?.gridCollectionView(collectionView: self,
                                          didUpdateSelectedIndexes: selectedIndexPaths)
     }
-    
+
     func randomise() {
         selectedIndexPaths = []
         
-        for item in 0...numberOfItems(inSection: 0) - 1 {
-            let shouldSelect: Bool = Int.random(in: 0...1) == 0
-            
-            if shouldSelect {
-                let indexPathToSelect = IndexPath(item: item,
-                                                  section: 0)
-                
-                selectedIndexPaths.append(indexPathToSelect)
+        let seedIndex = Int.random(in: 0...15)
+        let seedIndexPath = IndexPath(item: seedIndex,
+                                      section: 0)
+        let length = 10
+        
+        selectedIndexPaths.addIfNotAlreadyThere(element: IndexPath(item: seedIndex,
+                                            section: 0))
+        
+        for var i in 0...length {
+            let nextIndexChoices: [IndexPath] = seedIndexPath.getSmoothPathsFor16Grid()
+            let positionOfChosenIndex = Int(arc4random_uniform(UInt32(nextIndexChoices.count)))
+            if let chosenIndex = nextIndexChoices[safe: positionOfChosenIndex] {
+                selectedIndexPaths.addIfNotAlreadyThere(element: chosenIndex)
             }
+            
+            
+            i = i + 1
         }
         
         reloadData()
