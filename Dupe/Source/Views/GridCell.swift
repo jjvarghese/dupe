@@ -12,6 +12,10 @@ class GridCell: UICollectionViewCell {
 
     @IBOutlet private weak var square: UIView?
     @IBOutlet private weak var cornerHeightLayoutConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var squareTopConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var squareBottomConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var squareLeadingConstraint: NSLayoutConstraint?
+    @IBOutlet private weak var squareTrailingConstraint: NSLayoutConstraint?
     
     static let CellIdentifier = "GridCellIdentifier"
     static let NibName = "GridCell"
@@ -28,13 +32,44 @@ class GridCell: UICollectionViewCell {
         isUserInteractionEnabled = true
         
         square?.backgroundColor = baseColor
-        cornerHeightLayoutConstraint?.constant = 0
+        cornerHeightLayoutConstraint?.constant = 1
     }
     
     // MARK: - Updating -
     
     func update(asSelected selected: Bool) {
         square?.backgroundColor = selected ? activeColor : baseColor
+        pulseAnimate()
+    }
+    
+    // MARK: - Animation -
+    
+    private func pulseAnimate() {
+        let pulseDuration = 0.3
+        
+        weak var weakSelf = self
+        
+        pulse(amount: 4)
+
+        UIView.animate(withDuration: pulseDuration,
+                       animations: {
+                        weakSelf?.layoutIfNeeded()
+        }) { (finished) in
+            if finished {
+                weakSelf?.pulse(amount: 0)
+
+                UIView.animate(withDuration: pulseDuration) {
+                    weakSelf?.layoutIfNeeded()
+                }
+            }
+        }
+    }
+    
+    private func pulse(amount: CGFloat) {
+        squareTopConstraint?.constant = amount
+        squareBottomConstraint?.constant = amount
+        squareLeadingConstraint?.constant = amount
+        squareTrailingConstraint?.constant = amount
     }
 
 }

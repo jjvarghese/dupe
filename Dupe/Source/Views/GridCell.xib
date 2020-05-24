@@ -67,6 +67,10 @@
             <connections>
                 <outlet property="cornerHeightLayoutConstraint" destination="109-V9-D8I" id="POV-N6-eHy"/>
                 <outlet property="square" destination="rCi-yb-kiq" id="qVk-CB-XBI"/>
+                <outlet property="squareBottomConstraint" destination="0cd-xZ-8Tl" id="AoB-Dj-kus"/>
+                <outlet property="squareLeadingConstraint" destination="9yS-l2-4R0" id="dkR-1f-rQi"/>
+                <outlet property="squareTopConstraint" destination="aUL-1m-Bae" id="JW6-ie-n8U"/>
+                <outlet property="squareTrailingConstraint" destination="E2L-Fb-2Q6" id="7KP-tU-8s9"/>
             </connections>
             <point key="canvasLocation" x="139" y="147"/>
         </collectionViewCell>
