@@ -17,5 +17,18 @@ extension Array where Element == Int {
             append(element)
         }
     }
+    
+    func containsUniqueIndices(comparedTo array: [Int]) -> Bool {
+        for index in array {
+            if !self.contains(index) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    
+    
 }
 

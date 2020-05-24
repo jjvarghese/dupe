@@ -50,24 +50,25 @@ class GridCollectionView: UICollectionView {
         selectedIndices = []
         
         let seedIndex = Int.random(in: 0...15)
-        let length = 10
+        let length = 5
         
         selectedIndices.addIfNotAlreadyThere(element: seedIndex)
         
         for var i in 0...length {
-            let validOptions: [Int] = seedIndex.getSmoothPathsForSize16Grid()
-            let selectedOptionPosition = Int.random(in: 0...validOptions.count)
+            let validOptions: Array = i.getSmoothPathsForSize16Grid()
             
-            if let nextIndex = validOptions[safe: selectedOptionPosition] {
-                selectedIndices.addIfNotAlreadyThere(element: nextIndex)
+            let chosenOption = Int.random(in: 0...validOptions.count)
+            
+            if let chosenIndex = validOptions[safe: chosenOption] {
+                selectedIndices.addIfNotAlreadyThere(element: chosenIndex)
             }
-            
             
             i += 1
         }
         
         reloadData()
     }
+   
     
     func reset() {
         selectedIndices = []
