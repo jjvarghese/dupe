@@ -5,6 +5,8 @@ extension GameViewController: GridCollectionViewDelegate {
     func gridCollectionView(collectionView: GridCollectionView,
                             didPanAt indexPath: IndexPath) {        
         collectionView.touch(indexPath: indexPath)
+        
+        checkForMatch()
     }
     
     func gridCollectionView(collectionView: GridCollectionView,
@@ -14,19 +16,17 @@ extension GameViewController: GridCollectionViewDelegate {
     func gridCollectionView(collectionView: GridCollectionView,
                             didSelect indexPath: IndexPath) {
         collectionView.touch(indexPath: indexPath)
-    }
-    
-    func gridCollectionView(collectionView: GridCollectionView,
-                            didUpdateSelectedIndexes selectedIndexes: [IndexPath]) {
-        checkForMatch(withSelectedIndexes: selectedIndexes)
+        
+        checkForMatch()
     }
     
     // MARK: - Helper -
     
-    private func checkForMatch(withSelectedIndexes selectedIndexes: [IndexPath]) {
-        guard let smallGridIndexPaths = self.smallGrid?.selectedIndexPaths.sorted() else { return }
+    private func checkForMatch() {
+        guard let smallGridIndices = smallGrid?.selectedIndices.sorted(),
+            let bigGridIndices = bigGrid?.selectedIndices.sorted() else { return }
 
-        if selectedIndexes.sorted().elementsEqual(smallGridIndexPaths) {
+        if bigGridIndices.elementsEqual(smallGridIndices) {
             triggerMatch()
         }
     }

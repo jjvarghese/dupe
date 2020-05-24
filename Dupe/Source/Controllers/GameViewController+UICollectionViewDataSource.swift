@@ -9,14 +9,13 @@ extension GameViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("collectionView == ", collectionView == smallGrid ? "smallGrid" : "bigGrid")
         guard let gridCell = collectionView.dequeueReusableCell(withReuseIdentifier: GridCell.CellIdentifier,
                                                                 for: indexPath) as? GridCell,
             let gridCollectionView = collectionView as? GridCollectionView else {
             return UICollectionViewCell()
         }
         
-        let isSelected = gridCollectionView.selectedIndexPaths.contains(indexPath)
+        let isSelected = gridCollectionView.selectedIndices.contains(indexPath.item)
                    
         gridCell.update(asSelected: isSelected)
                 

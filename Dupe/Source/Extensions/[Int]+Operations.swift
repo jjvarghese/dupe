@@ -1,8 +1,8 @@
 import Foundation
 
-extension Array where Element == IndexPath {
-    
-    mutating func toggle(element: IndexPath) {
+extension Array where Element == Int {
+
+    mutating func toggle(element: Int) {
         if contains(element) {
             removeAll { (containingElement) -> Bool in
                 return containingElement == element
@@ -12,7 +12,7 @@ extension Array where Element == IndexPath {
         }
     }
     
-    mutating func addIfNotAlreadyThere(element: IndexPath) {
+    mutating func addIfNotAlreadyThere(element: Int) {
         if !contains(element) {
             append(element)
         }

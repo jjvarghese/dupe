@@ -19,17 +19,14 @@ protocol GridCollectionViewDelegate {
     func gridCollectionView(collectionView: GridCollectionView,
                             didSelect indexPath: IndexPath)
     
-    func gridCollectionView(collectionView: GridCollectionView,
-                            didUpdateSelectedIndexes selectedIndexes: [IndexPath])
-    
 }
 
 class GridCollectionView: UICollectionView {
 
     var gridDelegate: GridCollectionViewDelegate?
-    var selectedIndexPaths: [IndexPath] = []
+    var selectedIndices: [Int] = []
     
-    private var swipeToggledIndexPaths: [IndexPath] = []
+    private var swipedIndices: [Int] = []
     
     // MARK: - UIView -
     
@@ -42,44 +39,39 @@ class GridCollectionView: UICollectionView {
     // MARK: - Updating -
     
     func touch(indexPath: IndexPath) {
-        guard !swipeToggledIndexPaths.contains(indexPath) else { return }
+        guard !swipedIndices.contains(indexPath.item) else { return }
         
-        selectedIndexPaths.toggle(element: indexPath)
+        selectedIndices.toggle(element: indexPath.item)
 
         reloadItems(at: [indexPath])
-        
-        gridDelegate?.gridCollectionView(collectionView: self,
-                                         didUpdateSelectedIndexes: selectedIndexPaths)
     }
 
     func randomise() {
-        selectedIndexPaths = []
+        selectedIndices = []
         
         let seedIndex = Int.random(in: 0...15)
-        let seedIndexPath = IndexPath(item: seedIndex,
-                                      section: 0)
         let length = 10
         
-        selectedIndexPaths.addIfNotAlreadyThere(element: IndexPath(item: seedIndex,
-                                            section: 0))
+        selectedIndices.addIfNotAlreadyThere(element: seedIndex)
         
         for var i in 0...length {
-            let nextIndexChoices: [IndexPath] = seedIndexPath.getSmoothPathsFor16Grid()
-            let positionOfChosenIndex = Int(arc4random_uniform(UInt32(nextIndexChoices.count)))
-            if let chosenIndex = nextIndexChoices[safe: positionOfChosenIndex] {
-                selectedIndexPaths.addIfNotAlreadyThere(element: chosenIndex)
+            let validOptions: [Int] = seedIndex.getSmoothPathsForSize16Grid()
+            let selectedOptionPosition = Int.random(in: 0...validOptions.count)
+            
+            if let nextIndex = validOptions[safe: selectedOptionPosition] {
+                selectedIndices.addIfNotAlreadyThere(element: nextIndex)
             }
             
             
-            i = i + 1
+            i += 1
         }
         
         reloadData()
     }
     
     func reset() {
-        selectedIndexPaths = []
-        swipeToggledIndexPaths = []
+        selectedIndices = []
+        swipedIndices = []
         
         for cell in visibleCells {
             if let gridCell = cell as? GridCell {
@@ -109,15 +101,15 @@ class GridCollectionView: UICollectionView {
                 gridDelegate?.gridCollectionView(collectionView: self,
                                                  didSelect: indexPath)
                 
-                swipeToggledIndexPaths.addIfNotAlreadyThere(element: indexPath)
+                swipedIndices.addIfNotAlreadyThere(element: indexPath.item)
             } else if panGesture.state == .changed {
                 gridDelegate?.gridCollectionView(collectionView: self,
                                                  didPanAt: indexPath)
                 
-                swipeToggledIndexPaths.addIfNotAlreadyThere(element: indexPath)
+                swipedIndices.addIfNotAlreadyThere(element: indexPath.item)
             } else if panGesture.state == .ended {
 
-                swipeToggledIndexPaths = []
+                swipedIndices = []
                 
                 gridDelegate?.gridCollectionView(collectionView: self,
                                                  didEndPanningAt: indexPath)
