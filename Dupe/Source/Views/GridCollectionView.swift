@@ -19,6 +19,9 @@ protocol GridCollectionViewDelegate {
     func gridCollectionView(collectionView: GridCollectionView,
                             didSelect indexPath: IndexPath)
     
+    func gridCollectionView(collectionView: GridCollectionView,
+                            didUpdateSelectedIndexes selectedIndexes: [IndexPath])
+    
 }
 
 class GridCollectionView: UICollectionView {
@@ -44,6 +47,39 @@ class GridCollectionView: UICollectionView {
         selectedIndexPaths.toggle(element: indexPath)
 
         reloadItems(at: [indexPath])
+        
+        gridDelegate?.gridCollectionView(collectionView: self,
+                                         didUpdateSelectedIndexes: selectedIndexPaths)
+    }
+    
+    func randomise() {
+        selectedIndexPaths = []
+        
+        for item in 0...numberOfItems(inSection: 0) - 1 {
+            let shouldSelect: Bool = Int.random(in: 0...1) == 0
+            
+            if shouldSelect {
+                let indexPathToSelect = IndexPath(item: item,
+                                                  section: 0)
+                
+                selectedIndexPaths.append(indexPathToSelect)
+            }
+        }
+        
+        reloadData()
+    }
+    
+    func reset() {
+        selectedIndexPaths = []
+        swipeToggledIndexPaths = []
+        
+        for cell in visibleCells {
+            if let gridCell = cell as? GridCell {
+                gridCell.update(asSelected: false)
+            }
+        }
+        
+        reloadData()
     }
     
     // MARK: - Gesture Handling -

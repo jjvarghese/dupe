@@ -18,6 +18,15 @@ class GameViewController: UIViewController {
         
         configureSubviews()
         configureNavigationBar()
+        
+        smallGrid?.randomise()
+    }
+    
+    // MARK: - Matching -
+    
+    func triggerMatch() {
+        bigGrid?.reset()
+        smallGrid?.randomise()
     }
     
     // MARK: - Configuration -

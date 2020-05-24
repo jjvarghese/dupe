@@ -16,4 +16,20 @@ extension GameViewController: GridCollectionViewDelegate {
         collectionView.touch(indexPath: indexPath)
     }
     
+    func gridCollectionView(collectionView: GridCollectionView,
+                            didUpdateSelectedIndexes selectedIndexes: [IndexPath]) {
+        checkForMatch(withSelectedIndexes: selectedIndexes)
+    }
+    
+    // MARK: - Helper -
+    
+    private func checkForMatch(withSelectedIndexes selectedIndexes: [IndexPath]) {
+        guard let smallGridIndexPaths = self.smallGrid?.selectedIndexPaths.sorted() else { return }
+
+        if selectedIndexes.sorted().elementsEqual(smallGridIndexPaths) {
+            triggerMatch()
+            
+        }
+    }
+    
 }

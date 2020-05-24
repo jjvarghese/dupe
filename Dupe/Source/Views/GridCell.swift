@@ -15,9 +15,7 @@ class GridCell: UICollectionViewCell {
     
     static let CellIdentifier = "GridCellIdentifier"
     static let NibName = "GridCell"
-    
-//    var isBeingTouchDragged: Bool = false
-    
+        
     private let baseColor: UIColor = UIColor.init(red: 61/255,
                                            green: 142/255,
                                            blue: 255/255,
@@ -30,7 +28,7 @@ class GridCell: UICollectionViewCell {
         isUserInteractionEnabled = true
         
         square?.backgroundColor = baseColor
-        cornerHeightLayoutConstraint?.constant = 2
+        cornerHeightLayoutConstraint?.constant = 0
     }
     
     // MARK: - Updating -
