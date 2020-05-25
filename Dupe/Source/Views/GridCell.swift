@@ -39,24 +39,27 @@ class GridCell: UICollectionViewCell {
     
     func update(asSelected selected: Bool) {
         square?.backgroundColor = selected ? activeColor : baseColor
-        pulseAnimate()
+        
+        if selected {
+            pulse()
+        }
     }
     
     // MARK: - Animation -
     
-    private func pulseAnimate() {
+    private func pulse() {
         let pulseDuration = 0.3
         
         weak var weakSelf = self
         
-        pulse(amount: 4)
+        adjustSquareSize(amount: -5)
 
         UIView.animate(withDuration: pulseDuration,
                        animations: {
                         weakSelf?.layoutIfNeeded()
         }) { (finished) in
             if finished {
-                weakSelf?.pulse(amount: 0)
+                weakSelf?.adjustSquareSize(amount: 0)
 
                 UIView.animate(withDuration: pulseDuration) {
                     weakSelf?.layoutIfNeeded()
@@ -65,7 +68,7 @@ class GridCell: UICollectionViewCell {
         }
     }
     
-    private func pulse(amount: CGFloat) {
+    private func adjustSquareSize(amount: CGFloat) {
         squareTopConstraint?.constant = amount
         squareBottomConstraint?.constant = amount
         squareLeadingConstraint?.constant = amount

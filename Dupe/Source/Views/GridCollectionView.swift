@@ -74,13 +74,27 @@ class GridCollectionView: UICollectionView {
         selectedIndices = []
         swipedIndices = []
         
-        for cell in visibleCells {
-            if let gridCell = cell as? GridCell {
-                gridCell.update(asSelected: false)
-            }
-        }
+        flash()
         
         reloadData()
+    }
+    
+    private func flash() {
+        flicker(on: true)
+        
+        weak var weakSelf = self
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            weakSelf?.flicker(on: false)
+        }
+    }
+    
+    private func flicker(on: Bool) {
+        for cell in visibleCells {
+            if let gridCell = cell as? GridCell {
+                gridCell.update(asSelected: on)
+            }
+        }
     }
     
     // MARK: - Gesture Handling -
