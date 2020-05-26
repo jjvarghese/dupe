@@ -25,8 +25,7 @@ class GridCollectionView: UICollectionView {
 
     var gridDelegate: GridCollectionViewDelegate?
     var selectedIndices: [Int] = []
-    
-    private var swipedIndices: [Int] = []
+    var swipedIndices: [Int] = []
     
     // MARK: - UIView -
     
@@ -68,7 +67,6 @@ class GridCollectionView: UICollectionView {
         
         reloadData()
     }
-   
     
     func reset() {
         selectedIndices = []
@@ -79,77 +77,4 @@ class GridCollectionView: UICollectionView {
         reloadData()
     }
     
-    private func flash() {
-        flicker(on: true)
-        
-        weak var weakSelf = self
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            weakSelf?.flicker(on: false)
-        }
-    }
-    
-    private func flicker(on: Bool) {
-        for cell in visibleCells {
-            if let gridCell = cell as? GridCell {
-                gridCell.update(asSelected: on)
-            }
-        }
-    }
-    
-    // MARK: - Gesture Handling -
-    
-    @objc private func didTap(touchGesture: UITapGestureRecognizer) {
-        let location = touchGesture.location(in: self)
-        
-        if let indexPath = indexPathForItem(at: location) {
-            gridDelegate?.gridCollectionView(collectionView: self,
-                                             didSelect: indexPath)
-        }
-    }
-    
-    @objc private func didPan(panGesture: UIPanGestureRecognizer) {
-        let location = panGesture.location(in: self)
-        
-        if let indexPath = indexPathForItem(at: location) {
-            if panGesture.state == .began {
-                gridDelegate?.gridCollectionView(collectionView: self,
-                                                 didSelect: indexPath)
-                
-                swipedIndices.addIfNotAlreadyThere(element: indexPath.item)
-            } else if panGesture.state == .changed {
-                gridDelegate?.gridCollectionView(collectionView: self,
-                                                 didPanAt: indexPath)
-                
-                swipedIndices.addIfNotAlreadyThere(element: indexPath.item)
-            } else if panGesture.state == .ended {
-
-                swipedIndices = []
-                
-                gridDelegate?.gridCollectionView(collectionView: self,
-                                                 didEndPanningAt: indexPath)
-            }
-        }
-    }
-    
-    // MARK: - Configuration -
-    
-    private func configureGestures() {
-        let swipeGesture: UIPanGestureRecognizer = UIPanGestureRecognizer.init(target: self,
-                                                                               action: #selector(didPan(panGesture:)))
-        swipeGesture.delegate = self
-        swipeGesture.cancelsTouchesInView = false
-        
-        addGestureRecognizer(swipeGesture)
-        
-        let touchGesture: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self,
-                                                                               action: #selector(didTap(touchGesture:)))
-        touchGesture.delegate = self
-        touchGesture.numberOfTapsRequired = 1
-        touchGesture.numberOfTouchesRequired = 1
-        touchGesture.cancelsTouchesInView = false
-        
-        addGestureRecognizer(touchGesture)
-    }
-
 }
