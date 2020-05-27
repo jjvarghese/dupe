@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A4364AD4247DA13300D7AF78 /* GridCollectionView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364AD3247DA13300D7AF78 /* GridCollectionView+Animation.swift */; };
 		A4364AD6247DA1A000D7AF78 /* GridCell+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364AD5247DA1A000D7AF78 /* GridCell+Animation.swift */; };
+		A4364AD8247DA2BF00D7AF78 /* GameViewController+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364AD7247DA2BF00D7AF78 /* GameViewController+Animation.swift */; };
 		A49B97132474556D007BF29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97122474556D007BF29A /* AppDelegate.swift */; };
 		A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97142474556D007BF29A /* SceneDelegate.swift */; };
 		A49B971A2474556D007BF29A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49B97182474556D007BF29A /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		A4364AD3247DA13300D7AF78 /* GridCollectionView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GridCollectionView+Animation.swift"; sourceTree = "<group>"; };
 		A4364AD5247DA1A000D7AF78 /* GridCell+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GridCell+Animation.swift"; sourceTree = "<group>"; };
+		A4364AD7247DA2BF00D7AF78 /* GameViewController+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Animation.swift"; sourceTree = "<group>"; };
 		A49B970F2474556D007BF29A /* Dupe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dupe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49B97122474556D007BF29A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A49B97142474556D007BF29A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		A49B974324745B4A007BF29A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4364AD7247DA2BF00D7AF78 /* GameViewController+Animation.swift */,
 				A49B975B2475C467007BF29A /* GameViewController+GridCollectionViewDelegate.swift */,
 				A49B974C247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift */,
 				A49B974A247479AA007BF29A /* GameViewController+UICollectionViewDelegate.swift */,
@@ -348,6 +351,7 @@
 				A4364AD6247DA1A000D7AF78 /* GridCell+Animation.swift in Sources */,
 				A49B9762247ADF3F007BF29A /* Collection+Operations.swift in Sources */,
 				A49B974B247479AA007BF29A /* GameViewController+UICollectionViewDelegate.swift in Sources */,
+				A4364AD8247DA2BF00D7AF78 /* GameViewController+Animation.swift in Sources */,
 				A49B974924747859007BF29A /* GameViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				A49B975224747B7B007BF29A /* GridCell.swift in Sources */,
 				A49B97582475BF5D007BF29A /* [Int]+Operations.swift in Sources */,

@@ -10,6 +10,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var smallGridTopConstraint: NSLayoutConstraint?
     @IBOutlet weak var smallGrid: GridCollectionView?
     @IBOutlet weak var bigGrid: GridCollectionView?
     
@@ -20,6 +21,8 @@ class GameViewController: UIViewController {
         configureNavigationBar()
         
         smallGrid?.randomise()
+        
+        descendSmallGrid(withDuration: 0.2)
     }
     
     // MARK: - Matching -
