@@ -6,22 +6,14 @@ extension GameViewController: GridCollectionViewDelegate {
         weak var weakSelf = self
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            guard let currentTempo = weakSelf?.currentTempo else { return }
-            
-            var tempo = currentTempo
-            
-            if currentTempo > 0.02 { // Maximum speed - any faster, and it's too hard
-                tempo -= 0.01
-            }
-            
-            weakSelf?.beginDescentOfSmallGrid(withDuration: tempo)
-            
-            collectionView.isHidden = false
+            weakSelf?.releaseNewSmallGrid()
         }
     }
     
     func gridCollectionView(collectionView: GridCollectionView,
-                            didPanAt indexPath: IndexPath) {        
+                            didPanAt indexPath: IndexPath) {
+        guard collectionView == bigGrid else { return }
+        
         collectionView.touch(indexPath: indexPath)
         
         checkForMatch()
@@ -33,6 +25,7 @@ extension GameViewController: GridCollectionViewDelegate {
     
     func gridCollectionView(collectionView: GridCollectionView,
                             didSelect indexPath: IndexPath) {
+        guard collectionView == bigGrid else { return }
         collectionView.touch(indexPath: indexPath)
         
         checkForMatch()

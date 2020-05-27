@@ -28,23 +28,6 @@ class GameViewController: UIViewController {
         beginDescentOfSmallGrid(withDuration: currentTempo)
     }
     
-    // MARK: - Matching -
-    
-    func triggerMatch() {
-        bigGrid?.reset()
-        smallGrid?.randomise()
-    }
-    
-    func startNewRound() {
-        descentInProgress = false
-        
-        smallGridTopConstraint?.constant = 14
-        
-        smallGrid?.updateConstraints()
-        
-        currentTempo = 0.2
-    }
-    
     // MARK: - Configuration -
     
     private func configureSubviews() {

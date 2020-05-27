@@ -39,9 +39,7 @@ extension GameViewController {
             
             animateDescent()
         } else {
-            startNewRound()
-            
-            // Game over
+            triggerGameOver()
         }
     }
     
