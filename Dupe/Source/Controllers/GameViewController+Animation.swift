@@ -16,6 +16,8 @@ extension GameViewController {
         
         smallGridTopConstraint?.constant = 14
         
+        smallGrid?.updateConstraints()
+        
         if !descentInProgress {
             descendSmallGrid()
         }
@@ -37,7 +39,7 @@ extension GameViewController {
             
             animateDescent()
         } else {
-            descentInProgress = false
+            startNewRound()
             
             // Game over
         }
