@@ -2,6 +2,18 @@ import Foundation
 
 extension GameViewController: GridCollectionViewDelegate {
     
+    func gridCollectionViewDidFinishMatchAnimation(collectionView: GridCollectionView) {
+        weak var weakSelf = self
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            guard let currentTempo = weakSelf?.currentTempo else { return }
+            
+            weakSelf?.beginDescentOfSmallGrid(withDuration: currentTempo - 0.01)
+            
+            collectionView.isHidden = false
+        }
+    }
+    
     func gridCollectionView(collectionView: GridCollectionView,
                             didPanAt indexPath: IndexPath) {        
         collectionView.touch(indexPath: indexPath)

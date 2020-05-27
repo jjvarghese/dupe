@@ -19,6 +19,8 @@ protocol GridCollectionViewDelegate {
     func gridCollectionView(collectionView: GridCollectionView,
                             didSelect indexPath: IndexPath)
     
+    func gridCollectionViewDidFinishMatchAnimation(collectionView: GridCollectionView)
+    
 }
 
 class GridCollectionView: UICollectionView {
@@ -46,6 +48,31 @@ class GridCollectionView: UICollectionView {
     }
 
     func randomise() {
+        let duration = 0.05
+        
+        flash(withDuration: duration)
+        
+        weak var weakSelf = self
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+            guard let strongSelf = weakSelf else { return }
+            
+            strongSelf.isHidden = true
+            strongSelf.randomiseActiveCells()
+            strongSelf.gridDelegate?.gridCollectionViewDidFinishMatchAnimation(collectionView: strongSelf)
+        }
+    }
+    
+    func reset() {
+        selectedIndices = []
+        swipedIndices = []
+        
+        flash(withDuration: 0.3)
+        
+        reloadData()
+    }
+    
+    private func randomiseActiveCells() {
         selectedIndices = []
         
         let seedIndex = Int.random(in: 0...15)
@@ -64,15 +91,6 @@ class GridCollectionView: UICollectionView {
             
             i += 1
         }
-        
-        reloadData()
-    }
-    
-    func reset() {
-        selectedIndices = []
-        swipedIndices = []
-        
-        flash()
         
         reloadData()
     }

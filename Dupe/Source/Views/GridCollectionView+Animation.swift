@@ -13,12 +13,12 @@ extension GridCollectionView {
     
     // MARK: - Available animations -
     
-    func flash() {
+    func flash(withDuration duration: TimeInterval) {
         flicker(on: true)
         
         weak var weakSelf = self
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             weakSelf?.flicker(on: false)
         }
     }

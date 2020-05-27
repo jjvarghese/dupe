@@ -14,6 +14,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var smallGrid: GridCollectionView?
     @IBOutlet weak var bigGrid: GridCollectionView?
     
+    var descentInProgress: Bool = false
+    var currentTempo: TimeInterval = 0.2
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +25,7 @@ class GameViewController: UIViewController {
         
         smallGrid?.randomise()
         
-        descendSmallGrid(withDuration: 0.2)
+        beginDescentOfSmallGrid(withDuration: currentTempo)
     }
     
     // MARK: - Matching -

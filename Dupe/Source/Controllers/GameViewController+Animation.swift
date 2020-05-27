@@ -11,9 +11,23 @@ import UIKit
 
 extension GameViewController {
     
-    func descendSmallGrid(withDuration duration: TimeInterval) {
+    func beginDescentOfSmallGrid(withDuration duration: TimeInterval) {
+        currentTempo = duration
+        
+        smallGridTopConstraint?.constant = 14
+        
+        if !descentInProgress {
+            descendSmallGrid()
+        }
+    }
+    
+    // MARK: - Animation helper -
+    
+    private func descendSmallGrid() {
         guard let smallGrid = smallGrid,
             let bigGrid = bigGrid else { return }
+        
+        descentInProgress = true
          
         let smallGridBottom = smallGrid.frame.origin.y + smallGrid.frame.size.height
         let bigGridTop = bigGrid.frame.origin.y
@@ -21,22 +35,26 @@ extension GameViewController {
         if smallGridBottom < bigGridTop {
             smallGridTopConstraint?.constant += 1
             
-            animateDescent(withDuration: duration)
+            animateDescent()
+        } else {
+            descentInProgress = false
+            
+            // Game over
         }
     }
     
-    // MARK: - Animation hekper -
-    
-    private func animateDescent(withDuration duration: TimeInterval) {
+    private func animateDescent() {
         weak var weakSelf = self
 
+        let duration = currentTempo
+        
         UIView.animate(withDuration: duration,
                        animations: {
                         weakSelf?.smallGrid?.updateConstraints()
         }) { (finished) in
             if finished {
                 DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-                    weakSelf?.descendSmallGrid(withDuration: duration)
+                    weakSelf?.descendSmallGrid()
                 }
             }
         }

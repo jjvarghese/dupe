@@ -25,6 +25,8 @@ class GridCell: UICollectionViewCell {
                                            blue: 255/255,
                                            alpha: 1)
     private let activeColor: UIColor = .white
+    
+    var shouldPulse: Bool = false
         
     // MARK: - UIView -
     
@@ -42,7 +44,7 @@ class GridCell: UICollectionViewCell {
     func update(asSelected selected: Bool) {
         square?.backgroundColor = selected ? activeColor : baseColor
         
-        if selected {
+        if selected && shouldPulse {
             pulse()
         }
     }
