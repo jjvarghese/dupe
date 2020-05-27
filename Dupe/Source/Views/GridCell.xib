@@ -21,24 +21,23 @@
                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOH-S4-I87" userLabel="tlCorner">
-                        <rect key="frame" x="0.0" y="0.0" width="2" height="2"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="0.0" y="0.0" width="5" height="5"/>
+                        <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="2" id="109-V9-D8I"/>
                             <constraint firstAttribute="width" secondItem="bOH-S4-I87" secondAttribute="height" multiplier="1:1" id="85A-8a-9xJ"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkt-g1-h8b" userLabel="brCorner">
-                        <rect key="frame" x="48" y="48" width="2" height="2"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="45" y="45" width="5" height="5"/>
+                        <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKK-dA-0x6" userLabel="blCorner">
-                        <rect key="frame" x="0.0" y="48" width="2" height="2"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="0.0" y="45" width="5" height="5"/>
+                        <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5H-cE-VfS" userLabel="trCorner">
-                        <rect key="frame" x="48" y="0.0" width="2" height="2"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="45" y="0.0" width="5" height="5"/>
+                        <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                 </subviews>
             </view>
@@ -62,10 +61,10 @@
                 <constraint firstItem="Gkt-g1-h8b" firstAttribute="height" secondItem="bOH-S4-I87" secondAttribute="height" id="mw6-mR-6uc"/>
                 <constraint firstItem="S5H-cE-VfS" firstAttribute="width" secondItem="bOH-S4-I87" secondAttribute="width" id="oAp-o0-5ZM"/>
                 <constraint firstItem="bOH-S4-I87" firstAttribute="leading" secondItem="rCi-yb-kiq" secondAttribute="leading" id="uYp-ZU-VJr"/>
+                <constraint firstItem="bOH-S4-I87" firstAttribute="width" secondItem="rCi-yb-kiq" secondAttribute="height" multiplier="1:10" id="w8m-sQ-A2a"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="cornerHeightLayoutConstraint" destination="109-V9-D8I" id="POV-N6-eHy"/>
                 <outlet property="square" destination="rCi-yb-kiq" id="qVk-CB-XBI"/>
                 <outlet property="squareBottomConstraint" destination="0cd-xZ-8Tl" id="AoB-Dj-kus"/>
                 <outlet property="squareLeadingConstraint" destination="9yS-l2-4R0" id="dkR-1f-rQi"/>

@@ -14,7 +14,6 @@ class GridCell: UICollectionViewCell {
     static let NibName = "GridCell"
     
     @IBOutlet private weak var square: UIView?
-    @IBOutlet weak var cornerHeightLayoutConstraint: NSLayoutConstraint?
     @IBOutlet weak var squareTopConstraint: NSLayoutConstraint?
     @IBOutlet weak var squareBottomConstraint: NSLayoutConstraint?
     @IBOutlet weak var squareLeadingConstraint: NSLayoutConstraint?
@@ -36,7 +35,6 @@ class GridCell: UICollectionViewCell {
         isUserInteractionEnabled = true
         
         square?.backgroundColor = baseColor
-        cornerHeightLayoutConstraint?.constant = 1
     }
     
     // MARK: - Updating -

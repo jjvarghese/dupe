@@ -17,6 +17,8 @@ class GameViewController: UIViewController {
     var descentInProgress: Bool = false
     var currentTempo: TimeInterval = 0.2
     
+    // MARK: - UIViewController -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +28,10 @@ class GameViewController: UIViewController {
         smallGrid?.randomise()
         
         beginDescentOfSmallGrid(withDuration: currentTempo)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     // MARK: - Configuration -
