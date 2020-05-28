@@ -13,7 +13,7 @@ extension GridCollectionView {
     
     // MARK: - Available animations -
     
-    func flash(withDuration duration: TimeInterval) {
+    func flash(for duration: TimeInterval) {
         flicker(on: true)
         
         weak var weakSelf = self

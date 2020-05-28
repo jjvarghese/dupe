@@ -26,4 +26,29 @@ public extension UIView {
         layer.add(animation, forKey: "shake")
     }
     
+    func fadeOut(for duration: TimeInterval,
+                 shouldReappear: Bool = false) {
+        weak var weakSelf = self
+
+        UIView.animate(withDuration: duration,
+                       animations: {
+                        weakSelf?.alpha = 0
+        }) { (finished) in
+            if shouldReappear {
+                UIView.animate(withDuration: 0,
+                               animations: {
+                                weakSelf?.alpha = 1
+                })
+            }
+        }
+    }
+    
+    func floatUp(for duration: TimeInterval) {
+        weak var weakSelf = self
+
+        UIView.animate(withDuration: duration) {
+            weakSelf?.frame.origin.y -= 30
+        }
+    }
+    
 }

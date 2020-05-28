@@ -48,16 +48,17 @@ class GridCollectionView: UICollectionView {
     }
 
     func randomise() {
-        let duration = 0.05
+        let duration = 0.3
         
-        flash(withDuration: duration)
-        
+        flash(for: duration)
+        fadeOut(for: duration,
+                shouldReappear: true)
+
         weak var weakSelf = self
         
         DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             guard let strongSelf = weakSelf else { return }
             
-            strongSelf.isHidden = true
             strongSelf.randomiseActiveCells()
             strongSelf.gridDelegate?.gridCollectionViewDidFinishMatchAnimation(collectionView: strongSelf)
         }
@@ -67,8 +68,9 @@ class GridCollectionView: UICollectionView {
         selectedIndices = []
         swipedIndices = []
         
-        flash(withDuration: 0.3)
-        shake(count: 1, for: 0.2)
+        flash(for: 0.3)
+        shake(count: 1,
+              for: 0.2)
         
         reloadData()
     }
