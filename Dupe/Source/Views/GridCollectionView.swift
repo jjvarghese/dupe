@@ -68,6 +68,7 @@ class GridCollectionView: UICollectionView {
         swipedIndices = []
         
         flash(withDuration: 0.3)
+        shake(count: 1, for: 0.2)
         
         reloadData()
     }
