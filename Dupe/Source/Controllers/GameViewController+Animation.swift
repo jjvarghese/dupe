@@ -23,18 +23,55 @@ extension GameViewController {
         }
     }
     
+    func spawnFloatingFadingLabels(atX x: CGFloat,
+                                   atY y: CGFloat,
+                                   withWidth width: CGFloat = 100,
+                                   withHeight height: CGFloat = 50,
+                                   withTexts texts: [String],
+                                   withCompletion finalCompletion: (() -> Void)?) {
+        guard texts.count > 0 else {
+            finalCompletion?()
+            
+            return
+        }
+        
+        var remainingTexts = texts
+        
+        let firstText = remainingTexts.removeFirst()
+            
+        weak var weakSelf = self
+        
+        spawnFloatingFadingLabel(atX: x,
+                                 atY: y,
+                                 withWidth: width,
+                                 withHeight: height,
+                                 withText: firstText,
+                                 withCompletion: {
+                                    weakSelf?.spawnFloatingFadingLabels(atX: x,
+                                                                        atY: y,
+                                                                        withWidth: width,
+                                                                        withHeight: height,
+                                                                        withTexts: remainingTexts,
+                                                                        withCompletion: finalCompletion)
+        })    
+    }
+    
     func spawnFloatingFadingLabel(atX x: CGFloat,
                                   atY y: CGFloat,
-                                  withText text: String) {        
+                                  withWidth width: CGFloat = 100,
+                                  withHeight height: CGFloat = 50,
+                                  withText text: String,
+                                  withCompletion completion: (() -> Void)? = nil) {
         let label: UILabel = UILabel(frame: CGRect(x: x,
                                                     y: y,
-                                                    width: 100,
-                                                    height: 50))
+                                                    width: width,
+                                                    height: height))
         
         label.text = text
         label.textColor = .white
         label.font = UIFont(name: "AmericanTypewriter",
-                            size: 40)
+                            size: 37)
+        label.textAlignment = .center
         
         view.addSubview(label)
         
@@ -45,6 +82,8 @@ extension GameViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             label.removeFromSuperview()
+            
+            completion?()
         }
     }
     

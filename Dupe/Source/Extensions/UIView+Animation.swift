@@ -27,7 +27,8 @@ public extension UIView {
     }
     
     func fadeOut(for duration: TimeInterval,
-                 shouldReappear: Bool = false) {
+                 shouldReappear: Bool = false,
+                 completion: (() -> Void)? = nil) {
         weak var weakSelf = self
 
         UIView.animate(withDuration: duration,
@@ -39,6 +40,10 @@ public extension UIView {
                                animations: {
                                 weakSelf?.alpha = 1
                 })
+            }
+            
+            if finished {
+                completion?()
             }
         }
     }

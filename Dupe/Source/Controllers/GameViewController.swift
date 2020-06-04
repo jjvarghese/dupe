@@ -35,13 +35,27 @@ class GameViewController: UIViewController {
     // MARK: - Actions -
     
     @IBAction private func startPressed(_ sender: Any) {
-        startButton?.fadeOut(for: 0.4)
+        guard let startButton = startButton else { return }
         
-        gameInProgress = true
-                
-        smallGrid?.randomise()
-               
-        beginDescentOfSmallGrid(withDuration: currentTempo)
+        weak var weakSelf = self
+        
+        let x = startButton.frame.origin.x
+        let y = startButton.frame.origin.y
+        let width = startButton.frame.size.width
+        let height = startButton.frame.size.height
+        
+        startButton.fadeOut(for: 0.4,
+                             completion: {
+                                weakSelf?.spawnFloatingFadingLabels(atX: x,
+                                                                    atY: y,
+                                                                    withWidth: width,
+                                                                    withHeight: height,
+                                                                    withTexts: ["READY", "SET", "DUPE!"], withCompletion: {
+                                                                        weakSelf?.startNewRound()
+                                })
+        })
+        
+        
     }
     
     // MARK: - Configuration -
