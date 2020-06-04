@@ -35,10 +35,10 @@ class GameViewController: UIViewController {
     // MARK: - Actions -
     
     @IBAction private func startPressed(_ sender: Any) {
+        startButton?.fadeOut(for: 0.4)
+        
         gameInProgress = true
-        
-        startButton?.isHidden = true
-        
+                
         smallGrid?.randomise()
                
         beginDescentOfSmallGrid(withDuration: currentTempo)

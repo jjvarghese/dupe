@@ -23,6 +23,31 @@ extension GameViewController {
         }
     }
     
+    func spawnFloatingFadingLabel(atX x: CGFloat,
+                                  atY y: CGFloat,
+                                  withText text: String) {        
+        let label: UILabel = UILabel(frame: CGRect(x: x,
+                                                    y: y,
+                                                    width: 100,
+                                                    height: 50))
+        
+        label.text = text
+        label.textColor = .white
+        label.font = UIFont(name: "AmericanTypewriter",
+                            size: 40)
+        
+        view.addSubview(label)
+        
+        let duration = 0.75
+        
+        label.floatUp(for: duration)
+        label.fadeOut(for: duration)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+            label.removeFromSuperview()
+        }
+    }
+    
     // MARK: - Animation helper -
     
     private func descendSmallGrid() {
