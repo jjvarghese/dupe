@@ -13,9 +13,11 @@ class GameViewController: UIViewController {
     @IBOutlet weak var smallGridTopConstraint: NSLayoutConstraint?
     @IBOutlet weak var smallGrid: GridCollectionView?
     @IBOutlet weak var bigGrid: GridCollectionView?
+    @IBOutlet private weak var startButton: UIButton?
     
     var descentInProgress: Bool = false
     var currentTempo: TimeInterval = 0.2
+    var gameInProgress: Bool = false
     
     // MARK: - UIViewController -
     
@@ -24,14 +26,22 @@ class GameViewController: UIViewController {
         
         configureSubviews()
         configureNavigationBar()
-        
-        smallGrid?.randomise()
-        
-        beginDescentOfSmallGrid(withDuration: currentTempo)
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    // MARK: - Actions -
+    
+    @IBAction private func startPressed(_ sender: Any) {
+        gameInProgress = true
+        
+        startButton?.isHidden = true
+        
+        smallGrid?.randomise()
+               
+        beginDescentOfSmallGrid(withDuration: currentTempo)
     }
     
     // MARK: - Configuration -

@@ -12,6 +12,7 @@
                 <outlet property="bigGrid" destination="5YU-iq-uwr" id="MwB-mu-yOg"/>
                 <outlet property="smallGrid" destination="LMz-yb-0Rf" id="aYY-h0-FsH"/>
                 <outlet property="smallGridTopConstraint" destination="hsK-f1-f6Y" id="wa9-33-rXH"/>
+                <outlet property="startButton" destination="8aA-9M-W3g" id="7V3-xa-ZU9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,16 +46,28 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aA-9M-W3g">
+                    <rect key="frame" x="100" y="318" width="214" height="90"/>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="37"/>
+                    <state key="normal" title="START"/>
+                    <connections>
+                        <action selector="startPressed:" destination="-1" eventType="touchUpInside" id="VPp-07-g8K"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="8aA-9M-W3g" firstAttribute="top" secondItem="LMz-yb-0Rf" secondAttribute="bottom" constant="100" id="A89-qW-FIM"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-20" id="DOh-jD-Kzs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LMz-yb-0Rf" secondAttribute="trailing" constant="127" id="Pbe-rB-qYf"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="R0v-nF-IvR"/>
+                <constraint firstItem="8aA-9M-W3g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="ZeX-9d-QVF"/>
                 <constraint firstItem="LMz-yb-0Rf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="127" id="f5w-Hb-mal"/>
+                <constraint firstItem="5YU-iq-uwr" firstAttribute="top" secondItem="8aA-9M-W3g" secondAttribute="bottom" constant="100" id="guA-Yo-Rhq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5YU-iq-uwr" secondAttribute="trailing" constant="40" id="hrp-NA-SKr"/>
                 <constraint firstItem="LMz-yb-0Rf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14" id="hsK-f1-f6Y"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iY2-EC-wdG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8aA-9M-W3g" secondAttribute="trailing" constant="100" id="pKk-B6-GGA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
