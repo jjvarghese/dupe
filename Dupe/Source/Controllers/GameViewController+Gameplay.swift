@@ -15,21 +15,27 @@ extension GameViewController {
         bigGrid?.reset()
         smallGrid?.randomise()
         
-        guard let smallGrid = smallGrid else { return }
-
-        spawnFloatingFadingLabel(atX: smallGrid.frame.origin.x + smallGrid.frame.size.width + 30,
-                                 atY: smallGrid.frame.origin.y + (smallGrid.frame.size.height / 4),
-                                 withText: "50")
+        spawnFloatingFadingLabel(withText: "50")
     }
     
     func triggerGameOver() {
-        startNewRound()
+        weak var weakSelf = self
+        
+        smallGrid?.randomise()
+        smallGrid?.reset()
+        smallGrid?.fadeOut(for: 0.2)
+        
+        spawnFloatingFadingLabel(withText: "BOOM!") {
+            weakSelf?.startNewRound()
+        }
     }
     
     func startNewRound() {
+        startButton?.alpha = 1.0
+        
         descentInProgress = false
         
-        currentTempo = 0.02
+        currentTempo = GameViewController.STARTING_TEMPO
     }
     
     func releaseNewSmallGrid() {

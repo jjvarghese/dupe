@@ -13,10 +13,12 @@ class GameViewController: UIViewController {
     @IBOutlet weak var smallGridTopConstraint: NSLayoutConstraint?
     @IBOutlet weak var smallGrid: GridCollectionView?
     @IBOutlet weak var bigGrid: GridCollectionView?
-    @IBOutlet private weak var startButton: UIButton?
+    @IBOutlet weak var startButton: UIButton?
+    
+    static let STARTING_TEMPO: TimeInterval = 0.2
     
     var descentInProgress: Bool = false
-    var currentTempo: TimeInterval = 0.2
+    var currentTempo: TimeInterval = STARTING_TEMPO
     var gameInProgress: Bool = false
     
     // MARK: - UIViewController -
@@ -39,18 +41,9 @@ class GameViewController: UIViewController {
         
         weak var weakSelf = self
         
-        let x: CGFloat = 0.0
-        let y = startButton.frame.origin.y
-        let width = view.frame.size.width
-        let height = startButton.frame.size.height
-        
         startButton.fadeOut(for: 0.4,
                              completion: {
-                                weakSelf?.spawnFloatingFadingLabels(atX: x,
-                                                                    atY: y,
-                                                                    withWidth: width,
-                                                                    withHeight: height,
-                                                                    withTexts: ["READY", "SET", "DUPE!"], withCompletion: {
+                                weakSelf?.spawnFloatingFadingLabels(withTexts: ["READY", "SET", "DUPE!"], withCompletion: {
                                                                         weakSelf?.smallGrid?.randomise()
                                 })
         })

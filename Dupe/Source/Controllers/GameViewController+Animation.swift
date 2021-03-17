@@ -23,11 +23,7 @@ extension GameViewController {
         }
     }
     
-    func spawnFloatingFadingLabels(atX x: CGFloat,
-                                   atY y: CGFloat,
-                                   withWidth width: CGFloat = 100,
-                                   withHeight height: CGFloat = 50,
-                                   withTexts texts: [String],
+    func spawnFloatingFadingLabels(withTexts texts: [String],
                                    withCompletion finalCompletion: (() -> Void)?) {
         guard texts.count > 0 else {
             finalCompletion?()
@@ -41,32 +37,20 @@ extension GameViewController {
             
         weak var weakSelf = self
         
-        spawnFloatingFadingLabel(atX: x,
-                                 atY: y,
-                                 withWidth: width,
-                                 withHeight: height,
-                                 withText: firstText,
+        spawnFloatingFadingLabel(withText: firstText,
                                  withCompletion: {
-                                    weakSelf?.spawnFloatingFadingLabels(atX: x,
-                                                                        atY: y,
-                                                                        withWidth: width,
-                                                                        withHeight: height,
-                                                                        withTexts: remainingTexts,
+                                    weakSelf?.spawnFloatingFadingLabels(withTexts:  remainingTexts,
                                                                         withCompletion: finalCompletion)
         })    
     }
     
-    func spawnFloatingFadingLabel(atX x: CGFloat,
-                                  atY y: CGFloat,
-                                  withWidth width: CGFloat = 100,
-                                  withHeight height: CGFloat = 50,
-                                  withText text: String,
+    func spawnFloatingFadingLabel(withText text: String,
                                   withCompletion completion: (() -> Void)? = nil) {
-        let label: UILabel = UILabel(frame: CGRect(x: x,
-                                                    y: y,
-                                                    width: width,
-                                                    height: height))
-        
+        let label: UILabel = UILabel(frame: CGRect(x: 0,
+                                                    y: 0,
+                                                    width: view.frame.size.width,
+                                                    height: 50))
+        label.center = view.center
         label.text = text
         label.textColor = .white
         label.font = UIFont(name: "AmericanTypewriter",
