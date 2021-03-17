@@ -18,13 +18,7 @@ class GridCell: UICollectionViewCell {
     @IBOutlet weak var squareBottomConstraint: NSLayoutConstraint?
     @IBOutlet weak var squareLeadingConstraint: NSLayoutConstraint?
     @IBOutlet weak var squareTrailingConstraint: NSLayoutConstraint?
-            
-    private let baseColor: UIColor = UIColor.init(red: 61/255,
-                                           green: 142/255,
-                                           blue: 255/255,
-                                           alpha: 1)
-    private let activeColor: UIColor = .white
-    
+
     var shouldPulse: Bool = false
         
     // MARK: - UIView -
@@ -34,13 +28,13 @@ class GridCell: UICollectionViewCell {
         
         isUserInteractionEnabled = true
         
-        square?.backgroundColor = baseColor
+        square?.backgroundColor = UIColor.base
     }
     
     // MARK: - Updating -
     
     func update(asSelected selected: Bool) {
-        square?.backgroundColor = selected ? activeColor : baseColor
+        square?.backgroundColor = selected ? UIColor.active : UIColor.base
         
         if selected && shouldPulse {
             pulse()

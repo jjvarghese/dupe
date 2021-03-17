@@ -23,7 +23,7 @@ extension GameViewController {
         
         smallGrid?.randomise()
         smallGrid?.reset()
-        smallGrid?.fadeOut(for: 0.2)
+        smallGrid?.isHidden = true
         
         spawnFloatingFadingLabel(withText: "BOOM!") {
             weakSelf?.startNewRound()

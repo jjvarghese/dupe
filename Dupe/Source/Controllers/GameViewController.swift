@@ -37,6 +37,8 @@ class GameViewController: UIViewController {
     // MARK: - Actions -
     
     @IBAction private func startPressed(_ sender: Any) {
+        smallGrid?.isHidden = false
+        
         guard let startButton = startButton else { return }
         
         weak var weakSelf = self
@@ -55,6 +57,7 @@ class GameViewController: UIViewController {
     
     private func configureSubviews() {
         configureCollectionViews()
+        configureStartButton()
     }
     
     private func configureNavigationBar() {
@@ -64,6 +67,12 @@ class GameViewController: UIViewController {
     private func configureCollectionViews() {
         configure(grid: smallGrid)
         configure(grid: bigGrid)
+        
+        smallGrid?.isHidden = true
+    }
+    
+    private func configureStartButton() {
+        startButton?.backgroundColor = UIColor.base
     }
     
     private func configure(grid: GridCollectionView?) {
