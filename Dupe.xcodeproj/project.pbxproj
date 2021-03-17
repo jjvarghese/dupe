@@ -183,9 +183,7 @@
 		A49B974E24747ABF007BF29A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A4364AD5247DA1A000D7AF78 /* GridCell+Animation.swift */,
-				A49B975024747B7B007BF29A /* GridCell.swift */,
-				A49B975124747B7B007BF29A /* GridCell.xib */,
+				A4A1D1E125FFDF9100FA1E4E /* Cells */,
 				A4364AD3247DA13300D7AF78 /* GridCollectionView+Animation.swift */,
 				A49B97592475C3EB007BF29A /* GridCollectionView+UIGestureRecognizerDelegate.swift */,
 				A49B97542475BC9B007BF29A /* GridCollectionView.swift */,
@@ -214,6 +212,16 @@
 				A4364ADB2480529100D7AF78 /* UIView+Animation.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A4A1D1E125FFDF9100FA1E4E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A4364AD5247DA1A000D7AF78 /* GridCell+Animation.swift */,
+				A49B975024747B7B007BF29A /* GridCell.swift */,
+				A49B975124747B7B007BF29A /* GridCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

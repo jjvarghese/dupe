@@ -39,9 +39,9 @@ class GameViewController: UIViewController {
         
         weak var weakSelf = self
         
-        let x = startButton.frame.origin.x
+        let x: CGFloat = 0.0
         let y = startButton.frame.origin.y
-        let width = startButton.frame.size.width
+        let width = view.frame.size.width
         let height = startButton.frame.size.height
         
         startButton.fadeOut(for: 0.4,
@@ -51,7 +51,7 @@ class GameViewController: UIViewController {
                                                                     withWidth: width,
                                                                     withHeight: height,
                                                                     withTexts: ["READY", "SET", "DUPE!"], withCompletion: {
-                                                                        weakSelf?.startNewRound()
+                                                                        weakSelf?.smallGrid?.randomise()
                                 })
         })
         

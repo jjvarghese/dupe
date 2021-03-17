@@ -29,17 +29,7 @@ extension GameViewController {
     func startNewRound() {
         descentInProgress = false
         
-        smallGridTopConstraint?.constant = 14
-        
-        smallGrid?.updateConstraints()
-        
-        currentTempo = 0.2
-        
-        gameInProgress = true
-                                                                            
-        smallGrid?.randomise()
-        
-        beginDescentOfSmallGrid(withDuration: currentTempo)
+        currentTempo = 0.02
     }
     
     func releaseNewSmallGrid() {
