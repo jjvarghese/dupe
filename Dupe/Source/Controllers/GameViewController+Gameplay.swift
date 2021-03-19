@@ -16,14 +16,16 @@ extension GameViewController {
         smallGrid?.randomise()
         
         spawnFloatingFadingLabel(withText: "50")
+        
+        currentScore += 50
     }
     
     func triggerGameOver() {
         weak var weakSelf = self
         
+        scoreLabel?.isHidden = false
         smallGrid?.randomise()
         smallGrid?.reset()
-        smallGrid?.isHidden = true
         
         spawnFloatingFadingLabel(withText: "BOOM!") {
             weakSelf?.startNewRound()
@@ -31,10 +33,9 @@ extension GameViewController {
     }
     
     func startNewRound() {
+        smallGrid?.isHidden = true
         startButton?.alpha = 1.0
-        
         descentInProgress = false
-        
         currentTempo = GameViewController.STARTING_TEMPO
     }
     

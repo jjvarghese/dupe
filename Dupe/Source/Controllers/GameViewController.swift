@@ -14,12 +14,25 @@ class GameViewController: UIViewController {
     @IBOutlet weak var smallGrid: GridCollectionView?
     @IBOutlet weak var bigGrid: GridCollectionView?
     @IBOutlet weak var startButton: UIButton?
+    @IBOutlet weak var scoreLabel: UILabel?
     
-    static let STARTING_TEMPO: TimeInterval = 0.2
+    static let STARTING_TEMPO: TimeInterval = 0.02
     
     var descentInProgress: Bool = false
     var currentTempo: TimeInterval = STARTING_TEMPO
     var gameInProgress: Bool = false
+    
+    private var _currentScore: Int?
+    var currentScore: Int {
+        get {
+            return _currentScore ?? 0
+        }
+        set {
+            _currentScore = newValue
+            
+            scoreLabel?.text = String(format: "Your score: %d", newValue)
+        }
+    }
     
     // MARK: - UIViewController -
     
@@ -28,6 +41,7 @@ class GameViewController: UIViewController {
         
         configureSubviews()
         configureNavigationBar()
+        startNewRound()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -38,6 +52,8 @@ class GameViewController: UIViewController {
     
     @IBAction private func startPressed(_ sender: Any) {
         smallGrid?.isHidden = false
+        scoreLabel?.isHidden = true
+        currentScore = 0
         
         guard let startButton = startButton else { return }
         
@@ -58,6 +74,7 @@ class GameViewController: UIViewController {
     private func configureSubviews() {
         configureCollectionViews()
         configureStartButton()
+        configureScoreLabel()
     }
     
     private func configureNavigationBar() {
@@ -67,12 +84,14 @@ class GameViewController: UIViewController {
     private func configureCollectionViews() {
         configure(grid: smallGrid)
         configure(grid: bigGrid)
-        
-        smallGrid?.isHidden = true
     }
     
     private func configureStartButton() {
         startButton?.backgroundColor = UIColor.base
+    }
+    
+    private func configureScoreLabel() {
+        scoreLabel?.isHidden = true
     }
     
     private func configure(grid: GridCollectionView?) {
