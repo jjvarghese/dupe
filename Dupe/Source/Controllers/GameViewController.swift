@@ -24,6 +24,8 @@ class GameViewController: UIViewController {
     var currentTempo: TimeInterval = STARTING_TEMPO
     var gameInProgress: Bool = false
     
+    private let soundProvider: SoundProvider = SoundProvider()
+    
     private var _currentScore: Int?
     var currentScore: Int {
         get {
@@ -43,6 +45,7 @@ class GameViewController: UIViewController {
         
         configureSubviews()
         configureNavigationBar()
+        configureSound()
         startNewRound()
     }
     
@@ -53,6 +56,7 @@ class GameViewController: UIViewController {
     // MARK: - Actions -
     
     @IBAction private func startPressed(_ sender: Any) {
+        soundProvider.playRandomTune()
         smallGrid?.isHidden = false
         scoreLabel?.isHidden = true
         currentScore = 0
@@ -104,6 +108,10 @@ class GameViewController: UIViewController {
         grid?.dataSource = self
         grid?.backgroundColor = .clear
         grid?.gridDelegate = self 
+    }
+    
+    private func configureSound() {
+        
     }
 
 }
