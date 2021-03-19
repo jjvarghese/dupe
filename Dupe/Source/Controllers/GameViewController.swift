@@ -16,7 +16,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton?
     @IBOutlet weak var scoreLabel: UILabel?
     
-    static let STARTING_TEMPO: TimeInterval = 0.02
+    static let STARTING_TEMPO: TimeInterval = 0.2
+    static let MAXIMUM_TEMPO: TimeInterval = 0.02
+    static let INCREMENT_TEMPO: TimeInterval = 0.01
     
     var descentInProgress: Bool = false
     var currentTempo: TimeInterval = STARTING_TEMPO

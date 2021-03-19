@@ -15,9 +15,18 @@ extension GameViewController {
         bigGrid?.reset()
         smallGrid?.randomise()
         
-        spawnFloatingFadingLabel(withText: "50")
+        let numberOfPointsToGain = getNumberOfPointsToGain()
         
-        currentScore += 50
+        spawnFloatingFadingLabel(withText: String(format: "%d", numberOfPointsToGain))
+        
+        currentScore += numberOfPointsToGain
+    }
+    
+    func getNumberOfPointsToGain() -> Int {
+        let baseline = 100
+        let amountToSubtract = currentTempo * 100
+        
+        return (baseline - Int(amountToSubtract))
     }
     
     func triggerGameOver() {
@@ -42,15 +51,11 @@ extension GameViewController {
     func releaseNewSmallGrid() {
         var tempo = currentTempo
         
-        if currentTempo > 0.02 { // Maximum speed - any faster, and it's too hard
-            tempo -= 0.01
+        if currentTempo > GameViewController.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
+            tempo -= GameViewController.INCREMENT_TEMPO
         }
         
         beginDescentOfSmallGrid(withDuration: tempo)
     }
-    
-    // MARK: - Private -
-    
-    
     
 }
