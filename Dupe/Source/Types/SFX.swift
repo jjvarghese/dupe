@@ -14,4 +14,8 @@ enum SFX: String {
     
     case gameOver = "gameover"
     
+    case start = "start"
+    
+    case touch = "touch"
+    
 }

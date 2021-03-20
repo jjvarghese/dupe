@@ -48,6 +48,8 @@
 		A4BC1CE9260664DD009A2AA0 /* match.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1CE7260664DD009A2AA0 /* match.mp3 */; };
 		A4BC1CEF26066564009A2AA0 /* SFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1CEE26066564009A2AA0 /* SFX.swift */; };
 		A4BC1CFC26066A24009A2AA0 /* Bundle+URLRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */; };
+		A4BC1D0226069118009A2AA0 /* touch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D0026069118009A2AA0 /* touch.mp3 */; };
+		A4BC1D0326069118009A2AA0 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D0126069118009A2AA0 /* start.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		A4BC1CE7260664DD009A2AA0 /* match.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = match.mp3; sourceTree = "<group>"; };
 		A4BC1CEE26066564009A2AA0 /* SFX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFX.swift; sourceTree = "<group>"; };
 		A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+URLRetrieval.swift"; sourceTree = "<group>"; };
+		A4BC1D0026069118009A2AA0 /* touch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = touch.mp3; sourceTree = "<group>"; };
+		A4BC1D0126069118009A2AA0 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +305,8 @@
 		A4BC1CE5260664D2009A2AA0 /* SFX */ = {
 			isa = PBXGroup;
 			children = (
+				A4BC1D0126069118009A2AA0 /* start.mp3 */,
+				A4BC1D0026069118009A2AA0 /* touch.mp3 */,
 				A4BC1CE6260664DD009A2AA0 /* gameover.mp3 */,
 				A4BC1CE7260664DD009A2AA0 /* match.mp3 */,
 			);
@@ -425,8 +431,10 @@
 				A49B974724745BA1007BF29A /* GameViewController.xib in Resources */,
 				A4BC1CC726054CA5009A2AA0 /* 8.wav in Resources */,
 				A4BC1CC526054CA5009A2AA0 /* 7.wav in Resources */,
+				A4BC1D0326069118009A2AA0 /* start.mp3 in Resources */,
 				A4BC1CC626054CA5009A2AA0 /* 6.mp3 in Resources */,
 				A49B975324747B7B007BF29A /* GridCell.xib in Resources */,
+				A4BC1D0226069118009A2AA0 /* touch.mp3 in Resources */,
 				A49B971F24745570007BF29A /* LaunchScreen.storyboard in Resources */,
 				A4BC1CC226054CA5009A2AA0 /* 3.wav in Resources */,
 				A4BC1CCA26054CA5009A2AA0 /* 1.wav in Resources */,

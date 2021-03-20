@@ -20,7 +20,7 @@ protocol GridCollectionViewDelegate {
                             didSelect indexPath: IndexPath)
     
     func gridCollectionViewDidFinishMatchAnimation(collectionView: GridCollectionView)
-    
+        
 }
 
 class GridCollectionView: UICollectionView {

@@ -57,6 +57,7 @@ class GameViewController: UIViewController {
     
     @IBAction private func startPressed(_ sender: Any) {
         soundProvider.playRandomTune()
+        soundProvider.play(sfx: .start)
         smallGrid?.isHidden = false
         scoreLabel?.isHidden = true
         currentScore = 0

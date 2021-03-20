@@ -19,6 +19,10 @@ extension GameViewController: UICollectionViewDataSource {
                    
         gridCell.update(asSelected: isSelected)
         gridCell.shouldPulse = collectionView == bigGrid
+        
+        if isSelected {
+            soundProvider.play(sfx: .touch)
+        }
                 
         return gridCell
     }
