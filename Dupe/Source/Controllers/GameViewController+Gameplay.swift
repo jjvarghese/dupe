@@ -12,6 +12,8 @@ import UIKit
 extension GameViewController {
     
     func triggerMatch() {
+        soundProvider.play(sfx: .matched)
+        
         bigGrid?.reset()
         smallGrid?.randomise()
         
@@ -30,6 +32,9 @@ extension GameViewController {
     }
     
     func triggerGameOver() {
+        soundProvider.play(sfx: .gameOver)
+        soundProvider.stopAllTunes()
+        
         weak var weakSelf = self
         
         scoreLabel?.isHidden = false

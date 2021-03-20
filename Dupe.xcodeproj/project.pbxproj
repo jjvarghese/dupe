@@ -44,6 +44,10 @@
 		A4BC1CCC26054CA5009A2AA0 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1CC126054CA4009A2AA0 /* 2.wav */; };
 		A4BC1CD626054D47009A2AA0 /* SoundProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1CD526054D47009A2AA0 /* SoundProvider.swift */; };
 		A4BC1CDE26054FB5009A2AA0 /* SoundProvider+AVAudioPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1CDD26054FB5009A2AA0 /* SoundProvider+AVAudioPlayerDelegate.swift */; };
+		A4BC1CE8260664DD009A2AA0 /* gameover.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1CE6260664DD009A2AA0 /* gameover.mp3 */; };
+		A4BC1CE9260664DD009A2AA0 /* match.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1CE7260664DD009A2AA0 /* match.mp3 */; };
+		A4BC1CEF26066564009A2AA0 /* SFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1CEE26066564009A2AA0 /* SFX.swift */; };
+		A4BC1CFC26066A24009A2AA0 /* Bundle+URLRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +111,10 @@
 		A4BC1CC126054CA4009A2AA0 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
 		A4BC1CD526054D47009A2AA0 /* SoundProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundProvider.swift; sourceTree = "<group>"; };
 		A4BC1CDD26054FB5009A2AA0 /* SoundProvider+AVAudioPlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SoundProvider+AVAudioPlayerDelegate.swift"; sourceTree = "<group>"; };
+		A4BC1CE6260664DD009A2AA0 /* gameover.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameover.mp3; sourceTree = "<group>"; };
+		A4BC1CE7260664DD009A2AA0 /* match.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = match.mp3; sourceTree = "<group>"; };
+		A4BC1CEE26066564009A2AA0 /* SFX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFX.swift; sourceTree = "<group>"; };
+		A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+URLRetrieval.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +229,7 @@
 		A49B974F24747AE3007BF29A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A4BC1CED2606654A009A2AA0 /* Types */,
 				A4BC1CD426054D3A009A2AA0 /* Providers */,
 				A49B97122474556D007BF29A /* AppDelegate.swift */,
 				A49B97142474556D007BF29A /* SceneDelegate.swift */,
@@ -239,6 +248,7 @@
 				A49B975F247AD38D007BF29A /* Int+Operations.swift */,
 				A4364ADB2480529100D7AF78 /* UIView+Animation.swift */,
 				A4BC1CB02602A0AE009A2AA0 /* UIColor+Theme.swift */,
+				A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -256,6 +266,7 @@
 		A4BC1CB526054C80009A2AA0 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				A4BC1CE5260664D2009A2AA0 /* SFX */,
 				A4BC1CB626054C89009A2AA0 /* Music */,
 			);
 			path = Sounds;
@@ -285,6 +296,23 @@
 				A4BC1CD526054D47009A2AA0 /* SoundProvider.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		A4BC1CE5260664D2009A2AA0 /* SFX */ = {
+			isa = PBXGroup;
+			children = (
+				A4BC1CE6260664DD009A2AA0 /* gameover.mp3 */,
+				A4BC1CE7260664DD009A2AA0 /* match.mp3 */,
+			);
+			path = SFX;
+			sourceTree = "<group>";
+		};
+		A4BC1CED2606654A009A2AA0 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				A4BC1CEE26066564009A2AA0 /* SFX.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4BC1CE8260664DD009A2AA0 /* gameover.mp3 in Resources */,
 				A4BC1CCB26054CA5009A2AA0 /* 10.wav in Resources */,
 				A4BC1CCC26054CA5009A2AA0 /* 2.wav in Resources */,
 				A49B974724745BA1007BF29A /* GameViewController.xib in Resources */,
@@ -404,6 +433,7 @@
 				A49B971C24745570007BF29A /* Assets.xcassets in Resources */,
 				A4BC1CC426054CA5009A2AA0 /* 4.wav in Resources */,
 				A4BC1CC826054CA5009A2AA0 /* 5.wav in Resources */,
+				A4BC1CE9260664DD009A2AA0 /* match.mp3 in Resources */,
 				A4BC1CC326054CA5009A2AA0 /* 9.mp3 in Resources */,
 				A49B971A2474556D007BF29A /* Main.storyboard in Resources */,
 			);
@@ -430,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4BC1CEF26066564009A2AA0 /* SFX.swift in Sources */,
 				A49B97552475BC9B007BF29A /* GridCollectionView.swift in Sources */,
 				A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */,
 				A4364AD6247DA1A000D7AF78 /* GridCell+Animation.swift in Sources */,
@@ -447,6 +478,7 @@
 				A49B974624745BA1007BF29A /* GameViewController.swift in Sources */,
 				A4364ADC2480529200D7AF78 /* UIView+Animation.swift in Sources */,
 				A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */,
+				A4BC1CFC26066A24009A2AA0 /* Bundle+URLRetrieval.swift in Sources */,
 				A49B975C2475C467007BF29A /* GameViewController+GridCollectionViewDelegate.swift in Sources */,
 				A49B975A2475C3EB007BF29A /* GridCollectionView+UIGestureRecognizerDelegate.swift in Sources */,
 				A4364AD4247DA13300D7AF78 /* GridCollectionView+Animation.swift in Sources */,

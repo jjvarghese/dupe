@@ -24,7 +24,7 @@ class GameViewController: UIViewController {
     var currentTempo: TimeInterval = STARTING_TEMPO
     var gameInProgress: Bool = false
     
-    private let soundProvider: SoundProvider = SoundProvider()
+    let soundProvider: SoundProvider = SoundProvider()
     
     private var _currentScore: Int?
     var currentScore: Int {
