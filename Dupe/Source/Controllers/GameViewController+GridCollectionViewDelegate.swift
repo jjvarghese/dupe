@@ -19,11 +19,7 @@ extension GameViewController: GridCollectionViewDelegate {
     }
     
     func gridCollectionViewDidFinishMatchAnimation(collectionView: GridCollectionView) {
-        weak var weakSelf = self
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            weakSelf?.releaseNewSmallGrid()
-        }
     }
     
     func gridCollectionView(collectionView: GridCollectionView,
@@ -51,10 +47,16 @@ extension GameViewController: GridCollectionViewDelegate {
     
     private func checkForMatch() {
         guard let smallGridIndices = smallGrid?.selectedIndices.sorted(),
+              let leftGridIndices = leftGrid?.selectedIndices.sorted(),
+              let rightGridIndices = rightGrid?.selectedIndices.sorted(),
             let bigGridIndices = bigGrid?.selectedIndices.sorted() else { return }
 
         if bigGridIndices.elementsEqual(smallGridIndices) {
-            triggerMatch()
+            triggerMatch(forGrid: smallGrid)
+        } else if bigGridIndices.elementsEqual(leftGridIndices) {
+            triggerMatch(forGrid: leftGrid)
+        } else if bigGridIndices.elementsEqual(rightGridIndices) {
+            triggerMatch(forGrid: rightGrid)
         }
     }
     

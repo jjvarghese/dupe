@@ -90,7 +90,7 @@ class GameViewController: UIViewController {
         startButton.fadeOut(for: 0.4,
                              completion: {
                                 weakSelf?.spawnFloatingFadingLabels(withTexts: ["READY", "SET", "DUPE!"], withCompletion: {
-                                                                        weakSelf?.smallGrid?.randomise()
+                                    weakSelf?.release(grid: weakSelf?.smallGrid)
                                 })
         })
         

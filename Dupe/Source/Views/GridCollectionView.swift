@@ -32,6 +32,7 @@ protocol GridCollectionViewDelegate {
 class GridCollectionView: UICollectionView {
 
     static private let START_POSITION: CGFloat = 14
+    static private let MATCH_ANIMATION_DURATION: TimeInterval = 0.3
 
     var gridDelegate: GridCollectionViewDelegate?
     var selectedIndices: [Int] = []
@@ -57,7 +58,7 @@ class GridCollectionView: UICollectionView {
     }
 
     func randomise() {
-        let duration = 0.3
+        let duration = GridCollectionView.MATCH_ANIMATION_DURATION
         
         flash(for: duration)
         fadeOut(for: duration,
@@ -84,8 +85,9 @@ class GridCollectionView: UICollectionView {
         reloadData()
     }
     
-    func startFalling(collisionGrid: GridCollectionView,
-                      withTempo tempo: TimeInterval) {
+    func startFalling(collisionGrid: GridCollectionView) {
+        randomise()
+        
         let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
         
         topConstraint?.constant = GridCollectionView.START_POSITION

@@ -11,11 +11,10 @@ import UIKit
 
 extension GameViewController {
     
-    func triggerMatch() {
+    func triggerMatch(forGrid grid: GridCollectionView?) {
         soundProvider.play(sfx: .matched)
         
         bigGrid?.reset()
-        smallGrid?.randomise()
         
         let numberOfPointsToGain = getNumberOfPointsToGain()
         
@@ -27,6 +26,12 @@ extension GameViewController {
             if Int.random(in: 0..<9) == 0 {
                 isInsaneMode = true
             }
+        }
+        
+        weak var weakSelf = self
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            weakSelf?.release(grid: grid)
         }
     }
     
@@ -59,7 +64,7 @@ extension GameViewController {
         currentTempo = GameViewController.STARTING_TEMPO
     }
     
-    func releaseNewSmallGrid() {
+    func release(grid: GridCollectionView?) {
         guard let bigGrid = bigGrid else { return }
 
         var tempo = currentTempo
@@ -70,15 +75,29 @@ extension GameViewController {
         
         currentTempo = tempo
                 
-        smallGrid?.startFalling(collisionGrid: bigGrid,
-                                withTempo: tempo)
+        grid?.startFalling(collisionGrid: bigGrid)
     }
     
     func startInsanityMode() {
         soundProvider.playRandomTune()
         
+        leftGrid?.isHidden = false
+        rightGrid?.isHidden = false
+        
         bigGrid?.reloadData()
         smallGrid?.reloadData()
+        rightGrid?.reloadData()
+        leftGrid?.reloadData()
+        
+        weak var weakSelf = self
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            weakSelf?.release(grid: weakSelf?.leftGrid)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            weakSelf?.release(grid: weakSelf?.rightGrid)
+        }
         
         insanityTimer = Timer.scheduledTimer(timeInterval: GameViewController.INSANITY_MODE_DURATION,
                                              target: self,
@@ -90,15 +109,16 @@ extension GameViewController {
     }
         
     func endInsanityMode() {
-        guard let bigGrid = bigGrid else { return }
-        
         insanityTimer = nil
                 
         smallGrid?.descentInProgress = false
         
-        releaseNewSmallGrid()
+        leftGrid?.isHidden = true
+        rightGrid?.isHidden = true
         
-        bigGrid.reloadData()
+        release(grid: smallGrid)
+        
+        bigGrid?.reloadData()
         smallGrid?.reloadData()
     }
     
