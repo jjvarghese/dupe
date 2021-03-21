@@ -50,6 +50,8 @@
 		A4BC1CFC26066A24009A2AA0 /* Bundle+URLRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */; };
 		A4BC1D0226069118009A2AA0 /* touch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D0026069118009A2AA0 /* touch.mp3 */; };
 		A4BC1D0326069118009A2AA0 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D0126069118009A2AA0 /* start.mp3 */; };
+		A4BC1D09260776E6009A2AA0 /* 12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D07260776E6009A2AA0 /* 12.mp3 */; };
+		A4BC1D0A260776E6009A2AA0 /* 11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D08260776E6009A2AA0 /* 11.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+URLRetrieval.swift"; sourceTree = "<group>"; };
 		A4BC1D0026069118009A2AA0 /* touch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = touch.mp3; sourceTree = "<group>"; };
 		A4BC1D0126069118009A2AA0 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
+		A4BC1D07260776E6009A2AA0 /* 12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12.mp3; sourceTree = "<group>"; };
+		A4BC1D08260776E6009A2AA0 /* 11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,8 @@
 				A4BC1CBC26054CA4009A2AA0 /* 8.wav */,
 				A4BC1CB826054CA4009A2AA0 /* 9.mp3 */,
 				A4BC1CC026054CA4009A2AA0 /* 10.wav */,
+				A4BC1D08260776E6009A2AA0 /* 11.mp3 */,
+				A4BC1D07260776E6009A2AA0 /* 12.mp3 */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -440,6 +446,8 @@
 				A4BC1CCA26054CA5009A2AA0 /* 1.wav in Resources */,
 				A49B971C24745570007BF29A /* Assets.xcassets in Resources */,
 				A4BC1CC426054CA5009A2AA0 /* 4.wav in Resources */,
+				A4BC1D09260776E6009A2AA0 /* 12.mp3 in Resources */,
+				A4BC1D0A260776E6009A2AA0 /* 11.mp3 in Resources */,
 				A4BC1CC826054CA5009A2AA0 /* 5.wav in Resources */,
 				A4BC1CE9260664DD009A2AA0 /* match.mp3 in Resources */,
 				A4BC1CC326054CA5009A2AA0 /* 9.mp3 in Resources */,

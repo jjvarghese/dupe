@@ -28,7 +28,8 @@ extension GridCollectionView {
     private func flicker(on: Bool) {
         for cell in visibleCells {
             if let gridCell = cell as? GridCell {
-                gridCell.update(asSelected: on)
+                gridCell.update(asSelected: on,
+                                isInsanityMode: gridDelegate?.gridCollectionViewRequestsInsanityMode(collectionView: self) ?? false)
             }
         }
     }

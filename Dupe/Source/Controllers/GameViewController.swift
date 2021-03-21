@@ -19,11 +19,12 @@ class GameViewController: UIViewController {
     static let STARTING_TEMPO: TimeInterval = 0.2
     static let MAXIMUM_TEMPO: TimeInterval = 0.02
     static let INCREMENT_TEMPO: TimeInterval = 0.01
+    static let THRESHOLD_TEMPO_FOR_INSANITY: TimeInterval = 0.1
     
     var descentInProgress: Bool = false
     var currentTempo: TimeInterval = STARTING_TEMPO
     var gameInProgress: Bool = false
-    
+
     let soundProvider: SoundProvider = SoundProvider()
     
     private var _currentScore: Int?
@@ -37,6 +38,27 @@ class GameViewController: UIViewController {
             scoreLabel?.text = String(format: "Your score: %d", newValue)
         }
     }
+    
+    private var _isInsaneMode: Bool?
+    var isInsaneMode: Bool {
+        get {
+            return _isInsaneMode ?? false
+        }
+        set {
+            _isInsaneMode = newValue
+            
+            soundProvider.playRandomTune()
+            
+            bigGrid?.reloadData()
+            smallGrid?.reloadData()
+            
+            if newValue == true {
+                startInsanityMode()
+            }
+        }
+    }
+    
+    var insanityTimer: Timer?
     
     // MARK: - UIViewController -
     

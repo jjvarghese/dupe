@@ -11,13 +11,13 @@ extension GameViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let gridCell = collectionView.dequeueReusableCell(withReuseIdentifier: GridCell.CellIdentifier,
                                                                 for: indexPath) as? GridCell,
-            let gridCollectionView = collectionView as? GridCollectionView else {
-            return UICollectionViewCell()
+            let gridCollectionView = collectionView as? GridCollectionView else {            return UICollectionViewCell()
         }
         
         let isSelected = gridCollectionView.selectedIndices.contains(indexPath.item)
                    
-        gridCell.update(asSelected: isSelected)
+        gridCell.update(asSelected: isSelected,
+                        isInsanityMode: isInsaneMode)
         gridCell.shouldPulse = collectionView == bigGrid
         
         if isSelected {

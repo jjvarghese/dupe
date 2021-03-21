@@ -76,7 +76,8 @@ class SoundProvider: NSObject {
     }
     
     private func getRandomTuneName() -> String {
-        let randomTuneName = String(format: "%d", Int.random(in: 1..<10))
+        let randomTuneName = String(format: "%d",
+                                    Int.random(in: 1...12))
         
         if randomTuneName == justPlayed {
             return getRandomTuneName()

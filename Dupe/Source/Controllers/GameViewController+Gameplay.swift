@@ -22,6 +22,12 @@ extension GameViewController {
         spawnFloatingFadingLabel(withText: String(format: "%d", numberOfPointsToGain))
         
         currentScore += numberOfPointsToGain
+        
+        if currentTempo <= GameViewController.THRESHOLD_TEMPO_FOR_INSANITY {
+            if Int.random(in: 0..<9) == 0 {
+                isInsaneMode = true
+            }
+        }
     }
     
     func getNumberOfPointsToGain() -> Int {
@@ -61,6 +67,22 @@ extension GameViewController {
         }
         
         beginDescentOfSmallGrid(withDuration: tempo)
+    }
+    
+    func startInsanityMode() {        
+        insanityTimer = Timer.scheduledTimer(timeInterval: 5.0,
+                                             target: self,
+                                             selector: #selector(endInsanityMode),
+                                             userInfo: nil,
+                                             repeats: false )
+    }
+        
+    @objc func endInsanityMode() {
+        insanityTimer = nil
+        
+        isInsaneMode = false
+        
+        releaseNewSmallGrid()
     }
     
 }

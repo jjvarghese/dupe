@@ -20,6 +20,8 @@ protocol GridCollectionViewDelegate {
                             didSelect indexPath: IndexPath)
     
     func gridCollectionViewDidFinishMatchAnimation(collectionView: GridCollectionView)
+    
+    func gridCollectionViewRequestsInsanityMode(collectionView: GridCollectionView) -> Bool
         
 }
 
@@ -74,6 +76,8 @@ class GridCollectionView: UICollectionView {
         
         reloadData()
     }
+    
+    // MARK: - Private -
     
     private func randomiseActiveCells() {
         selectedIndices = []

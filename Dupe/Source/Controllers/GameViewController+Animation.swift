@@ -87,7 +87,11 @@ extension GameViewController {
             
             animateDescent()
         } else {
-            triggerGameOver()
+            if isInsaneMode {
+                endInsanityMode()
+            } else {
+                triggerGameOver()
+            }
         }
     }
     

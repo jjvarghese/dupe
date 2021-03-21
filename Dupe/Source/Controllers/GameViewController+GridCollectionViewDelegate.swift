@@ -2,6 +2,10 @@ import Foundation
 
 extension GameViewController: GridCollectionViewDelegate {
     
+    func gridCollectionViewRequestsInsanityMode(collectionView: GridCollectionView) -> Bool {
+        return isInsaneMode
+    }
+    
     func gridCollectionViewDidFinishMatchAnimation(collectionView: GridCollectionView) {
         weak var weakSelf = self
         
