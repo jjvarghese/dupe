@@ -24,6 +24,8 @@ extension GridCollectionView {
     }
     
     func descend(collisionGrid: GridCollectionView) {
+        guard !isStopped else { return }
+        
         let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
         
         guard let topLayoutConstraint = topConstraint,

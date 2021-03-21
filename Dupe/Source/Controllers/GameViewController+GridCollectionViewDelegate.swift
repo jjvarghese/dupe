@@ -3,7 +3,7 @@ import Foundation
 extension GameViewController: GridCollectionViewDelegate {
     
     func gridCollectionViewDidCollide(collectionView: GridCollectionView) {
-        if isInsaneMode {
+        if isInsaneMode || collectionView != smallGrid {
             isInsaneMode = false
         } else {
             triggerGameOver()

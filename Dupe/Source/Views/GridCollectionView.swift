@@ -38,6 +38,7 @@ class GridCollectionView: UICollectionView {
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
     var descentInProgress: Bool = false
+    var isStopped: Bool = false 
 
     // MARK: - UIView -
     
@@ -85,15 +86,18 @@ class GridCollectionView: UICollectionView {
         reloadData()
     }
     
+    func stop() {
+        isStopped = true
+        
+        resetPosition()
+    }
+    
     func startFalling(collisionGrid: GridCollectionView) {
+        isStopped = false
+        
         randomise()
         
-        let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
-        
-        topConstraint?.constant = GridCollectionView.START_POSITION
-        frame.origin.y = GridCollectionView.START_POSITION
-        
-        updateConstraints()
+        resetPosition()
         
         if !descentInProgress {
             descend(collisionGrid: collisionGrid)
@@ -101,6 +105,15 @@ class GridCollectionView: UICollectionView {
     }
     
     // MARK: - Private -
+    
+    private func resetPosition() {
+        let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
+        
+        topConstraint?.constant = GridCollectionView.START_POSITION
+        frame.origin.y = GridCollectionView.START_POSITION
+        
+        updateConstraints()
+    }
     
     private func randomiseActiveCells() {
         selectedIndices = []

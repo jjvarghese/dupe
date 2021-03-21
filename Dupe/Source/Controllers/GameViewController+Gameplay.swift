@@ -115,6 +115,8 @@ extension GameViewController {
         
         leftGrid?.isHidden = true
         rightGrid?.isHidden = true
+        leftGrid?.stop()
+        rightGrid?.stop()
         
         release(grid: smallGrid)
         

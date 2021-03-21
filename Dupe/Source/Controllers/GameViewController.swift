@@ -82,7 +82,7 @@ class GameViewController: UIViewController {
         smallGrid?.isHidden = false
         scoreLabel?.isHidden = true
         currentScore = 0
-        
+                
         guard let startButton = startButton else { return }
         
         weak var weakSelf = self
