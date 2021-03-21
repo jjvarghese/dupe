@@ -89,6 +89,7 @@ class GridCollectionView: UICollectionView {
         let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
         
         topConstraint?.constant = GridCollectionView.START_POSITION
+        frame.origin.y = GridCollectionView.START_POSITION
         
         updateConstraints()
         

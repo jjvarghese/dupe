@@ -28,9 +28,7 @@ extension GridCollectionView {
         
         guard let topLayoutConstraint = topConstraint,
               let tempo = gridDelegate?.gridCollectionViewRequestsCurrentTempo(collectionView: self) else { return }
-        
-        NSLog("TEMPO: %f", tempo)
-        
+                
         descentInProgress = true
          
         let gridBottom = frame.origin.y + frame.size.height

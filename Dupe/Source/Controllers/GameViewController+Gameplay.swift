@@ -69,9 +69,7 @@ extension GameViewController {
         }
         
         currentTempo = tempo
-        
-        NSLog("** CURRENT TEMPO: %f **", currentTempo)
-        
+                
         smallGrid?.startFalling(collisionGrid: bigGrid,
                                 withTempo: tempo)
     }
@@ -84,17 +82,30 @@ extension GameViewController {
         
         insanityTimer = Timer.scheduledTimer(timeInterval: GameViewController.INSANITY_MODE_DURATION,
                                              target: self,
-                                             selector: #selector(endInsanityMode),
+                                             selector: #selector(switchOffInsanity),
                                              userInfo: nil,
                                              repeats: false)
       
         
     }
         
-    @objc func endInsanityMode() {
+    func endInsanityMode() {
+        guard let bigGrid = bigGrid else { return }
+        
         insanityTimer = nil
                 
+        smallGrid?.descentInProgress = false
+        
         releaseNewSmallGrid()
+        
+        bigGrid.reloadData()
+        smallGrid?.reloadData()
+    }
+    
+    // MARK: - Private -
+    
+    @objc private func switchOffInsanity() {
+        isInsaneMode = false
     }
     
 }
