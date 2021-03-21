@@ -21,16 +21,23 @@ protocol GridCollectionViewDelegate {
     
     func gridCollectionViewDidFinishMatchAnimation(collectionView: GridCollectionView)
     
+    func gridCollectionViewDidCollide(collectionView: GridCollectionView)
+    
     func gridCollectionViewRequestsInsanityMode(collectionView: GridCollectionView) -> Bool
+    
+    func gridCollectionViewRequestsCurrentTempo(collectionView: GridCollectionView) -> TimeInterval
         
 }
 
 class GridCollectionView: UICollectionView {
 
+    static private let START_POSITION: CGFloat = 14
+
     var gridDelegate: GridCollectionViewDelegate?
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
-    
+    var descentInProgress: Bool = false
+
     // MARK: - UIView -
     
     override func awakeFromNib() {
@@ -75,6 +82,19 @@ class GridCollectionView: UICollectionView {
               for: 0.2)
         
         reloadData()
+    }
+    
+    func startFalling(collisionGrid: GridCollectionView,
+                      withTempo tempo: TimeInterval) {
+        let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
+        
+        topConstraint?.constant = GridCollectionView.START_POSITION
+        
+        updateConstraints()
+        
+        if !descentInProgress {
+            descend(collisionGrid: collisionGrid)
+        }
     }
     
     // MARK: - Private -

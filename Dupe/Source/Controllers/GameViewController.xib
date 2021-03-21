@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -12,23 +12,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController" customModule="Dupe" customModuleProvider="target">
             <connections>
                 <outlet property="bigGrid" destination="5YU-iq-uwr" id="MwB-mu-yOg"/>
+                <outlet property="leftGrid" destination="Dpd-fG-k1n" id="B3j-YQ-WkN"/>
+                <outlet property="rightGrid" destination="QD8-Fv-fZR" id="wG8-OE-hWA"/>
                 <outlet property="scoreLabel" destination="Mlm-nJ-9YG" id="Xqs-YQ-jsz"/>
                 <outlet property="smallGrid" destination="LMz-yb-0Rf" id="aYY-h0-FsH"/>
-                <outlet property="smallGridTopConstraint" destination="hsK-f1-f6Y" id="wa9-33-rXH"/>
                 <outlet property="startButton" destination="8aA-9M-W3g" id="7V3-xa-ZU9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LMz-yb-0Rf" customClass="GridCollectionView" customModule="Dupe" customModuleProvider="target">
-                    <rect key="frame" x="127" y="58" width="160" height="160"/>
+                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LMz-yb-0Rf" userLabel="smallGrid" customClass="GridCollectionView" customModule="Dupe" customModuleProvider="target">
+                    <rect key="frame" x="127" y="14" width="66" height="66"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="66" id="5Lq-8a-W4Z"/>
                         <constraint firstAttribute="width" secondItem="LMz-yb-0Rf" secondAttribute="height" multiplier="1:1" id="aHw-jc-fNv"/>
+                        <constraint firstAttribute="width" constant="66" id="zuO-DC-xhf"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZVc-9o-mEs">
                         <size key="itemSize" width="128" height="128"/>
@@ -37,8 +40,23 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5YU-iq-uwr" customClass="GridCollectionView" customModule="Dupe" customModuleProvider="target">
-                    <rect key="frame" x="40" y="508" width="334" height="334"/>
+                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Dpd-fG-k1n" userLabel="leftGrid" customClass="GridCollectionView" customModule="Dupe" customModuleProvider="target">
+                    <rect key="frame" x="40" y="14" width="66" height="66"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="9ev-xk-TfE"/>
+                        <constraint firstAttribute="width" secondItem="Dpd-fG-k1n" secondAttribute="height" multiplier="1:1" id="fOb-gB-9IX"/>
+                        <constraint firstAttribute="width" constant="66" id="qQV-5H-0pF"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nSC-96-YMh">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5YU-iq-uwr" userLabel="bigGrid" customClass="GridCollectionView" customModule="Dupe" customModuleProvider="target">
+                    <rect key="frame" x="40" y="220" width="240" height="240"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="5YU-iq-uwr" secondAttribute="height" multiplier="1:1" id="ytA-f4-6x3"/>
                     </constraints>
@@ -50,7 +68,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aA-9M-W3g">
-                    <rect key="frame" x="40" y="508" width="334" height="334"/>
+                    <rect key="frame" x="40" y="220" width="240" height="240"/>
                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="37"/>
                     <state key="normal" title="START"/>
                     <connections>
@@ -58,11 +76,26 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlm-nJ-9YG">
-                    <rect key="frame" x="40" y="226" width="334" height="20"/>
+                    <rect key="frame" x="40" y="182" width="240" height="20"/>
                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QD8-Fv-fZR" userLabel="rightGrid" customClass="GridCollectionView" customModule="Dupe" customModuleProvider="target">
+                    <rect key="frame" x="214" y="14" width="66" height="66"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="66" id="5ln-yg-JuB"/>
+                        <constraint firstAttribute="height" constant="66" id="Cne-Sx-cJo"/>
+                        <constraint firstAttribute="width" secondItem="QD8-Fv-fZR" secondAttribute="height" multiplier="1:1" id="abN-hk-HZG"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tLf-WM-45R">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -70,17 +103,21 @@
                 <constraint firstItem="8aA-9M-W3g" firstAttribute="height" secondItem="5YU-iq-uwr" secondAttribute="height" id="4ht-Nt-Hc8"/>
                 <constraint firstItem="Mlm-nJ-9YG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="AH3-hq-3zk"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-20" id="DOh-jD-Kzs"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LMz-yb-0Rf" secondAttribute="trailing" constant="127" id="Pbe-rB-qYf"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="R0v-nF-IvR"/>
                 <constraint firstItem="8aA-9M-W3g" firstAttribute="leading" secondItem="5YU-iq-uwr" secondAttribute="leading" id="The-rp-lsL"/>
                 <constraint firstItem="Mlm-nJ-9YG" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="XVf-pm-ZgB"/>
-                <constraint firstItem="LMz-yb-0Rf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="127" id="f5w-Hb-mal"/>
+                <constraint firstItem="Dpd-fG-k1n" firstAttribute="width" secondItem="Dpd-fG-k1n" secondAttribute="height" multiplier="1:1" id="bwo-Qd-zt0"/>
+                <constraint firstItem="LMz-yb-0Rf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dCp-nO-qnh"/>
+                <constraint firstItem="QD8-Fv-fZR" firstAttribute="leading" secondItem="LMz-yb-0Rf" secondAttribute="trailing" constant="21" id="eoc-B7-hTs"/>
                 <constraint firstItem="Mlm-nJ-9YG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="182" id="heC-LD-NeE"/>
                 <constraint firstItem="8aA-9M-W3g" firstAttribute="width" secondItem="5YU-iq-uwr" secondAttribute="width" id="hjU-fu-KNX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5YU-iq-uwr" secondAttribute="trailing" constant="40" id="hrp-NA-SKr"/>
                 <constraint firstItem="LMz-yb-0Rf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14" id="hsK-f1-f6Y"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iY2-EC-wdG"/>
+                <constraint firstItem="QD8-Fv-fZR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14" id="nr5-3k-bhb"/>
+                <constraint firstItem="LMz-yb-0Rf" firstAttribute="leading" secondItem="Dpd-fG-k1n" secondAttribute="trailing" constant="21" id="tgW-63-iyx"/>
                 <constraint firstItem="8aA-9M-W3g" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="tji-7d-bYv"/>
+                <constraint firstItem="Dpd-fG-k1n" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14" id="waU-69-5kj"/>
                 <constraint firstItem="8aA-9M-W3g" firstAttribute="top" secondItem="5YU-iq-uwr" secondAttribute="top" id="zT0-GM-yt6"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>

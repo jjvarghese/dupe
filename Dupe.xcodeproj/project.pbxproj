@@ -52,6 +52,8 @@
 		A4BC1D0326069118009A2AA0 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D0126069118009A2AA0 /* start.mp3 */; };
 		A4BC1D09260776E6009A2AA0 /* 12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D07260776E6009A2AA0 /* 12.mp3 */; };
 		A4BC1D0A260776E6009A2AA0 /* 11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D08260776E6009A2AA0 /* 11.mp3 */; };
+		A4BC1D0F2607A70D009A2AA0 /* NSLayoutConstraint+ConstraintDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1D0E2607A70D009A2AA0 /* NSLayoutConstraint+ConstraintDetection.swift */; };
+		A4BC1D142607A8D0009A2AA0 /* [NSLayoutConstraint]+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1D132607A8D0009A2AA0 /* [NSLayoutConstraint]+Operations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		A4BC1D0126069118009A2AA0 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		A4BC1D07260776E6009A2AA0 /* 12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12.mp3; sourceTree = "<group>"; };
 		A4BC1D08260776E6009A2AA0 /* 11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11.mp3; sourceTree = "<group>"; };
+		A4BC1D0E2607A70D009A2AA0 /* NSLayoutConstraint+ConstraintDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+ConstraintDetection.swift"; sourceTree = "<group>"; };
+		A4BC1D132607A8D0009A2AA0 /* [NSLayoutConstraint]+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Operations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +261,8 @@
 				A4364ADB2480529100D7AF78 /* UIView+Animation.swift */,
 				A4BC1CB02602A0AE009A2AA0 /* UIColor+Theme.swift */,
 				A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */,
+				A4BC1D0E2607A70D009A2AA0 /* NSLayoutConstraint+ConstraintDetection.swift */,
+				A4BC1D132607A8D0009A2AA0 /* [NSLayoutConstraint]+Operations.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 				A4BC1CEF26066564009A2AA0 /* SFX.swift in Sources */,
 				A49B97552475BC9B007BF29A /* GridCollectionView.swift in Sources */,
 				A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */,
+				A4BC1D0F2607A70D009A2AA0 /* NSLayoutConstraint+ConstraintDetection.swift in Sources */,
 				A4364AD6247DA1A000D7AF78 /* GridCell+Animation.swift in Sources */,
 				A4BC1CB12602A0AE009A2AA0 /* UIColor+Theme.swift in Sources */,
 				A49B9762247ADF3F007BF29A /* Collection+Operations.swift in Sources */,
@@ -486,6 +493,7 @@
 				A49B974924747859007BF29A /* GameViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				A49B975224747B7B007BF29A /* GridCell.swift in Sources */,
 				A4BC1CDE26054FB5009A2AA0 /* SoundProvider+AVAudioPlayerDelegate.swift in Sources */,
+				A4BC1D142607A8D0009A2AA0 /* [NSLayoutConstraint]+Operations.swift in Sources */,
 				A4BC1CD626054D47009A2AA0 /* SoundProvider.swift in Sources */,
 				A4364ADA247EED7200D7AF78 /* GameViewController+Gameplay.swift in Sources */,
 				A49B97582475BF5D007BF29A /* [Int]+Operations.swift in Sources */,

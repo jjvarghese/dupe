@@ -10,9 +10,11 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    @IBOutlet weak var smallGridTopConstraint: NSLayoutConstraint?
     @IBOutlet weak var smallGrid: GridCollectionView?
     @IBOutlet weak var bigGrid: GridCollectionView?
+    @IBOutlet weak var rightGrid: GridCollectionView?
+    @IBOutlet weak var leftGrid: GridCollectionView?
+    
     @IBOutlet weak var startButton: UIButton?
     @IBOutlet weak var scoreLabel: UILabel?
     
@@ -20,8 +22,8 @@ class GameViewController: UIViewController {
     static let MAXIMUM_TEMPO: TimeInterval = 0.02
     static let INCREMENT_TEMPO: TimeInterval = 0.01
     static let THRESHOLD_TEMPO_FOR_INSANITY: TimeInterval = 0.1
+    static let INSANITY_MODE_DURATION = 15.0
     
-    var descentInProgress: Bool = false
     var currentTempo: TimeInterval = STARTING_TEMPO
     var gameInProgress: Bool = false
 
@@ -47,13 +49,10 @@ class GameViewController: UIViewController {
         set {
             _isInsaneMode = newValue
             
-            soundProvider.playRandomTune()
-            
-            bigGrid?.reloadData()
-            smallGrid?.reloadData()
-            
             if newValue == true {
                 startInsanityMode()
+            } else {
+                endInsanityMode()
             }
         }
     }
@@ -113,6 +112,11 @@ class GameViewController: UIViewController {
     private func configureCollectionViews() {
         configure(grid: smallGrid)
         configure(grid: bigGrid)
+        configure(grid: leftGrid)
+        configure(grid: rightGrid)
+                
+        leftGrid?.isHidden = true
+        rightGrid?.isHidden = true
     }
     
     private func configureStartButton() {
