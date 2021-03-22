@@ -52,6 +52,7 @@
 		A4BC1D0326069118009A2AA0 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D0126069118009A2AA0 /* start.mp3 */; };
 		A4BC1D09260776E6009A2AA0 /* 12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D07260776E6009A2AA0 /* 12.mp3 */; };
 		A4BC1D0A260776E6009A2AA0 /* 11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D08260776E6009A2AA0 /* 11.mp3 */; };
+		A4BC1D282609177B009A2AA0 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1D272609177B009A2AA0 /* Grid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		A4BC1D0126069118009A2AA0 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		A4BC1D07260776E6009A2AA0 /* 12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12.mp3; sourceTree = "<group>"; };
 		A4BC1D08260776E6009A2AA0 /* 11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11.mp3; sourceTree = "<group>"; };
+		A4BC1D272609177B009A2AA0 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 		A49B974E24747ABF007BF29A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A4BC1D26260911DF009A2AA0 /* SwiftUI */,
 				A4A1D1E125FFDF9100FA1E4E /* Cells */,
 				A4364AD3247DA13300D7AF78 /* GridCollectionView+Animation.swift */,
 				A49B97592475C3EB007BF29A /* GridCollectionView+UIGestureRecognizerDelegate.swift */,
@@ -325,6 +328,14 @@
 				A4BC1CEE26066564009A2AA0 /* SFX.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		A4BC1D26260911DF009A2AA0 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				A4BC1D272609177B009A2AA0 /* Grid.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +502,7 @@
 				A49B97582475BF5D007BF29A /* [Int]+Operations.swift in Sources */,
 				A49B97132474556D007BF29A /* AppDelegate.swift in Sources */,
 				A49B9760247AD38D007BF29A /* Int+Operations.swift in Sources */,
+				A4BC1D282609177B009A2AA0 /* Grid.swift in Sources */,
 				A49B974624745BA1007BF29A /* GameViewController.swift in Sources */,
 				A4364ADC2480529200D7AF78 /* UIView+Animation.swift in Sources */,
 				A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */,
