@@ -30,7 +30,7 @@ class GridCollectionView: UICollectionView {
     var gridDelegate: GridCollectionViewDelegate?
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
-    
+        
     // MARK: - UIView -
     
     override func awakeFromNib() {

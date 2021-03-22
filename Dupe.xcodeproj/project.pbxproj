@@ -53,6 +53,8 @@
 		A4BC1D09260776E6009A2AA0 /* 12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D07260776E6009A2AA0 /* 12.mp3 */; };
 		A4BC1D0A260776E6009A2AA0 /* 11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D08260776E6009A2AA0 /* 11.mp3 */; };
 		A4BC1D282609177B009A2AA0 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1D272609177B009A2AA0 /* Grid.swift */; };
+		A4BC1D3326093428009A2AA0 /* [IndexPath]+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1D3226093427009A2AA0 /* [IndexPath]+Operations.swift */; };
+		A4BC1D3826093433009A2AA0 /* IndexPath+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1D3726093433009A2AA0 /* IndexPath+Operations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		A4BC1D07260776E6009A2AA0 /* 12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12.mp3; sourceTree = "<group>"; };
 		A4BC1D08260776E6009A2AA0 /* 11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11.mp3; sourceTree = "<group>"; };
 		A4BC1D272609177B009A2AA0 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		A4BC1D3226093427009A2AA0 /* [IndexPath]+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[IndexPath]+Operations.swift"; sourceTree = "<group>"; };
+		A4BC1D3726093433009A2AA0 /* IndexPath+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexPath+Operations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +264,8 @@
 				A4364ADB2480529100D7AF78 /* UIView+Animation.swift */,
 				A4BC1CB02602A0AE009A2AA0 /* UIColor+Theme.swift */,
 				A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */,
+				A4BC1D3226093427009A2AA0 /* [IndexPath]+Operations.swift */,
+				A4BC1D3726093433009A2AA0 /* IndexPath+Operations.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -500,6 +506,8 @@
 				A4BC1CD626054D47009A2AA0 /* SoundProvider.swift in Sources */,
 				A4364ADA247EED7200D7AF78 /* GameViewController+Gameplay.swift in Sources */,
 				A49B97582475BF5D007BF29A /* [Int]+Operations.swift in Sources */,
+				A4BC1D3326093428009A2AA0 /* [IndexPath]+Operations.swift in Sources */,
+				A4BC1D3826093433009A2AA0 /* IndexPath+Operations.swift in Sources */,
 				A49B97132474556D007BF29A /* AppDelegate.swift in Sources */,
 				A49B9760247AD38D007BF29A /* Int+Operations.swift in Sources */,
 				A4BC1D282609177B009A2AA0 /* Grid.swift in Sources */,

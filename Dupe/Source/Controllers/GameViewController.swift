@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class GameViewController: UIViewController {
     
@@ -69,6 +70,16 @@ class GameViewController: UIViewController {
         configureNavigationBar()
         configureSound()
         startNewRound()
+        
+//        guard let bigGrid = bigGrid else { return }
+//        
+//        let grid = Grid(activeIndices: [])
+//        let gridController = UIHostingController(rootView: grid)
+//
+//        addChild(gridController)
+//        gridController.view.frame = bigGrid.bounds
+//        bigGrid.addSubview(gridController.view)
+//        gridController.didMove(toParent: self)
     }
     
     override var prefersStatusBarHidden: Bool {
