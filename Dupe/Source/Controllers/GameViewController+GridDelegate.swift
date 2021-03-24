@@ -14,7 +14,7 @@ extension GameViewController: GridDelegate {
         weak var weakSelf = self
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            weakSelf?.releaseNewSmallGrid()
+            weakSelf?.spawnGrid()
         }
     }
     
@@ -43,11 +43,14 @@ extension GameViewController: GridDelegate {
     // MARK: - Helper -
     
     private func checkForMatch() {
-        guard let smallGridIndices = smallGrid?.selectedIndices.sorted(),
-              let bigGridIndices = bigGrid?.selectedIndices.sorted() else { return }
-        
-        if bigGridIndices.elementsEqual(smallGridIndices) {
-            triggerMatch()
+        guard let bigGridIndices = bigGrid?.selectedIndices.sorted() else { return }
+                
+        for grid in grids {
+            let gridIndices = grid.selectedIndices.sorted()
+            
+            if bigGridIndices.elementsEqual(gridIndices) {
+                triggerMatch(matchedGrid: grid)
+            }
         }
     }
     

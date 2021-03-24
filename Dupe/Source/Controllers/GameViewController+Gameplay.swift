@@ -11,32 +11,61 @@ import UIKit
 
 extension GameViewController {
     
-    func triggerMatch() {
-        guard let smallGrid = smallGrid else { return }
+    func spawnGrid() {
+        let grid = Grid(frame: CGRect.zero,
+                        collectionViewLayout: UICollectionViewFlowLayout.init())
+
+        configure(grid: grid)
         
+        grids.append(grid)
+        
+        view.addSubviewWithConstraints(subview: grid)
+        
+        grid.randomise()
+        
+        var tempo = grid.currentTempo
+        
+        if grid.currentTempo > Grid.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
+            tempo -= Grid.INCREMENT_TEMPO
+        }
+        
+        grid.currentTempo = tempo
+                
+        if let bigGrid = bigGrid {
+            grid.startFalling(collisionGrid: bigGrid,
+                                    withTempo: tempo)
+        }
+    }
+    
+    func triggerMatch(matchedGrid: Grid) {
         soundProvider.play(sfx: .matched)
         
         bigGrid?.reset()
-        smallGrid.randomise()
         
-        let numberOfPointsToGain = getNumberOfPointsToGain()
+        grids.removeAll { (onScreenGrid) -> Bool in
+            return matchedGrid == onScreenGrid
+        }
+        
+        spawnGrid()
+        
+        let numberOfPointsToGain = getNumberOfPointsToGain(matchedGrid: matchedGrid)
         
         spawnFloatingFadingLabel(withText: String(format: "%d", numberOfPointsToGain))
         
         currentScore += numberOfPointsToGain
         
-        if smallGrid.currentTempo <= GameViewController.THRESHOLD_TEMPO_FOR_INSANITY && isInsaneMode == false {
+        if matchedGrid.currentTempo <= GameViewController.THRESHOLD_TEMPO_FOR_INSANITY && isInsaneMode == false {
             if Int.random(in: 0..<9) == 0 {
                 isInsaneMode = true
             }
         }
+        
+        matchedGrid.removeFromSuperview()
     }
     
-    func getNumberOfPointsToGain() -> Int {
-        guard let smallGrid = smallGrid else { return 0 }
-
+    func getNumberOfPointsToGain(matchedGrid: Grid) -> Int {
         let baseline = 100
-        let amountToSubtract = smallGrid.currentTempo * 100
+        let amountToSubtract = matchedGrid.currentTempo * 100
         
         return (baseline - Int(amountToSubtract))
     }
@@ -48,8 +77,10 @@ extension GameViewController {
         weak var weakSelf = self
         
         scoreLabel?.isHidden = false
-        smallGrid?.randomise()
-        smallGrid?.reset()
+        
+        for grid in grids {
+            grid.removeFromSuperview()
+        }
         
         spawnFloatingFadingLabel(withText: "BOOM!") {
             weakSelf?.startNewRound()
@@ -57,26 +88,7 @@ extension GameViewController {
     }
     
     func startNewRound() {
-        smallGrid?.isHidden = true
         startButton?.alpha = 1.0
-        smallGrid?.descentInProgress = false
-        smallGrid?.currentTempo = Grid.STARTING_TEMPO
-    }
-    
-    func releaseNewSmallGrid() {
-        guard let bigGrid = bigGrid,
-              let smallGrid = smallGrid else { return }
-
-        var tempo = smallGrid.currentTempo
-        
-        if smallGrid.currentTempo > Grid.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
-            tempo -= Grid.INCREMENT_TEMPO
-        }
-        
-        smallGrid.currentTempo = tempo
-                
-        smallGrid.startFalling(collisionGrid: bigGrid,
-                                withTempo: tempo)
     }
     
     func startInsanityMode() {
@@ -93,8 +105,6 @@ extension GameViewController {
         insanityTimer = nil
         
         isInsaneMode = false
-        
-        releaseNewSmallGrid()
     }
     
 }

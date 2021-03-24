@@ -13,8 +13,9 @@ class GameViewController: UIViewController {
 //    var session: GameSession = GameSession()
     
     var gameInProgress: Bool = false
+    
+    var grids: [Grid] = []
 
-    @IBOutlet weak var smallGrid: Grid?
     @IBOutlet weak var bigGrid: Grid?
     @IBOutlet weak var startButton: UIButton?
     @IBOutlet weak var scoreLabel: UILabel?
@@ -47,7 +48,6 @@ class GameViewController: UIViewController {
             soundProvider.playRandomTune()
             
             bigGrid?.reloadData()
-            smallGrid?.reloadData()
             
             if newValue == true {
                 startInsanityMode()
@@ -77,7 +77,6 @@ class GameViewController: UIViewController {
     @IBAction private func startPressed(_ sender: Any) {
         soundProvider.playRandomTune()
         soundProvider.play(sfx: .start)
-        smallGrid?.isHidden = false
         scoreLabel?.isHidden = true
         currentScore = 0
         
@@ -88,7 +87,7 @@ class GameViewController: UIViewController {
         startButton.fadeOut(for: 0.4,
                              completion: {
                                 weakSelf?.spawnFloatingFadingLabels(withTexts: ["READY", "SET", "DUPE!"], withCompletion: {
-                                                                        weakSelf?.smallGrid?.randomise()
+                                                                        weakSelf?.spawnGrid()
                                 })
         })
         
@@ -108,7 +107,6 @@ class GameViewController: UIViewController {
     }
     
     private func configureCollectionViews() {
-        configure(grid: smallGrid)
         configure(grid: bigGrid)
     }
     
@@ -120,7 +118,7 @@ class GameViewController: UIViewController {
         scoreLabel?.isHidden = true
     }
     
-    private func configure(grid: Grid?) {
+    func configure(grid: Grid?) {
         grid?.register(UINib.init(nibName: GridCell.NibName,
                                   bundle: nil),
                        forCellWithReuseIdentifier: GridCell.CellIdentifier)

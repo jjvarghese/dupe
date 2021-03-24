@@ -29,7 +29,7 @@ protocol GridDelegate {
 
 class Grid: UICollectionView {
 
-    static private let START_POSITION: CGFloat = 14
+    static let START_POSITION: CGFloat = 14
     static let STARTING_TEMPO: TimeInterval = 0.2
     static let MAXIMUM_TEMPO: TimeInterval = 0.02
     static let INCREMENT_TEMPO: TimeInterval = 0.01
@@ -71,7 +71,7 @@ class Grid: UICollectionView {
             guard let strongSelf = weakSelf else { return }
             
             strongSelf.randomiseActiveCells()
-            strongSelf.gridDelegate?.gridDidFinishMatchAnimation(strongSelf)
+//            strongSelf.gridDelegate?.gridDidFinishMatchAnimation(strongSelf)
         }
     }
     

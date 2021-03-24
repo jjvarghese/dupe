@@ -15,6 +15,7 @@
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943F96260BDC8E001D3C0C /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F95260BDC8E001D3C0C /* GameSession.swift */; };
+		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
 		A49B97132474556D007BF29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97122474556D007BF29A /* AppDelegate.swift */; };
 		A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97142474556D007BF29A /* SceneDelegate.swift */; };
 		A49B971A2474556D007BF29A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49B97182474556D007BF29A /* Main.storyboard */; };
@@ -83,6 +84,7 @@
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Detection.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943F95260BDC8E001D3C0C /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
+		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
 		A49B970F2474556D007BF29A /* Dupe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dupe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49B97122474556D007BF29A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A49B97142474556D007BF29A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -266,14 +268,15 @@
 		A49B97562475BF26007BF29A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A49B9761247ADF3F007BF29A /* Collection+Operations.swift */,
 				A49B97572475BF5D007BF29A /* [Int]+Operations.swift */,
-				A49B975F247AD38D007BF29A /* Int+Operations.swift */,
-				A4364ADB2480529100D7AF78 /* UIView+Animation.swift */,
-				A4BC1CB02602A0AE009A2AA0 /* UIColor+Theme.swift */,
-				A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */,
-				A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */,
 				A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */,
+				A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */,
+				A49B9761247ADF3F007BF29A /* Collection+Operations.swift */,
+				A49B975F247AD38D007BF29A /* Int+Operations.swift */,
+				A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */,
+				A4BC1CB02602A0AE009A2AA0 /* UIColor+Theme.swift */,
+				A4364ADB2480529100D7AF78 /* UIView+Animation.swift */,
+				A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */,
 				A4364AD6247DA1A000D7AF78 /* GridCell+Animation.swift in Sources */,
 				A4BC1CB12602A0AE009A2AA0 /* UIColor+Theme.swift in Sources */,
+				A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */,
 				A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */,
 				A49B9762247ADF3F007BF29A /* Collection+Operations.swift in Sources */,
 				A4364AD8247DA2BF00D7AF78 /* GameViewController+Animation.swift in Sources */,
