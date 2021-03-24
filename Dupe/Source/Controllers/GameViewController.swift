@@ -14,8 +14,8 @@ class GameViewController: UIViewController {
     
     var gameInProgress: Bool = false
 
-    @IBOutlet weak var smallGrid: GridCollectionView?
-    @IBOutlet weak var bigGrid: GridCollectionView?
+    @IBOutlet weak var smallGrid: Grid?
+    @IBOutlet weak var bigGrid: Grid?
     @IBOutlet weak var startButton: UIButton?
     @IBOutlet weak var scoreLabel: UILabel?
     
@@ -120,7 +120,7 @@ class GameViewController: UIViewController {
         scoreLabel?.isHidden = true
     }
     
-    private func configure(grid: GridCollectionView?) {
+    private func configure(grid: Grid?) {
         grid?.register(UINib.init(nibName: GridCell.NibName,
                                   bundle: nil),
                        forCellWithReuseIdentifier: GridCell.CellIdentifier)

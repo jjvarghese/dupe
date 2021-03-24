@@ -11,7 +11,7 @@ extension GameViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let gridCell = collectionView.dequeueReusableCell(withReuseIdentifier: GridCell.CellIdentifier,
                                                                 for: indexPath) as? GridCell,
-            let gridCollectionView = collectionView as? GridCollectionView else {            return UICollectionViewCell()
+            let gridCollectionView = collectionView as? Grid else {            return UICollectionViewCell()
         }
         
         let isSelected = gridCollectionView.selectedIndices.contains(indexPath.item)

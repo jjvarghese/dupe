@@ -1,6 +1,6 @@
 import UIKit
 
-extension GridCollectionView: UIGestureRecognizerDelegate {
+extension Grid: UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
                            shouldReceive touch: UITouch) -> Bool {
@@ -18,8 +18,7 @@ extension GridCollectionView: UIGestureRecognizerDelegate {
         let location = touchGesture.location(in: self)
         
         if let indexPath = indexPathForItem(at: location) {
-            gridDelegate?.gridCollectionView(collectionView: self,
-                                             didSelect: indexPath)
+            gridDelegate?.grid(self, didSelect: indexPath)
         }
     }
     
@@ -28,21 +27,18 @@ extension GridCollectionView: UIGestureRecognizerDelegate {
         
         if let indexPath = indexPathForItem(at: location) {
             if panGesture.state == .began {
-                gridDelegate?.gridCollectionView(collectionView: self,
-                                                 didSelect: indexPath)
+                gridDelegate?.grid(self, didSelect: indexPath)
                 
                 swipedIndices.addIfNotAlreadyThere(element: indexPath.item)
             } else if panGesture.state == .changed {
-                gridDelegate?.gridCollectionView(collectionView: self,
-                                                 didPanAt: indexPath)
+                gridDelegate?.grid(self, didPanAt: indexPath)
                 
                 swipedIndices.addIfNotAlreadyThere(element: indexPath.item)
             } else if panGesture.state == .ended {
 
                 swipedIndices = []
                 
-                gridDelegate?.gridCollectionView(collectionView: self,
-                                                 didEndPanningAt: indexPath)
+                gridDelegate?.grid(self, didEndPanningAt: indexPath)
             }
         }
     }

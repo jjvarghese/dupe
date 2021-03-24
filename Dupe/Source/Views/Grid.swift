@@ -8,26 +8,26 @@
 
 import UIKit
 
-protocol GridCollectionViewDelegate {
+protocol GridDelegate {
     
-    func gridCollectionView(collectionView: GridCollectionView,
-                            didPanAt indexPath: IndexPath)
+    func grid(_ grid: Grid,
+              didPanAt indexPath: IndexPath)
     
-    func gridCollectionView(collectionView: GridCollectionView,
-                            didEndPanningAt indexPath: IndexPath)
+    func grid(_ grid: Grid,
+              didEndPanningAt indexPath: IndexPath)
     
-    func gridCollectionView(collectionView: GridCollectionView,
-                            didSelect indexPath: IndexPath)
+    func grid(_ grid: Grid,
+              didSelect indexPath: IndexPath)
     
-    func gridCollectionViewDidFinishMatchAnimation(collectionView: GridCollectionView)
+    func gridDidFinishMatchAnimation(_ grid: Grid)
     
-    func gridCollectionViewRequestsInsanityMode(collectionView: GridCollectionView) -> Bool
+    func gridRequestsInsanityMode(_ grid: Grid) -> Bool
     
-    func gridCollectionViewDidCollide(collectionView: GridCollectionView)
-        
+    func gridDidCollide(_ grid: Grid)
+    
 }
 
-class GridCollectionView: UICollectionView {
+class Grid: UICollectionView {
 
     static private let START_POSITION: CGFloat = 14
     static let STARTING_TEMPO: TimeInterval = 0.2
@@ -35,7 +35,7 @@ class GridCollectionView: UICollectionView {
     static let INCREMENT_TEMPO: TimeInterval = 0.01
     
     var descentInProgress: Bool = false
-    var gridDelegate: GridCollectionViewDelegate?
+    var gridDelegate: GridDelegate?
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
     var currentTempo: TimeInterval = STARTING_TEMPO
@@ -71,7 +71,7 @@ class GridCollectionView: UICollectionView {
             guard let strongSelf = weakSelf else { return }
             
             strongSelf.randomiseActiveCells()
-            strongSelf.gridDelegate?.gridCollectionViewDidFinishMatchAnimation(collectionView: strongSelf)
+            strongSelf.gridDelegate?.gridDidFinishMatchAnimation(strongSelf)
         }
     }
     
@@ -86,11 +86,11 @@ class GridCollectionView: UICollectionView {
         reloadData()
     }
     
-    func startFalling(collisionGrid: GridCollectionView,
+    func startFalling(collisionGrid: Grid,
                       withTempo tempo: TimeInterval) {
         let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
         
-        topConstraint?.constant = GridCollectionView.START_POSITION
+        topConstraint?.constant = Grid.START_POSITION
         
         updateConstraints()
         

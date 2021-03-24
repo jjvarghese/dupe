@@ -60,7 +60,7 @@ extension GameViewController {
         smallGrid?.isHidden = true
         startButton?.alpha = 1.0
         smallGrid?.descentInProgress = false
-        smallGrid?.currentTempo = GridCollectionView.STARTING_TEMPO
+        smallGrid?.currentTempo = Grid.STARTING_TEMPO
     }
     
     func releaseNewSmallGrid() {
@@ -69,8 +69,8 @@ extension GameViewController {
 
         var tempo = smallGrid.currentTempo
         
-        if smallGrid.currentTempo > GridCollectionView.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
-            tempo -= GridCollectionView.INCREMENT_TEMPO
+        if smallGrid.currentTempo > Grid.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
+            tempo -= Grid.INCREMENT_TEMPO
         }
         
         smallGrid.currentTempo = tempo

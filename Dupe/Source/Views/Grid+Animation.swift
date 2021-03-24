@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-extension GridCollectionView {
+extension Grid {
     
     // MARK: - Available animations -
     
@@ -24,7 +24,7 @@ extension GridCollectionView {
         }
     }
     
-    func descend(collisionGrid: GridCollectionView) {
+    func descend(collisionGrid: Grid) {
         let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
         
         guard let topLayoutConstraint = topConstraint else { return }
@@ -52,7 +52,7 @@ extension GridCollectionView {
                 }
             }
         } else {
-            gridDelegate?.gridCollectionViewDidCollide(collectionView: self)
+            gridDelegate?.gridDidCollide(self)
         }
     }
 
@@ -63,7 +63,7 @@ extension GridCollectionView {
         for cell in visibleCells {
             if let gridCell = cell as? GridCell {
                 gridCell.update(asSelected: on,
-                                isInsanityMode: gridDelegate?.gridCollectionViewRequestsInsanityMode(collectionView: self) ?? false)
+                                isInsanityMode: gridDelegate?.gridRequestsInsanityMode(self) ?? false)
             }
         }
     }
