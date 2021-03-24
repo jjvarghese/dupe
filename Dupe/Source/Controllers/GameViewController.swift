@@ -10,7 +10,6 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    @IBOutlet weak var smallGridTopConstraint: NSLayoutConstraint?
     @IBOutlet weak var smallGrid: GridCollectionView?
     @IBOutlet weak var bigGrid: GridCollectionView?
     @IBOutlet weak var startButton: UIButton?
@@ -20,8 +19,8 @@ class GameViewController: UIViewController {
     static let MAXIMUM_TEMPO: TimeInterval = 0.02
     static let INCREMENT_TEMPO: TimeInterval = 0.01
     static let THRESHOLD_TEMPO_FOR_INSANITY: TimeInterval = 0.1
-    
-    var descentInProgress: Bool = false
+    static let INSANITY_MODE_DURATION = 15.0
+
     var currentTempo: TimeInterval = STARTING_TEMPO
     var gameInProgress: Bool = false
 

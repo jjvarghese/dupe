@@ -12,6 +12,8 @@
 		A4364AD8247DA2BF00D7AF78 /* GameViewController+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364AD7247DA2BF00D7AF78 /* GameViewController+Animation.swift */; };
 		A4364ADA247EED7200D7AF78 /* GameViewController+Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364AD9247EED7200D7AF78 /* GameViewController+Gameplay.swift */; };
 		A4364ADC2480529200D7AF78 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364ADB2480529100D7AF78 /* UIView+Animation.swift */; };
+		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */; };
+		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A49B97132474556D007BF29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97122474556D007BF29A /* AppDelegate.swift */; };
 		A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97142474556D007BF29A /* SceneDelegate.swift */; };
 		A49B971A2474556D007BF29A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49B97182474556D007BF29A /* Main.storyboard */; };
@@ -77,6 +79,8 @@
 		A4364AD7247DA2BF00D7AF78 /* GameViewController+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Animation.swift"; sourceTree = "<group>"; };
 		A4364AD9247EED7200D7AF78 /* GameViewController+Gameplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Gameplay.swift"; sourceTree = "<group>"; };
 		A4364ADB2480529100D7AF78 /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
+		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Detection.swift"; sourceTree = "<group>"; };
+		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A49B970F2474556D007BF29A /* Dupe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dupe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49B97122474556D007BF29A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A49B97142474556D007BF29A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -257,6 +261,8 @@
 				A4364ADB2480529100D7AF78 /* UIView+Animation.swift */,
 				A4BC1CB02602A0AE009A2AA0 /* UIColor+Theme.swift */,
 				A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */,
+				A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */,
+				A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */,
 				A4364AD6247DA1A000D7AF78 /* GridCell+Animation.swift in Sources */,
 				A4BC1CB12602A0AE009A2AA0 /* UIColor+Theme.swift in Sources */,
+				A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */,
 				A49B9762247ADF3F007BF29A /* Collection+Operations.swift in Sources */,
 				A4364AD8247DA2BF00D7AF78 /* GameViewController+Animation.swift in Sources */,
 				A49B974924747859007BF29A /* GameViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
@@ -497,6 +504,7 @@
 				A4BC1CFC26066A24009A2AA0 /* Bundle+URLRetrieval.swift in Sources */,
 				A49B975C2475C467007BF29A /* GameViewController+GridCollectionViewDelegate.swift in Sources */,
 				A49B975A2475C3EB007BF29A /* GridCollectionView+UIGestureRecognizerDelegate.swift in Sources */,
+				A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */,
 				A4364AD4247DA13300D7AF78 /* GridCollectionView+Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

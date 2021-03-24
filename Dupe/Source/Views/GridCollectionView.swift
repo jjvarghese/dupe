@@ -22,11 +22,18 @@ protocol GridCollectionViewDelegate {
     func gridCollectionViewDidFinishMatchAnimation(collectionView: GridCollectionView)
     
     func gridCollectionViewRequestsInsanityMode(collectionView: GridCollectionView) -> Bool
+    
+    func gridCollectionViewDidCollide(collectionView: GridCollectionView)
+
+    func gridCollectionViewRequestsCurrentTempo(collectionView: GridCollectionView) -> TimeInterval
         
 }
 
 class GridCollectionView: UICollectionView {
 
+    static private let START_POSITION: CGFloat = 14
+    
+    var descentInProgress: Bool = false
     var gridDelegate: GridCollectionViewDelegate?
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
@@ -76,6 +83,20 @@ class GridCollectionView: UICollectionView {
         
         reloadData()
     }
+    
+    func startFalling(collisionGrid: GridCollectionView,
+                      withTempo tempo: TimeInterval) {
+        let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
+        
+        topConstraint?.constant = GridCollectionView.START_POSITION
+        
+        updateConstraints()
+        
+        if !descentInProgress {
+            descend(collisionGrid: collisionGrid)
+        }
+    }
+
     
     // MARK: - Private -
     

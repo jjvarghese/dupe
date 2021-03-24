@@ -2,6 +2,14 @@ import Foundation
 
 extension GameViewController: GridCollectionViewDelegate {
     
+    func gridCollectionViewDidCollide(collectionView: GridCollectionView) {
+        triggerGameOver()
+    }
+    
+    func gridCollectionViewRequestsCurrentTempo(collectionView: GridCollectionView) -> TimeInterval {
+        return currentTempo
+    }
+
     func gridCollectionViewRequestsInsanityMode(collectionView: GridCollectionView) -> Bool {
         return isInsaneMode
     }

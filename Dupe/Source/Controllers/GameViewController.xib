@@ -14,7 +14,6 @@
                 <outlet property="bigGrid" destination="5YU-iq-uwr" id="MwB-mu-yOg"/>
                 <outlet property="scoreLabel" destination="Mlm-nJ-9YG" id="Xqs-YQ-jsz"/>
                 <outlet property="smallGrid" destination="LMz-yb-0Rf" id="aYY-h0-FsH"/>
-                <outlet property="smallGridTopConstraint" destination="hsK-f1-f6Y" id="wa9-33-rXH"/>
                 <outlet property="startButton" destination="8aA-9M-W3g" id="7V3-xa-ZU9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

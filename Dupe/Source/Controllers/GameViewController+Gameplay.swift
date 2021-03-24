@@ -23,7 +23,7 @@ extension GameViewController {
         
         currentScore += numberOfPointsToGain
         
-        if currentTempo <= GameViewController.THRESHOLD_TEMPO_FOR_INSANITY {
+        if currentTempo <= GameViewController.THRESHOLD_TEMPO_FOR_INSANITY && isInsaneMode == false {
             if Int.random(in: 0..<9) == 0 {
                 isInsaneMode = true
             }
@@ -55,22 +55,31 @@ extension GameViewController {
     func startNewRound() {
         smallGrid?.isHidden = true
         startButton?.alpha = 1.0
-        descentInProgress = false
+        smallGrid?.descentInProgress = false
         currentTempo = GameViewController.STARTING_TEMPO
     }
     
     func releaseNewSmallGrid() {
+        guard let bigGrid = bigGrid else { return }
+
         var tempo = currentTempo
         
         if currentTempo > GameViewController.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
             tempo -= GameViewController.INCREMENT_TEMPO
         }
         
-        beginDescentOfSmallGrid(withDuration: tempo)
+        currentTempo = tempo
+        
+        NSLog("** CURRENT TEMPO: %f **", currentTempo)
+        
+        smallGrid?.startFalling(collisionGrid: bigGrid,
+                                withTempo: tempo)
     }
     
-    func startInsanityMode() {        
-        insanityTimer = Timer.scheduledTimer(timeInterval: 5.0,
+    func startInsanityMode() {
+        soundProvider.playRandomTune()
+
+        insanityTimer = Timer.scheduledTimer(timeInterval: GameViewController.INSANITY_MODE_DURATION,
                                              target: self,
                                              selector: #selector(endInsanityMode),
                                              userInfo: nil,

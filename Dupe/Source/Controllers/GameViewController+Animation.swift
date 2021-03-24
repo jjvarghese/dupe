@@ -11,18 +11,6 @@ import UIKit
 
 extension GameViewController {
     
-    func beginDescentOfSmallGrid(withDuration duration: TimeInterval) {
-        currentTempo = duration
-        
-        smallGridTopConstraint?.constant = 14
-        
-        smallGrid?.updateConstraints()
-        
-        if !descentInProgress {
-            descendSmallGrid()
-        }
-    }
-    
     func spawnFloatingFadingLabels(withTexts texts: [String],
                                    withCompletion finalCompletion: (() -> Void)?) {
         guard texts.count > 0 else {
@@ -68,47 +56,6 @@ extension GameViewController {
             label.removeFromSuperview()
             
             completion?()
-        }
-    }
-    
-    // MARK: - Animation helper -
-    
-    private func descendSmallGrid() {
-        guard let smallGrid = smallGrid,
-            let bigGrid = bigGrid else { return }
-        
-        descentInProgress = true
-         
-        let smallGridBottom = smallGrid.frame.origin.y + smallGrid.frame.size.height
-        let bigGridTop = bigGrid.frame.origin.y
-        
-        if smallGridBottom < bigGridTop {
-            smallGridTopConstraint?.constant += 1
-            
-            animateDescent()
-        } else {
-            if isInsaneMode {
-                endInsanityMode()
-            } else {
-                triggerGameOver()
-            }
-        }
-    }
-    
-    private func animateDescent() {
-        weak var weakSelf = self
-
-        let duration = currentTempo
-        
-        UIView.animate(withDuration: duration,
-                       animations: {
-                        weakSelf?.smallGrid?.updateConstraints()
-        }) { (finished) in
-            if finished {
-                DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-                    weakSelf?.descendSmallGrid()
-                }
-            }
         }
     }
     
