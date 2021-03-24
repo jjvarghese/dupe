@@ -24,20 +24,22 @@ protocol GridCollectionViewDelegate {
     func gridCollectionViewRequestsInsanityMode(collectionView: GridCollectionView) -> Bool
     
     func gridCollectionViewDidCollide(collectionView: GridCollectionView)
-
-    func gridCollectionViewRequestsCurrentTempo(collectionView: GridCollectionView) -> TimeInterval
         
 }
 
 class GridCollectionView: UICollectionView {
 
     static private let START_POSITION: CGFloat = 14
+    static let STARTING_TEMPO: TimeInterval = 0.2
+    static let MAXIMUM_TEMPO: TimeInterval = 0.02
+    static let INCREMENT_TEMPO: TimeInterval = 0.01
     
     var descentInProgress: Bool = false
     var gridDelegate: GridCollectionViewDelegate?
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
-    
+    var currentTempo: TimeInterval = STARTING_TEMPO
+
     // MARK: - UIView -
     
     override func awakeFromNib() {

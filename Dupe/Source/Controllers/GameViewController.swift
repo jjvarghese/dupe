@@ -10,19 +10,17 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+//    var session: GameSession = GameSession()
+    
+    var gameInProgress: Bool = false
+
     @IBOutlet weak var smallGrid: GridCollectionView?
     @IBOutlet weak var bigGrid: GridCollectionView?
     @IBOutlet weak var startButton: UIButton?
     @IBOutlet weak var scoreLabel: UILabel?
     
-    static let STARTING_TEMPO: TimeInterval = 0.2
-    static let MAXIMUM_TEMPO: TimeInterval = 0.02
-    static let INCREMENT_TEMPO: TimeInterval = 0.01
     static let THRESHOLD_TEMPO_FOR_INSANITY: TimeInterval = 0.1
     static let INSANITY_MODE_DURATION = 15.0
-
-    var currentTempo: TimeInterval = STARTING_TEMPO
-    var gameInProgress: Bool = false
 
     let soundProvider: SoundProvider = SoundProvider()
     

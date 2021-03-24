@@ -27,11 +27,8 @@ extension GridCollectionView {
     func descend(collisionGrid: GridCollectionView) {
         let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
         
-        guard let topLayoutConstraint = topConstraint,
-              let tempo = gridDelegate?.gridCollectionViewRequestsCurrentTempo(collectionView: self) else { return }
-        
-        NSLog("TEMPO: %f", tempo)
-        
+        guard let topLayoutConstraint = topConstraint else { return }
+                
         descentInProgress = true
          
         let gridBottom = frame.origin.y + frame.size.height
@@ -42,12 +39,14 @@ extension GridCollectionView {
             
             weak var weakSelf = self
                         
-            UIView.animate(withDuration: tempo,
+            UIView.animate(withDuration: currentTempo,
                            animations: {
                             weakSelf?.updateConstraints()
             }) { (finished) in
                 if finished {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + tempo) {
+                    guard let strongSelf = weakSelf else { return }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + strongSelf.currentTempo) {
                         weakSelf?.descend(collisionGrid: collisionGrid)
                     }
                 }

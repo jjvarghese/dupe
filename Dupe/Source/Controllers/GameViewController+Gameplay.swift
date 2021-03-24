@@ -12,10 +12,12 @@ import UIKit
 extension GameViewController {
     
     func triggerMatch() {
+        guard let smallGrid = smallGrid else { return }
+        
         soundProvider.play(sfx: .matched)
         
         bigGrid?.reset()
-        smallGrid?.randomise()
+        smallGrid.randomise()
         
         let numberOfPointsToGain = getNumberOfPointsToGain()
         
@@ -23,7 +25,7 @@ extension GameViewController {
         
         currentScore += numberOfPointsToGain
         
-        if currentTempo <= GameViewController.THRESHOLD_TEMPO_FOR_INSANITY && isInsaneMode == false {
+        if smallGrid.currentTempo <= GameViewController.THRESHOLD_TEMPO_FOR_INSANITY && isInsaneMode == false {
             if Int.random(in: 0..<9) == 0 {
                 isInsaneMode = true
             }
@@ -31,8 +33,10 @@ extension GameViewController {
     }
     
     func getNumberOfPointsToGain() -> Int {
+        guard let smallGrid = smallGrid else { return 0 }
+
         let baseline = 100
-        let amountToSubtract = currentTempo * 100
+        let amountToSubtract = smallGrid.currentTempo * 100
         
         return (baseline - Int(amountToSubtract))
     }
@@ -56,23 +60,22 @@ extension GameViewController {
         smallGrid?.isHidden = true
         startButton?.alpha = 1.0
         smallGrid?.descentInProgress = false
-        currentTempo = GameViewController.STARTING_TEMPO
+        smallGrid?.currentTempo = GridCollectionView.STARTING_TEMPO
     }
     
     func releaseNewSmallGrid() {
-        guard let bigGrid = bigGrid else { return }
+        guard let bigGrid = bigGrid,
+              let smallGrid = smallGrid else { return }
 
-        var tempo = currentTempo
+        var tempo = smallGrid.currentTempo
         
-        if currentTempo > GameViewController.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
-            tempo -= GameViewController.INCREMENT_TEMPO
+        if smallGrid.currentTempo > GridCollectionView.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
+            tempo -= GridCollectionView.INCREMENT_TEMPO
         }
         
-        currentTempo = tempo
-        
-        NSLog("** CURRENT TEMPO: %f **", currentTempo)
-        
-        smallGrid?.startFalling(collisionGrid: bigGrid,
+        smallGrid.currentTempo = tempo
+                
+        smallGrid.startFalling(collisionGrid: bigGrid,
                                 withTempo: tempo)
     }
     

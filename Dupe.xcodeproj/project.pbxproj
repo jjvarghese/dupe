@@ -14,6 +14,7 @@
 		A4364ADC2480529200D7AF78 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364ADB2480529100D7AF78 /* UIView+Animation.swift */; };
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
+		A4943F96260BDC8E001D3C0C /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F95260BDC8E001D3C0C /* GameSession.swift */; };
 		A49B97132474556D007BF29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97122474556D007BF29A /* AppDelegate.swift */; };
 		A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97142474556D007BF29A /* SceneDelegate.swift */; };
 		A49B971A2474556D007BF29A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49B97182474556D007BF29A /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 		A4364ADB2480529100D7AF78 /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Detection.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
+		A4943F95260BDC8E001D3C0C /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		A49B970F2474556D007BF29A /* Dupe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dupe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49B97122474556D007BF29A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A49B97142474556D007BF29A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4943F94260BDC6C001D3C0C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A4943F95260BDC8E001D3C0C /* GameSession.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		A49B97062474556D007BF29A = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +251,7 @@
 		A49B974F24747AE3007BF29A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A4943F94260BDC6C001D3C0C /* Utility */,
 				A4BC1CED2606654A009A2AA0 /* Types */,
 				A4BC1CD426054D3A009A2AA0 /* Providers */,
 				A49B97122474556D007BF29A /* AppDelegate.swift */,
@@ -499,6 +510,7 @@
 				A49B97132474556D007BF29A /* AppDelegate.swift in Sources */,
 				A49B9760247AD38D007BF29A /* Int+Operations.swift in Sources */,
 				A49B974624745BA1007BF29A /* GameViewController.swift in Sources */,
+				A4943F96260BDC8E001D3C0C /* GameSession.swift in Sources */,
 				A4364ADC2480529200D7AF78 /* UIView+Animation.swift in Sources */,
 				A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */,
 				A4BC1CFC26066A24009A2AA0 /* Bundle+URLRetrieval.swift in Sources */,
