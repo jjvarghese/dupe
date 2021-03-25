@@ -6,10 +6,6 @@ extension GameViewController: GridDelegate {
         triggerGameOver()
     }
     
-    func gridRequestsInsanityMode(_ grid: Grid) -> Bool {
-        return isInsaneMode
-    }
-    
     func grid(_ grid: Grid,
               didPanAt indexPath: IndexPath) {
         guard grid == bigGrid else { return }
@@ -40,7 +36,7 @@ extension GameViewController: GridDelegate {
         for grid in grids {
             let gridIndices = grid.selectedIndices.sorted()
             
-            if bigGridIndices.elementsEqual(gridIndices) {                
+            if bigGridIndices.elementsEqual(gridIndices) {
                 weak var weakSelf = self
                 
                 DispatchQueue.main.async {

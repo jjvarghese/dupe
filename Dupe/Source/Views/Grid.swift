@@ -18,9 +18,7 @@ protocol GridDelegate {
     
     func grid(_ grid: Grid,
               didSelect indexPath: IndexPath)
-        
-    func gridRequestsInsanityMode(_ grid: Grid) -> Bool
-    
+            
     func gridDidCollide(_ grid: Grid)
     
 }

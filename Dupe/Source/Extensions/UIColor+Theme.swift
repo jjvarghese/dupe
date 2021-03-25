@@ -15,9 +15,7 @@ extension UIColor {
                                            green: 142/255,
                                            blue: 255/255,
                                            alpha: 1)
-    
-    static let insaneBase: UIColor = UIColor.purple
-    
+        
     static let active: UIColor = .white
     
 }

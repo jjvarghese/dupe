@@ -62,8 +62,7 @@ extension Grid {
     private func flicker(on: Bool) {
         for cell in visibleCells {
             if let gridCell = cell as? GridCell {
-                gridCell.update(asSelected: on,
-                                isInsanityMode: gridDelegate?.gridRequestsInsanityMode(self) ?? false)
+                gridCell.update(asSelected: on)
             }
         }
     }

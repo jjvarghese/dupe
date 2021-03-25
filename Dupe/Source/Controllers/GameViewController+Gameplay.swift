@@ -37,7 +37,7 @@ extension GameViewController {
         }
     }
     
-    func triggerMatch(matchedGrid: Grid) {        
+    func triggerMatch(matchedGrid: Grid) {
         soundProvider.play(sfx: .matched)
         
         bigGrid?.reset()
@@ -54,9 +54,9 @@ extension GameViewController {
         
         currentScore += numberOfPointsToGain
         
-        if matchedGrid.currentTempo <= GameViewController.THRESHOLD_TEMPO_FOR_INSANITY && isInsaneMode == false {
+        if matchedGrid.currentTempo <= GameViewController.THRESHOLD_TEMPO_FOR_EXTRA_SPAWN  {
             if Int.random(in: 0..<9) == 0 {
-                isInsaneMode = true
+                // Spawn another grid
             }
         }
         
@@ -89,22 +89,6 @@ extension GameViewController {
     
     func startNewRound() {
         startButton?.alpha = 1.0
-    }
-    
-    func startInsanityMode() {
-        soundProvider.playRandomTune()
-
-        insanityTimer = Timer.scheduledTimer(timeInterval: GameViewController.INSANITY_MODE_DURATION,
-                                             target: self,
-                                             selector: #selector(endInsanityMode),
-                                             userInfo: nil,
-                                             repeats: false )
-    }
-        
-    @objc func endInsanityMode() {
-        insanityTimer = nil
-        
-        isInsaneMode = false
     }
     
 }

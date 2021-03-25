@@ -11,17 +11,14 @@ import UIKit
 class GameViewController: UIViewController {
     
 //    var session: GameSession = GameSession()
-    
-    var gameInProgress: Bool = false
-    
+        
     var grids: [Grid] = []
 
     @IBOutlet weak var bigGrid: Grid?
     @IBOutlet weak var startButton: UIButton?
     @IBOutlet weak var scoreLabel: UILabel?
     
-    static let THRESHOLD_TEMPO_FOR_INSANITY: TimeInterval = 0.1
-    static let INSANITY_MODE_DURATION = 15.0
+    static let THRESHOLD_TEMPO_FOR_EXTRA_SPAWN: TimeInterval = 0.1
 
     let soundProvider: SoundProvider = SoundProvider()
     
@@ -36,26 +33,6 @@ class GameViewController: UIViewController {
             scoreLabel?.text = String(format: "Your score: %d", newValue)
         }
     }
-    
-    private var _isInsaneMode: Bool?
-    var isInsaneMode: Bool {
-        get {
-            return _isInsaneMode ?? false
-        }
-        set {
-            _isInsaneMode = newValue
-            
-            soundProvider.playRandomTune()
-            
-            bigGrid?.reloadData()
-            
-            if newValue == true {
-                startInsanityMode()
-            }
-        }
-    }
-    
-    var insanityTimer: Timer?
     
     // MARK: - UIViewController -
     

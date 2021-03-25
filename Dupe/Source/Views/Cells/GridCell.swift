@@ -33,11 +33,8 @@ class GridCell: UICollectionViewCell {
     
     // MARK: - Updating -
     
-    func update(asSelected selected: Bool,
-                isInsanityMode: Bool) {
-        let baseColor: UIColor = isInsanityMode ? UIColor.insaneBase : UIColor.base
-                
-        square?.backgroundColor = selected ? UIColor.active : baseColor
+    func update(asSelected selected: Bool) {                
+        square?.backgroundColor = selected ? UIColor.active : UIColor.base
         
         if selected && shouldPulse {
             pulse()
