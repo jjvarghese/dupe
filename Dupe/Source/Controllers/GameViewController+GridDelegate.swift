@@ -10,14 +10,6 @@ extension GameViewController: GridDelegate {
         return isInsaneMode
     }
     
-    func gridDidFinishMatchAnimation(_ grid: Grid) {
-        weak var weakSelf = self
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            weakSelf?.spawnGrid()
-        }
-    }
-    
     func grid(_ grid: Grid,
               didPanAt indexPath: IndexPath) {
         guard grid == bigGrid else { return }
@@ -48,8 +40,12 @@ extension GameViewController: GridDelegate {
         for grid in grids {
             let gridIndices = grid.selectedIndices.sorted()
             
-            if bigGridIndices.elementsEqual(gridIndices) {
-                triggerMatch(matchedGrid: grid)
+            if bigGridIndices.elementsEqual(gridIndices) {                
+                weak var weakSelf = self
+                
+                DispatchQueue.main.async {
+                    weakSelf?.triggerMatch(matchedGrid: grid)
+                }
             }
         }
     }

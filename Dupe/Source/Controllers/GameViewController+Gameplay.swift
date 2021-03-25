@@ -37,7 +37,7 @@ extension GameViewController {
         }
     }
     
-    func triggerMatch(matchedGrid: Grid) {
+    func triggerMatch(matchedGrid: Grid) {        
         soundProvider.play(sfx: .matched)
         
         bigGrid?.reset()

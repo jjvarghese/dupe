@@ -30,7 +30,7 @@ extension Grid: UIGestureRecognizerDelegate {
                 gridDelegate?.grid(self, didSelect: indexPath)
                 
                 swipedIndices.addIfNotAlreadyThere(element: indexPath.item)
-            } else if panGesture.state == .changed {
+            } else if panGesture.state == .changed {                
                 gridDelegate?.grid(self, didPanAt: indexPath)
                 
                 swipedIndices.addIfNotAlreadyThere(element: indexPath.item)

@@ -18,9 +18,7 @@ protocol GridDelegate {
     
     func grid(_ grid: Grid,
               didSelect indexPath: IndexPath)
-    
-    func gridDidFinishMatchAnimation(_ grid: Grid)
-    
+        
     func gridRequestsInsanityMode(_ grid: Grid) -> Bool
     
     func gridDidCollide(_ grid: Grid)
@@ -29,6 +27,7 @@ protocol GridDelegate {
 
 class Grid: UICollectionView {
 
+    private static let MATCH_DURATION: TimeInterval = 0.3
     static let START_POSITION: CGFloat = 14
     static let STARTING_TEMPO: TimeInterval = 0.2
     static let MAXIMUM_TEMPO: TimeInterval = 0.02
@@ -59,7 +58,7 @@ class Grid: UICollectionView {
     }
 
     func randomise() {
-        let duration = 0.3
+        let duration = Grid.MATCH_DURATION
         
         flash(for: duration)
         fadeOut(for: duration,
@@ -71,7 +70,6 @@ class Grid: UICollectionView {
             guard let strongSelf = weakSelf else { return }
             
             strongSelf.randomiseActiveCells()
-//            strongSelf.gridDelegate?.gridDidFinishMatchAnimation(strongSelf)
         }
     }
     
