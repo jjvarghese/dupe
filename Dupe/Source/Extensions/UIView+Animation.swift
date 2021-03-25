@@ -13,7 +13,8 @@ public extension UIView {
 
     func shake(count: Float = 4,
                for duration: TimeInterval = 0.5,
-               withTranslation translation: Float = 5) {
+               withTranslation translation: Float = 5,
+               withCompletion completion: (() -> Void)? = nil) {
 
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         
@@ -24,6 +25,10 @@ public extension UIView {
         animation.values = [translation, -translation]
         
         layer.add(animation, forKey: "shake")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+            completion?()
+        }
     }
     
     func fadeOut(for duration: TimeInterval,

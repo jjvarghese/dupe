@@ -14,13 +14,15 @@ extension Grid {
     
     // MARK: - Available animations -
     
-    func flash(for duration: TimeInterval) {
+    func flash(for duration: TimeInterval,
+               withCompletion completion: (() -> Void)? = nil) {
         flicker(on: true)
         
         weak var weakSelf = self
         
         DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             weakSelf?.flicker(on: false)
+            completion?()
         }
     }
     

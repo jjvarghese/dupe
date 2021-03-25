@@ -72,14 +72,22 @@ class Grid: UICollectionView {
     }
     
     func reset() {
-        selectedIndices = []
-        swipedIndices = []
-        
-        flash(for: 0.3)
-        shake(count: 1,
-              for: 0.2)
-        
-        reloadData()
+        weak var weakSelf = self
+
+        DispatchQueue.main.async {
+            weakSelf?.isUserInteractionEnabled = false
+
+            weakSelf?.flash(for: 0.3,
+                  withCompletion: {
+                    weakSelf?.selectedIndices = []
+                    weakSelf?.swipedIndices = []
+                    weakSelf?.reloadData()
+                    weakSelf?.isUserInteractionEnabled = true
+                  })
+            
+            weakSelf?.shake(count: 1,
+                  for: 0.2)
+        }
     }
     
     func startFalling(collisionGrid: Grid,
