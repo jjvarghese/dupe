@@ -33,6 +33,7 @@ class Grid: UICollectionView {
     var gridDelegate: GridDelegate?
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
+    var position: Position?
 
     // MARK: - UIView -
     
@@ -56,8 +57,6 @@ class Grid: UICollectionView {
         let duration = Grid.MATCH_DURATION
         
         flash(for: duration)
-        fadeOut(for: duration,
-                shouldReappear: true)
 
         weak var weakSelf = self
         

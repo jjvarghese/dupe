@@ -15,6 +15,8 @@ extension GameViewController {
         let grid = Grid(frame: CGRect.zero,
                         collectionViewLayout: UICollectionViewFlowLayout.init())
 
+        grid.position = position
+        
         configure(grid: grid)
         
         grids.append(grid)
@@ -43,7 +45,9 @@ extension GameViewController {
             return matchedGrid == onScreenGrid
         }
         
-        spawnGrid(in: .center)
+        if matchedGrid.position == .center {
+            spawnGrid(in: .center)
+        }
         
         let numberOfPointsToGain = getNumberOfPointsToGain(matchedGrid: matchedGrid)
         
