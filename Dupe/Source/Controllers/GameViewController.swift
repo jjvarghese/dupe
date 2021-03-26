@@ -22,7 +22,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton?
     @IBOutlet weak var scoreLabel: UILabel?
     
-
     let soundProvider: SoundProvider = SoundProvider()
     
     private var _currentScore: Int?

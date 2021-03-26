@@ -31,8 +31,10 @@ extension GameViewController {
         }
                         
         if let bigGrid = bigGrid {
+            let threshold = position == .center ? 0.0 : 0.05
+            
             grid.startFalling(collisionGrid: bigGrid,
-                                    withTempo: tempo)
+                                    withTempo: tempo + threshold)
         }
     }
     
@@ -56,7 +58,7 @@ extension GameViewController {
         currentScore += numberOfPointsToGain
         
         if tempo <= GameViewController.THRESHOLD_TEMPO_FOR_EXTRA_SPAWN {
-            let randomNumber = Int.random(in: 0..<9)
+            let randomNumber = Int.random(in: 0..<5)
             if randomNumber == 0 {
                 Timer.scheduledTimer(timeInterval: 1.2,
                                      target: self,
@@ -96,13 +98,33 @@ extension GameViewController {
     func startNewRound() {
         tempo = GameViewController.STARTING_TEMPO
         startButton?.alpha = 1.0
+        bigGrid?.reset()
     }
     
     // MARK: - Private -
     
     @objc private func spawnSideGrid() {
-        let coinFlip = Int.random(in: 0..<2)
+        var hasExistingLeftGrid = false
+        var hasExistingRightGrid = false
+        
+        for grid in grids {
+            if grid.position == .left {
+                hasExistingLeftGrid = true
+            } else if grid.position == .right {
+                hasExistingRightGrid = true
+            }
+        }
+        
+        if hasExistingRightGrid && hasExistingLeftGrid {
+            return
+        } else if hasExistingRightGrid {
+            spawnGrid(in: .left)
+        } else if hasExistingLeftGrid {
+            spawnGrid(in: .right)
+        } else {
+            let coinFlip = Int.random(in: 0..<2)
 
-        spawnGrid(in: coinFlip == 0 ? .left : .right)
+            spawnGrid(in: coinFlip == 0 ? .left : .right)
+        }
     }
 }
