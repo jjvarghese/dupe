@@ -54,16 +54,19 @@ class Grid: UICollectionView {
     }
 
     func randomise() {
-        let duration = Grid.MATCH_DURATION
-        
-        flash(for: duration)
-
         weak var weakSelf = self
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-            guard let strongSelf = weakSelf else { return }
+        DispatchQueue.main.async {
+            let duration = Grid.MATCH_DURATION
             
-            strongSelf.randomiseActiveCells()
+            weakSelf?.flash(for: duration - 0.1)
+            weakSelf?.shake(count: 1, for: 0.1)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+                guard let strongSelf = weakSelf else { return }
+                
+                strongSelf.randomiseActiveCells()
+            }
         }
     }
     

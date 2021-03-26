@@ -62,9 +62,15 @@ extension Grid {
     // MARK: - Animation Helpers -
     
     private func flicker(on: Bool) {
-        for cell in visibleCells {
-            if let gridCell = cell as? GridCell {
-                gridCell.update(asSelected: on)
+        weak var weakSelf = self
+        
+        DispatchQueue.main.async {
+            guard let strongSelf = weakSelf else { return }
+            
+            for cell in strongSelf.visibleCells {
+                if let gridCell = cell as? GridCell {
+                    gridCell.update(asSelected: on)
+                }
             }
         }
     }

@@ -18,17 +18,19 @@ extension GridCell {
         
         weak var weakSelf = self
         
-        adjustSquareSize(amount: -5)
-        
-        UIView.animate(withDuration: pulseDuration,
-                       animations: {
+        DispatchQueue.main.async {
+            weakSelf?.adjustSquareSize(amount: -5)
+            
+            UIView.animate(withDuration: pulseDuration,
+                           animations: {
+                            weakSelf?.layoutIfNeeded()
+            }) { (finished) in
+                if finished {
+                    weakSelf?.adjustSquareSize(amount: 0)
+                    
+                    UIView.animate(withDuration: pulseDuration) {
                         weakSelf?.layoutIfNeeded()
-        }) { (finished) in
-            if finished {
-                weakSelf?.adjustSquareSize(amount: 0)
-                
-                UIView.animate(withDuration: pulseDuration) {
-                    weakSelf?.layoutIfNeeded()
+                    }
                 }
             }
         }
@@ -37,10 +39,14 @@ extension GridCell {
     // MARK: - Animation helper -
     
     private func adjustSquareSize(amount: CGFloat) {
-        squareTopConstraint?.constant = amount
-        squareBottomConstraint?.constant = amount
-        squareLeadingConstraint?.constant = amount
-        squareTrailingConstraint?.constant = amount
+        weak var weakSelf = self
+
+        DispatchQueue.main.async {
+            weakSelf?.squareTopConstraint?.constant = amount
+            weakSelf?.squareBottomConstraint?.constant = amount
+            weakSelf?.squareLeadingConstraint?.constant = amount
+            weakSelf?.squareTrailingConstraint?.constant = amount
+        }
     }
     
 }
