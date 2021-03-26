@@ -42,6 +42,11 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
+        
         configureSubviews()
         configureNavigationBar()
         startNewRound()
@@ -65,7 +70,7 @@ class GameViewController: UIViewController {
         
         startButton.fadeOut(for: 0.4,
                              completion: {
-                                weakSelf?.spawnFloatingFadingLabels(withTexts: ["READY", "SET", "DUPE!"], withCompletion: {
+                                weakSelf?.spawnFloatingFadingLabels(withTexts: ["Ready...", "Set...", "DUPE!"], withCompletion: {
                                     weakSelf?.spawnGrid(in: .center)
                                 })
         })
@@ -91,10 +96,14 @@ class GameViewController: UIViewController {
     
     private func configureStartButton() {
         startButton?.backgroundColor = UIColor.base
+        startButton?.titleLabel?.font = UIFont(name: "8-bit",
+                                               size: 37)
     }
     
     private func configureScoreLabel() {
         scoreLabel?.isHidden = true
+        scoreLabel?.font = UIFont(name: "8-bit",
+                            size: 20)
     }
     
     func configure(grid: Grid?) {

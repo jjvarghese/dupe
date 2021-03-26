@@ -41,7 +41,7 @@ extension GameViewController {
         label.center = view.center
         label.text = text
         label.textColor = .white
-        label.font = UIFont(name: "AmericanTypewriter",
+        label.font = UIFont(name: "8-bit",
                             size: 37)
         label.textAlignment = .center
         
