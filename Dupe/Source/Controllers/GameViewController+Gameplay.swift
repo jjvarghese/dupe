@@ -58,9 +58,11 @@ extension GameViewController {
         if tempo <= GameViewController.THRESHOLD_TEMPO_FOR_EXTRA_SPAWN {
             let randomNumber = Int.random(in: 0..<9)
             if randomNumber == 0 {
-                spawnGrid(in: .left)
-            } else if randomNumber == 1 {
-                spawnGrid(in: .right)
+                Timer.scheduledTimer(timeInterval: 1.2,
+                                     target: self,
+                                     selector: #selector(spawnSideGrid),
+                                     userInfo: nil,
+                                     repeats: false)
             }
         }
         
@@ -92,7 +94,15 @@ extension GameViewController {
     }
     
     func startNewRound() {
+        tempo = GameViewController.STARTING_TEMPO
         startButton?.alpha = 1.0
     }
     
+    // MARK: - Private -
+    
+    @objc private func spawnSideGrid() {
+        let coinFlip = Int.random(in: 0..<2)
+
+        spawnGrid(in: coinFlip == 0 ? .left : .right)
+    }
 }
