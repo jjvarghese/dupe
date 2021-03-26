@@ -10,15 +10,18 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-//    var session: GameSession = GameSession()
-        
+    static let STARTING_TEMPO: TimeInterval = 0.2
+    static let MAXIMUM_TEMPO: TimeInterval = 0.02
+    static let INCREMENT_TEMPO: TimeInterval = 0.01
+    static let THRESHOLD_TEMPO_FOR_EXTRA_SPAWN: TimeInterval = 0.1
+
+    var tempo: TimeInterval = STARTING_TEMPO
     var grids: [Grid] = []
 
     @IBOutlet weak var bigGrid: Grid?
     @IBOutlet weak var startButton: UIButton?
     @IBOutlet weak var scoreLabel: UILabel?
     
-    static let THRESHOLD_TEMPO_FOR_EXTRA_SPAWN: TimeInterval = 0.1
 
     let soundProvider: SoundProvider = SoundProvider()
     
@@ -41,7 +44,6 @@ class GameViewController: UIViewController {
         
         configureSubviews()
         configureNavigationBar()
-        configureSound()
         startNewRound()
     }
     
@@ -64,7 +66,7 @@ class GameViewController: UIViewController {
         startButton.fadeOut(for: 0.4,
                              completion: {
                                 weakSelf?.spawnFloatingFadingLabels(withTexts: ["READY", "SET", "DUPE!"], withCompletion: {
-                                                                        weakSelf?.spawnGrid()
+                                    weakSelf?.spawnGrid(in: .center)
                                 })
         })
         
@@ -103,10 +105,6 @@ class GameViewController: UIViewController {
         grid?.dataSource = self
         grid?.backgroundColor = .clear
         grid?.gridDelegate = self 
-    }
-    
-    private func configureSound() {
-        
     }
 
 }

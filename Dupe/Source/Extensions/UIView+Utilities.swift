@@ -11,18 +11,15 @@ import UIKit
 
 extension UIView {
     
-    func addSubviewWithConstraints(subview: UIView) {
+    func addSubviewWithConstraints(subview: UIView,
+                                   atPosition position: Position) {
         addSubview(subview)
         
         subview.translatesAutoresizingMaskIntoConstraints = false
         
-        let horizontalConstraint = NSLayoutConstraint(item: subview,
-                                                      attribute: NSLayoutConstraint.Attribute.centerX,
-                                                      relatedBy: NSLayoutConstraint.Relation.equal,
-                                                      toItem: self,
-                                                      attribute: NSLayoutConstraint.Attribute.centerX,
-                                                      multiplier: 1,
-                                                      constant: 0)
+        let xConstraint: NSLayoutConstraint = NSLayoutConstraint.xLayoutConstraint(forSubview: subview,
+                                                                                   forSuperview: self,
+                                                                                   forPosition: position)
         let topConstraint = NSLayoutConstraint(item: subview,
                                                attribute: NSLayoutConstraint.Attribute.top,
                                                relatedBy: NSLayoutConstraint.Relation.equal,
@@ -36,16 +33,16 @@ extension UIView {
                                                  toItem: nil,
                                                  attribute: NSLayoutConstraint.Attribute.notAnAttribute,
                                                  multiplier: 1,
-                                                 constant: 100)
+                                                 constant: 60)
         let heightConstraint = NSLayoutConstraint(item: subview,
                                                   attribute: NSLayoutConstraint.Attribute.height,
                                                   relatedBy: NSLayoutConstraint.Relation.equal,
                                                   toItem: nil,
                                                   attribute: NSLayoutConstraint.Attribute.notAnAttribute,
                                                   multiplier: 1,
-                                                  constant: 100)
+                                                  constant: 60)
         
-        addConstraints([horizontalConstraint,
+        addConstraints([xConstraint,
                         topConstraint,
                         widthConstraint,
                         heightConstraint])

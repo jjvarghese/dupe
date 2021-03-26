@@ -11,7 +11,7 @@ import UIKit
 
 extension GameViewController {
     
-    func spawnGrid() {
+    func spawnGrid(in position: Position) {
         let grid = Grid(frame: CGRect.zero,
                         collectionViewLayout: UICollectionViewFlowLayout.init())
 
@@ -19,18 +19,15 @@ extension GameViewController {
         
         grids.append(grid)
         
-        view.addSubviewWithConstraints(subview: grid)
+        view.addSubviewWithConstraints(subview: grid,
+                                       atPosition: position)
         
         grid.randomise()
-        
-        var tempo = grid.currentTempo
-        
-        if grid.currentTempo > Grid.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
-            tempo -= Grid.INCREMENT_TEMPO
-        }
-        
-        grid.currentTempo = tempo
                 
+        if tempo > GameViewController.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
+            tempo -= GameViewController.INCREMENT_TEMPO
+        }
+                        
         if let bigGrid = bigGrid {
             grid.startFalling(collisionGrid: bigGrid,
                                     withTempo: tempo)
@@ -46,7 +43,7 @@ extension GameViewController {
             return matchedGrid == onScreenGrid
         }
         
-        spawnGrid()
+        spawnGrid(in: .center)
         
         let numberOfPointsToGain = getNumberOfPointsToGain(matchedGrid: matchedGrid)
         
@@ -54,9 +51,12 @@ extension GameViewController {
         
         currentScore += numberOfPointsToGain
         
-        if matchedGrid.currentTempo <= GameViewController.THRESHOLD_TEMPO_FOR_EXTRA_SPAWN  {
-            if Int.random(in: 0..<9) == 0 {
-                // Spawn another grid
+        if tempo <= GameViewController.THRESHOLD_TEMPO_FOR_EXTRA_SPAWN {
+            let randomNumber = Int.random(in: 0..<9)
+            if randomNumber == 0 {
+                spawnGrid(in: .left)
+            } else if randomNumber == 1 {
+                spawnGrid(in: .right)
             }
         }
         
@@ -65,7 +65,7 @@ extension GameViewController {
     
     func getNumberOfPointsToGain(matchedGrid: Grid) -> Int {
         let baseline = 100
-        let amountToSubtract = matchedGrid.currentTempo * 100
+        let amountToSubtract = tempo * 100
         
         return (baseline - Int(amountToSubtract))
     }

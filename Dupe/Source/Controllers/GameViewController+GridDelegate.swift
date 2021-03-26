@@ -16,8 +16,7 @@ extension GameViewController: GridDelegate {
     }
     
     func grid(_ grid: Grid,
-              didEndPanningAt indexPath: IndexPath) {
-    }
+              didEndPanningAt indexPath: IndexPath) {}
     
     func grid(_ grid: Grid,
               didSelect indexPath: IndexPath) {
@@ -32,9 +31,7 @@ extension GameViewController: GridDelegate {
     
     private func checkForMatch() {
         guard let bigGridIndices = bigGrid?.selectedIndices.sorted() else { return }
-                
-        NSLog("** BIG GRID INDICES: %@", bigGridIndices)
-        
+                        
         weak var weakSelf = self
 
         DispatchQueue.main.async {

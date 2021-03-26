@@ -27,15 +27,12 @@ class Grid: UICollectionView {
 
     private static let MATCH_DURATION: TimeInterval = 0.3
     static let START_POSITION: CGFloat = 14
-    static let STARTING_TEMPO: TimeInterval = 0.2
-    static let MAXIMUM_TEMPO: TimeInterval = 0.02
-    static let INCREMENT_TEMPO: TimeInterval = 0.01
+
     
     var descentInProgress: Bool = false
     var gridDelegate: GridDelegate?
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
-    var currentTempo: TimeInterval = STARTING_TEMPO
 
     // MARK: - UIView -
     
@@ -99,7 +96,8 @@ class Grid: UICollectionView {
         updateConstraints()
         
         if !descentInProgress {
-            descend(collisionGrid: collisionGrid)
+            descend(collisionGrid: collisionGrid,
+                    withTempo: tempo)
         }
     }
 

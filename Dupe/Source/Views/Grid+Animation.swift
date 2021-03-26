@@ -26,7 +26,8 @@ extension Grid {
         }
     }
     
-    func descend(collisionGrid: Grid) {
+    func descend(collisionGrid: Grid,
+                 withTempo tempo: TimeInterval) {
         let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
         
         guard let topLayoutConstraint = topConstraint else { return }
@@ -41,15 +42,14 @@ extension Grid {
             
             weak var weakSelf = self
                         
-            UIView.animate(withDuration: currentTempo,
+            UIView.animate(withDuration: tempo,
                            animations: {
                             weakSelf?.updateConstraints()
             }) { (finished) in
                 if finished {
-                    guard let strongSelf = weakSelf else { return }
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + strongSelf.currentTempo) {
-                        weakSelf?.descend(collisionGrid: collisionGrid)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + tempo) {
+                        weakSelf?.descend(collisionGrid: collisionGrid,
+                                          withTempo: tempo)
                     }
                 }
             }
