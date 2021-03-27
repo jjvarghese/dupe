@@ -67,6 +67,12 @@
 		A4DBACD6260F63E0006B42B7 /* GameViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBACD5260F63E0006B42B7 /* GameViewController+UITableViewDataSource.swift */; };
 		A4DBACDB260F647F006B42B7 /* Menu+MenuCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBACDA260F647F006B42B7 /* Menu+MenuCellDelegate.swift */; };
 		A4DBACE3260F9778006B42B7 /* GameViewController+MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBACE2260F9778006B42B7 /* GameViewController+MenuDelegate.swift */; };
+		A4DBACE8260FD860006B42B7 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBACE7260FD860006B42B7 /* AboutView.swift */; };
+		A4DBACED260FD871006B42B7 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DBACEC260FD871006B42B7 /* AboutView.xib */; };
+		A4DBACF3260FDAEA006B42B7 /* UIButton+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBACF2260FDAEA006B42B7 /* UIButton+Theme.swift */; };
+		A4DBACF8260FDB6B006B42B7 /* UILabel+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBACF7260FDB6B006B42B7 /* UILabel+Theme.swift */; };
+		A4DBACFD260FDC20006B42B7 /* UITextView+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBACFC260FDC20006B42B7 /* UITextView+Theme.swift */; };
+		A4DBAD02260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBAD01260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +159,12 @@
 		A4DBACD5260F63E0006B42B7 /* GameViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		A4DBACDA260F647F006B42B7 /* Menu+MenuCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menu+MenuCellDelegate.swift"; sourceTree = "<group>"; };
 		A4DBACE2260F9778006B42B7 /* GameViewController+MenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+MenuDelegate.swift"; sourceTree = "<group>"; };
+		A4DBACE7260FD860006B42B7 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		A4DBACEC260FD871006B42B7 /* AboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
+		A4DBACF2260FDAEA006B42B7 /* UIButton+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Theme.swift"; sourceTree = "<group>"; };
+		A4DBACF7260FDB6B006B42B7 /* UILabel+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Theme.swift"; sourceTree = "<group>"; };
+		A4DBACFC260FDC20006B42B7 /* UITextView+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Theme.swift"; sourceTree = "<group>"; };
+		A4DBAD01260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+AboutViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +264,7 @@
 				A4DBACD5260F63E0006B42B7 /* GameViewController+UITableViewDataSource.swift */,
 				A4DBACD0260F63D2006B42B7 /* GameViewController+UITableViewDelegate.swift */,
 				A4DBACE2260F9778006B42B7 /* GameViewController+MenuDelegate.swift */,
+				A4DBAD01260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -265,6 +278,8 @@
 				A49B97542475BC9B007BF29A /* Grid.swift */,
 				A4DBACB7260F5D41006B42B7 /* Menu.swift */,
 				A4DBACDA260F647F006B42B7 /* Menu+MenuCellDelegate.swift */,
+				A4DBACE7260FD860006B42B7 /* AboutView.swift */,
+				A4DBACEC260FD871006B42B7 /* AboutView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +301,7 @@
 		A49B97562475BF26007BF29A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A4DBACF1260FDAD6006B42B7 /* Theme */,
 				A49B97572475BF5D007BF29A /* [Int]+Operations.swift */,
 				A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */,
 				A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */,
@@ -378,6 +394,16 @@
 				A4DBAC9F260E8441006B42B7 /* 8BitOutlined-oMV4.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A4DBACF1260FDAD6006B42B7 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A4DBACF2260FDAEA006B42B7 /* UIButton+Theme.swift */,
+				A4DBACF7260FDB6B006B42B7 /* UILabel+Theme.swift */,
+				A4DBACFC260FDC20006B42B7 /* UITextView+Theme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,6 +520,7 @@
 				A4BC1CC626054CA5009A2AA0 /* 6.mp3 in Resources */,
 				A49B975324747B7B007BF29A /* GridCell.xib in Resources */,
 				A4BC1D0226069118009A2AA0 /* touch.mp3 in Resources */,
+				A4DBACED260FD871006B42B7 /* AboutView.xib in Resources */,
 				A49B971F24745570007BF29A /* LaunchScreen.storyboard in Resources */,
 				A4BC1CC226054CA5009A2AA0 /* 3.wav in Resources */,
 				A4BC1CCA26054CA5009A2AA0 /* 1.wav in Resources */,
@@ -533,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4BC1CEF26066564009A2AA0 /* SFX.swift in Sources */,
+				A4DBACFD260FDC20006B42B7 /* UITextView+Theme.swift in Sources */,
 				A4DBACD1260F63D2006B42B7 /* GameViewController+UITableViewDelegate.swift in Sources */,
 				A49B97552475BC9B007BF29A /* Grid.swift in Sources */,
 				A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */,
@@ -556,11 +584,15 @@
 				A49B9760247AD38D007BF29A /* Int+Operations.swift in Sources */,
 				A4DBAC94260D4257006B42B7 /* Position.swift in Sources */,
 				A49B974624745BA1007BF29A /* GameViewController.swift in Sources */,
+				A4DBACF8260FDB6B006B42B7 /* UILabel+Theme.swift in Sources */,
 				A4DBACDB260F647F006B42B7 /* Menu+MenuCellDelegate.swift in Sources */,
 				A4364ADC2480529200D7AF78 /* UIView+Animation.swift in Sources */,
 				A4DBACD6260F63E0006B42B7 /* GameViewController+UITableViewDataSource.swift in Sources */,
+				A4DBACF3260FDAEA006B42B7 /* UIButton+Theme.swift in Sources */,
 				A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */,
 				A4BC1CFC26066A24009A2AA0 /* Bundle+URLRetrieval.swift in Sources */,
+				A4DBAD02260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift in Sources */,
+				A4DBACE8260FD860006B42B7 /* AboutView.swift in Sources */,
 				A49B975C2475C467007BF29A /* GameViewController+GridDelegate.swift in Sources */,
 				A4DBACE3260F9778006B42B7 /* GameViewController+MenuDelegate.swift in Sources */,
 				A49B975A2475C3EB007BF29A /* Grid+UIGestureRecognizerDelegate.swift in Sources */,

@@ -55,10 +55,7 @@ class MenuCell: UITableViewCell {
     }
     
     private func configureButton() {
-        button?.setTitle("", for: .normal)
-        button?.backgroundColor = .clear
-        button?.titleLabel?.font = UIFont(name: "8-bit",
-                                          size: 37)
+        button?.theme()
     }
     
 }

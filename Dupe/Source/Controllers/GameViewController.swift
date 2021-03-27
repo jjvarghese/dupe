@@ -41,13 +41,9 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font names: \(names)")
-        }
-        
         configureSubviews()
         configureNavigationBar()
+        
         startNewRound()
     }
     
@@ -73,8 +69,7 @@ class GameViewController: UIViewController {
     
     private func configureScoreLabel() {
         scoreLabel?.isHidden = true
-        scoreLabel?.font = UIFont(name: "8-bit",
-                            size: 20)
+        scoreLabel?.theme(withSize: 20)
     }
     
     private func configureMenu() {

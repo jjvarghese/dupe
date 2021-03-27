@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension GameViewController: MenuDelegate {
     
@@ -40,7 +41,24 @@ extension GameViewController: MenuDelegate {
     }
     
     private func handleAboutPressed() {
+        let nib = UINib(nibName: AboutView.NibName,
+                        bundle: nil)
+        guard let aboutView = nib.instantiate(withOwner: self, options: nil).first as? AboutView else { return }
         
+        aboutView.delegate = self
+        
+        bigGrid?.alpha = 0
+        
+        weak var weakSelf = self
+        
+        menu?.fadeOut(for: 0.4, completion: {
+            guard let strongSelf = weakSelf else { return }
+            
+            strongSelf.view.addSubviewWithConstraints(subview: aboutView,
+                                                     atPosition: .center,
+                                                     withWidth: strongSelf.view.frame.size.width,
+                                                     withHeight: 200)
+        })
     }
     
     

@@ -12,7 +12,9 @@ import UIKit
 extension UIView {
     
     func addSubviewWithConstraints(subview: UIView,
-                                   atPosition position: Position) {
+                                   atPosition position: Position,
+                                   withWidth width: CGFloat = 60,
+                                   withHeight height: CGFloat = 60) {
         addSubview(subview)
         
         subview.translatesAutoresizingMaskIntoConstraints = false
@@ -33,14 +35,14 @@ extension UIView {
                                                  toItem: nil,
                                                  attribute: NSLayoutConstraint.Attribute.notAnAttribute,
                                                  multiplier: 1,
-                                                 constant: 60)
+                                                 constant: width)
         let heightConstraint = NSLayoutConstraint(item: subview,
                                                   attribute: NSLayoutConstraint.Attribute.height,
                                                   relatedBy: NSLayoutConstraint.Relation.equal,
                                                   toItem: nil,
                                                   attribute: NSLayoutConstraint.Attribute.notAnAttribute,
                                                   multiplier: 1,
-                                                  constant: 60)
+                                                  constant: height)
         
         addConstraints([xConstraint,
                         topConstraint,

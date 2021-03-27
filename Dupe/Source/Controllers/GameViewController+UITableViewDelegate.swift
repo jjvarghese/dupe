@@ -11,4 +11,11 @@ import UIKit
 
 extension GameViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let numberOfElements: CGFloat = CGFloat(tableView.numberOfRows(inSection: 0))
+        
+        return tableView.frame.size.height / numberOfElements
+    }
+    
 }

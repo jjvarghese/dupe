@@ -40,10 +40,7 @@ extension GameViewController {
                                                     height: 50))
         label.center = view.center
         label.text = text
-        label.textColor = .white
-        label.font = UIFont(name: "8-bit",
-                            size: 37)
-        label.textAlignment = .center
+        label.theme()
         
         view.addSubview(label)
         
