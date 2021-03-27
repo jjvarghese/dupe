@@ -27,7 +27,6 @@ class Grid: UICollectionView {
 
     private static let MATCH_DURATION: TimeInterval = 0.3
     static let START_POSITION: CGFloat = 14
-
     
     var descentInProgress: Bool = false
     var gridDelegate: GridDelegate?
@@ -35,12 +34,28 @@ class Grid: UICollectionView {
     var swipedIndices: [Int] = []
     var position: Position?
 
+    // MARK: - NSObject -
+    
+    override init(frame: CGRect,
+                  collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: frame,
+                   collectionViewLayout: layout)
+        
+        configure()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        configure()
+    }
+    
     // MARK: - UIView -
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        configureGestures()
+        configure()
     }
     
     // MARK: - Updating -
@@ -103,6 +118,22 @@ class Grid: UICollectionView {
         }
     }
 
+    // MARK: - Configuration -
+    
+    private func configure() {
+        backgroundColor = .clear
+        
+        configureRegistration()
+        configureGestures()
+    }
+    
+    private func configureRegistration() {
+        let nib = UINib.init(nibName: GridCell.NibName,
+                             bundle: nil)
+        
+        register(nib,
+                 forCellWithReuseIdentifier: GridCell.CellIdentifier)
+    }
     
     // MARK: - Private -
     

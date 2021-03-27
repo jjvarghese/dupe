@@ -97,8 +97,7 @@ extension GameViewController {
     
     func startNewRound() {
         tempo = GameViewController.STARTING_TEMPO
-        startButton?.alpha = 1.0
-        bigGrid?.reset()
+        menu?.alpha = 1.0
     }
     
     // MARK: - Private -

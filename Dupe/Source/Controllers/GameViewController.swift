@@ -19,8 +19,8 @@ class GameViewController: UIViewController {
     var grids: [Grid] = []
 
     @IBOutlet weak var bigGrid: Grid?
-    @IBOutlet weak var startButton: UIButton?
     @IBOutlet weak var scoreLabel: UILabel?
+    @IBOutlet weak var menu: Menu?
     
     let soundProvider: SoundProvider = SoundProvider()
     
@@ -55,33 +55,11 @@ class GameViewController: UIViewController {
         return true
     }
     
-    // MARK: - Actions -
-    
-    @IBAction private func startPressed(_ sender: Any) {
-        soundProvider.playRandomTune()
-        soundProvider.play(sfx: .start)
-        scoreLabel?.isHidden = true
-        currentScore = 0
-        
-        guard let startButton = startButton else { return }
-        
-        weak var weakSelf = self
-        
-        startButton.fadeOut(for: 0.4,
-                             completion: {
-                                weakSelf?.spawnFloatingFadingLabels(withTexts: ["Ready...", "Set...", "DUPE!"], withCompletion: {
-                                    weakSelf?.spawnGrid(in: .center)
-                                })
-        })
-        
-        
-    }
-    
     // MARK: - Configuration -
     
     private func configureSubviews() {
         configureCollectionViews()
-        configureStartButton()
+        configureMenu()
         configureScoreLabel()
     }
     
@@ -93,25 +71,21 @@ class GameViewController: UIViewController {
         configure(grid: bigGrid)
     }
     
-    private func configureStartButton() {
-        startButton?.backgroundColor = UIColor.base
-        startButton?.titleLabel?.font = UIFont(name: "8-bit",
-                                               size: 37)
-    }
-    
     private func configureScoreLabel() {
         scoreLabel?.isHidden = true
         scoreLabel?.font = UIFont(name: "8-bit",
                             size: 20)
     }
     
+    private func configureMenu() {
+        menu?.delegate = self
+        menu?.dataSource = self
+        menu?.menuDelegate = self
+    }
+    
     func configure(grid: Grid?) {
-        grid?.register(UINib.init(nibName: GridCell.NibName,
-                                  bundle: nil),
-                       forCellWithReuseIdentifier: GridCell.CellIdentifier)
         grid?.delegate = self
         grid?.dataSource = self
-        grid?.backgroundColor = .clear
         grid?.gridDelegate = self 
     }
 
