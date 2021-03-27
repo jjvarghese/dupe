@@ -29,15 +29,18 @@ extension GameViewController: MenuDelegate {
         soundProvider.play(sfx: .start)
         scoreLabel?.isHidden = true
         currentScore = 0
-                
+        
         weak var weakSelf = self
         
         menu.fadeOut(for: 0.4,
-                             completion: {
-                                weakSelf?.spawnFloatingFadingLabels(withTexts: ["Ready...", "Set...", "DUPE!"], withCompletion: {
-                                    weakSelf?.spawnGrid(in: .center)
-                                })
-        })
+                     completion: {
+                        guard let strongSelf = weakSelf else { return }
+                        
+                        UILabel.spawnFloatingFadingLabels(toSuperview: strongSelf.view,
+                                                          withTexts: ["Ready...", "Set...", "DUPE!"]) {
+                            weakSelf?.spawnGrid(in: .center)
+                        }
+                     })
     }
     
     private func handleAboutPressed() {

@@ -53,7 +53,8 @@ extension GameViewController {
         
         let numberOfPointsToGain = getNumberOfPointsToGain(matchedGrid: matchedGrid)
         
-        spawnFloatingFadingLabel(withText: String(format: "%d", numberOfPointsToGain))
+        UILabel.spawnFloatingFadingLabel(toSuperview: view,
+                                         withText: String(format: "%d", numberOfPointsToGain))
         
         currentScore += numberOfPointsToGain
         
@@ -90,7 +91,8 @@ extension GameViewController {
             grid.removeFromSuperview()
         }
         
-        spawnFloatingFadingLabel(withText: "BOOM!") {
+        UILabel.spawnFloatingFadingLabel(toSuperview: view,
+                                         withText: "BOOM!") {
             weakSelf?.startNewRound()
         }
     }
