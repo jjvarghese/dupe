@@ -46,6 +46,8 @@ extension Grid: UIGestureRecognizerDelegate {
     // MARK: - Configuration -
     
     func configureGestures() {
+        removeAllExistingGestureRecognizers()
+        
         let swipeGesture: UIPanGestureRecognizer = UIPanGestureRecognizer.init(target: self,
                                                                                action: #selector(didPan(panGesture:)))
         swipeGesture.delegate = self

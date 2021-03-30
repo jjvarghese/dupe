@@ -50,4 +50,12 @@ extension UIView {
                         heightConstraint])
     }
     
+    func removeAllExistingGestureRecognizers() {
+        if let gestureRecognizers = gestureRecognizers {
+            for existingRecognizer in gestureRecognizers {
+                removeGestureRecognizer(existingRecognizer)
+            }
+        }
+    }
+    
 }

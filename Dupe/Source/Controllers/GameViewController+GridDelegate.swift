@@ -31,7 +31,7 @@ extension GameViewController: GridDelegate {
     
     private func checkForMatch() {
         guard let bigGridIndices = bigGrid?.selectedIndices.sorted() else { return }
-                        
+                     
         weak var weakSelf = self
 
         DispatchQueue.main.async {
