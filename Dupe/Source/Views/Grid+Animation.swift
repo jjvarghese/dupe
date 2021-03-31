@@ -70,7 +70,8 @@ extension Grid {
             for cell in strongSelf.visibleCells {
                 if let gridCell = cell as? GridCell {
                     gridCell.update(asSelected: on,
-                                    corner: nil)
+                                    corner: nil,
+                                    withBorderWidth: weakSelf?.borderWidth ?? 3.0)
                 }
             }
         }

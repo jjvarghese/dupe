@@ -67,6 +67,8 @@ class GameViewController: UIViewController {
     
     private func configureCollectionViews() {
         configure(grid: bigGrid)
+        
+        bigGrid?.borderWidth = 3.0
     }
     
     private func configureScoreLabel() {
@@ -83,7 +85,7 @@ class GameViewController: UIViewController {
     func configure(grid: Grid?) {
         grid?.delegate = self
         grid?.dataSource = self
-        grid?.gridDelegate = self 
+        grid?.gridDelegate = self
     }
 
 }

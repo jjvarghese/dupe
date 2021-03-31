@@ -35,9 +35,6 @@ class GridCell: UICollectionViewCell {
         isUserInteractionEnabled = true
         
         square?.backgroundColor = UIColor.base
-
-        square?.layer.borderWidth = Grid.BORDER_WIDTH
-        square?.layer.borderColor = Grid.BORDER_COLOR.cgColor
         
         configureSubviews()
     }
@@ -45,12 +42,17 @@ class GridCell: UICollectionViewCell {
     // MARK: - Updating -
     
     func update(asSelected selected: Bool,
-                corner: Corner?) {
+                corner: Corner?,
+                withBorderWidth borderWidth: CGFloat = 3.0) {
         square?.backgroundColor = selected ? UIColor.active : UIColor.base
         
         if selected && shouldPulse {
             pulse()
         }
+        
+        square?.layer.borderWidth = borderWidth
+        square?.layer.borderColor = Grid.BORDER_COLOR.cgColor
+
         
 //        styleAsCornerSquare(corner: corner)
     }

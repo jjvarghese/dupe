@@ -28,13 +28,13 @@ class Grid: UICollectionView {
     private static let MATCH_DURATION: TimeInterval = 0.3
     static let START_POSITION: CGFloat = 14
     static let BORDER_COLOR = UIColor.black
-    static let BORDER_WIDTH: CGFloat = 3.0
     
     var descentInProgress: Bool = false
     var gridDelegate: GridDelegate?
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
     var position: Position?
+    var borderWidth: CGFloat = 1.0
 
     // MARK: - NSObject -
     
@@ -119,14 +119,18 @@ class Grid: UICollectionView {
                     withTempo: tempo)
         }
     }
+    
+    override func reloadData() {
+        super.reloadData()
+        
+        layer.borderWidth = borderWidth * 2
+        layer.borderColor = Grid.BORDER_COLOR.cgColor
+    }
 
     // MARK: - Configuration -
     
     private func configure() {
         backgroundColor = .clear
-        
-        layer.borderWidth = Grid.BORDER_WIDTH * 2
-        layer.borderColor = Grid.BORDER_COLOR.cgColor
         
         configureRegistration()
         configureGestures()
