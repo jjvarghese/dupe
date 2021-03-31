@@ -1,4 +1,5 @@
 import UIKit
+import Foundation
 
 extension GameViewController: UICollectionViewDataSource {
     
@@ -14,9 +15,12 @@ extension GameViewController: UICollectionViewDataSource {
             let gridCollectionView = collectionView as? Grid else {            return UICollectionViewCell()
         }
         
+        NSLog("indexPath.section: %d, row: %d", indexPath.section, indexPath.row)
+        
         let isSelected = gridCollectionView.selectedIndices.contains(indexPath.item)
                    
-        gridCell.update(asSelected: isSelected)
+        gridCell.update(asSelected: isSelected,
+                        corner: Corner.getCorner(forIndexPath: indexPath))
         gridCell.shouldPulse = collectionView == bigGrid
         
         if isSelected {

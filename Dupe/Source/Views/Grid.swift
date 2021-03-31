@@ -27,6 +27,8 @@ class Grid: UICollectionView {
 
     private static let MATCH_DURATION: TimeInterval = 0.3
     static let START_POSITION: CGFloat = 14
+    static let BORDER_COLOR = UIColor.black
+    static let BORDER_WIDTH: CGFloat = 3.0
     
     var descentInProgress: Bool = false
     var gridDelegate: GridDelegate?
@@ -122,6 +124,9 @@ class Grid: UICollectionView {
     
     private func configure() {
         backgroundColor = .clear
+        
+        layer.borderWidth = Grid.BORDER_WIDTH * 2
+        layer.borderColor = Grid.BORDER_COLOR.cgColor
         
         configureRegistration()
         configureGestures()

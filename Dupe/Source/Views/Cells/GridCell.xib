@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,29 +20,30 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCi-yb-kiq">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOH-S4-I87" userLabel="tlCorner">
-                        <rect key="frame" x="0.0" y="0.0" width="5" height="5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="8.5" height="8.5"/>
                         <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="bOH-S4-I87" secondAttribute="height" multiplier="1:1" id="85A-8a-9xJ"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkt-g1-h8b" userLabel="brCorner">
-                        <rect key="frame" x="45" y="45" width="5" height="5"/>
+                        <rect key="frame" x="41.5" y="41.5" width="8.5" height="8.5"/>
                         <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKK-dA-0x6" userLabel="blCorner">
-                        <rect key="frame" x="0.0" y="45" width="5" height="5"/>
+                        <rect key="frame" x="0.0" y="41.5" width="8.5" height="8.5"/>
                         <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5H-cE-VfS" userLabel="trCorner">
-                        <rect key="frame" x="45" y="0.0" width="5" height="5"/>
+                        <rect key="frame" x="41.5" y="0.0" width="8.5" height="8.5"/>
                         <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="rCi-yb-kiq" secondAttribute="bottom" id="0cd-xZ-8Tl"/>
@@ -61,17 +64,25 @@
                 <constraint firstItem="Gkt-g1-h8b" firstAttribute="height" secondItem="bOH-S4-I87" secondAttribute="height" id="mw6-mR-6uc"/>
                 <constraint firstItem="S5H-cE-VfS" firstAttribute="width" secondItem="bOH-S4-I87" secondAttribute="width" id="oAp-o0-5ZM"/>
                 <constraint firstItem="bOH-S4-I87" firstAttribute="leading" secondItem="rCi-yb-kiq" secondAttribute="leading" id="uYp-ZU-VJr"/>
-                <constraint firstItem="bOH-S4-I87" firstAttribute="width" secondItem="rCi-yb-kiq" secondAttribute="height" multiplier="1:10" id="w8m-sQ-A2a"/>
+                <constraint firstItem="bOH-S4-I87" firstAttribute="width" secondItem="rCi-yb-kiq" secondAttribute="height" multiplier="1:6" id="w8m-sQ-A2a"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="blCorner" destination="yKK-dA-0x6" id="Jdq-0R-2U7"/>
+                <outlet property="brCorner" destination="Gkt-g1-h8b" id="vsy-AB-e5E"/>
                 <outlet property="square" destination="rCi-yb-kiq" id="qVk-CB-XBI"/>
                 <outlet property="squareBottomConstraint" destination="0cd-xZ-8Tl" id="AoB-Dj-kus"/>
                 <outlet property="squareLeadingConstraint" destination="9yS-l2-4R0" id="dkR-1f-rQi"/>
                 <outlet property="squareTopConstraint" destination="aUL-1m-Bae" id="JW6-ie-n8U"/>
                 <outlet property="squareTrailingConstraint" destination="E2L-Fb-2Q6" id="7KP-tU-8s9"/>
+                <outlet property="tlCorner" destination="bOH-S4-I87" id="U75-Wf-lhH"/>
+                <outlet property="trCorner" destination="S5H-cE-VfS" id="cyy-a2-JaV"/>
             </connections>
-            <point key="canvasLocation" x="139" y="147"/>
+            <point key="canvasLocation" x="137.68115942028987" y="146.65178571428569"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

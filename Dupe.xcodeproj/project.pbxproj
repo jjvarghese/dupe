@@ -73,6 +73,7 @@
 		A4DBACFD260FDC20006B42B7 /* UITextView+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBACFC260FDC20006B42B7 /* UITextView+Theme.swift */; };
 		A4DBAD02260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBAD01260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift */; };
 		A4DBAD07260FE128006B42B7 /* UILabel+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBAD06260FE128006B42B7 /* UILabel+Utilities.swift */; };
+		A4DBAD1B2613C608006B42B7 /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBAD1A2613C608006B42B7 /* Corner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,7 @@
 		A4DBACFC260FDC20006B42B7 /* UITextView+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Theme.swift"; sourceTree = "<group>"; };
 		A4DBAD01260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+AboutViewDelegate.swift"; sourceTree = "<group>"; };
 		A4DBAD06260FE128006B42B7 /* UILabel+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utilities.swift"; sourceTree = "<group>"; };
+		A4DBAD1A2613C608006B42B7 /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +385,7 @@
 				A4BC1CEE26066564009A2AA0 /* SFX.swift */,
 				A4DBAC93260D4257006B42B7 /* Position.swift */,
 				A4DBACC6260F5FE1006B42B7 /* MenuOption.swift */,
+				A4DBAD1A2613C608006B42B7 /* Corner.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				A49B9760247AD38D007BF29A /* Int+Operations.swift in Sources */,
 				A4DBAD07260FE128006B42B7 /* UILabel+Utilities.swift in Sources */,
 				A4DBAC94260D4257006B42B7 /* Position.swift in Sources */,
+				A4DBAD1B2613C608006B42B7 /* Corner.swift in Sources */,
 				A49B974624745BA1007BF29A /* GameViewController.swift in Sources */,
 				A4DBACF8260FDB6B006B42B7 /* UILabel+Theme.swift in Sources */,
 				A4DBACDB260F647F006B42B7 /* Menu+MenuCellDelegate.swift in Sources */,

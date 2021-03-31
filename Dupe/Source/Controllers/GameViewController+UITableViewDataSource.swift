@@ -26,7 +26,6 @@ extension GameViewController: UITableViewDataSource {
            let tableView = tableView as? Menu,
            let option = MenuOption(rawValue: indexPath.row) {
             menuCell.delegate = tableView
-            
             menuCell.update(asMenuOption: option)
                 
             return menuCell

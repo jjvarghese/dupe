@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5YU-iq-uwr" customClass="Grid" customModule="Dupe" customModuleProvider="target">
+                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5YU-iq-uwr" customClass="Grid" customModule="Dupe" customModuleProvider="target">
                     <rect key="frame" x="40" y="508" width="334" height="334"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="5YU-iq-uwr" secondAttribute="height" multiplier="1:1" id="ytA-f4-6x3"/>
@@ -34,7 +34,7 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VNv-vC-KeF" customClass="Menu" customModule="Dupe" customModuleProvider="target">
+                <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VNv-vC-KeF" customClass="Menu" customModule="Dupe" customModuleProvider="target">
                     <rect key="frame" x="40" y="508" width="334" height="334"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>

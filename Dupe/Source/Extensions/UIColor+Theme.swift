@@ -18,4 +18,6 @@ extension UIColor {
         
     static let active: UIColor = .white
     
+    static let background: UIColor = .white
+    
 }
