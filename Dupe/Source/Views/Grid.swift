@@ -130,7 +130,7 @@ class Grid: UICollectionView {
     // MARK: - Configuration -
     
     private func configure() {
-        backgroundColor = .clear
+        backgroundColor = Grid.BORDER_COLOR
         
         configureRegistration()
         configureGestures()
