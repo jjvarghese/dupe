@@ -70,6 +70,8 @@ extension GameViewController {
         }
         
         matchedGrid.removeFromSuperview()
+        
+        rotateColors()
     }
     
     func getNumberOfPointsToGain(matchedGrid: Grid) -> Int {
@@ -128,4 +130,16 @@ extension GameViewController {
             spawnGrid(in: coinFlip == 0 ? .left : .right)
         }
     }
+    
+    private func rotateColors() {
+        GameViewController.baseRubikColor = RubikColor.getRandomRubikColor()
+        GameViewController.activeRubikColor = RubikColor.getRandomRubikColor()
+
+        bigGrid?.reloadData()
+        
+        for grid in grids {
+            grid.reloadData()
+        }
+    }
+    
 }

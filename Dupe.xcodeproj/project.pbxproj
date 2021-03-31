@@ -74,6 +74,7 @@
 		A4DBAD02260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBAD01260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift */; };
 		A4DBAD07260FE128006B42B7 /* UILabel+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBAD06260FE128006B42B7 /* UILabel+Utilities.swift */; };
 		A4DBAD1B2613C608006B42B7 /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBAD1A2613C608006B42B7 /* Corner.swift */; };
+		A4DBAD202614D376006B42B7 /* RubikColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBAD1F2614D376006B42B7 /* RubikColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		A4DBAD01260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+AboutViewDelegate.swift"; sourceTree = "<group>"; };
 		A4DBAD06260FE128006B42B7 /* UILabel+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utilities.swift"; sourceTree = "<group>"; };
 		A4DBAD1A2613C608006B42B7 /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
+		A4DBAD1F2614D376006B42B7 /* RubikColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubikColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,6 +388,7 @@
 				A4DBAC93260D4257006B42B7 /* Position.swift */,
 				A4DBACC6260F5FE1006B42B7 /* MenuOption.swift */,
 				A4DBAD1A2613C608006B42B7 /* Corner.swift */,
+				A4DBAD1F2614D376006B42B7 /* RubikColor.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				A4DBACF8260FDB6B006B42B7 /* UILabel+Theme.swift in Sources */,
 				A4DBACDB260F647F006B42B7 /* Menu+MenuCellDelegate.swift in Sources */,
 				A4364ADC2480529200D7AF78 /* UIView+Animation.swift in Sources */,
+				A4DBAD202614D376006B42B7 /* RubikColor.swift in Sources */,
 				A4DBACD6260F63E0006B42B7 /* GameViewController+UITableViewDataSource.swift in Sources */,
 				A4DBACF3260FDAEA006B42B7 /* UIButton+Theme.swift in Sources */,
 				A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */,

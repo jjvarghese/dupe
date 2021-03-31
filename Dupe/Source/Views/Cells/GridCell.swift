@@ -34,7 +34,7 @@ class GridCell: UICollectionViewCell {
         
         isUserInteractionEnabled = true
         
-        square?.backgroundColor = UIColor.base
+        square?.backgroundColor = GameViewController.baseRubikColor
         
         configureSubviews()
     }
@@ -44,7 +44,7 @@ class GridCell: UICollectionViewCell {
     func update(asSelected selected: Bool,
                 corner: Corner?,
                 withBorderWidth borderWidth: CGFloat = 3.0) {
-        square?.backgroundColor = selected ? UIColor.active : UIColor.base
+        square?.backgroundColor = selected ? GameViewController.activeRubikColor : GameViewController.baseRubikColor
         
         if selected && shouldPulse {
             pulse()

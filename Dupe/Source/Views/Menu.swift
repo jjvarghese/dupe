@@ -25,7 +25,7 @@ class Menu: UITableView {
         super.awakeFromNib()
         
         isUserInteractionEnabled = true
-        backgroundColor = UIColor.base
+        backgroundColor = GameViewController.baseRubikColor
         separatorStyle = .none
         
         configureRegistration()
