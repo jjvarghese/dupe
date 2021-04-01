@@ -7,11 +7,25 @@
 //
 
 import Foundation
+import UIKit
 
-@objc enum GridSize: Int {
+enum GridSize: Int {
     
     case small = 0
     
     case large
+    
+}
+
+extension GridSize {
+    
+    var borderThickness: CGFloat {
+        switch self {
+        case .small:
+            return 1.0
+        case .large:
+            return 3.0
+        }
+    }
     
 }

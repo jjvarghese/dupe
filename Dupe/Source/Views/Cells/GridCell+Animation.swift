@@ -26,7 +26,7 @@ extension GridCell {
                             weakSelf?.layoutIfNeeded()
             }) { (finished) in
                 if finished {
-                    weakSelf?.adjustSquareSize(amount: weakSelf?.borderThickness ?? 0)
+                    weakSelf?.adjustSquareSize(amount: weakSelf?.size.borderThickness ?? 0)
                     
                     UIView.animate(withDuration: pulseDuration) {
                         weakSelf?.layoutIfNeeded()

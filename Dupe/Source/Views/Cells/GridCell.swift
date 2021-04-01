@@ -22,7 +22,7 @@ class GridCell: UICollectionViewCell {
     @IBOutlet weak var innerCornerDimension: NSLayoutConstraint?
     
     var shouldPulse: Bool = false
-    var borderThickness: CGFloat = 3.0
+    var size: GridSize = .small
         
     // MARK: - UIView -
     
@@ -56,12 +56,12 @@ class GridCell: UICollectionViewCell {
         DispatchQueue.main.async {
             guard let strongSelf = weakSelf else { return }
             
-            strongSelf.squareTopConstraint?.constant = strongSelf.borderThickness
-            strongSelf.squareBottomConstraint?.constant = strongSelf.borderThickness
-            strongSelf.squareLeadingConstraint?.constant = strongSelf.borderThickness
-            strongSelf.squareTrailingConstraint?.constant = strongSelf.borderThickness
-            strongSelf.cornerDimensionConstraint?.constant = strongSelf.borderThickness * 3
-            strongSelf.innerCornerDimension?.constant = strongSelf.borderThickness * 2
+            strongSelf.squareTopConstraint?.constant = strongSelf.size.borderThickness
+            strongSelf.squareBottomConstraint?.constant = strongSelf.size.borderThickness
+            strongSelf.squareLeadingConstraint?.constant = strongSelf.size.borderThickness
+            strongSelf.squareTrailingConstraint?.constant = strongSelf.size.borderThickness
+            strongSelf.cornerDimensionConstraint?.constant = strongSelf.size.borderThickness * 3
+            strongSelf.innerCornerDimension?.constant = strongSelf.size.borderThickness * 2
         }
     }
    

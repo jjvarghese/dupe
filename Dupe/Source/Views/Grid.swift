@@ -34,7 +34,7 @@ class Grid: UICollectionView {
     var swipedIndices: [Int] = []
     var position: Position?
     
-    @IBInspectable var size: GridSize
+    var size: GridSize
 
     // MARK: - NSObject -
     

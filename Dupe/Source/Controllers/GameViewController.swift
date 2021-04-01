@@ -55,9 +55,9 @@ class GameViewController: UIViewController {
     // MARK: - Configuration -
     
     private func configureSubviews() {
-        configureCollectionViews()
         configureMenu()
         configureScoreLabel()
+        configureCollectionViews()
     }
     
     private func configureNavigationBar() {
@@ -65,7 +65,9 @@ class GameViewController: UIViewController {
     }
     
     private func configureCollectionViews() {
-        bigGrid?.size = .large
+        guard let bigGrid = bigGrid else { return }
+        
+        bigGrid.size = .large
         
         configure(grid: bigGrid)
     }
