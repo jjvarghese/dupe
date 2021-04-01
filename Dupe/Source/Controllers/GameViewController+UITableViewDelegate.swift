@@ -13,9 +13,11 @@ extension GameViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let bigGrid = bigGrid else { return 0 }
+        
         let numberOfElements: CGFloat = CGFloat(tableView.numberOfRows(inSection: 0))
         
-        return tableView.frame.size.height / numberOfElements
+        return bigGrid.frame.size.height / numberOfElements
     }
     
 }

@@ -5,14 +5,12 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController" customModule="Dupe" customModuleProvider="target">
             <connections>
                 <outlet property="bigGrid" destination="5YU-iq-uwr" id="MwB-mu-yOg"/>
-                <outlet property="menu" destination="VNv-vC-KeF" id="plY-ED-XqT"/>
                 <outlet property="scoreLabel" destination="Mlm-nJ-9YG" id="Xqs-YQ-jsz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,10 +32,6 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VNv-vC-KeF" customClass="Menu" customModule="Dupe" customModuleProvider="target">
-                    <rect key="frame" x="40" y="508" width="334" height="334"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlm-nJ-9YG">
                     <rect key="frame" x="40" y="226" width="334" height="20"/>
                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
@@ -48,14 +42,10 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="VNv-vC-KeF" firstAttribute="top" secondItem="5YU-iq-uwr" secondAttribute="top" id="3vx-jg-Ryf"/>
                 <constraint firstItem="Mlm-nJ-9YG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="AH3-hq-3zk"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-20" id="DOh-jD-Kzs"/>
-                <constraint firstItem="VNv-vC-KeF" firstAttribute="leading" secondItem="5YU-iq-uwr" secondAttribute="leading" id="QA3-sG-pYd"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="R0v-nF-IvR"/>
-                <constraint firstItem="VNv-vC-KeF" firstAttribute="trailing" secondItem="5YU-iq-uwr" secondAttribute="trailing" id="Rvu-gB-jdk"/>
                 <constraint firstItem="Mlm-nJ-9YG" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="XVf-pm-ZgB"/>
-                <constraint firstItem="VNv-vC-KeF" firstAttribute="bottom" secondItem="5YU-iq-uwr" secondAttribute="bottom" id="cc5-pZ-5bo"/>
                 <constraint firstItem="Mlm-nJ-9YG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="182" id="heC-LD-NeE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5YU-iq-uwr" secondAttribute="trailing" constant="40" id="hrp-NA-SKr"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iY2-EC-wdG"/>
@@ -63,9 +53,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

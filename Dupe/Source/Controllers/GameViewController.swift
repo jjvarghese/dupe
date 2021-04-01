@@ -20,7 +20,8 @@ class GameViewController: UIViewController {
 
     @IBOutlet weak var bigGrid: Grid?
     @IBOutlet weak var scoreLabel: UILabel?
-    @IBOutlet weak var menu: Menu?
+    
+    var menu: Menu?
     
     let soundProvider: SoundProvider = SoundProvider()
     
@@ -73,9 +74,19 @@ class GameViewController: UIViewController {
     }
     
     private func configureMenu() {
+        guard let bigGrid = bigGrid else { return }
+        
+        menu = Menu(frame: .zero)
         menu?.delegate = self
         menu?.dataSource = self
         menu?.menuDelegate = self
+        
+        if let menu = menu {
+            bigGrid.addSubviewWithConstraints(subview: menu,
+                                              atPosition: .center, withWidth: bigGrid.frame.size.width,
+                                              withHeight: bigGrid.frame.size.height,
+                                              withVerticalOffset: 0)
+        }
     }
     
     func configure(grid: Grid?) {
