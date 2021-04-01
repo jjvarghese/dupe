@@ -48,7 +48,7 @@ class Menu: UITableView {
     
     private func configure() {
         isUserInteractionEnabled = true
-        backgroundColor = UIColor.base
+        backgroundColor = GameViewController.baseRubikColor
         separatorStyle = .none
         
         configureRegistration()

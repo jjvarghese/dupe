@@ -12,6 +12,7 @@
 		A4364ADA247EED7200D7AF78 /* GameViewController+Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364AD9247EED7200D7AF78 /* GameViewController+Gameplay.swift */; };
 		A4364ADC2480529200D7AF78 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364ADB2480529100D7AF78 /* UIView+Animation.swift */; };
 		A4453905261632020000B051 /* GridSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4453904261632020000B051 /* GridSize.swift */; };
+		A445390A26163A910000B051 /* RubikColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445390926163A910000B051 /* RubikColor.swift */; };
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
@@ -99,6 +100,7 @@
 		A4364AD9247EED7200D7AF78 /* GameViewController+Gameplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Gameplay.swift"; sourceTree = "<group>"; };
 		A4364ADB2480529100D7AF78 /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		A4453904261632020000B051 /* GridSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSize.swift; sourceTree = "<group>"; };
+		A445390926163A910000B051 /* RubikColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubikColor.swift; sourceTree = "<group>"; };
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Detection.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				A4DBAC93260D4257006B42B7 /* Position.swift */,
 				A4DBACC6260F5FE1006B42B7 /* MenuOption.swift */,
 				A4453904261632020000B051 /* GridSize.swift */,
+				A445390926163A910000B051 /* RubikColor.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				A4DBACF8260FDB6B006B42B7 /* UILabel+Theme.swift in Sources */,
 				A4DBACDB260F647F006B42B7 /* Menu+MenuCellDelegate.swift in Sources */,
 				A4364ADC2480529200D7AF78 /* UIView+Animation.swift in Sources */,
+				A445390A26163A910000B051 /* RubikColor.swift in Sources */,
 				A4DBACD6260F63E0006B42B7 /* GameViewController+UITableViewDataSource.swift in Sources */,
 				A4DBACF3260FDAEA006B42B7 /* UIButton+Theme.swift in Sources */,
 				A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */,

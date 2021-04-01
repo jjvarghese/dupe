@@ -37,6 +37,30 @@ class GameViewController: UIViewController {
         }
     }
     
+    private static var _baseRubikColor: UIColor?
+    static var baseRubikColor: UIColor {
+        get {
+            if let baseColor = _baseRubikColor {
+                return baseColor
+            } else {
+                let newColor = RubikColor.getRandomRubikColor()
+                
+                _baseRubikColor = newColor
+                
+                return newColor
+            }
+        }
+        set {
+            if baseRubikColor == newValue || newValue == activeRubikColor {
+                _baseRubikColor = RubikColor.getRandomRubikColor()
+            } else {
+                _baseRubikColor = newValue
+            }
+        }
+    }
+    
+    static var activeRubikColor: UIColor = .white
+    
     // MARK: - UIViewController -
     
     override func viewDidLoad() {
