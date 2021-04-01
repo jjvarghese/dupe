@@ -33,18 +33,33 @@ class Grid: UICollectionView {
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
     var position: Position?
+    
+    @IBInspectable var size: GridSize
 
     // MARK: - NSObject -
     
-    override init(frame: CGRect,
-                  collectionViewLayout layout: UICollectionViewLayout) {
-        super.init(frame: frame,
-                   collectionViewLayout: layout)
+    required init(withSize gridSize: GridSize) {
+        size = gridSize
+        
+        super.init(frame: .zero,
+                   collectionViewLayout: UICollectionViewFlowLayout.init())
         
         configure()
     }
     
+    override init(frame: CGRect,
+                  collectionViewLayout layout: UICollectionViewLayout) {
+        size = .small
+        
+        super.init(frame: frame,
+                   collectionViewLayout: layout)
+                
+        configure()
+    }
+    
     required init?(coder: NSCoder) {
+        size = .small
+        
         super.init(coder: coder)
         
         configure()

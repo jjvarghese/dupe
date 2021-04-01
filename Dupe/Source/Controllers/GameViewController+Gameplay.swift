@@ -12,8 +12,7 @@ import UIKit
 extension GameViewController {
     
     func spawnGrid(in position: Position) {
-        let grid = Grid(frame: CGRect.zero,
-                        collectionViewLayout: UICollectionViewFlowLayout.init())
+        let grid = Grid(withSize: .small)
 
         grid.position = position
         

@@ -65,6 +65,8 @@ class GameViewController: UIViewController {
     }
     
     private func configureCollectionViews() {
+        bigGrid?.size = .large
+        
         configure(grid: bigGrid)
     }
     
