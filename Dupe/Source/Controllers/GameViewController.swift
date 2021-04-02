@@ -113,9 +113,10 @@ class GameViewController: UIViewController {
         
         if let menu = menu {
             bigGrid.addSubviewWithConstraints(subview: menu,
-                                              atPosition: .center, withWidth: bigGrid.frame.size.width,
-                                              withHeight: bigGrid.frame.size.height,
-                                              withVerticalOffset: 0)
+                                              atPosition: .center,
+                                              withWidth: bigGrid.frame.size.width - 112,
+                                              withHeight: bigGrid.frame.size.height - 112,
+                                              withVerticalOffset: 9)
         }
     }
     
