@@ -98,6 +98,7 @@ extension GameViewController {
         DispatchQueue.main.async {
             guard let strongSelf = weakSelf else { return }
             
+            strongSelf.gameInProgress = false 
             strongSelf.soundProvider.play(sfx: .gameOver)
             strongSelf.soundProvider.stopAllTunes()
             

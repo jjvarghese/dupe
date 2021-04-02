@@ -32,6 +32,7 @@ extension GameViewController: MenuDelegate {
         weak var weakSelf = self
 
         DispatchQueue.main.async {
+            weakSelf?.gameInProgress = true
             weakSelf?.bigGrid?.reset()
             weakSelf?.soundProvider.playRandomTune()
             weakSelf?.soundProvider.play(sfx: .start)

@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
 
     var tempo: TimeInterval = STARTING_TEMPO
     var grids: [Grid] = []
+    var gameInProgress: Bool = false
 
     @IBOutlet weak var bigGrid: Grid?
     @IBOutlet weak var scoreLabel: UILabel?

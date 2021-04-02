@@ -8,7 +8,7 @@ extension GameViewController: GridDelegate {
     
     func grid(_ grid: Grid,
               didPanAt indexPath: IndexPath) {
-        guard grid == bigGrid else { return }
+        guard grid == bigGrid, gameInProgress else { return }
         
         grid.touch(indexPath: indexPath)
         
@@ -20,7 +20,7 @@ extension GameViewController: GridDelegate {
     
     func grid(_ grid: Grid,
               didSelect indexPath: IndexPath) {
-        guard grid == bigGrid else { return }
+        guard grid == bigGrid, gameInProgress else { return }
         
         grid.touch(indexPath: indexPath)
         
