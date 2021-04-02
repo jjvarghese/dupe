@@ -12,6 +12,8 @@ enum MenuOption: Int, CaseIterable {
     
     case start = 0
     
+    case highScores
+    
     case about
     
 }

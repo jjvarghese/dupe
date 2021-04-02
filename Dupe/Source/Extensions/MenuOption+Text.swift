@@ -16,6 +16,8 @@ extension MenuOption {
             return "START"
         case .about:
             return "ABOUT"
+        case .highScores:
+            return "HIGH SCORES"
         }
     }
     

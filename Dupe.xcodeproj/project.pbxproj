@@ -38,6 +38,7 @@
 		A49B975C2475C467007BF29A /* GameViewController+GridDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B975B2475C467007BF29A /* GameViewController+GridDelegate.swift */; };
 		A49B9760247AD38D007BF29A /* Int+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B975F247AD38D007BF29A /* Int+Operations.swift */; };
 		A49B9762247ADF3F007BF29A /* Collection+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B9761247ADF3F007BF29A /* Collection+Operations.swift */; };
+		A4A217E32617AAF300DB7C7C /* HighScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A217E22617AAF300DB7C7C /* HighScores.swift */; };
 		A4BC1CB12602A0AE009A2AA0 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1CB02602A0AE009A2AA0 /* UIColor+Theme.swift */; };
 		A4BC1CC226054CA5009A2AA0 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1CB726054CA4009A2AA0 /* 3.wav */; };
 		A4BC1CC326054CA5009A2AA0 /* 9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1CB826054CA4009A2AA0 /* 9.mp3 */; };
@@ -141,6 +142,7 @@
 		A49B975B2475C467007BF29A /* GameViewController+GridDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+GridDelegate.swift"; sourceTree = "<group>"; };
 		A49B975F247AD38D007BF29A /* Int+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Operations.swift"; sourceTree = "<group>"; };
 		A49B9761247ADF3F007BF29A /* Collection+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Operations.swift"; sourceTree = "<group>"; };
+		A4A217E22617AAF300DB7C7C /* HighScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScores.swift; sourceTree = "<group>"; };
 		A4BC1CB02602A0AE009A2AA0 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		A4BC1CB726054CA4009A2AA0 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
 		A4BC1CB826054CA4009A2AA0 /* 9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9.mp3; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		A49B974F24747AE3007BF29A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A4A217E12617AAD700DB7C7C /* Utility */,
 				A4BC1CED2606654A009A2AA0 /* Types */,
 				A4BC1CD426054D3A009A2AA0 /* Providers */,
 				A49B97122474556D007BF29A /* AppDelegate.swift */,
@@ -368,6 +371,14 @@
 				A4DBACC1260F5DC0006B42B7 /* MenuCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A4A217E12617AAD700DB7C7C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A4A217E22617AAF300DB7C7C /* HighScores.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		A4BC1CB526054C80009A2AA0 /* Sounds */ = {
@@ -729,6 +740,7 @@
 				A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */,
 				A49B9762247ADF3F007BF29A /* Collection+Operations.swift in Sources */,
 				A49B974924747859007BF29A /* GameViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
+				A4A217E32617AAF300DB7C7C /* HighScores.swift in Sources */,
 				A49B975224747B7B007BF29A /* GridCell.swift in Sources */,
 				A4BC1CDE26054FB5009A2AA0 /* SoundProvider+AVAudioPlayerDelegate.swift in Sources */,
 				A4BC1CD626054D47009A2AA0 /* SoundProvider.swift in Sources */,

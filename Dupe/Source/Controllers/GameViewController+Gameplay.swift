@@ -102,6 +102,10 @@ extension GameViewController {
             strongSelf.soundProvider.play(sfx: .gameOver)
             strongSelf.soundProvider.stopAllTunes()
             
+            if strongSelf.currentScore > 0 {
+                HighScores.save(score: strongSelf.currentScore)
+            }
+            
             strongSelf.menu?.backgroundColor = GameViewController.baseRubikColor
             strongSelf.bigGrid?.reset()
                                     

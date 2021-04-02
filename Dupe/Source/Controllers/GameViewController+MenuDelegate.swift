@@ -21,6 +21,8 @@ extension GameViewController: MenuDelegate {
                 weakSelf?.handleStartPressed(menu: menu)
             case .about:
                 weakSelf?.handleAboutPressed()
+            case .highScores:
+                weakSelf?.handleHighScoresPressed()
             }
         }
     }
@@ -55,5 +57,23 @@ extension GameViewController: MenuDelegate {
         """)
     }
     
+    private func handleHighScoresPressed() {
+        let highScores = HighScores.getScores()
+        
+        var text = String("HIGH SCORES\n\n")
+        
+        var i = 1
+        for highScore in highScores {
+            text.append(String(format: "%d. %d\n", i, highScore))
+            
+            i = i + 1
+        }
+        
+        if highScores.count == 0 {
+            text.append("No scores yet!")
+        }
+        
+        notificationView?.popin(withText: text)
+    }
     
 }
