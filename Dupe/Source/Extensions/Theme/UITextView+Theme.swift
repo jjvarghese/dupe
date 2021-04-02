@@ -13,7 +13,7 @@ extension UITextView {
     
     func theme() {
         backgroundColor = .clear
-        textColor = UIColor.textColor
+        textColor = UIColor.background
         font = UIFont(name: "8-bit",
                         size: 20)
         textAlignment = .center

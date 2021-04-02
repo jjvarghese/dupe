@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FFPopup
 
 extension GameViewController: MenuDelegate {
     
@@ -53,21 +54,17 @@ extension GameViewController: MenuDelegate {
         let nib = UINib(nibName: AboutView.NibName,
                         bundle: nil)
         guard let aboutView = nib.instantiate(withOwner: self, options: nil).first as? AboutView else { return }
+                
+        let popup = FFPopup(contetnView: aboutView,
+                            showType: .bounceInFromTop,
+                            dismissType: .slideOutToTop,
+                            maskType: .dimmed,
+                            dismissOnBackgroundTouch: true,
+                            dismissOnContentTouch: true)
+        let layout = FFPopupLayout(horizontal: .center,
+                                   vertical: .top)
         
-        aboutView.delegate = self
-        
-        bigGrid?.alpha = 0
-        
-        weak var weakSelf = self
-        
-        menu?.fadeOut(for: 0.4, completion: {
-            guard let strongSelf = weakSelf else { return }
-            
-            strongSelf.view.addSubviewWithConstraints(subview: aboutView,
-                                                     atPosition: .center,
-                                                     withWidth: strongSelf.view.frame.size.width,
-                                                     withHeight: 200)
-        })
+        popup.show(layout: layout)
     }
     
     
