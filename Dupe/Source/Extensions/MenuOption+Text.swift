@@ -15,7 +15,7 @@ extension MenuOption {
         case .start:
             return "START"
         case .about:
-            return "About"
+            return "ABOUT"
         }
     }
     

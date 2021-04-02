@@ -45,7 +45,11 @@ class MenuCell: UITableViewCell {
     @IBAction private func buttonTouched(_ sender: Any) {
         guard let option = option else { return }
         
-        delegate?.menuCellSelectedOption(self, option: option)
+        weak var weakSelf = self
+        
+        DispatchQueue.main.async {
+            weakSelf?.delegate?.menuCellSelectedOption(self, option: option)
+        }
     }
     
     // MARK: - Configuration -

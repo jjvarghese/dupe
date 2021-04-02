@@ -17,7 +17,7 @@ extension GameViewController: UITableViewDelegate {
         
         let numberOfElements: CGFloat = CGFloat(tableView.numberOfRows(inSection: 0))
         
-        return bigGrid.frame.size.height / numberOfElements
+        return (bigGrid.frame.size.height / numberOfElements) - 12
     }
     
 }

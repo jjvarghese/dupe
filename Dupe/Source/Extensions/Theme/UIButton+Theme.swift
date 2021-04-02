@@ -14,8 +14,8 @@ extension UIButton {
     func theme() {
         backgroundColor = .clear
         titleLabel?.font = UIFont(name: "8-bit",
-                                          size: 37)
-        setTitleColor(.white,
+                                          size: 30)
+        setTitleColor(UIColor.background,
                       for: .normal)
     }
     

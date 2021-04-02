@@ -13,34 +13,40 @@ extension GameViewController: MenuDelegate {
     
     func menu(_ menu: Menu,
               selectedOption menuOption: MenuOption) {
-        switch menuOption {
-        case .start:
-            handleStartPressed(menu: menu)
-        case .about:
-            handleAboutPressed()
+        weak var weakSelf = self
+        
+        DispatchQueue.main.async {
+            switch menuOption {
+            case .start:
+                weakSelf?.handleStartPressed(menu: menu)
+            case .about:
+                weakSelf?.handleAboutPressed()
+            }
         }
     }
     
     // MARK: - Private: Handling -
     
     private func handleStartPressed(menu: Menu) {
-        bigGrid?.reset()
-        soundProvider.playRandomTune()
-        soundProvider.play(sfx: .start)
-        scoreLabel?.isHidden = true
-        currentScore = 0
-        
         weak var weakSelf = self
-        
-        menu.fadeOut(for: 0.1,
-                     completion: {
-                        guard let strongSelf = weakSelf else { return }
-                        
-                        UILabel.spawnFloatingFadingLabels(toSuperview: strongSelf.view,
-                                                          withTexts: ["Ready...", "Set...", "DUPE!"]) {
-                            weakSelf?.spawnGrid(in: .center)
-                        }
-                     })
+
+        DispatchQueue.main.async {
+            weakSelf?.bigGrid?.reset()
+            weakSelf?.soundProvider.playRandomTune()
+            weakSelf?.soundProvider.play(sfx: .start)
+            weakSelf?.scoreLabel?.isHidden = true
+            weakSelf?.currentScore = 0
+            
+            menu.fadeOut(for: 0.4,
+                         completion: {
+                            guard let strongSelf = weakSelf else { return }
+                            
+                            UILabel.spawnFloatingFadingLabels(toSuperview: strongSelf.view,
+                                                              withTexts: ["Ready...", "Set...", "DUPE!"]) {
+                                weakSelf?.spawnGrid(in: .center)
+                            }
+                         })
+        }
     }
     
     private func handleAboutPressed() {
