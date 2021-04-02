@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		663ABF26C276603F5055D27D /* Pods_DupeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F2A29A9A7E9F3AC78997FB /* Pods_DupeTests.framework */; };
+		7737E9261A9AE545973715B7 /* Pods_Dupe_DupeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7CAB612720CA83FE65CE98 /* Pods_Dupe_DupeUITests.framework */; };
 		A4364AD4247DA13300D7AF78 /* Grid+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364AD3247DA13300D7AF78 /* Grid+Animation.swift */; };
 		A4364AD6247DA1A000D7AF78 /* GridCell+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364AD5247DA1A000D7AF78 /* GridCell+Animation.swift */; };
 		A4364ADA247EED7200D7AF78 /* GameViewController+Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364AD9247EED7200D7AF78 /* GameViewController+Gameplay.swift */; };
@@ -76,6 +78,7 @@
 		A4DBACFD260FDC20006B42B7 /* UITextView+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBACFC260FDC20006B42B7 /* UITextView+Theme.swift */; };
 		A4DBAD02260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBAD01260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift */; };
 		A4DBAD07260FE128006B42B7 /* UILabel+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBAD06260FE128006B42B7 /* UILabel+Utilities.swift */; };
+		F70F4E4918E06217E2DA1ADB /* Pods_Dupe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B2D29805767CA83750AF10 /* Pods_Dupe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A4B5DF801F1DFAD76F0E965 /* Pods-Dupe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dupe.release.xcconfig"; path = "Target Support Files/Pods-Dupe/Pods-Dupe.release.xcconfig"; sourceTree = "<group>"; };
+		59F2A29A9A7E9F3AC78997FB /* Pods_DupeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DupeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EF8CB437FB7A28B7213E0E5 /* Pods-Dupe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dupe.debug.xcconfig"; path = "Target Support Files/Pods-Dupe/Pods-Dupe.debug.xcconfig"; sourceTree = "<group>"; };
+		78E4019BB3EE266E9B8DBC55 /* Pods-Dupe-DupeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dupe-DupeUITests.release.xcconfig"; path = "Target Support Files/Pods-Dupe-DupeUITests/Pods-Dupe-DupeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8A7CAB612720CA83FE65CE98 /* Pods_Dupe_DupeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dupe_DupeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A133EF5B81C3ED19EDEFD0DA /* Pods-Dupe-DupeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dupe-DupeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Dupe-DupeUITests/Pods-Dupe-DupeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A2B2D29805767CA83750AF10 /* Pods_Dupe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dupe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2D42845810FDEE5A010FCD2 /* Pods-DupeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DupeTests.release.xcconfig"; path = "Target Support Files/Pods-DupeTests/Pods-DupeTests.release.xcconfig"; sourceTree = "<group>"; };
 		A4364AD3247DA13300D7AF78 /* Grid+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grid+Animation.swift"; sourceTree = "<group>"; };
 		A4364AD5247DA1A000D7AF78 /* GridCell+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GridCell+Animation.swift"; sourceTree = "<group>"; };
 		A4364AD9247EED7200D7AF78 /* GameViewController+Gameplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Gameplay.swift"; sourceTree = "<group>"; };
@@ -171,6 +182,7 @@
 		A4DBACFC260FDC20006B42B7 /* UITextView+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Theme.swift"; sourceTree = "<group>"; };
 		A4DBAD01260FDCBB006B42B7 /* GameViewController+AboutViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+AboutViewDelegate.swift"; sourceTree = "<group>"; };
 		A4DBAD06260FE128006B42B7 /* UILabel+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utilities.swift"; sourceTree = "<group>"; };
+		F8E299E850DF0471388E8494 /* Pods-DupeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DupeTests.debug.xcconfig"; path = "Target Support Files/Pods-DupeTests/Pods-DupeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70F4E4918E06217E2DA1ADB /* Pods_Dupe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				663ABF26C276603F5055D27D /* Pods_DupeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,12 +206,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7737E9261A9AE545973715B7 /* Pods_Dupe_DupeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EE1F6DA6CD0583BF05250FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EF8CB437FB7A28B7213E0E5 /* Pods-Dupe.debug.xcconfig */,
+				2A4B5DF801F1DFAD76F0E965 /* Pods-Dupe.release.xcconfig */,
+				A133EF5B81C3ED19EDEFD0DA /* Pods-Dupe-DupeUITests.debug.xcconfig */,
+				78E4019BB3EE266E9B8DBC55 /* Pods-Dupe-DupeUITests.release.xcconfig */,
+				F8E299E850DF0471388E8494 /* Pods-DupeTests.debug.xcconfig */,
+				A2D42845810FDEE5A010FCD2 /* Pods-DupeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		783D1A1E8F8370CD678E7095 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2B2D29805767CA83750AF10 /* Pods_Dupe.framework */,
+				8A7CAB612720CA83FE65CE98 /* Pods_Dupe_DupeUITests.framework */,
+				59F2A29A9A7E9F3AC78997FB /* Pods_DupeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A49B97062474556D007BF29A = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +243,8 @@
 				A49B972824745571007BF29A /* DupeTests */,
 				A49B973324745571007BF29A /* DupeUITests */,
 				A49B97102474556D007BF29A /* Products */,
+				1EE1F6DA6CD0583BF05250FC /* Pods */,
+				783D1A1E8F8370CD678E7095 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -422,9 +462,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A49B973924745571007BF29A /* Build configuration list for PBXNativeTarget "Dupe" */;
 			buildPhases = (
+				059E034ECFD2FF5193EBB779 /* [CP] Check Pods Manifest.lock */,
 				A49B970B2474556D007BF29A /* Sources */,
 				A49B970C2474556D007BF29A /* Frameworks */,
 				A49B970D2474556D007BF29A /* Resources */,
+				E73EFA85CD91437C69DEB04A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -439,6 +481,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A49B973C24745571007BF29A /* Build configuration list for PBXNativeTarget "DupeTests" */;
 			buildPhases = (
+				E7DA70F17B17AFC2A22A3DF7 /* [CP] Check Pods Manifest.lock */,
 				A49B972124745571007BF29A /* Sources */,
 				A49B972224745571007BF29A /* Frameworks */,
 				A49B972324745571007BF29A /* Resources */,
@@ -457,9 +500,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A49B973F24745571007BF29A /* Build configuration list for PBXNativeTarget "DupeUITests" */;
 			buildPhases = (
+				45E4F92715559CE45F03E7C1 /* [CP] Check Pods Manifest.lock */,
 				A49B972C24745571007BF29A /* Sources */,
 				A49B972D24745571007BF29A /* Frameworks */,
 				A49B972E24745571007BF29A /* Resources */,
+				2A9E131EE27C04F570FE337B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -562,6 +607,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		059E034ECFD2FF5193EBB779 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dupe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A9E131EE27C04F570FE337B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dupe-DupeUITests/Pods-Dupe-DupeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dupe-DupeUITests/Pods-Dupe-DupeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dupe-DupeUITests/Pods-Dupe-DupeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45E4F92715559CE45F03E7C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dupe-DupeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E73EFA85CD91437C69DEB04A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dupe/Pods-Dupe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dupe/Pods-Dupe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dupe/Pods-Dupe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7DA70F17B17AFC2A22A3DF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DupeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A49B970B2474556D007BF29A /* Sources */ = {
@@ -780,6 +928,7 @@
 		};
 		A49B973A24745571007BF29A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EF8CB437FB7A28B7213E0E5 /* Pods-Dupe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -798,6 +947,7 @@
 		};
 		A49B973B24745571007BF29A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A4B5DF801F1DFAD76F0E965 /* Pods-Dupe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -816,6 +966,7 @@
 		};
 		A49B973D24745571007BF29A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8E299E850DF0471388E8494 /* Pods-DupeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -838,6 +989,7 @@
 		};
 		A49B973E24745571007BF29A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2D42845810FDEE5A010FCD2 /* Pods-DupeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -860,6 +1012,7 @@
 		};
 		A49B974024745571007BF29A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A133EF5B81C3ED19EDEFD0DA /* Pods-Dupe-DupeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -880,6 +1033,7 @@
 		};
 		A49B974124745571007BF29A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78E4019BB3EE266E9B8DBC55 /* Pods-Dupe-DupeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
