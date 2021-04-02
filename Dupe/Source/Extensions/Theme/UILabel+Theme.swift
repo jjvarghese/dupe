@@ -13,7 +13,7 @@ extension UILabel {
     
     func theme(withSize size: CGFloat = 37) {
         backgroundColor = .clear
-        textColor = .white
+        textColor = UIColor.textColor
         font = UIFont(name: "8-bit",
                         size: size)
         textAlignment = .center

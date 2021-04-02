@@ -13,6 +13,7 @@
 		A4364ADC2480529200D7AF78 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364ADB2480529100D7AF78 /* UIView+Animation.swift */; };
 		A4453905261632020000B051 /* GridSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4453904261632020000B051 /* GridSize.swift */; };
 		A445390A26163A910000B051 /* RubikColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445390926163A910000B051 /* RubikColor.swift */; };
+		A445390F26163E240000B051 /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445390E26163E240000B051 /* Corner.swift */; };
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
@@ -101,6 +102,7 @@
 		A4364ADB2480529100D7AF78 /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		A4453904261632020000B051 /* GridSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSize.swift; sourceTree = "<group>"; };
 		A445390926163A910000B051 /* RubikColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubikColor.swift; sourceTree = "<group>"; };
+		A445390E26163E240000B051 /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Detection.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
@@ -311,7 +313,6 @@
 				A49B9761247ADF3F007BF29A /* Collection+Operations.swift */,
 				A49B975F247AD38D007BF29A /* Int+Operations.swift */,
 				A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */,
-				A4BC1CB02602A0AE009A2AA0 /* UIColor+Theme.swift */,
 				A4364ADB2480529100D7AF78 /* UIView+Animation.swift */,
 				A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */,
 				A4DBACCB260F60DA006B42B7 /* MenuOption+Text.swift */,
@@ -389,6 +390,7 @@
 				A4DBACC6260F5FE1006B42B7 /* MenuOption.swift */,
 				A4453904261632020000B051 /* GridSize.swift */,
 				A445390926163A910000B051 /* RubikColor.swift */,
+				A445390E26163E240000B051 /* Corner.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -405,6 +407,7 @@
 		A4DBACF1260FDAD6006B42B7 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				A4BC1CB02602A0AE009A2AA0 /* UIColor+Theme.swift */,
 				A4DBACF2260FDAEA006B42B7 /* UIButton+Theme.swift */,
 				A4DBACF7260FDB6B006B42B7 /* UILabel+Theme.swift */,
 				A4DBACFC260FDC20006B42B7 /* UITextView+Theme.swift */,
@@ -569,6 +572,7 @@
 				A4DBACFD260FDC20006B42B7 /* UITextView+Theme.swift in Sources */,
 				A4DBACD1260F63D2006B42B7 /* GameViewController+UITableViewDelegate.swift in Sources */,
 				A49B97552475BC9B007BF29A /* Grid.swift in Sources */,
+				A445390F26163E240000B051 /* Corner.swift in Sources */,
 				A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */,
 				A4364AD6247DA1A000D7AF78 /* GridCell+Animation.swift in Sources */,
 				A4BC1CB12602A0AE009A2AA0 /* UIColor+Theme.swift in Sources */,

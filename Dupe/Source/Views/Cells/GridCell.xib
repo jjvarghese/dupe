@@ -125,6 +125,8 @@
                 <constraint firstItem="N51-es-M4t" firstAttribute="bottom" secondItem="iAr-vh-eLi" secondAttribute="bottom" id="tci-Cw-Efg"/>
             </constraints>
             <connections>
+                <outlet property="blCorner" destination="yKK-dA-0x6" id="CEq-Gd-Qah"/>
+                <outlet property="brCorner" destination="Gkt-g1-h8b" id="LsZ-3g-kfZ"/>
                 <outlet property="cornerDimensionConstraint" destination="9Bq-vE-eUx" id="v9e-qg-Igo"/>
                 <outlet property="innerCornerDimension" destination="3YZ-ci-Gh4" id="5hT-Zy-XqM"/>
                 <outlet property="square" destination="rCi-yb-kiq" id="qVk-CB-XBI"/>
@@ -132,6 +134,8 @@
                 <outlet property="squareLeadingConstraint" destination="g9G-Cn-5OG" id="j49-4a-VRk"/>
                 <outlet property="squareTopConstraint" destination="H6R-rP-Onh" id="Mf2-hz-rev"/>
                 <outlet property="squareTrailingConstraint" destination="Cft-7L-X07" id="CVq-cP-oQT"/>
+                <outlet property="tlCorner" destination="bOH-S4-I87" id="SOk-iW-DrR"/>
+                <outlet property="trCorner" destination="S5H-cE-VfS" id="SI4-Oj-xZC"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="145.98214285714286"/>
         </collectionViewCell>

@@ -11,6 +11,10 @@ import UIKit
 
 extension UIColor {
     
+    static let background: UIColor = UIColor(withHex: "#fffdd0")
+    
+    static let textColor: UIColor = .black
+    
     // MARK: - Constructors -
     
     convenience init(withHex hex: String) {

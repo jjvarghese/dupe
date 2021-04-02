@@ -16,7 +16,8 @@ extension GameViewController: UICollectionViewDataSource {
         
         let isSelected = gridCollectionView.selectedIndices.contains(indexPath.item)
                    
-        gridCell.size = gridCollectionView.size 
+        gridCell.size = gridCollectionView.size
+        gridCell.index = indexPath.row
         gridCell.update(asSelected: isSelected)
         gridCell.shouldPulse = collectionView == bigGrid
         
