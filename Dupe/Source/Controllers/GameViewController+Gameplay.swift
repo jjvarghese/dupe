@@ -12,65 +12,77 @@ import UIKit
 extension GameViewController {
     
     func spawnGrid(in position: Position) {
-        let grid = Grid(withSize: .small)
-
-        grid.position = position
+        weak var weakSelf = self
         
-        configure(grid: grid)
-        
-        grids.append(grid)
-        
-        view.addSubviewWithConstraints(subview: grid,
-                                       atPosition: position)
-        
-        grid.randomise()
-                
-        if tempo > GameViewController.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
-            tempo -= GameViewController.INCREMENT_TEMPO
-        }
-                        
-        if let bigGrid = bigGrid {
-            let threshold = position == .center ? 0.0 : 0.05
+        DispatchQueue.main.async {
+            guard let strongSelf = weakSelf else { return }
             
-            grid.startFalling(collisionGrid: bigGrid,
-                                    withTempo: tempo + threshold)
+            let grid = Grid(withSize: .small)
+
+            grid.position = position
+            
+            strongSelf.configure(grid: grid)
+            
+            strongSelf.grids.append(grid)
+            
+            strongSelf.view.addSubviewWithConstraints(subview: grid,
+                                           atPosition: position)
+            
+            grid.randomise()
+                    
+            if strongSelf.tempo > GameViewController.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
+                strongSelf.tempo -= GameViewController.INCREMENT_TEMPO
+            }
+                            
+            if let bigGrid = strongSelf.bigGrid {
+                let threshold = position == .center ? 0.0 : 0.05
+                
+                grid.startFalling(collisionGrid: bigGrid,
+                                  withTempo: strongSelf.tempo + threshold)
+            }
         }
     }
     
     func triggerMatch(matchedGrid: Grid) {
-        soundProvider.play(sfx: .matched)
+        weak var weakSelf = self
         
-        bigGrid?.reset()
-        
-        grids.removeAll { (onScreenGrid) -> Bool in
-            return matchedGrid == onScreenGrid
-        }
-        
-        if matchedGrid.position == .center {
-            spawnGrid(in: .center)
-        }
-        
-        let numberOfPointsToGain = getNumberOfPointsToGain(matchedGrid: matchedGrid)
-        
-        UILabel.spawnFloatingFadingLabel(toSuperview: view,
-                                         withText: String(format: "%d", numberOfPointsToGain))
-        
-        currentScore += numberOfPointsToGain
-        
-        if tempo <= GameViewController.THRESHOLD_TEMPO_FOR_EXTRA_SPAWN {
-            let randomNumber = Int.random(in: 0..<5)
-            if randomNumber == 0 {
-                Timer.scheduledTimer(timeInterval: 1.2,
-                                     target: self,
-                                     selector: #selector(spawnSideGrid),
-                                     userInfo: nil,
-                                     repeats: false)
+        DispatchQueue.main.async {
+            guard let strongSelf = weakSelf else { return }
+            
+            strongSelf.soundProvider.play(sfx: .matched)
+            
+            strongSelf.bigGrid?.reset()
+            
+            strongSelf.grids.removeAll { (onScreenGrid) -> Bool in
+                return matchedGrid == onScreenGrid
             }
+            
+            if matchedGrid.position == .center {
+                strongSelf.spawnGrid(in: .center)
+            }
+            
+            let numberOfPointsToGain = strongSelf.getNumberOfPointsToGain(matchedGrid: matchedGrid)
+            
+            UILabel.spawnFloatingFadingLabel(toSuperview: strongSelf.view,
+                                             withText: String(format: "%d", numberOfPointsToGain))
+            
+            strongSelf.currentScore += numberOfPointsToGain
+            
+            if strongSelf.tempo <= GameViewController.THRESHOLD_TEMPO_FOR_EXTRA_SPAWN {
+                let randomNumber = Int.random(in: 0..<5)
+                if randomNumber == 0 {
+                    Timer.scheduledTimer(timeInterval: 1.2,
+                                         target: self,
+                                         selector: #selector(strongSelf.spawnSideGrid),
+                                         userInfo: nil,
+                                         repeats: false)
+                }
+            }
+            
+            matchedGrid.removeFromSuperview()
+            
+            strongSelf.rotateColors()
         }
-        
-        matchedGrid.removeFromSuperview()
-        
-        rotateColors()
     }
     
     func getNumberOfPointsToGain(matchedGrid: Grid) -> Int {
@@ -81,20 +93,27 @@ extension GameViewController {
     }
     
     func triggerGameOver() {
-        soundProvider.play(sfx: .gameOver)
-        soundProvider.stopAllTunes()
-        
         weak var weakSelf = self
         
-        scoreLabel?.isHidden = false
-        
-        for grid in grids {
-            grid.removeFromSuperview()
-        }
-        
-        UILabel.spawnFloatingFadingLabel(toSuperview: view,
-                                         withText: "BOOM!") {
-            weakSelf?.startNewRound()
+        DispatchQueue.main.async {
+            guard let strongSelf = weakSelf else { return }
+            
+            strongSelf.soundProvider.play(sfx: .gameOver)
+            strongSelf.soundProvider.stopAllTunes()
+            
+            strongSelf.menu?.backgroundColor = GameViewController.baseRubikColor
+            strongSelf.bigGrid?.reset()
+                        
+            strongSelf.scoreLabel?.isHidden = false
+            
+            for grid in strongSelf.grids {
+                grid.removeFromSuperview()
+            }
+            
+            UILabel.spawnFloatingFadingLabel(toSuperview: strongSelf.view,
+                                             withText: "BOOM!") {
+                strongSelf.startNewRound()
+            }
         }
     }
     

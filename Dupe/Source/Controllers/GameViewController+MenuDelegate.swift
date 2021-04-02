@@ -32,7 +32,7 @@ extension GameViewController: MenuDelegate {
         
         weak var weakSelf = self
         
-        menu.fadeOut(for: 0.4,
+        menu.fadeOut(for: 0.1,
                      completion: {
                         guard let strongSelf = weakSelf else { return }
                         
