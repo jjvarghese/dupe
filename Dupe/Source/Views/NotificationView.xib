@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,25 +16,75 @@
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgX-R5-WaI">
                     <rect key="frame" x="3" y="0.0" width="231" height="229"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvc-jp-SBe" userLabel="blBlackCorner">
+                    <rect key="frame" x="0.0" y="217" width="15" height="15"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="Jsr-oS-ayN"/>
+                        <constraint firstAttribute="width" constant="15" id="SJd-WE-Agg"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4A-Ln-8mh" userLabel="blClearCorner">
+                    <rect key="frame" x="0.0" y="220" width="12" height="12"/>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="12" id="dF0-jB-WrH"/>
+                        <constraint firstAttribute="height" constant="12" id="z86-PC-Rx4"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3n-Bk-RiT" userLabel="brBlackCorner">
+                    <rect key="frame" x="222" y="217" width="15" height="15"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="Lb7-ih-RL4"/>
+                        <constraint firstAttribute="width" constant="15" id="Oge-UJ-q0J"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ZE-EW-tbg" userLabel="brClearCorner">
+                    <rect key="frame" x="225" y="220" width="12" height="12"/>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="m1V-Lu-rRI"/>
+                        <constraint firstAttribute="width" constant="12" id="syt-Ku-SXk"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="GgX-R5-WaI" secondAttribute="trailing" constant="3" id="53k-vL-tkX"/>
                 <constraint firstItem="GgX-R5-WaI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="3" id="7QR-0C-WWd"/>
+                <constraint firstAttribute="trailing" secondItem="7ZE-EW-tbg" secondAttribute="trailing" id="BJX-KG-UYx"/>
+                <constraint firstItem="Dvc-jp-SBe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IQX-dW-nCX"/>
+                <constraint firstAttribute="bottom" secondItem="7ZE-EW-tbg" secondAttribute="bottom" id="KsS-ri-7aQ"/>
                 <constraint firstAttribute="bottom" secondItem="GgX-R5-WaI" secondAttribute="bottom" constant="3" id="RRb-5S-bAz"/>
+                <constraint firstAttribute="bottom" secondItem="e4A-Ln-8mh" secondAttribute="bottom" id="Vmo-UR-FvY"/>
+                <constraint firstAttribute="bottom" secondItem="Dvc-jp-SBe" secondAttribute="bottom" id="gEx-zI-1Dh"/>
                 <constraint firstItem="GgX-R5-WaI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="i3j-fB-Drf"/>
+                <constraint firstAttribute="trailing" secondItem="N3n-Bk-RiT" secondAttribute="trailing" id="liU-JK-i0R"/>
+                <constraint firstItem="e4A-Ln-8mh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="n4D-xk-1sC"/>
+                <constraint firstAttribute="bottom" secondItem="N3n-Bk-RiT" secondAttribute="bottom" id="sRg-On-0hv"/>
             </constraints>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="blCorner" destination="e4A-Ln-8mh" id="Z0X-tx-0r5"/>
+                <outlet property="brCorner" destination="7ZE-EW-tbg" id="ZaQ-Cp-keA"/>
                 <outlet property="textView" destination="GgX-R5-WaI" id="yAk-86-iBY"/>
             </connections>
             <point key="canvasLocation" x="247.10144927536234" y="277.90178571428572"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
