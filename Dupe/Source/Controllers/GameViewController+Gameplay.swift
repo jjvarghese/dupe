@@ -104,9 +104,7 @@ extension GameViewController {
             
             strongSelf.menu?.backgroundColor = GameViewController.baseRubikColor
             strongSelf.bigGrid?.reset()
-                        
-            strongSelf.scoreLabel?.isHidden = false
-            
+                                    
             for grid in strongSelf.grids {
                 grid.removeFromSuperview()
             }
@@ -114,6 +112,7 @@ extension GameViewController {
             UILabel.spawnFloatingFadingLabel(toSuperview: strongSelf.view,
                                              withText: "BOOM!") {
                 strongSelf.startNewRound()
+                strongSelf.showScore()
             }
         }
     }
@@ -124,6 +123,12 @@ extension GameViewController {
     }
     
     // MARK: - Private -
+    
+    private func showScore() {
+        let scoreString = String(format: "GAME OVER\n\nYou achieved a score of\n%d", currentScore)
+        
+        notificationView?.popin(withText: scoreString)
+    }
     
     @objc private func spawnSideGrid() {
         var hasExistingLeftGrid = false

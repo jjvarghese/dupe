@@ -20,23 +20,14 @@ class GameViewController: UIViewController {
     var gameInProgress: Bool = false
 
     @IBOutlet weak var bigGrid: Grid?
-    @IBOutlet weak var scoreLabel: UILabel?
     
     var menu: Menu?
+    var notificationView: NotificationView? = UINib(nibName: NotificationView.NibName,
+                                                    bundle: nil).instantiate(withOwner: self, options: nil).first as? NotificationView
     
     let soundProvider: SoundProvider = SoundProvider()
     
-    private var _currentScore: Int?
-    var currentScore: Int {
-        get {
-            return _currentScore ?? 0
-        }
-        set {
-            _currentScore = newValue
-            
-            scoreLabel?.text = String(format: "Your score: %d", newValue)
-        }
-    }
+    var currentScore: Int = 0
     
     private static var _baseRubikColor: UIColor?
     static var baseRubikColor: UIColor {
@@ -83,7 +74,6 @@ class GameViewController: UIViewController {
     
     private func configureSubviews() {
         configureMenu()
-        configureScoreLabel()
         configureCollectionViews()
     }
     
@@ -97,11 +87,6 @@ class GameViewController: UIViewController {
         bigGrid.size = .large
         
         configure(grid: bigGrid)
-    }
-    
-    private func configureScoreLabel() {
-        scoreLabel?.isHidden = true
-        scoreLabel?.theme(withSize: 20)
     }
     
     private func configureMenu() {

@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import FFPopup
 
 extension GameViewController: MenuDelegate {
     
@@ -36,7 +35,6 @@ extension GameViewController: MenuDelegate {
             weakSelf?.bigGrid?.reset()
             weakSelf?.soundProvider.playRandomTune()
             weakSelf?.soundProvider.play(sfx: .start)
-            weakSelf?.scoreLabel?.isHidden = true
             weakSelf?.currentScore = 0
             
             menu.fadeOut(for: 0.4,
@@ -52,20 +50,9 @@ extension GameViewController: MenuDelegate {
     }
     
     private func handleAboutPressed() {
-        let nib = UINib(nibName: AboutView.NibName,
-                        bundle: nil)
-        guard let aboutView = nib.instantiate(withOwner: self, options: nil).first as? AboutView else { return }
-                
-        let popup = FFPopup(contetnView: aboutView,
-                            showType: .bounceInFromTop,
-                            dismissType: .slideOutToTop,
-                            maskType: .dimmed,
-                            dismissOnBackgroundTouch: true,
-                            dismissOnContentTouch: true)
-        let layout = FFPopupLayout(horizontal: .center,
-                                   vertical: .top)
-        
-        popup.show(layout: layout)
+        notificationView?.popin(withText: """
+            Dupe is a solo production, made with ❤️\n\n Sound effects and music obtained from\nhttps://www.zapsplat.com
+        """)
     }
     
     
