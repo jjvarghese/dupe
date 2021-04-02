@@ -17,6 +17,12 @@ extension GameViewController {
         DispatchQueue.main.async {
             guard let strongSelf = weakSelf else { return }
             
+            for grid in strongSelf.grids {
+                if grid.position == position {
+                    return
+                }
+            }
+            
             let grid = Grid(withSize: .small)
 
             grid.position = position

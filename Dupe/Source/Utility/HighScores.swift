@@ -11,10 +11,11 @@ import Foundation
 class HighScores {
     
     private static let HIGH_SCORES_KEY = "HIGH_SCORES"
+    private static let MAX_NUMBER_OF_SCORES = 5
     
     static func save(score: Int) {
         if var existingHighScores = UserDefaults.standard.object(forKey: HIGH_SCORES_KEY) as? [Int] {
-            if existingHighScores.count < 10 {
+            if existingHighScores.count < MAX_NUMBER_OF_SCORES {
                 existingHighScores.append(score)
             } else {
                 if let lowestScore = existingHighScores.min() {
