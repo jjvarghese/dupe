@@ -66,10 +66,10 @@
 		44011979436F858C959A889DE7E59F97 /* FFPopup-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FFPopup-prefix.pch"; sourceTree = "<group>"; };
 		451A1515CF864787AD7790AC70A3D6F4 /* FFPopup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FFPopup.h; path = FFPopup/Classes/FFPopup.h; sourceTree = "<group>"; };
 		4CB932AAAC2FDB2F4D67B6205B22D861 /* FFPopup-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FFPopup-Info.plist"; sourceTree = "<group>"; };
-		4E86A8BBFE3E34AADA3FA6FC85FD12FE /* Pods_Dupe_DupeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Dupe_DupeUITests.framework; path = "Pods-Dupe-DupeUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E86A8BBFE3E34AADA3FA6FC85FD12FE /* Pods_Dupe_DupeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dupe_DupeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F6905D06483AF6E8B6CD81EF3C00EAE /* Pods-Dupe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dupe.release.xcconfig"; sourceTree = "<group>"; };
 		50C1DE4446ACC14483DFECA4F8B8056F /* Pods-Dupe-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dupe-acknowledgements.plist"; sourceTree = "<group>"; };
-		5125771082B193234A1C5F1A2329790A /* FFPopup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FFPopup.framework; path = FFPopup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5125771082B193234A1C5F1A2329790A /* FFPopup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFPopup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F4EC9897A8276D02FF76DB8733643C /* Pods-Dupe-DupeUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Dupe-DupeUITests-umbrella.h"; sourceTree = "<group>"; };
 		715E54E61462D6BC9B848E7EDA10DCF9 /* Pods-Dupe-DupeUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dupe-DupeUITests-Info.plist"; sourceTree = "<group>"; };
 		76B8673BADF951B3B7C0CF1514B82014 /* Pods-Dupe-DupeUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Dupe-DupeUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -78,13 +78,13 @@
 		7DB2280B95381D718E10AD4639A90007 /* Pods-Dupe-DupeUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Dupe-DupeUITests.modulemap"; sourceTree = "<group>"; };
 		8179593FD7563A33129D203DA63522AD /* Pods-Dupe-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dupe-Info.plist"; sourceTree = "<group>"; };
 		823E5898998EFC1F1A60292AFA48A70F /* Pods-Dupe.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Dupe.modulemap"; sourceTree = "<group>"; };
-		8ACBD2E9637FA006E3DD74D687521F55 /* Pods_Dupe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Dupe.framework; path = "Pods-Dupe.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ACBD2E9637FA006E3DD74D687521F55 /* Pods_Dupe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dupe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6DBDE390BD01918A380BDDA45C85D4 /* Pods-DupeTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DupeTests.modulemap"; sourceTree = "<group>"; };
 		8FA320F57B0FBD0DF11A89750ECA7C7A /* Pods-Dupe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dupe.debug.xcconfig"; sourceTree = "<group>"; };
 		9161DC24456A68728737DFC881A42061 /* FFPopup.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FFPopup.modulemap; sourceTree = "<group>"; };
-		99F5A63A2ED4B8664CDB24D945DFE841 /* Pods_DupeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DupeTests.framework; path = "Pods-DupeTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99F5A63A2ED4B8664CDB24D945DFE841 /* Pods_DupeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DupeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6955F27D537434BE37B780F4B2D68A /* Pods-Dupe-DupeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dupe-DupeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A3A9FCF75A560B7CB72FE039740915E6 /* FFPopup.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FFPopup.xcconfig; sourceTree = "<group>"; };
 		C2465F667D1245B08BCB2C00C710325F /* Pods-Dupe-DupeUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dupe-DupeUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D4C8F5E577BF884BD0C1EAB2EC647865 /* FFPopup-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FFPopup-dummy.m"; sourceTree = "<group>"; };
@@ -146,7 +146,6 @@
 				78492FFD2EC81BDE22649580B9C4094C /* FFPopup.m */,
 				6AB8DE1512039E72EC7645D72CCCFA97 /* Support Files */,
 			);
-			name = FFPopup;
 			path = FFPopup;
 			sourceTree = "<group>";
 		};
@@ -382,7 +381,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -596,6 +595,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -738,6 +738,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -788,7 +789,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FFPopup/FFPopup-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FFPopup/FFPopup-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -901,7 +902,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/FFPopup/FFPopup-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/FFPopup/FFPopup-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
