@@ -13,8 +13,8 @@ extension UIButton {
     
     func theme() {
         backgroundColor = .clear
-        titleLabel?.font = UIFont(name: "8-bit",
-                                          size: 30)
+        titleLabel?.font = UIFont(name: "PressStart2P-Regular",
+                                          size: 20)
         setTitleColor(UIColor.background,
                       for: .normal)
     }

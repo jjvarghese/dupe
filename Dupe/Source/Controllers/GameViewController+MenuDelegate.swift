@@ -55,7 +55,7 @@ extension GameViewController: MenuDelegate {
     
     private func handleAboutPressed() {
         notificationView?.popin(withText: """
-            Dupe is a solo production, made with ❤️\n\n Sound effects and music obtained from\nhttps://www.zapsplat.com
+        Dupe is a solo production,\n made with ❤️\n\n Sound effects and music obtained from\nhttps://www.zapsplat.com
         """)
     }
     

@@ -14,8 +14,8 @@ extension UITextView {
     func theme() {
         backgroundColor = .clear
         textColor = UIColor.background
-        font = UIFont(name: "8-bit",
-                        size: 20)
+        font = UIFont(name: "PressStart2P-Regular",
+                        size: 12)
         textAlignment = .center
     }
     

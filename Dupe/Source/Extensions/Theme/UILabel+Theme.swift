@@ -11,10 +11,10 @@ import UIKit
 
 extension UILabel {
     
-    func theme(withSize size: CGFloat = 37) {
+    func theme(withSize size: CGFloat = 20) {
         backgroundColor = .clear
         textColor = UIColor.textColor
-        font = UIFont(name: "8-bit",
+        font = UIFont(name: "PressStart2P-Regular",
                         size: size)
         textAlignment = .center
     }
