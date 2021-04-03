@@ -19,4 +19,14 @@ extension UILabel {
         textAlignment = .center
     }
     
+    func themeAsLogo() {
+        backgroundColor = .clear
+        textColor = GameViewController.baseRubikColor
+        font = UIFont(name: "8-bit",
+                        size: 70)
+        textAlignment = .center
+        alpha = 1
+        bob()
+    }
+    
 }

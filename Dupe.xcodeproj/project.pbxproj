@@ -18,6 +18,7 @@
 		A445390F26163E240000B051 /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445390E26163E240000B051 /* Corner.swift */; };
 		A453CE3B261854780049A6E2 /* ka1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A453CE3A261854780049A6E2 /* ka1.ttf */; };
 		A453CE40261855790049A6E2 /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A453CE3F261855790049A6E2 /* PressStart2P-Regular.ttf */; };
+		A453CE4526186D1A0049A6E2 /* [Grid]+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CE4426186D1A0049A6E2 /* [Grid]+Operations.swift */; };
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
@@ -117,6 +118,7 @@
 		A445390E26163E240000B051 /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
 		A453CE3A261854780049A6E2 /* ka1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ka1.ttf; sourceTree = "<group>"; };
 		A453CE3F261855790049A6E2 /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
+		A453CE4426186D1A0049A6E2 /* [Grid]+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[Grid]+Operations.swift"; sourceTree = "<group>"; };
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Detection.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			children = (
 				A4DBACF1260FDAD6006B42B7 /* Theme */,
 				A49B97572475BF5D007BF29A /* [Int]+Operations.swift */,
+				A453CE4426186D1A0049A6E2 /* [Grid]+Operations.swift */,
 				A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */,
 				A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */,
 				A49B9761247ADF3F007BF29A /* Collection+Operations.swift */,
@@ -730,6 +733,7 @@
 			files = (
 				A4BC1CEF26066564009A2AA0 /* SFX.swift in Sources */,
 				A4DBACFD260FDC20006B42B7 /* UITextView+Theme.swift in Sources */,
+				A453CE4526186D1A0049A6E2 /* [Grid]+Operations.swift in Sources */,
 				A4DBACD1260F63D2006B42B7 /* GameViewController+UITableViewDelegate.swift in Sources */,
 				A49B97552475BC9B007BF29A /* Grid.swift in Sources */,
 				A445390F26163E240000B051 /* Corner.swift in Sources */,

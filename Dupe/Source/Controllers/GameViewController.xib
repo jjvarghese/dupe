@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController" customModule="Dupe" customModuleProvider="target">
             <connections>
                 <outlet property="bigGrid" destination="5YU-iq-uwr" id="MwB-mu-yOg"/>
+                <outlet property="logoLabel" destination="Nw9-PJ-5OV" id="7pT-DE-RoW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,12 +32,24 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DUPE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nw9-PJ-5OV">
+                    <rect key="frame" x="40" y="144" width="334" height="117"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="117" id="TVz-Df-ydI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="Nw9-PJ-5OV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="9dk-FQ-zhu"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-20" id="DOh-jD-Kzs"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="R0v-nF-IvR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nw9-PJ-5OV" secondAttribute="trailing" constant="40" id="ZEA-iP-VD8"/>
+                <constraint firstItem="Nw9-PJ-5OV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="gKh-BZ-NZa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5YU-iq-uwr" secondAttribute="trailing" constant="40" id="hrp-NA-SKr"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iY2-EC-wdG"/>
             </constraints>

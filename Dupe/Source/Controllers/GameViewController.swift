@@ -20,7 +20,8 @@ class GameViewController: UIViewController {
     var gameInProgress: Bool = false
 
     @IBOutlet weak var bigGrid: Grid?
-    
+    @IBOutlet weak var logoLabel: UILabel?
+
     var menu: Menu?
     var notificationView: NotificationView? = UINib(nibName: NotificationView.NibName,
                                                     bundle: nil).instantiate(withOwner: self, options: nil).first as? NotificationView
@@ -58,12 +59,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font names: \(names)")
-        }
-
-        
         view.backgroundColor = UIColor.background
         
         configureSubviews()
@@ -79,8 +74,13 @@ class GameViewController: UIViewController {
     // MARK: - Configuration -
     
     private func configureSubviews() {
+        configureLogo()
         configureMenu()
         configureCollectionViews()
+    }
+    
+    private func configureLogo() {
+        logoLabel?.themeAsLogo()
     }
     
     private func configureNavigationBar() {

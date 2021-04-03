@@ -20,7 +20,7 @@ public extension UIView {
         
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         animation.repeatCount = count
-        animation.duration = duration/TimeInterval(animation.repeatCount)
+        animation.duration = duration / TimeInterval(animation.repeatCount)
         animation.autoreverses = true
         animation.values = [translation, -translation]
         
@@ -29,6 +29,18 @@ public extension UIView {
         DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             completion?()
         }
+    }
+    
+    func bob() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.y")
+        
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        animation.repeatCount = Float.greatestFiniteMagnitude
+        animation.duration = 90 / TimeInterval(99)
+        animation.autoreverses = true
+        animation.values = [5, -5]
+        
+        layer.add(animation, forKey: "bob")
     }
     
     func fadeOut(for duration: TimeInterval,

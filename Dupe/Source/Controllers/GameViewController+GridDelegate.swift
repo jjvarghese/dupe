@@ -3,6 +3,8 @@ import Foundation
 extension GameViewController: GridDelegate {
     
     func gridDidCollide(_ grid: Grid) {
+        grids.removeAllGrids()
+        
         triggerGameOver()
     }
     

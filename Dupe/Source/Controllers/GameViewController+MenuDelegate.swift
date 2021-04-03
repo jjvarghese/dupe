@@ -40,6 +40,7 @@ extension GameViewController: MenuDelegate {
             weakSelf?.soundProvider.playRandomTune()
             weakSelf?.soundProvider.play(sfx: .start)
             weakSelf?.currentScore = 0
+            weakSelf?.logoLabel?.fadeOut(for: 0.4)
             
             menu.fadeOut(for: 0.4,
                          completion: {

@@ -106,6 +106,7 @@ extension GameViewController {
             strongSelf.gameInProgress = false 
             strongSelf.soundProvider.play(sfx: .gameOver)
             strongSelf.soundProvider.stopAllTunes()
+            strongSelf.logoLabel?.themeAsLogo()
             
             if strongSelf.currentScore > 0 {
                 HighScores.save(score: strongSelf.currentScore)
