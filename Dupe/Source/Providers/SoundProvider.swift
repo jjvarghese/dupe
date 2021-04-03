@@ -11,6 +11,8 @@ import AVFoundation
 
 class SoundProvider: NSObject {
     
+    static private let NUMBER_OF_MUSIC_TRACKS = 15
+    
     var musicPlayer: AVAudioPlayer?
     var sfxPlayer: AVAudioPlayer?
     var justPlayed: String?
@@ -77,7 +79,7 @@ class SoundProvider: NSObject {
     
     private func getRandomTuneName() -> String {
         let randomTuneName = String(format: "%d",
-                                    Int.random(in: 1...12))
+                                    Int.random(in: 1...SoundProvider.NUMBER_OF_MUSIC_TRACKS))
         
         if randomTuneName == justPlayed {
             return getRandomTuneName()

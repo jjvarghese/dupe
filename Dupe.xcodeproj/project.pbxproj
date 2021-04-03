@@ -19,6 +19,9 @@
 		A453CE3B261854780049A6E2 /* ka1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A453CE3A261854780049A6E2 /* ka1.ttf */; };
 		A453CE40261855790049A6E2 /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A453CE3F261855790049A6E2 /* PressStart2P-Regular.ttf */; };
 		A453CE4526186D1A0049A6E2 /* [Grid]+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CE4426186D1A0049A6E2 /* [Grid]+Operations.swift */; };
+		A453CE4F261871070049A6E2 /* 15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A453CE4C261871060049A6E2 /* 15.mp3 */; };
+		A453CE50261871070049A6E2 /* 13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A453CE4D261871060049A6E2 /* 13.mp3 */; };
+		A453CE51261871070049A6E2 /* 14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A453CE4E261871070049A6E2 /* 14.mp3 */; };
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
@@ -119,6 +122,9 @@
 		A453CE3A261854780049A6E2 /* ka1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ka1.ttf; sourceTree = "<group>"; };
 		A453CE3F261855790049A6E2 /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
 		A453CE4426186D1A0049A6E2 /* [Grid]+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[Grid]+Operations.swift"; sourceTree = "<group>"; };
+		A453CE4C261871060049A6E2 /* 15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 15.mp3; sourceTree = "<group>"; };
+		A453CE4D261871060049A6E2 /* 13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 13.mp3; sourceTree = "<group>"; };
+		A453CE4E261871070049A6E2 /* 14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 14.mp3; sourceTree = "<group>"; };
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Detection.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
@@ -411,6 +417,9 @@
 				A4BC1CC026054CA4009A2AA0 /* 10.wav */,
 				A4BC1D08260776E6009A2AA0 /* 11.mp3 */,
 				A4BC1D07260776E6009A2AA0 /* 12.mp3 */,
+				A453CE4D261871060049A6E2 /* 13.mp3 */,
+				A453CE4E261871070049A6E2 /* 14.mp3 */,
+				A453CE4C261871060049A6E2 /* 15.mp3 */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -588,7 +597,9 @@
 				A4BC1CC626054CA5009A2AA0 /* 6.mp3 in Resources */,
 				A453CE3B261854780049A6E2 /* ka1.ttf in Resources */,
 				A49B975324747B7B007BF29A /* GridCell.xib in Resources */,
+				A453CE4F261871070049A6E2 /* 15.mp3 in Resources */,
 				A4BC1D0226069118009A2AA0 /* touch.mp3 in Resources */,
+				A453CE51261871070049A6E2 /* 14.mp3 in Resources */,
 				A4DBACED260FD871006B42B7 /* NotificationView.xib in Resources */,
 				A49B971F24745570007BF29A /* LaunchScreen.storyboard in Resources */,
 				A4BC1CC226054CA5009A2AA0 /* 3.wav in Resources */,
@@ -602,6 +613,7 @@
 				A4BC1D0A260776E6009A2AA0 /* 11.mp3 in Resources */,
 				A4BC1CC826054CA5009A2AA0 /* 5.wav in Resources */,
 				A4BC1CE9260664DD009A2AA0 /* match.mp3 in Resources */,
+				A453CE50261871070049A6E2 /* 13.mp3 in Resources */,
 				A4BC1CC326054CA5009A2AA0 /* 9.mp3 in Resources */,
 				A49B971A2474556D007BF29A /* Main.storyboard in Resources */,
 			);
