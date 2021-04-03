@@ -56,9 +56,7 @@ extension GameViewController {
             guard let strongSelf = weakSelf else { return }
             
             strongSelf.soundProvider.play(sfx: .matched)
-            
             strongSelf.bigGrid?.reset()
-            
             strongSelf.grids.removeAll { (onScreenGrid) -> Bool in
                 return matchedGrid == onScreenGrid
             }
@@ -93,9 +91,10 @@ extension GameViewController {
     
     func getNumberOfPointsToGain(matchedGrid: Grid) -> Int {
         let baseline = 100
-        let amountToSubtract = tempo * 100
+        let amountToSubtract = tempo * 500
+        let positionModifier = matchedGrid.position == .center ? 0 : 100
         
-        return (baseline - Int(amountToSubtract))
+        return (baseline - Int(amountToSubtract) + positionModifier)
     }
     
     func triggerGameOver() {

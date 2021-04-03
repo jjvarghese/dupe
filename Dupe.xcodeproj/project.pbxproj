@@ -62,7 +62,6 @@
 		A4BC1D0A260776E6009A2AA0 /* 11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D08260776E6009A2AA0 /* 11.mp3 */; };
 		A4DBAC94260D4257006B42B7 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBAC93260D4257006B42B7 /* Position.swift */; };
 		A4DBACA4260E858E006B42B7 /* 8Bit-44Pl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4DBACA0260E8441006B42B7 /* 8Bit-44Pl.ttf */; };
-		A4DBACA8260E8596006B42B7 /* 8BitOutlined-oMV4.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4DBAC9F260E8441006B42B7 /* 8BitOutlined-oMV4.ttf */; };
 		A4DBACB8260F5D41006B42B7 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBACB7260F5D41006B42B7 /* Menu.swift */; };
 		A4DBACBD260F5D8D006B42B7 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBACBC260F5D8D006B42B7 /* MenuCell.swift */; };
 		A4DBACC2260F5DC0006B42B7 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DBACC1260F5DC0006B42B7 /* MenuCell.xib */; };
@@ -165,7 +164,6 @@
 		A4BC1D07260776E6009A2AA0 /* 12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12.mp3; sourceTree = "<group>"; };
 		A4BC1D08260776E6009A2AA0 /* 11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11.mp3; sourceTree = "<group>"; };
 		A4DBAC93260D4257006B42B7 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
-		A4DBAC9F260E8441006B42B7 /* 8BitOutlined-oMV4.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8BitOutlined-oMV4.ttf"; sourceTree = "<group>"; };
 		A4DBACA0260E8441006B42B7 /* 8Bit-44Pl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8Bit-44Pl.ttf"; sourceTree = "<group>"; };
 		A4DBACB7260F5D41006B42B7 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		A4DBACBC260F5D8D006B42B7 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -447,7 +445,6 @@
 			isa = PBXGroup;
 			children = (
 				A4DBACA0260E8441006B42B7 /* 8Bit-44Pl.ttf */,
-				A4DBAC9F260E8441006B42B7 /* 8BitOutlined-oMV4.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -586,7 +583,6 @@
 				A49B971F24745570007BF29A /* LaunchScreen.storyboard in Resources */,
 				A4BC1CC226054CA5009A2AA0 /* 3.wav in Resources */,
 				A4BC1CCA26054CA5009A2AA0 /* 1.wav in Resources */,
-				A4DBACA8260E8596006B42B7 /* 8BitOutlined-oMV4.ttf in Resources */,
 				A49B971C24745570007BF29A /* Assets.xcassets in Resources */,
 				A4BC1CC426054CA5009A2AA0 /* 4.wav in Resources */,
 				A4DBACA4260E858E006B42B7 /* 8Bit-44Pl.ttf in Resources */,

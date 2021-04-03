@@ -13,6 +13,8 @@ extension GameViewController: MenuDelegate {
     
     func menu(_ menu: Menu,
               selectedOption menuOption: MenuOption) {
+        soundProvider.play(sfx: .matched)
+        
         weak var weakSelf = self
         
         DispatchQueue.main.async {
