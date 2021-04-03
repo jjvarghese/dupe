@@ -45,10 +45,18 @@ extension UIView {
                                                   multiplier: 1,
                                                   constant: height)
         
-        addConstraints([xConstraint,
-                        topConstraint,
-                        widthConstraint,
-                        heightConstraint])
+        if verticalOffset == Grid.START_POSITION {
+            addConstraints([xConstraint,
+                            widthConstraint,
+                            heightConstraint])
+            
+            NSLayoutConstraint.activate([subview.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)])
+        } else {
+            addConstraints([xConstraint,
+                            topConstraint,
+                            widthConstraint,
+                            heightConstraint])
+        }
     }
     
     func removeAllExistingGestureRecognizers() {
