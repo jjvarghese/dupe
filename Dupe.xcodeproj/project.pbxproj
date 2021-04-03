@@ -22,6 +22,7 @@
 		A453CE4F261871070049A6E2 /* 15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A453CE4C261871060049A6E2 /* 15.mp3 */; };
 		A453CE50261871070049A6E2 /* 13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A453CE4D261871060049A6E2 /* 13.mp3 */; };
 		A453CE51261871070049A6E2 /* 14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A453CE4E261871070049A6E2 /* 14.mp3 */; };
+		A453CE78261906CE0049A6E2 /* UIDevice+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CE77261906CE0049A6E2 /* UIDevice+Detection.swift */; };
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
@@ -125,6 +126,7 @@
 		A453CE4C261871060049A6E2 /* 15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 15.mp3; sourceTree = "<group>"; };
 		A453CE4D261871060049A6E2 /* 13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 13.mp3; sourceTree = "<group>"; };
 		A453CE4E261871070049A6E2 /* 14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 14.mp3; sourceTree = "<group>"; };
+		A453CE77261906CE0049A6E2 /* UIDevice+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Detection.swift"; sourceTree = "<group>"; };
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Detection.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */,
 				A4DBACCB260F60DA006B42B7 /* MenuOption+Text.swift */,
 				A4DBAD06260FE128006B42B7 /* UILabel+Utilities.swift */,
+				A453CE77261906CE0049A6E2 /* UIDevice+Detection.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -758,6 +761,7 @@
 				A4453905261632020000B051 /* GridSize.swift in Sources */,
 				A4DBACB8260F5D41006B42B7 /* Menu.swift in Sources */,
 				A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */,
+				A453CE78261906CE0049A6E2 /* UIDevice+Detection.swift in Sources */,
 				A49B9762247ADF3F007BF29A /* Collection+Operations.swift in Sources */,
 				A49B974924747859007BF29A /* GameViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				A4A217E32617AAF300DB7C7C /* HighScores.swift in Sources */,
