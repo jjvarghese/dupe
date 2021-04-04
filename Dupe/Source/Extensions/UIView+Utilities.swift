@@ -13,8 +13,8 @@ extension UIView {
     
     func addSubviewWithConstraints(subview: UIView,
                                    atPosition position: Position,
-                                   withWidth width: CGFloat = 60,
-                                   withHeight height: CGFloat = 60,
+                                   withWidth width: CGFloat? = nil,
+                                   withHeight height: CGFloat? = nil,
                                    withVerticalOffset verticalOffset: CGFloat = Grid.START_POSITION) {
         addSubview(subview)
         
@@ -36,14 +36,14 @@ extension UIView {
                                                  toItem: nil,
                                                  attribute: NSLayoutConstraint.Attribute.notAnAttribute,
                                                  multiplier: 1,
-                                                 constant: width)
+                                                 constant: width ?? frame.size.width / 5)
         let heightConstraint = NSLayoutConstraint(item: subview,
                                                   attribute: NSLayoutConstraint.Attribute.height,
                                                   relatedBy: NSLayoutConstraint.Relation.equal,
                                                   toItem: nil,
                                                   attribute: NSLayoutConstraint.Attribute.notAnAttribute,
                                                   multiplier: 1,
-                                                  constant: height)
+                                                  constant: height ?? frame.size.width / 5)
         
         if verticalOffset == Grid.START_POSITION {
             addConstraints([xConstraint,
