@@ -10,12 +10,12 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    static let STARTING_TEMPO: TimeInterval = 0.2
+    static let INITIAL_TIME_TO_FALL: CGFloat = 15
     static let MAXIMUM_TEMPO: TimeInterval = 0.02
     static let INCREMENT_TEMPO: TimeInterval = 0.01
     static let THRESHOLD_TEMPO_FOR_EXTRA_SPAWN: TimeInterval = 0.1
 
-    var tempo: TimeInterval = STARTING_TEMPO
+    var tempo: TimeInterval = 0
     var grids: [Grid] = []
     var gameInProgress: Bool = false
 

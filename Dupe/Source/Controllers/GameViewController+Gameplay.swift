@@ -28,11 +28,9 @@ extension GameViewController {
             grid.position = position
             
             strongSelf.configure(grid: grid)
-            
             strongSelf.grids.append(grid)
-            
             strongSelf.view.addSubviewWithConstraints(subview: grid,
-                                           atPosition: position)
+                                                      atPosition: position)
             
             grid.randomise()
                     
@@ -128,14 +126,38 @@ extension GameViewController {
     }
     
     func startNewRound() {
-        tempo = GameViewController.STARTING_TEMPO
         menu?.alpha = 1.0
+        
+        weak var weakSelf = self
+        
+        determineInitialTempo { (initialTempo) in
+            weakSelf?.tempo = initialTempo
+        }
     }
     
     // MARK: - Private -
     
+    private func determineInitialTempo(withCompletion completion: @escaping (TimeInterval) -> Void) {
+        weak var weakSelf = self
+        
+        DispatchQueue.main.async {
+            guard let strongSelf = weakSelf else { return }
+            
+            let window = UIApplication.shared.windows.first
+            let top = (window?.safeAreaInsets.top ?? 0) + Grid.START_POSITION
+            let collisionPoint = strongSelf.bigGrid?.frame.origin.y ?? 0
+            let bottom = top + (strongSelf.view.frame.size.width / 5)
+            let distanceToFall = collisionPoint - bottom
+            let timeToFall: CGFloat = GameViewController.INITIAL_TIME_TO_FALL
+            let pixelsPerSecond = distanceToFall / timeToFall
+            let finalTempo = TimeInterval(1 / pixelsPerSecond)
+            
+            completion(finalTempo)
+        }
+    }
+    
     private func showScore() {
-        let scoreString = String(format: "GAME OVER\n\nYou achieved a score of\n%d", currentScore)
+        let scoreString = String(format: "GAME OVER\n\nYou achieved a score of\n\n%d", currentScore)
         
         notificationView?.popin(withText: scoreString)
     }
