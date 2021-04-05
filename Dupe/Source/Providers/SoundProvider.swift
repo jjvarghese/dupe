@@ -17,9 +17,9 @@ class SoundProvider: NSObject {
     var sfxPlayer: AVAudioPlayer?
     var justPlayed: String?
     
-    func play(sfx: SFX) {
-        guard let sfxUrl = Bundle.main.url(forResource: sfx.rawValue,
-                                        withExtension: "mp3") else {
+    func play(sfx: SFX,
+              bundle: BundleProtocol = Bundle.main) {
+        guard let sfxUrl = bundle.url(forResource: sfx.rawValue) else {
             return
         }
         
@@ -31,12 +31,12 @@ class SoundProvider: NSObject {
         musicPlayer?.stop()
     }
     
-    func playRandomTune() {
+    func playRandomTune(bundle: BundleProtocol = Bundle.main) {
         let randomMusicSelection = getRandomTuneName()
 
         justPlayed = randomMusicSelection
         
-        guard let url = Bundle.main.url(forResource: randomMusicSelection) else { return }
+        guard let url = bundle.url(forResource: randomMusicSelection) else { return }
 
         playAudio(url: url,
                   asTune: true)

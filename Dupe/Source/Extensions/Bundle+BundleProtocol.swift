@@ -1,16 +1,15 @@
 //
-//  Bundle+URLRetrieval.swift
+//  Bundle+BundleProtocol.swift
 //  Dupe
 //
-//  Created by Joshua James on 20.03.21.
+//  Created by Joshua James on 05.04.21.
 //  Copyright © 2021 Cosmic. All rights reserved.
 //
 
 import Foundation
 
-extension Bundle {
+extension Bundle: BundleProtocol {
     
-    // Return a wav or mp3 resource, whichever is found.
     func url(forResource resource: String) -> URL? {
         if let mp3Url = url(forResource: resource,
                                         withExtension: "mp3") {

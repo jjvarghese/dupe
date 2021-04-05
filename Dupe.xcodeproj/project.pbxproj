@@ -31,6 +31,9 @@
 		A453CEAE261B1DB50049A6E2 /* [Int]+OperationsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CEAD261B1DB50049A6E2 /* [Int]+OperationsTest.swift */; };
 		A453CEB6261B23680049A6E2 /* [Grid]+OperationsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CEB5261B23680049A6E2 /* [Grid]+OperationsTest.swift */; };
 		A453CEBB261B25330049A6E2 /* [NSLayoutConstraint]+DetectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CEBA261B25330049A6E2 /* [NSLayoutConstraint]+DetectionTest.swift */; };
+		A453CEC0261B274B0049A6E2 /* BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CEBF261B274B0049A6E2 /* BundleProtocol.swift */; };
+		A453CEC5261B27660049A6E2 /* Bundle+BundleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CEC4261B27660049A6E2 /* Bundle+BundleProtocol.swift */; };
+		A453CECD261B290E0049A6E2 /* TestableBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CECC261B290E0049A6E2 /* TestableBundle.swift */; };
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
@@ -70,7 +73,6 @@
 		A4BC1CE8260664DD009A2AA0 /* gameover.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1CE6260664DD009A2AA0 /* gameover.mp3 */; };
 		A4BC1CE9260664DD009A2AA0 /* match.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1CE7260664DD009A2AA0 /* match.mp3 */; };
 		A4BC1CEF26066564009A2AA0 /* SFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1CEE26066564009A2AA0 /* SFX.swift */; };
-		A4BC1CFC26066A24009A2AA0 /* Bundle+URLRetrieval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */; };
 		A4BC1D0226069118009A2AA0 /* touch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D0026069118009A2AA0 /* touch.mp3 */; };
 		A4BC1D0326069118009A2AA0 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D0126069118009A2AA0 /* start.mp3 */; };
 		A4BC1D09260776E6009A2AA0 /* 12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4BC1D07260776E6009A2AA0 /* 12.mp3 */; };
@@ -143,6 +145,9 @@
 		A453CEAD261B1DB50049A6E2 /* [Int]+OperationsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[Int]+OperationsTest.swift"; sourceTree = "<group>"; };
 		A453CEB5261B23680049A6E2 /* [Grid]+OperationsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[Grid]+OperationsTest.swift"; sourceTree = "<group>"; };
 		A453CEBA261B25330049A6E2 /* [NSLayoutConstraint]+DetectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+DetectionTest.swift"; sourceTree = "<group>"; };
+		A453CEBF261B274B0049A6E2 /* BundleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProtocol.swift; sourceTree = "<group>"; };
+		A453CEC4261B27660049A6E2 /* Bundle+BundleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+BundleProtocol.swift"; sourceTree = "<group>"; };
+		A453CECC261B290E0049A6E2 /* TestableBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableBundle.swift; sourceTree = "<group>"; };
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Detection.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
@@ -188,7 +193,6 @@
 		A4BC1CE6260664DD009A2AA0 /* gameover.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameover.mp3; sourceTree = "<group>"; };
 		A4BC1CE7260664DD009A2AA0 /* match.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = match.mp3; sourceTree = "<group>"; };
 		A4BC1CEE26066564009A2AA0 /* SFX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFX.swift; sourceTree = "<group>"; };
-		A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+URLRetrieval.swift"; sourceTree = "<group>"; };
 		A4BC1D0026069118009A2AA0 /* touch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = touch.mp3; sourceTree = "<group>"; };
 		A4BC1D0126069118009A2AA0 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		A4BC1D07260776E6009A2AA0 /* 12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12.mp3; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				A453CE8D261B13660049A6E2 /* UserDefaultsProtocol.swift */,
+				A453CEBF261B274B0049A6E2 /* BundleProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				A453CE9F261B15DE0049A6E2 /* TestableStorage.swift */,
+				A453CECC261B290E0049A6E2 /* TestableBundle.swift */,
 			);
 			path = Mocking;
 			sourceTree = "<group>";
@@ -416,7 +422,6 @@
 				A49B97572475BF5D007BF29A /* [Int]+Operations.swift */,
 				A453CE4426186D1A0049A6E2 /* [Grid]+Operations.swift */,
 				A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */,
-				A4BC1CFB26066A24009A2AA0 /* Bundle+URLRetrieval.swift */,
 				A49B9761247ADF3F007BF29A /* Collection+Operations.swift */,
 				A49B975F247AD38D007BF29A /* Int+Operations.swift */,
 				A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */,
@@ -426,6 +431,7 @@
 				A4DBAD06260FE128006B42B7 /* UILabel+Utilities.swift */,
 				A453CE77261906CE0049A6E2 /* UIDevice+Detection.swift */,
 				A453CE96261B13FB0049A6E2 /* UserDefaults+UserDefaultsProtocol.swift */,
+				A453CEC4261B27660049A6E2 /* Bundle+BundleProtocol.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -813,6 +819,7 @@
 				A4BC1CB12602A0AE009A2AA0 /* UIColor+Theme.swift in Sources */,
 				A4DBACC7260F5FE1006B42B7 /* MenuOption.swift in Sources */,
 				A4DBACCC260F60DA006B42B7 /* MenuOption+Text.swift in Sources */,
+				A453CEC5261B27660049A6E2 /* Bundle+BundleProtocol.swift in Sources */,
 				A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */,
 				A4453905261632020000B051 /* GridSize.swift in Sources */,
 				A4DBACB8260F5D41006B42B7 /* Menu.swift in Sources */,
@@ -842,9 +849,9 @@
 				A4DBACD6260F63E0006B42B7 /* GameViewController+UITableViewDataSource.swift in Sources */,
 				A4DBACF3260FDAEA006B42B7 /* UIButton+Theme.swift in Sources */,
 				A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */,
-				A4BC1CFC26066A24009A2AA0 /* Bundle+URLRetrieval.swift in Sources */,
 				A4DBACE8260FD860006B42B7 /* NotificationView.swift in Sources */,
 				A49B975C2475C467007BF29A /* GameViewController+GridDelegate.swift in Sources */,
+				A453CEC0261B274B0049A6E2 /* BundleProtocol.swift in Sources */,
 				A4DBACE3260F9778006B42B7 /* GameViewController+MenuDelegate.swift in Sources */,
 				A49B975A2475C3EB007BF29A /* Grid+UIGestureRecognizerDelegate.swift in Sources */,
 				A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */,
@@ -861,6 +868,7 @@
 				A453CEB6261B23680049A6E2 /* [Grid]+OperationsTest.swift in Sources */,
 				A49B972A24745571007BF29A /* DupeTests.swift in Sources */,
 				A453CEAE261B1DB50049A6E2 /* [Int]+OperationsTest.swift in Sources */,
+				A453CECD261B290E0049A6E2 /* TestableBundle.swift in Sources */,
 				A453CEBB261B25330049A6E2 /* [NSLayoutConstraint]+DetectionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
