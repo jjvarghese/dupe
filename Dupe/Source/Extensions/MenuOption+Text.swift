@@ -13,11 +13,11 @@ extension MenuOption {
     func title() -> String {
         switch (self) {
         case .start:
-            return "START"
+            return Constants.Menu.start
         case .about:
-            return "ABOUT"
+            return Constants.Menu.about
         case .highScores:
-            return "SCORE"
+            return Constants.Menu.highScores
         }
     }
     

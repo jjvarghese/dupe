@@ -11,5 +11,11 @@ struct Constants {
         static let highScores = "highScores"
     }
     
+    struct Menu {
+        static let start = "START"
+        static let about = "ABOUT"
+        static let highScores = "SCORE"
+    }
+    
     private init() {}
 }
