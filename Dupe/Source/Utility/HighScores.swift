@@ -13,8 +13,9 @@ class HighScores {
     private static let HIGH_SCORES_KEY = "HIGH_SCORES"
     private static let MAX_NUMBER_OF_SCORES = 5
     
-    static func save(score: Int) {
-        if var existingHighScores = UserDefaults.standard.object(forKey: HIGH_SCORES_KEY) as? [Int] {
+    static func save(score: Int,
+                     storage: UserDefaultsProtocol = UserDefaults.standard) {
+        if var existingHighScores = storage.getObject(forKey: HIGH_SCORES_KEY) as? [Int] {
             if existingHighScores.count < MAX_NUMBER_OF_SCORES {
                 existingHighScores.append(score)
             } else {
@@ -29,18 +30,18 @@ class HighScores {
                 }
             }
             
-            UserDefaults.standard.setValue(existingHighScores,
-                                           forKey: HIGH_SCORES_KEY)
+            storage.set(object: existingHighScores,
+                        forKey: HIGH_SCORES_KEY)
         } else {
             let newHighScores = [score]
             
-            UserDefaults.standard.setValue(newHighScores,
-                                           forKey: HIGH_SCORES_KEY)
+            storage.set(object: newHighScores,
+                        forKey: HIGH_SCORES_KEY)
         }
     }
     
-    static func getScores() -> [Int] {
-        let existingHighScores = UserDefaults.standard.object(forKey: HIGH_SCORES_KEY) as? [Int]
+    static func getScores(storage: UserDefaultsProtocol = UserDefaults.standard) -> [Int] {
+        let existingHighScores = storage.getObject(forKey: HIGH_SCORES_KEY) as? [Int]
         
         return existingHighScores?.sorted().reversed() ?? []
     }

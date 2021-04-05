@@ -23,6 +23,10 @@
 		A453CE50261871070049A6E2 /* 13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A453CE4D261871060049A6E2 /* 13.mp3 */; };
 		A453CE51261871070049A6E2 /* 14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A453CE4E261871070049A6E2 /* 14.mp3 */; };
 		A453CE78261906CE0049A6E2 /* UIDevice+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CE77261906CE0049A6E2 /* UIDevice+Detection.swift */; };
+		A453CE86261B0F5D0049A6E2 /* HighScoresTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CE85261B0F5D0049A6E2 /* HighScoresTest.swift */; };
+		A453CE8E261B13660049A6E2 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CE8D261B13660049A6E2 /* UserDefaultsProtocol.swift */; };
+		A453CE97261B13FB0049A6E2 /* UserDefaults+UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CE96261B13FB0049A6E2 /* UserDefaults+UserDefaultsProtocol.swift */; };
+		A453CEA0261B15DE0049A6E2 /* TestableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CE9F261B15DE0049A6E2 /* TestableStorage.swift */; };
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
@@ -127,6 +131,10 @@
 		A453CE4D261871060049A6E2 /* 13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 13.mp3; sourceTree = "<group>"; };
 		A453CE4E261871070049A6E2 /* 14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 14.mp3; sourceTree = "<group>"; };
 		A453CE77261906CE0049A6E2 /* UIDevice+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Detection.swift"; sourceTree = "<group>"; };
+		A453CE85261B0F5D0049A6E2 /* HighScoresTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresTest.swift; sourceTree = "<group>"; };
+		A453CE8D261B13660049A6E2 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		A453CE96261B13FB0049A6E2 /* UserDefaults+UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserDefaultsProtocol.swift"; sourceTree = "<group>"; };
+		A453CE9F261B15DE0049A6E2 /* TestableStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableStorage.swift; sourceTree = "<group>"; };
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Detection.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
@@ -248,6 +256,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A453CE84261B0F1F0049A6E2 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A453CE85261B0F5D0049A6E2 /* HighScoresTest.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		A453CE95261B13BB0049A6E2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A453CE8D261B13660049A6E2 /* UserDefaultsProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A453CE9E261B15C10049A6E2 /* Mocking */ = {
+			isa = PBXGroup;
+			children = (
+				A453CE9F261B15DE0049A6E2 /* TestableStorage.swift */,
+			);
+			path = Mocking;
+			sourceTree = "<group>";
+		};
 		A49B97062474556D007BF29A = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +314,8 @@
 		A49B972824745571007BF29A /* DupeTests */ = {
 			isa = PBXGroup;
 			children = (
+				A453CE9E261B15C10049A6E2 /* Mocking */,
+				A453CE84261B0F1F0049A6E2 /* Utility */,
 				A49B972924745571007BF29A /* DupeTests.swift */,
 				A49B972B24745571007BF29A /* Info.plist */,
 			);
@@ -343,6 +377,7 @@
 		A49B974F24747AE3007BF29A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A453CE95261B13BB0049A6E2 /* Protocols */,
 				A4A217E12617AAD700DB7C7C /* Utility */,
 				A4BC1CED2606654A009A2AA0 /* Types */,
 				A4BC1CD426054D3A009A2AA0 /* Providers */,
@@ -371,6 +406,7 @@
 				A4DBACCB260F60DA006B42B7 /* MenuOption+Text.swift */,
 				A4DBAD06260FE128006B42B7 /* UILabel+Utilities.swift */,
 				A453CE77261906CE0049A6E2 /* UIDevice+Detection.swift */,
+				A453CE96261B13FB0049A6E2 /* UserDefaults+UserDefaultsProtocol.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -768,6 +804,8 @@
 				A49B975224747B7B007BF29A /* GridCell.swift in Sources */,
 				A4BC1CDE26054FB5009A2AA0 /* SoundProvider+AVAudioPlayerDelegate.swift in Sources */,
 				A4BC1CD626054D47009A2AA0 /* SoundProvider.swift in Sources */,
+				A453CE8E261B13660049A6E2 /* UserDefaultsProtocol.swift in Sources */,
+				A453CE97261B13FB0049A6E2 /* UserDefaults+UserDefaultsProtocol.swift in Sources */,
 				A4DBACBD260F5D8D006B42B7 /* MenuCell.swift in Sources */,
 				A4364ADA247EED7200D7AF78 /* GameViewController+Gameplay.swift in Sources */,
 				A49B97582475BF5D007BF29A /* [Int]+Operations.swift in Sources */,
@@ -797,6 +835,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A453CE86261B0F5D0049A6E2 /* HighScoresTest.swift in Sources */,
+				A453CEA0261B15DE0049A6E2 /* TestableStorage.swift in Sources */,
 				A49B972A24745571007BF29A /* DupeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
