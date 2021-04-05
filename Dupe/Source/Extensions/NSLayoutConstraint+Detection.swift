@@ -46,7 +46,7 @@ extension NSLayoutConstraint {
                                    toItem: superview,
                                    attribute: NSLayoutConstraint.Attribute.leading,
                                    multiplier: 1,
-                                   constant: LEFT_CONSTANT)
+                                   constant: (superview.frame.width / 5) - LEFT_CONSTANT)
     }
     
     private static func getCentreConstraint(forSubview subview: UIView,
@@ -68,7 +68,7 @@ extension NSLayoutConstraint {
                                    toItem: superview,
                                    attribute: NSLayoutConstraint.Attribute.trailing,
                                    multiplier: 1,
-                                   constant: RIGHT_CONSTANT)
+                                   constant: -(superview.frame.width / 5) - RIGHT_CONSTANT)
     }
     
 }
