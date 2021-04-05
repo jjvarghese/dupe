@@ -9,7 +9,7 @@ extension GameViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let gridCell = collectionView.dequeueReusableCell(withReuseIdentifier: GridCell.CellIdentifier,
+        guard let gridCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellIdentifiers.GridCell,
                                                                 for: indexPath) as? GridCell,
             let gridCollectionView = collectionView as? Grid else {            return UICollectionViewCell()
         }

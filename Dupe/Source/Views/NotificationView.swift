@@ -11,9 +11,7 @@ import UIKit
 import SwiftEntryKit
 
 class NotificationView: UIView {
-    
-    static let NibName = "NotificationView"
-        
+            
     @IBOutlet private weak var blCorner: UIView?
     @IBOutlet private weak var brCorner: UIView?
     @IBOutlet private weak var textView: UITextView?

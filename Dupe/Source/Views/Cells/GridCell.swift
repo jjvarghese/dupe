@@ -9,9 +9,6 @@
 import UIKit
 
 class GridCell: UICollectionViewCell {
-
-    static let CellIdentifier = "GridCellIdentifier"
-    static let NibName = "GridCell"
     
     @IBOutlet private weak var square: UIView?
     @IBOutlet weak var squareTopConstraint: NSLayoutConstraint?

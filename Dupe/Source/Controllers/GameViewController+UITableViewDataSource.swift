@@ -22,7 +22,7 @@ extension GameViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let menuCell = tableView.dequeueReusableCell(withIdentifier: MenuCell.CellIdentifier) as? MenuCell,
+        if let menuCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.MenuCell) as? MenuCell,
            let tableView = tableView as? Menu,
            let option = MenuOption(rawValue: indexPath.row) {
             menuCell.delegate = tableView

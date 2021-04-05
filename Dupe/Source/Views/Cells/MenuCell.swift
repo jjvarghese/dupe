@@ -17,9 +17,6 @@ protocol MenuCellDelegate {
 
 class MenuCell: UITableViewCell {
     
-    static let CellIdentifier = "MenuCellIdentifier"
-    static let NibName = "MenuCell"
-    
     @IBOutlet private weak var button: UIButton?
     
     var delegate: MenuCellDelegate?

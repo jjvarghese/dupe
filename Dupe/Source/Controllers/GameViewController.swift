@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var logoLabel: UILabel?
 
     var menu: Menu?
-    var notificationView: NotificationView? = UINib(nibName: NotificationView.NibName,
+    var notificationView: NotificationView? = UINib(nibName: Constants.NibNames.NotificationView,
                                                     bundle: nil).instantiate(withOwner: self, options: nil).first as? NotificationView
     
     let soundProvider: SoundProvider = SoundProvider()

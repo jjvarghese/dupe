@@ -55,11 +55,11 @@ class Menu: UITableView {
     }
     
     private func configureRegistration() {
-        let nib = UINib.init(nibName: MenuCell.NibName,
+        let nib = UINib.init(nibName: Constants.NibNames.MenuCell,
                              bundle: nil)
         
         register(nib,
-                 forCellReuseIdentifier: MenuCell.CellIdentifier)
+                 forCellReuseIdentifier: Constants.CellIdentifiers.MenuCell)
     }
             
 }

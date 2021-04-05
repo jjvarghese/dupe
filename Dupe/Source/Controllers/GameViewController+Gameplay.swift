@@ -118,7 +118,7 @@ extension GameViewController {
             }
             
             UILabel.spawnFloatingFadingLabel(toSuperview: strongSelf.view,
-                                             withText: "BOOM!") {
+                                             withText: Constants.Text.collisionText) {
                 strongSelf.startNewRound()
                 strongSelf.showScore()
             }
@@ -157,7 +157,9 @@ extension GameViewController {
     }
     
     private func showScore() {
-        let scoreString = String(format: "GAME OVER\n\nYou achieved a score of\n\n%d", currentScore)
+        let scoreString = String(format: "%@%d",
+                                 Constants.Text.gameOverHeadline,
+                                 currentScore)
         
         notificationView?.popin(withText: scoreString)
     }

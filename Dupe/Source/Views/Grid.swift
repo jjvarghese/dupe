@@ -143,11 +143,11 @@ class Grid: UICollectionView {
     }
     
     private func configureRegistration() {
-        let nib = UINib.init(nibName: GridCell.NibName,
+        let nib = UINib.init(nibName: Constants.NibNames.GridCell,
                              bundle: nil)
         
         register(nib,
-                 forCellWithReuseIdentifier: GridCell.CellIdentifier)
+                 forCellWithReuseIdentifier: Constants.CellIdentifiers.GridCell)
     }
     
     // MARK: - Private -

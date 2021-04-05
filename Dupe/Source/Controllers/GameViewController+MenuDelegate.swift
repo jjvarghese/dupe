@@ -47,7 +47,9 @@ extension GameViewController: MenuDelegate {
                             guard let strongSelf = weakSelf else { return }
                             
                             UILabel.spawnFloatingFadingLabels(toSuperview: strongSelf.view,
-                                                              withTexts: ["Ready...", "Set...", "DUPE!"]) {
+                                                              withTexts: [Constants.Text.startGameReadyText1,
+                                                                          Constants.Text.startGameReadyText2,
+                                                                          Constants.Text.startGameReadyText3]) {
                                 weakSelf?.spawnGrid(in: .center)
                             }
                          })
@@ -55,15 +57,13 @@ extension GameViewController: MenuDelegate {
     }
     
     private func handleAboutPressed() {
-        notificationView?.popin(withText: """
-        Dupe is a solo production,\n made with ❤️\n\n Sound effects and music obtained from\nwww.zapsplat.com
-        """)
+        notificationView?.popin(withText: Constants.Text.aboutDescription)
     }
     
     private func handleHighScoresPressed() {
         let highScores = HighScores.getScores()
         
-        var text = String("HIGH SCORES\n\n")
+        var text = Constants.Text.highScoreTitle
         
         var i = 1
         for highScore in highScores {
@@ -73,7 +73,7 @@ extension GameViewController: MenuDelegate {
         }
         
         if highScores.count == 0 {
-            text.append("No scores yet!")
+            text.append(Constants.Text.highScoreNoScores)
         }
         
         notificationView?.popin(withText: text)
