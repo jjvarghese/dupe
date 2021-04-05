@@ -21,15 +21,16 @@ extension NSLayoutConstraint {
     static func xLayoutConstraint(forSubview subview: UIView,
                                   forSuperview superview: UIView,
                                   forPosition position: Position) -> NSLayoutConstraint {
-        if position == .left {
+        switch position {
+        case .left:
             return getLeftConstraint(forSubview: subview,
                                      forSuperview: superview)
-        } else if position == .right {
+        case .right:
             return getRightConstraint(forSubview: subview,
                                       forSuperview: superview)
-        } else {
+        case .center:
             return getCentreConstraint(forSubview: subview,
-                                       forSuperview: superview)
+                                              forSuperview: superview)
         }
     }
     
