@@ -1,5 +1,5 @@
 //
-//  HighScoresTest.swift
+//  IntArrayOperationsExtensionTest.swift
 //  DupeTests
 //
 //  Created by Joshua James on 05.04.21.
@@ -9,28 +9,8 @@
 import XCTest
 @testable import Dupe
 
-/*
- mutating func toggle(element: Int) {
-     if contains(element) {
-         removeAll { (containingElement) -> Bool in
-             return containingElement == element
-         }
-     } else {
-         append(element)
-     }
- }
- 
- mutating func addIfNotAlreadyThere(element: Int) {
-     if !contains(element) {
-         append(element)
-     }
- }
- */
 class IntArrayOperationsExtensionTest: XCTestCase {
     
-    override func setUpWithError() throws {
-    }
-
     func testToggleOnEmptyArray() {
         var array: [Int] = []
         
