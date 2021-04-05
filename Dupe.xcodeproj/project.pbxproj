@@ -27,6 +27,7 @@
 		A453CE8E261B13660049A6E2 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CE8D261B13660049A6E2 /* UserDefaultsProtocol.swift */; };
 		A453CE97261B13FB0049A6E2 /* UserDefaults+UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CE96261B13FB0049A6E2 /* UserDefaults+UserDefaultsProtocol.swift */; };
 		A453CEA0261B15DE0049A6E2 /* TestableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CE9F261B15DE0049A6E2 /* TestableStorage.swift */; };
+		A453CEA8261B1BC70049A6E2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CEA7261B1BC70049A6E2 /* Constants.swift */; };
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
@@ -135,6 +136,7 @@
 		A453CE8D261B13660049A6E2 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
 		A453CE96261B13FB0049A6E2 /* UserDefaults+UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserDefaultsProtocol.swift"; sourceTree = "<group>"; };
 		A453CE9F261B15DE0049A6E2 /* TestableStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableStorage.swift; sourceTree = "<group>"; };
+		A453CEA7261B1BC70049A6E2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Detection.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				A4A217E22617AAF300DB7C7C /* HighScores.swift */,
+				A453CEA7261B1BC70049A6E2 /* Constants.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -806,6 +809,7 @@
 				A4BC1CD626054D47009A2AA0 /* SoundProvider.swift in Sources */,
 				A453CE8E261B13660049A6E2 /* UserDefaultsProtocol.swift in Sources */,
 				A453CE97261B13FB0049A6E2 /* UserDefaults+UserDefaultsProtocol.swift in Sources */,
+				A453CEA8261B1BC70049A6E2 /* Constants.swift in Sources */,
 				A4DBACBD260F5D8D006B42B7 /* MenuCell.swift in Sources */,
 				A4364ADA247EED7200D7AF78 /* GameViewController+Gameplay.swift in Sources */,
 				A49B97582475BF5D007BF29A /* [Int]+Operations.swift in Sources */,

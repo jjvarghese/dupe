@@ -10,12 +10,11 @@ import Foundation
 
 class HighScores {
     
-    private static let HIGH_SCORES_KEY = "HIGH_SCORES"
     private static let MAX_NUMBER_OF_SCORES = 5
     
     static func save(score: Int,
                      storage: UserDefaultsProtocol = UserDefaults.standard) {
-        if var existingHighScores = storage.getObject(forKey: HIGH_SCORES_KEY) as? [Int] {
+        if var existingHighScores = storage.getObject(forKey: Constants.Keys.highScores) as? [Int] {
             if existingHighScores.count < MAX_NUMBER_OF_SCORES {
                 existingHighScores.append(score)
             } else {
@@ -31,17 +30,17 @@ class HighScores {
             }
             
             storage.set(object: existingHighScores,
-                        forKey: HIGH_SCORES_KEY)
+                        forKey: Constants.Keys.highScores)
         } else {
             let newHighScores = [score]
             
             storage.set(object: newHighScores,
-                        forKey: HIGH_SCORES_KEY)
+                        forKey: Constants.Keys.highScores)
         }
     }
     
     static func getScores(storage: UserDefaultsProtocol = UserDefaults.standard) -> [Int] {
-        let existingHighScores = storage.getObject(forKey: HIGH_SCORES_KEY) as? [Int]
+        let existingHighScores = storage.getObject(forKey: Constants.Keys.highScores) as? [Int]
         
         return existingHighScores?.sorted().reversed() ?? []
     }
