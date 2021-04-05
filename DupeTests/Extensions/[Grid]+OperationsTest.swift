@@ -1,14 +1,3 @@
-/*
- mutating func removeAllGrids() {
-     for grid in self {
-         grid.removeFromSuperview()
-     }
-     
-     removeAll()
- }
- 
- */
-
 //
 //  GridArrayOperationsTest.swift
 //  DupeTests
