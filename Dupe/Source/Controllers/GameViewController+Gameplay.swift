@@ -34,8 +34,8 @@ extension GameViewController {
             
             grid.randomise()
                     
-            if strongSelf.tempo > GameViewController.MAXIMUM_TEMPO { // Maximum speed - any faster, and it's too hard
-                strongSelf.tempo -= GameViewController.INCREMENT_TEMPO
+            if strongSelf.tempo > Constants.Values.maximumTempo { // Maximum speed - any faster, and it's too hard
+                strongSelf.tempo -= Constants.Values.incrementTempo
             }
                             
             if let bigGrid = strongSelf.bigGrid {
@@ -70,7 +70,7 @@ extension GameViewController {
             
             strongSelf.currentScore += numberOfPointsToGain
             
-            if strongSelf.tempo <= GameViewController.THRESHOLD_TEMPO_FOR_EXTRA_SPAWN {
+            if strongSelf.tempo <= Constants.Values.thresholdTempoForExtraSpawns {
                 let randomNumber = Int.random(in: 0..<5)
                 if randomNumber == 0 {
                     Timer.scheduledTimer(timeInterval: 1.2,
@@ -148,7 +148,7 @@ extension GameViewController {
             let collisionPoint = strongSelf.bigGrid?.frame.origin.y ?? 0
             let bottom = top + (strongSelf.view.frame.size.width / 5)
             let distanceToFall = collisionPoint - bottom
-            let timeToFall: CGFloat = GameViewController.INITIAL_TIME_TO_FALL
+            let timeToFall: CGFloat = Constants.Values.initialTimeToFall
             let pixelsPerSecond = distanceToFall / timeToFall
             let finalTempo = TimeInterval(1 / pixelsPerSecond)
             

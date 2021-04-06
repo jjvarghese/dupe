@@ -10,18 +10,12 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    static let INITIAL_TIME_TO_FALL: CGFloat = 15
-    static let MAXIMUM_TEMPO: TimeInterval = 0.02
-    static let INCREMENT_TEMPO: TimeInterval = 0.01
-    static let THRESHOLD_TEMPO_FOR_EXTRA_SPAWN: TimeInterval = 0.1
-
+    @IBOutlet weak var bigGrid: Grid?
+    @IBOutlet weak var logoLabel: UILabel?
+    
     var tempo: TimeInterval = 0
     var grids: [Grid] = []
     var gameInProgress: Bool = false
-
-    @IBOutlet weak var bigGrid: Grid?
-    @IBOutlet weak var logoLabel: UILabel?
-
     var menu: Menu?
     var notificationView: NotificationView? = UINib(nibName: Constants.NibNames.NotificationView,
                                                     bundle: nil).instantiate(withOwner: self, options: nil).first as? NotificationView

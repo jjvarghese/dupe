@@ -6,7 +6,11 @@
 //  Copyright © 2021 Cosmic. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 struct Constants {
+    
     struct Keys {
         static let highScores = "highScores"
     }
@@ -41,6 +45,12 @@ struct Constants {
         static let MenuCell = "MenuCellIdentifier"
     }
     
+    struct Values {
+        static let initialTimeToFall: CGFloat = 15
+        static let maximumTempo: TimeInterval = 0.02
+        static let incrementTempo: TimeInterval = 0.01
+        static let thresholdTempoForExtraSpawns: TimeInterval = 0.1
+    }
+    
     private init() {}
 }
-
