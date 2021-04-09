@@ -43,7 +43,6 @@
 		A49B97132474556D007BF29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97122474556D007BF29A /* AppDelegate.swift */; };
 		A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97142474556D007BF29A /* SceneDelegate.swift */; };
 		A49B971A2474556D007BF29A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49B97182474556D007BF29A /* Main.storyboard */; };
-		A49B971C24745570007BF29A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A49B971B24745570007BF29A /* Assets.xcassets */; };
 		A49B971F24745570007BF29A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49B971D24745570007BF29A /* LaunchScreen.storyboard */; };
 		A49B972A24745571007BF29A /* DupeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B972924745571007BF29A /* DupeTests.swift */; };
 		A49B973524745571007BF29A /* DupeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B973424745571007BF29A /* DupeUITests.swift */; };
@@ -99,6 +98,7 @@
 		A4DBAD07260FE128006B42B7 /* UILabel+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBAD06260FE128006B42B7 /* UILabel+Utilities.swift */; };
 		A4F902112620F60B008814CA /* TextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902102620F60B008814CA /* TextSize.swift */; };
 		A4F902162620F651008814CA /* TextSize+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902152620F651008814CA /* TextSize+Theme.swift */; };
+		A4F902292620FE74008814CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4F902282620FE74008814CA /* Assets.xcassets */; };
 		F70F4E4918E06217E2DA1ADB /* Pods_Dupe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B2D29805767CA83750AF10 /* Pods_Dupe.framework */; };
 /* End PBXBuildFile section */
 
@@ -163,7 +163,6 @@
 		A49B97122474556D007BF29A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A49B97142474556D007BF29A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A49B97192474556D007BF29A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A49B971B24745570007BF29A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A49B971E24745570007BF29A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A49B972024745570007BF29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A49B972524745571007BF29A /* DupeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DupeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +223,7 @@
 		A4DBAD06260FE128006B42B7 /* UILabel+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utilities.swift"; sourceTree = "<group>"; };
 		A4F902102620F60B008814CA /* TextSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSize.swift; sourceTree = "<group>"; };
 		A4F902152620F651008814CA /* TextSize+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextSize+Theme.swift"; sourceTree = "<group>"; };
+		A4F902282620FE74008814CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8E299E850DF0471388E8494 /* Pods-DupeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DupeTests.debug.xcconfig"; path = "Target Support Files/Pods-DupeTests/Pods-DupeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -374,9 +374,9 @@
 		A49B974224745B16007BF29A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A4F902282620FE74008814CA /* Assets.xcassets */,
 				A4BC1CB526054C80009A2AA0 /* Sounds */,
 				A49B97182474556D007BF29A /* Main.storyboard */,
-				A49B971B24745570007BF29A /* Assets.xcassets */,
 				A49B971D24745570007BF29A /* LaunchScreen.storyboard */,
 				A49B972024745570007BF29A /* Info.plist */,
 			);
@@ -454,8 +454,8 @@
 		A4A1D1E125FFDF9100FA1E4E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A49B975024747B7B007BF29A /* GridCell.swift */,
 				A49B975124747B7B007BF29A /* GridCell.xib */,
+				A49B975024747B7B007BF29A /* GridCell.swift */,
 				A4DBACBC260F5D8D006B42B7 /* MenuCell.swift */,
 				A4DBACC1260F5DC0006B42B7 /* MenuCell.xib */,
 			);
@@ -684,7 +684,6 @@
 				A49B971F24745570007BF29A /* LaunchScreen.storyboard in Resources */,
 				A4BC1CC226054CA5009A2AA0 /* 3.wav in Resources */,
 				A4BC1CCA26054CA5009A2AA0 /* 1.wav in Resources */,
-				A49B971C24745570007BF29A /* Assets.xcassets in Resources */,
 				A4BC1CC426054CA5009A2AA0 /* 4.wav in Resources */,
 				A4DBACA4260E858E006B42B7 /* 8Bit-44Pl.ttf in Resources */,
 				A4BC1D09260776E6009A2AA0 /* 12.mp3 in Resources */,
@@ -694,6 +693,7 @@
 				A4BC1CC826054CA5009A2AA0 /* 5.wav in Resources */,
 				A4BC1CE9260664DD009A2AA0 /* match.mp3 in Resources */,
 				A453CE50261871070049A6E2 /* 13.mp3 in Resources */,
+				A4F902292620FE74008814CA /* Assets.xcassets in Resources */,
 				A4BC1CC326054CA5009A2AA0 /* 9.mp3 in Resources */,
 				A49B971A2474556D007BF29A /* Main.storyboard in Resources */,
 			);
