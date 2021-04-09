@@ -17,7 +17,6 @@ class GridCell: UICollectionViewCell {
     @IBOutlet weak var trCorner: UIView?
     @IBOutlet weak var tlCorner: UIView?
     
-    var size: GridSize = .small
     var index: Int = 0
         
     // MARK: - UIView -

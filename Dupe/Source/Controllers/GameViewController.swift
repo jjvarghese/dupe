@@ -18,7 +18,6 @@ class GameViewController: UIViewController {
     var grids: [Grid] = []
     var gameInProgress: Bool = false
    
-    
     var notificationView: NotificationView? = UINib(nibName: Constants.NibNames.NotificationView,
                                                     bundle: nil).instantiate(withOwner: self, options: nil).first as? NotificationView
     
@@ -85,9 +84,7 @@ class GameViewController: UIViewController {
     
     private func configureCollectionViews() {
         guard let bigGrid = bigGrid else { return }
-        
-        bigGrid.size = .large
-        
+                
         configure(grid: bigGrid)
     }
     

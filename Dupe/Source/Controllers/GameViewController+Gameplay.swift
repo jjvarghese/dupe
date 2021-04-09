@@ -23,7 +23,7 @@ extension GameViewController {
                 }
             }
             
-            let grid = Grid(withSize: .small)
+            let grid = Grid()
 
             grid.position = position
             

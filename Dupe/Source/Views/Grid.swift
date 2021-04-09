@@ -34,32 +34,24 @@ class Grid: UICollectionView {
     var swipedIndices: [Int] = []
     var position: Position?
     
-    var size: GridSize
-
     // MARK: - NSObject -
     
-    required init(withSize gridSize: GridSize) {
-        size = gridSize
-        
-        super.init(frame: .zero,
-                   collectionViewLayout: UICollectionViewFlowLayout.init())
+    convenience init() {
+        self.init(frame: .zero,
+                   collectionViewLayout: UICollectionViewFlowLayout())
         
         configure()
     }
     
     override init(frame: CGRect,
                   collectionViewLayout layout: UICollectionViewLayout) {
-        size = .small
-        
         super.init(frame: frame,
                    collectionViewLayout: layout)
                 
         configure()
     }
     
-    required init?(coder: NSCoder) {
-        size = .small
-        
+    required init?(coder: NSCoder) {        
         super.init(coder: coder)
         
         configure()
