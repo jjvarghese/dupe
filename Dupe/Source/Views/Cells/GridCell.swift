@@ -11,12 +11,6 @@ import UIKit
 class GridCell: UICollectionViewCell {
     
     @IBOutlet private weak var square: UIView?
-    @IBOutlet weak var squareTopConstraint: NSLayoutConstraint?
-    @IBOutlet weak var squareBottomConstraint: NSLayoutConstraint?
-    @IBOutlet weak var squareLeadingConstraint: NSLayoutConstraint?
-    @IBOutlet weak var squareTrailingConstraint: NSLayoutConstraint?
-    @IBOutlet weak var cornerDimensionConstraint: NSLayoutConstraint?
-    @IBOutlet weak var innerCornerDimension: NSLayoutConstraint?
     
     @IBOutlet weak var brCorner: UIView?
     @IBOutlet weak var blCorner: UIView?
@@ -36,21 +30,25 @@ class GridCell: UICollectionViewCell {
         
         square?.backgroundColor = GameViewController.baseRubikColor
         
-        resize()
         styleCorners()
     }
     
     // MARK: - Updating -
     
     func update(asSelected selected: Bool) {
-        resize()
+        let pulseDuration = 0.3
+        
+        weak var weakSelf = self
+        
+        DispatchQueue.main.async {
+            weakSelf?.layoutIfNeeded()
 
-        square?.backgroundColor = selected ? GameViewController.activeRubikColor : GameViewController.baseRubikColor
-        
-        if selected && shouldPulse {
-            pulse()
+            UIView.animate(withDuration: pulseDuration,
+                           animations: {
+                            weakSelf?.square?.backgroundColor = selected ? GameViewController.activeRubikColor : GameViewController.baseRubikColor
+            })
         }
-        
+
         styleCorners()
     }
     
@@ -141,21 +139,6 @@ class GridCell: UICollectionViewCell {
             return blCorner
         case .bottomRight:
             return brCorner
-        }
-    }
-    
-    private func resize() {
-        weak var weakSelf = self
-
-        DispatchQueue.main.async {
-            guard let strongSelf = weakSelf else { return }
-            
-            strongSelf.squareTopConstraint?.constant = strongSelf.size.borderThickness
-            strongSelf.squareBottomConstraint?.constant = strongSelf.size.borderThickness
-            strongSelf.squareLeadingConstraint?.constant = strongSelf.size.borderThickness
-            strongSelf.squareTrailingConstraint?.constant = strongSelf.size.borderThickness
-            strongSelf.cornerDimensionConstraint?.constant = strongSelf.size.borderThickness * 3
-            strongSelf.innerCornerDimension?.constant = strongSelf.size.borderThickness * 2
         }
     }
    

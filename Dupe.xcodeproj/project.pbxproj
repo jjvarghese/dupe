@@ -10,7 +10,6 @@
 		663ABF26C276603F5055D27D /* Pods_DupeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F2A29A9A7E9F3AC78997FB /* Pods_DupeTests.framework */; };
 		7737E9261A9AE545973715B7 /* Pods_Dupe_DupeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7CAB612720CA83FE65CE98 /* Pods_Dupe_DupeUITests.framework */; };
 		A4364AD4247DA13300D7AF78 /* Grid+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364AD3247DA13300D7AF78 /* Grid+Animation.swift */; };
-		A4364AD6247DA1A000D7AF78 /* GridCell+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364AD5247DA1A000D7AF78 /* GridCell+Animation.swift */; };
 		A4364ADA247EED7200D7AF78 /* GameViewController+Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364AD9247EED7200D7AF78 /* GameViewController+Gameplay.swift */; };
 		A4364ADC2480529200D7AF78 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4364ADB2480529100D7AF78 /* UIView+Animation.swift */; };
 		A4453905261632020000B051 /* GridSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4453904261632020000B051 /* GridSize.swift */; };
@@ -129,7 +128,6 @@
 		A2B2D29805767CA83750AF10 /* Pods_Dupe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dupe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D42845810FDEE5A010FCD2 /* Pods-DupeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DupeTests.release.xcconfig"; path = "Target Support Files/Pods-DupeTests/Pods-DupeTests.release.xcconfig"; sourceTree = "<group>"; };
 		A4364AD3247DA13300D7AF78 /* Grid+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grid+Animation.swift"; sourceTree = "<group>"; };
-		A4364AD5247DA1A000D7AF78 /* GridCell+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GridCell+Animation.swift"; sourceTree = "<group>"; };
 		A4364AD9247EED7200D7AF78 /* GameViewController+Gameplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Gameplay.swift"; sourceTree = "<group>"; };
 		A4364ADB2480529100D7AF78 /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		A4453904261632020000B051 /* GridSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSize.swift; sourceTree = "<group>"; };
@@ -454,7 +452,6 @@
 		A4A1D1E125FFDF9100FA1E4E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A4364AD5247DA1A000D7AF78 /* GridCell+Animation.swift */,
 				A49B975024747B7B007BF29A /* GridCell.swift */,
 				A49B975124747B7B007BF29A /* GridCell.xib */,
 				A4DBACBC260F5D8D006B42B7 /* MenuCell.swift */,
@@ -830,7 +827,6 @@
 				A49B97552475BC9B007BF29A /* Grid.swift in Sources */,
 				A445390F26163E240000B051 /* Corner.swift in Sources */,
 				A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */,
-				A4364AD6247DA1A000D7AF78 /* GridCell+Animation.swift in Sources */,
 				A4BC1CB12602A0AE009A2AA0 /* UIColor+Theme.swift in Sources */,
 				A4DBACC7260F5FE1006B42B7 /* MenuOption.swift in Sources */,
 				A4DBACCC260F60DA006B42B7 /* MenuOption+Text.swift in Sources */,
