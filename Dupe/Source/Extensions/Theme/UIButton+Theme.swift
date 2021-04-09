@@ -14,7 +14,7 @@ extension UIButton {
     func theme() {
         backgroundColor = .clear
         titleLabel?.font = UIFont(name: "PressStart2P-Regular",
-                                          size: 20)
+                                  size: TextSize.size(textSize: .medium))
         setTitleColor(UIColor.background,
                       for: .normal)
     }

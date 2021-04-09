@@ -15,7 +15,7 @@ extension UITextView {
         backgroundColor = .clear
         textColor = UIColor.background
         font = UIFont(name: "PressStart2P-Regular",
-                        size: 12)
+                        size: TextSize.size(textSize: .small))
         textAlignment = .center
     }
     

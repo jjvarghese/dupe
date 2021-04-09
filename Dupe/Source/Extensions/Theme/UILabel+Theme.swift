@@ -11,11 +11,11 @@ import UIKit
 
 extension UILabel {
     
-    func theme(withSize size: CGFloat = 20) {
+    func theme(withSize size: TextSize = .medium) {
         backgroundColor = .clear
         textColor = UIColor.textColor
         font = UIFont(name: "PressStart2P-Regular",
-                        size: size)
+                        size: TextSize.size(textSize: size))
         textAlignment = .center
     }
     
@@ -23,7 +23,7 @@ extension UILabel {
         backgroundColor = .clear
         textColor = GameViewController.baseRubikColor
         font = UIFont(name: "8-bit",
-                        size: 70)
+                        size: TextSize.size(textSize: .large))
         textAlignment = .center
         alpha = 1
         bob()
