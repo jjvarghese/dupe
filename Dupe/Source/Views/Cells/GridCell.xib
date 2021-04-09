@@ -31,7 +31,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="6" height="6"/>
                                         <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="6" id="3YZ-ci-Gh4"/>
                                             <constraint firstAttribute="width" secondItem="bOH-S4-I87" secondAttribute="height" multiplier="1:1" id="rqL-i2-iZg"/>
                                         </constraints>
                                     </view>
@@ -41,6 +40,7 @@
                                     <constraint firstItem="bOH-S4-I87" firstAttribute="leading" secondItem="p7M-cT-QGq" secondAttribute="leading" id="Ffa-AS-MS5"/>
                                     <constraint firstItem="bOH-S4-I87" firstAttribute="top" secondItem="p7M-cT-QGq" secondAttribute="top" id="p4n-3a-PYb"/>
                                     <constraint firstAttribute="width" secondItem="p7M-cT-QGq" secondAttribute="height" multiplier="1:1" id="p9A-nl-ic4"/>
+                                    <constraint firstItem="bOH-S4-I87" firstAttribute="width" secondItem="p7M-cT-QGq" secondAttribute="height" multiplier="2:3" id="wZc-pN-YdT"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BfS-c3-Lfn" userLabel="topRightCorner">
@@ -127,7 +127,6 @@
             <connections>
                 <outlet property="blCorner" destination="yKK-dA-0x6" id="CEq-Gd-Qah"/>
                 <outlet property="brCorner" destination="Gkt-g1-h8b" id="LsZ-3g-kfZ"/>
-                <outlet property="innerCornerDimension" destination="3YZ-ci-Gh4" id="5hT-Zy-XqM"/>
                 <outlet property="square" destination="rCi-yb-kiq" id="qVk-CB-XBI"/>
                 <outlet property="tlCorner" destination="bOH-S4-I87" id="SOk-iW-DrR"/>
                 <outlet property="trCorner" destination="S5H-cE-VfS" id="SI4-Oj-xZC"/>
