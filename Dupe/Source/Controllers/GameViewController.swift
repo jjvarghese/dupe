@@ -12,11 +12,13 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var bigGrid: Grid?
     @IBOutlet weak var logoLabel: UILabel?
-    
+    @IBOutlet weak var menu: Menu?
+
     var tempo: TimeInterval = 0
     var grids: [Grid] = []
     var gameInProgress: Bool = false
-    var menu: Menu?
+   
+    
     var notificationView: NotificationView? = UINib(nibName: Constants.NibNames.NotificationView,
                                                     bundle: nil).instantiate(withOwner: self, options: nil).first as? NotificationView
     
@@ -90,22 +92,9 @@ class GameViewController: UIViewController {
     }
     
     private func configureMenu() {
-        guard let bigGrid = bigGrid else { return }
-        
-        menu = Menu(frame: .zero)
         menu?.delegate = self
         menu?.dataSource = self
         menu?.menuDelegate = self
-        
-        if let menu = menu {
-            DispatchQueue.main.async {
-                bigGrid.addSubviewWithConstraints(subview: menu,
-                                                            atPosition: .center,
-                                                            withWidth: bigGrid.frame.size.width - 40,
-                                                            withHeight: bigGrid.frame.size.height - 35,
-                                                            withVerticalOffset: 18)
-            }
-        }
     }
     
     func configure(grid: Grid?) {

@@ -11,7 +11,8 @@ extension GameViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let gridCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellIdentifiers.GridCell,
                                                                 for: indexPath) as? GridCell,
-            let gridCollectionView = collectionView as? Grid else {            return UICollectionViewCell()
+            let gridCollectionView = collectionView as? Grid else {
+            return UICollectionViewCell()
         }
         
         let isSelected = gridCollectionView.selectedIndices.contains(indexPath.item)
@@ -19,7 +20,6 @@ extension GameViewController: UICollectionViewDataSource {
         gridCell.size = gridCollectionView.size
         gridCell.index = indexPath.row
         gridCell.update(asSelected: isSelected)
-        gridCell.shouldPulse = collectionView == bigGrid
         
         if isSelected {
             soundProvider.play(sfx: .touch)
