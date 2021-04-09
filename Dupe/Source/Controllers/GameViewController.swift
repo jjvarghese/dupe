@@ -101,9 +101,9 @@ class GameViewController: UIViewController {
             DispatchQueue.main.async {
                 bigGrid.addSubviewWithConstraints(subview: menu,
                                                             atPosition: .center,
-                                                            withWidth: bigGrid.frame.size.width - 17,
-                                                            withHeight: bigGrid.frame.size.height - 17,
-                                                            withVerticalOffset: 9)
+                                                            withWidth: bigGrid.frame.size.width - 31,
+                                                            withHeight: bigGrid.frame.size.height - 26,
+                                                            withVerticalOffset: 13)
             }
         }
     }

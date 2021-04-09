@@ -17,11 +17,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAr-vh-eLi" userLabel="Background">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAr-vh-eLi" userLabel="Border">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCi-yb-kiq">
+                    <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCi-yb-kiq">
                         <rect key="frame" x="3" y="3" width="44" height="44"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7M-cT-QGq" userLabel="topLeftCorner">
@@ -38,7 +38,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="9" id="9Bq-vE-eUx"/>
                                     <constraint firstItem="bOH-S4-I87" firstAttribute="leading" secondItem="p7M-cT-QGq" secondAttribute="leading" id="Ffa-AS-MS5"/>
                                     <constraint firstItem="bOH-S4-I87" firstAttribute="top" secondItem="p7M-cT-QGq" secondAttribute="top" id="p4n-3a-PYb"/>
                                     <constraint firstAttribute="width" secondItem="p7M-cT-QGq" secondAttribute="height" multiplier="1:1" id="p9A-nl-ic4"/>
@@ -90,6 +89,8 @@
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
                             <constraint firstItem="Gkt-g1-h8b" firstAttribute="height" secondItem="bOH-S4-I87" secondAttribute="height" id="HFy-nb-Tgh"/>
+                            <constraint firstItem="p7M-cT-QGq" firstAttribute="width" secondItem="rCi-yb-kiq" secondAttribute="height" multiplier="9:44" id="Khv-6k-mop"/>
+                            <constraint firstAttribute="width" secondItem="rCi-yb-kiq" secondAttribute="height" multiplier="1:1" id="LS2-Px-vhm"/>
                             <constraint firstItem="2hH-J2-X8Y" firstAttribute="width" secondItem="p7M-cT-QGq" secondAttribute="width" id="PbH-qY-mBB"/>
                             <constraint firstItem="BfS-c3-Lfn" firstAttribute="width" secondItem="p7M-cT-QGq" secondAttribute="width" id="Rvw-Ak-gpC"/>
                             <constraint firstItem="S5H-cE-VfS" firstAttribute="height" secondItem="bOH-S4-I87" secondAttribute="height" id="Tpw-UU-PXU"/>
@@ -109,31 +110,25 @@
             <constraints>
                 <constraint firstItem="iAr-vh-eLi" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="3by-a3-zfB"/>
                 <constraint firstItem="BfS-c3-Lfn" firstAttribute="trailing" secondItem="iAr-vh-eLi" secondAttribute="trailing" id="6JO-cs-Aqa"/>
-                <constraint firstAttribute="bottom" secondItem="rCi-yb-kiq" secondAttribute="bottom" constant="3" id="9bm-zq-ZLN"/>
-                <constraint firstAttribute="trailing" secondItem="rCi-yb-kiq" secondAttribute="trailing" constant="3" id="Cft-7L-X07"/>
                 <constraint firstItem="iAr-vh-eLi" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="DlE-nR-j5D"/>
-                <constraint firstItem="rCi-yb-kiq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="H6R-rP-Onh"/>
+                <constraint firstItem="rCi-yb-kiq" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="IiE-g2-Yja"/>
                 <constraint firstItem="2hH-J2-X8Y" firstAttribute="trailing" secondItem="iAr-vh-eLi" secondAttribute="trailing" id="OcM-Cj-zGB"/>
                 <constraint firstItem="N51-es-M4t" firstAttribute="leading" secondItem="iAr-vh-eLi" secondAttribute="leading" id="Z8X-Ja-r7Q"/>
                 <constraint firstItem="BfS-c3-Lfn" firstAttribute="top" secondItem="iAr-vh-eLi" secondAttribute="top" id="atI-xQ-NVS"/>
                 <constraint firstItem="p7M-cT-QGq" firstAttribute="top" secondItem="iAr-vh-eLi" secondAttribute="top" id="cZ7-2d-Vad"/>
                 <constraint firstItem="iAr-vh-eLi" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="cbZ-Hb-j8U"/>
                 <constraint firstItem="iAr-vh-eLi" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="ft3-cQ-xP3"/>
-                <constraint firstItem="rCi-yb-kiq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="g9G-Cn-5OG"/>
+                <constraint firstItem="rCi-yb-kiq" firstAttribute="width" secondItem="iAr-vh-eLi" secondAttribute="height" multiplier="22:25" id="gOn-BO-cVL"/>
                 <constraint firstItem="p7M-cT-QGq" firstAttribute="leading" secondItem="iAr-vh-eLi" secondAttribute="leading" id="ncn-H8-3zZ"/>
                 <constraint firstItem="2hH-J2-X8Y" firstAttribute="bottom" secondItem="iAr-vh-eLi" secondAttribute="bottom" id="p6V-P6-Lul"/>
                 <constraint firstItem="N51-es-M4t" firstAttribute="bottom" secondItem="iAr-vh-eLi" secondAttribute="bottom" id="tci-Cw-Efg"/>
+                <constraint firstItem="rCi-yb-kiq" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="uZe-1H-U6m"/>
             </constraints>
             <connections>
                 <outlet property="blCorner" destination="yKK-dA-0x6" id="CEq-Gd-Qah"/>
                 <outlet property="brCorner" destination="Gkt-g1-h8b" id="LsZ-3g-kfZ"/>
-                <outlet property="cornerDimensionConstraint" destination="9Bq-vE-eUx" id="v9e-qg-Igo"/>
                 <outlet property="innerCornerDimension" destination="3YZ-ci-Gh4" id="5hT-Zy-XqM"/>
                 <outlet property="square" destination="rCi-yb-kiq" id="qVk-CB-XBI"/>
-                <outlet property="squareBottomConstraint" destination="9bm-zq-ZLN" id="Vm8-ek-HfL"/>
-                <outlet property="squareLeadingConstraint" destination="g9G-Cn-5OG" id="j49-4a-VRk"/>
-                <outlet property="squareTopConstraint" destination="H6R-rP-Onh" id="Mf2-hz-rev"/>
-                <outlet property="squareTrailingConstraint" destination="Cft-7L-X07" id="CVq-cP-oQT"/>
                 <outlet property="tlCorner" destination="bOH-S4-I87" id="SOk-iW-DrR"/>
                 <outlet property="trCorner" destination="S5H-cE-VfS" id="SI4-Oj-xZC"/>
             </connections>

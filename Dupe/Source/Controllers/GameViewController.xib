@@ -43,34 +43,21 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qk3-sN-xxI">
-                    <rect key="frame" x="157.5" y="0.0" width="5" height="5"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="5" id="XGJ-44-i6N"/>
-                        <constraint firstAttribute="width" constant="5" id="sfb-Pn-Rii"/>
-                    </constraints>
-                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="5YU-iq-uwr" firstAttribute="top" secondItem="Qk3-sN-xxI" secondAttribute="bottom" constant="276" id="5Dp-O6-O4T"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="top" secondItem="Nw9-PJ-5OV" secondAttribute="bottom" constant="64" id="7Bi-XI-oA7"/>
                 <constraint firstItem="Nw9-PJ-5OV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="9dk-FQ-zhu"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-20" id="DOh-jD-Kzs"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="167:448" id="MB3-el-ekh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nw9-PJ-5OV" secondAttribute="trailing" constant="40" id="ZEA-iP-VD8"/>
-                <constraint firstItem="Qk3-sN-xxI" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Zlg-A9-aZg"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iY2-EC-wdG"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
