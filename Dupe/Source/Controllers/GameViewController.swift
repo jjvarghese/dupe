@@ -25,18 +25,10 @@ class GameViewController: UIViewController {
     
     var currentScore: Int = 0
     
-    private static var _baseRubikColor: UIColor?
+    private static var _baseRubikColor: UIColor = UIColor(withHex: RubikColor.yellow.rawValue)
     static var baseRubikColor: UIColor {
         get {
-            if let baseColor = _baseRubikColor {
-                return baseColor
-            } else {
-                let newColor = RubikColor.getRandomRubikColor()
-                
-                _baseRubikColor = newColor
-                
-                return newColor
-            }
+            return _baseRubikColor
         }
         set {
             if baseRubikColor == newValue || newValue == activeRubikColor {

@@ -34,7 +34,7 @@ class GridCell: UICollectionViewCell {
     // MARK: - Updating -
     
     func update(asSelected selected: Bool) {
-        let pulseDuration = 0.3
+        let pulseDuration = 0.4
         
         weak var weakSelf = self
         

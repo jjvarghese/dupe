@@ -46,7 +46,7 @@ struct Constants {
             case i = "Absolutely pro."
             
             static func getJudgement(forScore score: Int) -> String {
-                let threshold = 500
+                let threshold = 800
                 var scoreCheck = 0
                 
                 for judgement in ScoreJudgements.allCases {
