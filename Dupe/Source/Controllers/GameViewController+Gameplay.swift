@@ -157,9 +157,10 @@ extension GameViewController {
     }
     
     private func showScore() {
-        let scoreString = String(format: "%@%d",
+        let scoreString = String(format: "%@%d\n\n%@",
                                  Constants.Text.gameOverHeadline,
-                                 currentScore)
+                                 currentScore,
+                                 Constants.Text.ScoreJudgements.getJudgement(forScore: currentScore))
         
         notificationView?.popin(withText: scoreString)
     }

@@ -32,6 +32,34 @@ struct Constants {
         static let highScoreNoScores = "No scores yet!"
         static let collisionText = "BOOM!"
         static let gameOverHeadline = "GAME OVER\n\nYou achieved a score of\n\n"
+        
+        enum ScoreJudgements: String, CaseIterable {
+            case none = "Tip: Match the falling grid's pattern on the bottom grid."
+            case a = "Are you even trying?"
+            case b = "You can do better than that!"
+            case c = "Not a bad effort."
+            case d = "Pretty good."
+            case e = "Pretty impressive."
+            case f = "Wow, you're good at this!"
+            case g = "Exceptional."
+            case h = "Unbelievable!"
+            case i = "Absolutely pro."
+            
+            static func getJudgement(forScore score: Int) -> String {
+                let threshold = 500
+                var scoreCheck = 0
+                
+                for judgement in ScoreJudgements.allCases {
+                    if score <= scoreCheck {
+                        return judgement.rawValue
+                    }
+                    
+                    scoreCheck += threshold
+                }
+                
+                return ScoreJudgements.allCases.last?.rawValue ?? ""
+            }
+        }
     }
     
     struct NibNames {
@@ -46,7 +74,7 @@ struct Constants {
     }
     
     struct Values {
-        static let initialTimeToFall: CGFloat = 15
+        static let initialTimeToFall: CGFloat = 30
         static let maximumTempo: TimeInterval = 0.02
         static let incrementTempo: TimeInterval = 0.01
         static let thresholdTempoForExtraSpawns: TimeInterval = 0.1
