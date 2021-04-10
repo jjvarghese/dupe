@@ -34,12 +34,12 @@ extension GameViewController {
             
             grid.randomise()
                     
-            if strongSelf.tempo > Constants.Values.maximumTempo { // Maximum speed - any faster, and it's too hard
+            if strongSelf.tempo > Constants.Values.DifficultyThreshold.getMaximumTempo(forCurrentScore: strongSelf.currentScore) { // Maximum speed
                 strongSelf.tempo -= Constants.Values.incrementTempo
             }
                             
             if let bigGrid = strongSelf.bigGrid {
-                let threshold = position == .center ? 0.0 : 0.05
+                let threshold = position == .center ? 0.0 : 0.01
                 
                 grid.startFalling(collisionGrid: bigGrid,
                                   withTempo: strongSelf.tempo + threshold)
@@ -73,7 +73,7 @@ extension GameViewController {
             if strongSelf.tempo <= Constants.Values.thresholdTempoForExtraSpawns {
                 let randomNumber = Int.random(in: 0..<5)
                 if randomNumber == 0 {
-                    Timer.scheduledTimer(timeInterval: 1.2,
+                    Timer.scheduledTimer(timeInterval: Constants.Values.sideGridSpawnDelay,
                                          target: self,
                                          selector: #selector(strongSelf.spawnSideGrid),
                                          userInfo: nil,
