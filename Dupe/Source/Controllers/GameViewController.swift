@@ -58,8 +58,13 @@ class GameViewController: UIViewController {
         
         configureSubviews()
         configureNavigationBar()
+        configureNotifications()
         
         startNewRound()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -67,6 +72,13 @@ class GameViewController: UIViewController {
     }
     
     // MARK: - Configuration -
+    
+    private func configureNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(appWillEnterForegroundNotificationReceived(_:)),
+                                               name: UIApplication.willEnterForegroundNotification,
+                                               object: nil)
+    }
     
     private func configureSubviews() {
         configureLogo()

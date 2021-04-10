@@ -99,6 +99,7 @@
 		A4F902112620F60B008814CA /* TextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902102620F60B008814CA /* TextSize.swift */; };
 		A4F902162620F651008814CA /* TextSize+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902152620F651008814CA /* TextSize+Theme.swift */; };
 		A4F902292620FE74008814CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4F902282620FE74008814CA /* Assets.xcassets */; };
+		A4F902312621B981008814CA /* GameViewController+StateHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902302621B981008814CA /* GameViewController+StateHandling.swift */; };
 		F70F4E4918E06217E2DA1ADB /* Pods_Dupe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B2D29805767CA83750AF10 /* Pods_Dupe.framework */; };
 /* End PBXBuildFile section */
 
@@ -224,6 +225,7 @@
 		A4F902102620F60B008814CA /* TextSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSize.swift; sourceTree = "<group>"; };
 		A4F902152620F651008814CA /* TextSize+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextSize+Theme.swift"; sourceTree = "<group>"; };
 		A4F902282620FE74008814CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4F902302621B981008814CA /* GameViewController+StateHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+StateHandling.swift"; sourceTree = "<group>"; };
 		F8E299E850DF0471388E8494 /* Pods-DupeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DupeTests.debug.xcconfig"; path = "Target Support Files/Pods-DupeTests/Pods-DupeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -395,6 +397,7 @@
 				A4DBACD5260F63E0006B42B7 /* GameViewController+UITableViewDataSource.swift */,
 				A4DBACD0260F63D2006B42B7 /* GameViewController+UITableViewDelegate.swift */,
 				A4DBACE2260F9778006B42B7 /* GameViewController+MenuDelegate.swift */,
+				A4F902302621B981008814CA /* GameViewController+StateHandling.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -824,6 +827,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4BC1CEF26066564009A2AA0 /* SFX.swift in Sources */,
+				A4F902312621B981008814CA /* GameViewController+StateHandling.swift in Sources */,
 				A4DBACFD260FDC20006B42B7 /* UITextView+Theme.swift in Sources */,
 				A453CE4526186D1A0049A6E2 /* [Grid]+Operations.swift in Sources */,
 				A4DBACD1260F63D2006B42B7 /* GameViewController+UITableViewDelegate.swift in Sources */,
