@@ -35,17 +35,19 @@ class MenuCell: UITableViewCell {
         
         button?.setTitle(option.title(),
                          for: .normal)
+        button?.accessibilityIdentifier = option.title()
     }
     
     // MARK: - Actions -
     
     @IBAction private func buttonTouched(_ sender: Any) {
         guard let option = option else { return }
-        
-        weak var weakSelf = self
-        
-        DispatchQueue.main.async {
-            weakSelf?.delegate?.menuCellSelectedOption(self, option: option)
+                
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            self.delegate?.menuCellSelectedOption(self,
+                                                  option: option)
         }
     }
     

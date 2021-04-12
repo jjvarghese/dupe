@@ -76,37 +76,34 @@ class Grid: UICollectionView {
     }
 
     func randomise() {
-        weak var weakSelf = self
-        
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
             let duration = Grid.MATCH_DURATION
             
-            weakSelf?.flash(for: duration - 0.1)
-            weakSelf?.shake(count: 1, for: 0.1)
+            self?.flash(for: duration - 0.1)
+            self?.shake(count: 1,
+                        for: 0.1)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-                guard let strongSelf = weakSelf else { return }
+                guard let self = self else { return }
                 
-                strongSelf.randomiseActiveCells()
+                self.randomiseActiveCells()
             }
         }
     }
     
     func reset() {
-        weak var weakSelf = self
+        DispatchQueue.main.async { [weak self] in
+            self?.isUserInteractionEnabled = false
 
-        DispatchQueue.main.async {
-            weakSelf?.isUserInteractionEnabled = false
-
-            weakSelf?.flash(for: 0.3,
-                  withCompletion: {
-                    weakSelf?.selectedIndices = []
-                    weakSelf?.swipedIndices = []
-                    weakSelf?.reloadData()
-                    weakSelf?.isUserInteractionEnabled = true
+            self?.flash(for: 0.3,
+                  withCompletion: { [weak self] in
+                    self?.selectedIndices = []
+                    self?.swipedIndices = []
+                    self?.reloadData()
+                    self?.isUserInteractionEnabled = true
                   })
             
-            weakSelf?.shake(count: 1,
+            self?.shake(count: 1,
                   for: 0.2)
         }
     }

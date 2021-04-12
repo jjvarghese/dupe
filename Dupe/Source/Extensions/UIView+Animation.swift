@@ -46,16 +46,14 @@ public extension UIView {
     func fadeOut(for duration: TimeInterval,
                  shouldReappear: Bool = false,
                  completion: (() -> Void)? = nil) {
-        weak var weakSelf = self
-
         UIView.animate(withDuration: duration,
-                       animations: {
-                        weakSelf?.alpha = 0
-        }) { (finished) in
+                       animations: { [weak self] in
+                       self?.alpha = 0
+        }) { [weak self] (finished) in
             if shouldReappear {
                 UIView.animate(withDuration: 0,
                                animations: {
-                                weakSelf?.alpha = 1
+                                self?.alpha = 1
                 })
             }
             
@@ -66,10 +64,8 @@ public extension UIView {
     }
     
     func floatUp(for duration: TimeInterval) {
-        weak var weakSelf = self
-
-        UIView.animate(withDuration: duration) {
-            weakSelf?.frame.origin.y -= 30
+        UIView.animate(withDuration: duration) { [weak self] in
+            self?.frame.origin.y -= 30
         }
     }
     

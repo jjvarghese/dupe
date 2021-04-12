@@ -36,14 +36,12 @@ class GridCell: UICollectionViewCell {
     func update(asSelected selected: Bool) {
         let pulseDuration = 0.4
         
-        weak var weakSelf = self
-        
-        DispatchQueue.main.async {
-            weakSelf?.layoutIfNeeded()
+        DispatchQueue.main.async { [weak self] in
+            self?.layoutIfNeeded()
 
             UIView.animate(withDuration: pulseDuration,
-                           animations: {
-                            weakSelf?.square?.backgroundColor = selected ? GameViewController.activeRubikColor : GameViewController.baseRubikColor
+                           animations: { [weak self] in
+                            self?.square?.backgroundColor = selected ? GameViewController.activeRubikColor : GameViewController.baseRubikColor
             })
         }
 

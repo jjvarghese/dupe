@@ -17,11 +17,10 @@ extension Grid {
     func flash(for duration: TimeInterval,
                withCompletion completion: (() -> Void)? = nil) {
         flicker(on: true)
-        
-        weak var weakSelf = self
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
-            weakSelf?.flicker(on: false)
+                
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration) { [weak self] in
+            self?.flicker(on: false)
+            
             completion?()
         }
     }
@@ -39,16 +38,14 @@ extension Grid {
         
         if gridBottom < collisionPoint {
             topLayoutConstraint.constant += 1
-            
-            weak var weakSelf = self
-                        
+                                    
             UIView.animate(withDuration: tempo,
-                           animations: {
-                            weakSelf?.updateConstraints()
-            }) { (finished) in
+                           animations: { [weak self] in
+                            self?.updateConstraints()
+            }) { [weak self] (finished) in
                 if finished {
                     DispatchQueue.main.asyncAfter(deadline: .now() + tempo) {
-                        weakSelf?.descend(collisionGrid: collisionGrid,
+                        self?.descend(collisionGrid: collisionGrid,
                                           withTempo: tempo)
                     }
                 }
@@ -62,12 +59,10 @@ extension Grid {
     // MARK: - Animation Helpers -
     
     private func flicker(on: Bool) {
-        weak var weakSelf = self
-        
-        DispatchQueue.main.async {
-            guard let strongSelf = weakSelf else { return }
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             
-            for cell in strongSelf.visibleCells {
+            for cell in self.visibleCells {
                 if let gridCell = cell as? GridCell {
                     
                     gridCell.update(asSelected: on)

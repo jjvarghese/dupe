@@ -12,70 +12,67 @@ import UIKit
 extension GameViewController {
     
     func spawnGrid(in position: Position) {
-        weak var weakSelf = self
-        
-        DispatchQueue.main.async {
-            guard let strongSelf = weakSelf else { return }
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             
-            for grid in strongSelf.grids {
+            for grid in self.grids {
                 if grid.position == position {
                     return
                 }
             }
             
             let grid = Grid()
-
+            
             grid.position = position
             
-            strongSelf.configure(grid: grid)
-            strongSelf.grids.append(grid)
-            strongSelf.view.addSubviewWithConstraints(subview: grid,
-                                                      atPosition: position)
+            self.configure(grid: grid)
+            self.grids.append(grid)
+            self.view.addSubviewWithConstraints(subview: grid,
+                                                atPosition: position)
             
             grid.randomise()
-                    
-            if strongSelf.tempo > Constants.Values.DifficultyThreshold.getMaximumTempo(forCurrentScore: strongSelf.currentScore) { // Maximum speed
-                strongSelf.tempo -= Constants.Values.incrementTempo
+            grid.accessibilityIdentifier = "SmallGrid"
+            
+            if self.tempo > Constants.Values.DifficultyThreshold.getMaximumTempo(forCurrentScore: self.currentScore) { // Maximum speed
+                self.tempo -= Constants.Values.incrementTempo
             }
-                            
-            if let bigGrid = strongSelf.bigGrid {
+            
+            if let bigGrid = self.bigGrid {
                 let threshold = position == .center ? 0.0 : 0.01
                 
                 grid.startFalling(collisionGrid: bigGrid,
-                                  withTempo: strongSelf.tempo + threshold)
+                                  withTempo: self.tempo + threshold)
             }
         }
     }
     
     func triggerMatch(matchedGrid: Grid) {
-        weak var weakSelf = self
-        
-        DispatchQueue.main.async {
-            guard let strongSelf = weakSelf else { return }
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             
-            strongSelf.soundProvider.play(sfx: .matched)
-            strongSelf.bigGrid?.reset()
-            strongSelf.grids.removeAll { (onScreenGrid) -> Bool in
+            self.soundProvider.play(sfx: .matched)
+            self.bigGrid?.reset()
+            self.grids.removeAll { (onScreenGrid) -> Bool in
                 return matchedGrid == onScreenGrid
             }
             
             if matchedGrid.position == .center {
-                strongSelf.spawnGrid(in: .center)
+                self.spawnGrid(in: .center)
             }
             
-            let numberOfPointsToGain = strongSelf.getNumberOfPointsToGain(matchedGrid: matchedGrid)
+            let numberOfPointsToGain = self.getNumberOfPointsToGain(matchedGrid: matchedGrid)
             
-            UILabel.spawnFloatingFadingLabel(toSuperview: strongSelf.view,
+            UILabel.spawnFloatingFadingLabel(toSuperview: self.view,
                                              withText: String(format: "%d", numberOfPointsToGain))
             
-            strongSelf.currentScore += numberOfPointsToGain
+            self.currentScore += numberOfPointsToGain
             
-            if strongSelf.tempo <= Constants.Values.thresholdTempoForExtraSpawns {
+            if self.tempo <= Constants.Values.thresholdTempoForExtraSpawns {
                 let randomNumber = Int.random(in: 0..<5)
                 if randomNumber == 0 {
                     Timer.scheduledTimer(timeInterval: Constants.Values.sideGridSpawnDelay,
                                          target: self,
-                                         selector: #selector(strongSelf.spawnSideGrid),
+                                         selector: #selector(self.spawnSideGrid),
                                          userInfo: nil,
                                          repeats: false)
                 }
@@ -83,7 +80,7 @@ extension GameViewController {
             
             matchedGrid.removeFromSuperview()
             
-            strongSelf.rotateColors()
+            self.rotateColors()
         }
     }
     
@@ -96,57 +93,51 @@ extension GameViewController {
     }
     
     func triggerGameOver() {
-        weak var weakSelf = self
-        
-        DispatchQueue.main.async {
-            guard let strongSelf = weakSelf else { return }
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             
-            strongSelf.gameInProgress = false 
-            strongSelf.soundProvider.play(sfx: .gameOver)
-            strongSelf.soundProvider.stopAllTunes()
-            strongSelf.logoLabel?.themeAsLogo()
+            self.gameInProgress = false
+            self.soundProvider.play(sfx: .gameOver)
+            self.soundProvider.stopAllTunes()
+            self.logoLabel?.themeAsLogo()
             
-            if strongSelf.currentScore > 0 {
-                HighScores.save(score: strongSelf.currentScore)
+            if self.currentScore > 0 {
+                HighScores.save(score: self.currentScore)
             }
             
-            strongSelf.menu?.backgroundColor = GameViewController.baseRubikColor
-            strongSelf.bigGrid?.reset()
-                                    
-            for grid in strongSelf.grids {
+            self.menu?.backgroundColor = GameViewController.baseRubikColor
+            self.bigGrid?.reset()
+            
+            for grid in self.grids {
                 grid.removeFromSuperview()
             }
             
-            UILabel.spawnFloatingFadingLabel(toSuperview: strongSelf.view,
+            UILabel.spawnFloatingFadingLabel(toSuperview: self.view,
                                              withText: Constants.Text.collisionText) {
-                strongSelf.startNewRound()
-                strongSelf.showScore()
+                self.startNewRound()
+                self.showScore()
             }
         }
     }
     
     func startNewRound() {
         menu?.alpha = 1.0
-        
-        weak var weakSelf = self
-        
-        determineInitialTempo { (initialTempo) in
-            weakSelf?.tempo = initialTempo
+                
+        determineInitialTempo { [weak self] (initialTempo) in
+            self?.tempo = initialTempo
         }
     }
     
     // MARK: - Private -
     
     private func determineInitialTempo(withCompletion completion: @escaping (TimeInterval) -> Void) {
-        weak var weakSelf = self
-        
-        DispatchQueue.main.async {
-            guard let strongSelf = weakSelf else { return }
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             
             let window = UIApplication.shared.windows.first
             let top = (window?.safeAreaInsets.top ?? 0) + Grid.START_POSITION
-            let collisionPoint = strongSelf.bigGrid?.frame.origin.y ?? 0
-            let bottom = top + (strongSelf.view.frame.size.width / 5)
+            let collisionPoint = self.bigGrid?.frame.origin.y ?? 0
+            let bottom = top + (self.view.frame.size.width / 5)
             let distanceToFall = collisionPoint - bottom
             let timeToFall: CGFloat = Constants.Values.initialTimeToFall
             let pixelsPerSecond = distanceToFall / timeToFall
@@ -185,19 +176,19 @@ extension GameViewController {
             spawnGrid(in: .right)
         } else {
             let coinFlip = Int.random(in: 0..<2)
-
+            
             spawnGrid(in: coinFlip == 0 ? .left : .right)
         }
     }
     
     private func rotateColors() {
         GameViewController.baseRubikColor = RubikColor.getRandomRubikColor()
-
+        
         bigGrid?.reloadData()
         
         for grid in grids {
             grid.reloadData()
         }
     }
-
+    
 }

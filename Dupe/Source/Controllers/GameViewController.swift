@@ -89,6 +89,8 @@ class GameViewController: UIViewController {
     private func configureCollectionViews() {
         guard let bigGrid = bigGrid else { return }
                 
+        bigGrid.accessibilityIdentifier = "BigGrid"
+        
         configure(grid: bigGrid)
     }
     

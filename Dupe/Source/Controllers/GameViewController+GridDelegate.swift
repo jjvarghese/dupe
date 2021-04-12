@@ -34,16 +34,14 @@ extension GameViewController: GridDelegate {
     private func checkForMatch() {
         guard let bigGridIndices = bigGrid?.selectedIndices.sorted() else { return }
                      
-        weak var weakSelf = self
-
-        DispatchQueue.main.async {
-            guard let strongSelf = weakSelf else { return }
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             
-            for grid in strongSelf.grids {
+            for grid in self.grids {
                 let gridIndices = grid.selectedIndices.sorted()
                 
                 if bigGridIndices.elementsEqual(gridIndices) {
-                    strongSelf.triggerMatch(matchedGrid: grid)
+                    self.triggerMatch(matchedGrid: grid)
                 }
             }
         }

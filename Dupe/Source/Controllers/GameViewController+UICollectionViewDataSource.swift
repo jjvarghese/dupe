@@ -23,6 +23,12 @@ extension GameViewController: UICollectionViewDataSource {
         if isSelected {
             soundProvider.play(sfx: .touch)
         }
+        
+        if collectionView == bigGrid {
+            let identifier = String(format: "%d", indexPath.row)
+            
+            gridCell.accessibilityIdentifier = identifier
+        }
                 
         return gridCell
     }

@@ -14,17 +14,15 @@ extension GameViewController: MenuDelegate {
     func menu(_ menu: Menu,
               selectedOption menuOption: MenuOption) {
         soundProvider.play(sfx: .matched)
-        
-        weak var weakSelf = self
-        
-        DispatchQueue.main.async {
+                
+        DispatchQueue.main.async { [weak self] in
             switch menuOption {
             case .start:
-                weakSelf?.handleStartPressed(menu: menu)
+                self?.handleStartPressed(menu: menu)
             case .about:
-                weakSelf?.handleAboutPressed()
+                self?.handleAboutPressed()
             case .highScores:
-                weakSelf?.handleHighScoresPressed()
+                self?.handleHighScoresPressed()
             }
         }
     }
@@ -32,25 +30,23 @@ extension GameViewController: MenuDelegate {
     // MARK: - Private: Handling -
     
     private func handleStartPressed(menu: Menu) {
-        weak var weakSelf = self
-
-        DispatchQueue.main.async {
-            weakSelf?.gameInProgress = true
-            weakSelf?.bigGrid?.reset()
-            weakSelf?.soundProvider.playRandomTune()
-            weakSelf?.soundProvider.play(sfx: .start)
-            weakSelf?.currentScore = 0
-            weakSelf?.logoLabel?.fadeOut(for: 0.4)
+        DispatchQueue.main.async { [weak self] in
+            self?.gameInProgress = true
+            self?.bigGrid?.reset()
+            self?.soundProvider.playRandomTune()
+            self?.soundProvider.play(sfx: .start)
+            self?.currentScore = 0
+            self?.logoLabel?.fadeOut(for: 0.4)
             
             menu.fadeOut(for: 0.4,
                          completion: {
-                            guard let strongSelf = weakSelf else { return }
+                            guard let self = self else { return }
                             
-                            UILabel.spawnFloatingFadingLabels(toSuperview: strongSelf.view,
+                            UILabel.spawnFloatingFadingLabels(toSuperview: self.view,
                                                               withTexts: [Constants.Text.startGameReadyText1,
                                                                           Constants.Text.startGameReadyText2,
-                                                                          Constants.Text.startGameReadyText3]) {
-                                weakSelf?.spawnGrid(in: .center)
+                                                                          Constants.Text.startGameReadyText3]) { [weak self] in
+                                self?.spawnGrid(in: .center)
                             }
                          })
         }
