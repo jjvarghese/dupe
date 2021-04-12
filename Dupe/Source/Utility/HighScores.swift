@@ -39,7 +39,28 @@ class HighScores {
         }
     }
     
-    static func getScores(storage: UserDefaultsProtocol = UserDefaults.standard) -> [Int] {
+    static func getHighScoreText() -> String {
+        let highScores = HighScores.getScores()
+        
+        var text = Constants.Text.highScoreTitle
+        
+        var i = 1
+        for highScore in highScores {
+            text.append(String(format: "%d. %d\n", i, highScore))
+            
+            i = i + 1
+        }
+        
+        if highScores.count == 0 {
+            text.append(Constants.Text.highScoreNoScores)
+        }
+        
+        return text
+    }
+    
+    // MARK: - Private -
+    
+    private static func getScores(storage: UserDefaultsProtocol = UserDefaults.standard) -> [Int] {
         let existingHighScores = storage.getObject(forKey: Constants.Keys.highScores) as? [Int]
         
         return existingHighScores?.sorted().reversed() ?? []
