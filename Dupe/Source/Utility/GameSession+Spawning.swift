@@ -33,7 +33,23 @@ extension GameSession {
         }
     }
     
-    @objc func spawnSideGrid() {
+    func spawnExtraGridsIfDetermined() {
+        if self.tempo <= Constants.Values.thresholdTempoForExtraSpawns {
+            let randomNumber = Int.random(in: 0..<5)
+            
+            if randomNumber == 0 {
+                Timer.scheduledTimer(timeInterval: Constants.Values.sideGridSpawnDelay,
+                                     target: self,
+                                     selector: #selector(self.spawnSideGrid),
+                                     userInfo: nil,
+                                     repeats: false)
+            }
+        }
+    }
+    
+    // MARK: - Private -
+    
+    @objc private func spawnSideGrid() {
         var hasExistingLeftGrid = false
         var hasExistingRightGrid = false
         
@@ -57,8 +73,6 @@ extension GameSession {
             spawnGrid(in: coinFlip == 0 ? .left : .right)
         }
     }
-    
-    // MARK: - Private -
     
     private func generateNewGrid(in position: Position) -> Grid {
         let grid = Grid(withGriddable: delegate)

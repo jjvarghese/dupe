@@ -15,10 +15,27 @@ class GameViewController: UIViewController {
     @IBOutlet weak var menu: Menu?
    
     let soundProvider: SoundProvider = SoundProvider()
-   
-
     
-    var session: GameSession?
+    var session: GameSession? {
+        willSet {
+            if newValue == nil {
+                menu?.backgroundColor = UIColor.baseRubikColor
+                menu?.fade(out: false,
+                           for: 0.4)
+            } else {
+                menu?.fade(out: true,
+                           for: 0.4,
+                             completion: {
+                                UILabel.spawnFloatingFadingLabels(toSuperview: self.view,
+                                                                  withTexts: [Constants.Text.startGameReadyText1,
+                                                                              Constants.Text.startGameReadyText2,
+                                                                              Constants.Text.startGameReadyText3]) {
+                                    newValue?.spawnGrid(in: .center)
+                                }
+                             })
+            }
+        }
+    }
         
     // MARK: - UIViewController -
     
@@ -30,8 +47,6 @@ class GameViewController: UIViewController {
         configureSubviews()
         configureNavigationBar()
         configureNotifications()
-        
-        startNewRound()
     }
     
     deinit {

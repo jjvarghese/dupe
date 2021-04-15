@@ -37,17 +37,8 @@ extension GameViewController: MenuDelegate {
             self.bigGrid?.reset()
             self.soundProvider.playRandomTune()
             self.soundProvider.play(sfx: .start)
-            self.logoLabel?.fadeOut(for: 0.4)
-            
-            menu.fadeOut(for: 0.4,
-                         completion: {                            
-                            UILabel.spawnFloatingFadingLabels(toSuperview: self.view,
-                                                              withTexts: [Constants.Text.startGameReadyText1,
-                                                                          Constants.Text.startGameReadyText2,
-                                                                          Constants.Text.startGameReadyText3]) { [weak self] in
-                                self?.session?.spawnGrid(in: .center)
-                            }
-                         })
+            self.logoLabel?.fade(out: true,
+                                 for: 0.4)
         }
     }
     

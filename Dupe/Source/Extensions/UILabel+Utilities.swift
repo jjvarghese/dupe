@@ -27,7 +27,7 @@ extension UILabel {
         let duration = 0.75
         
         label.floatUp(for: duration)
-        label.fadeOut(for: duration)
+        label.fade(out: true, for: duration)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             label.removeFromSuperview()

@@ -11,8 +11,6 @@ import UIKit
 
 extension GameViewController {
     
-    
-    
     func triggerGameOver() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
@@ -21,22 +19,11 @@ extension GameViewController {
             self.soundProvider.play(sfx: .gameOver)
             self.soundProvider.stopAllTunes()
             self.logoLabel?.themeAsLogo()
-            self.menu?.backgroundColor = UIColor.baseRubikColor
             self.bigGrid?.reset()
 
             UILabel.spawnFloatingFadingLabel(toSuperview: self.view,
-                                             withText: Constants.Text.collisionText) {
-                self.startNewRound()
-            }
+                                             withText: Constants.Text.collisionText)
         }
     }
-    
-    func startNewRound() {
-        menu?.alpha = 1.0
-    }
-    
-    
-    
-    
-    
+
 }

@@ -11,7 +11,27 @@ import UIKit
 
 extension GameSession {
     
-    func triggerMatch(matchedGrid: Grid) {
+    func checkForMatch() {
+        guard let collisionGrid = delegate.gameSessionRequestsCollisionGrid(self) else { return }
+                     
+        let collisionGridIndices = collisionGrid.selectedIndices.sorted()
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            for grid in self.grids {
+                let gridIndices = grid.selectedIndices.sorted()
+                
+                if collisionGridIndices.elementsEqual(gridIndices) {
+                    self.triggerMatch(matchedGrid: grid)
+                }
+            }
+        }
+    }
+    
+    // MARK: - Private -
+    
+    private func triggerMatch(matchedGrid: Grid) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             
@@ -36,26 +56,14 @@ extension GameSession {
             
             self.currentScore += numberOfPointsToGain
             
-            if self.tempo <= Constants.Values.thresholdTempoForExtraSpawns {
-                let randomNumber = Int.random(in: 0..<5)
-                
-                if randomNumber == 0 {
-                    Timer.scheduledTimer(timeInterval: Constants.Values.sideGridSpawnDelay,
-                                         target: self,
-                                         selector: #selector(self.spawnSideGrid),
-                                         userInfo: nil,
-                                         repeats: false)
-                }
-            }
+            self.spawnExtraGridsIfDetermined()
             
             matchedGrid.removeFromSuperview()
             
             self.rotateColors()
         }
     }
-    
-    // MARK: - Private -
-    
+        
     private func rotateColors() {
         UIColor.baseRubikColor = RubikColor.getRandomRubikColor()
         

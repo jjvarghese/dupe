@@ -43,17 +43,18 @@ public extension UIView {
         layer.add(animation, forKey: "bob")
     }
     
-    func fadeOut(for duration: TimeInterval,
-                 shouldReappear: Bool = false,
-                 completion: (() -> Void)? = nil) {
+    func fade(out: Bool,
+              for duration: TimeInterval,
+              shouldReappear: Bool = false,
+              completion: (() -> Void)? = nil) {
         UIView.animate(withDuration: duration,
                        animations: { [weak self] in
-                       self?.alpha = 0
-        }) { [weak self] (finished) in
+                        self?.alpha = out ? 0 : 1
+                       }) { [weak self] (finished) in
             if shouldReappear {
                 UIView.animate(withDuration: 0,
                                animations: {
-                                self?.alpha = 1
+                                self?.alpha = out ? 1 : 0
                 })
             }
             
