@@ -3,14 +3,14 @@ import Foundation
 extension GameViewController: GridDelegate {
     
     func gridDidCollide(_ grid: Grid) {
-        grids.removeAllGrids()
+        session?.grids.removeAllGrids()
         
         triggerGameOver()
     }
     
     func grid(_ grid: Grid,
               didPanAt indexPath: IndexPath) {
-        guard grid == bigGrid, gameInProgress else { return }
+        guard grid == bigGrid, session != nil else { return }
         
         grid.touch(indexPath: indexPath)
         
@@ -22,7 +22,7 @@ extension GameViewController: GridDelegate {
     
     func grid(_ grid: Grid,
               didSelect indexPath: IndexPath) {
-        guard grid == bigGrid, gameInProgress else { return }
+        guard grid == bigGrid, session != nil else { return }
         
         grid.touch(indexPath: indexPath)
         
@@ -35,9 +35,10 @@ extension GameViewController: GridDelegate {
         guard let bigGridIndices = bigGrid?.selectedIndices.sorted() else { return }
                      
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
+            guard let self = self,
+                  let session = self.session else { return }
             
-            for grid in self.grids {
+            for grid in session.grids {
                 let gridIndices = grid.selectedIndices.sorted()
                 
                 if bigGridIndices.elementsEqual(gridIndices) {

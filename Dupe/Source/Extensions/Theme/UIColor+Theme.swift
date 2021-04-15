@@ -13,7 +13,9 @@ extension UIColor {
     
     static let background: UIColor = UIColor(withHex: "#fffdd0")
     
-    static let textColor: UIColor = .black
+    static let text: UIColor = .black
+    
+    static var activeRubik: UIColor = .white
     
     // MARK: - Constructors -
     

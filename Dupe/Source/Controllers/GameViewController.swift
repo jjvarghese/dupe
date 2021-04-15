@@ -13,25 +13,19 @@ class GameViewController: UIViewController {
     @IBOutlet weak var bigGrid: Grid?
     @IBOutlet weak var logoLabel: UILabel?
     @IBOutlet weak var menu: Menu?
-
-    var tempo: TimeInterval = 0
-    var grids: [Grid] = []
-    var gameInProgress: Bool = false
-   
+    
     var notificationView: NotificationView? = UINib(nibName: Constants.NibNames.NotificationView,
-                                                    bundle: nil).instantiate(withOwner: self, options: nil).first as? NotificationView
-    
+                                                    bundle: nil).instantiate(withOwner: self,
+                                                                             options: nil).first as? NotificationView
+
+  
     let soundProvider: SoundProvider = SoundProvider()
-    
-    var currentScore: Int = 0
-    
+   
     private static var _baseRubikColor: UIColor = UIColor(withHex: RubikColor.yellow.rawValue)
     static var baseRubikColor: UIColor {
-        get {
-            return _baseRubikColor
-        }
+        get { return _baseRubikColor }
         set {
-            if baseRubikColor == newValue || newValue == activeRubikColor {
+            if baseRubikColor == newValue {
                 _baseRubikColor = RubikColor.getRandomRubikColor()
             } else {
                 _baseRubikColor = newValue
@@ -39,8 +33,8 @@ class GameViewController: UIViewController {
         }
     }
     
-    static var activeRubikColor: UIColor = .white
-    
+    var session: GameSession?
+        
     // MARK: - UIViewController -
     
     override func viewDidLoad() {

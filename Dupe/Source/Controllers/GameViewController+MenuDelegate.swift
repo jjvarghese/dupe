@@ -31,17 +31,16 @@ extension GameViewController: MenuDelegate {
     
     private func handleStartPressed(menu: Menu) {
         DispatchQueue.main.async { [weak self] in
-            self?.gameInProgress = true
-            self?.bigGrid?.reset()
-            self?.soundProvider.playRandomTune()
-            self?.soundProvider.play(sfx: .start)
-            self?.currentScore = 0
-            self?.logoLabel?.fadeOut(for: 0.4)
+            guard let self = self else { return }
+            
+            self.session = GameSession(withDelegate: self)
+            self.bigGrid?.reset()
+            self.soundProvider.playRandomTune()
+            self.soundProvider.play(sfx: .start)
+            self.logoLabel?.fadeOut(for: 0.4)
             
             menu.fadeOut(for: 0.4,
-                         completion: {
-                            guard let self = self else { return }
-                            
+                         completion: {                            
                             UILabel.spawnFloatingFadingLabels(toSuperview: self.view,
                                                               withTexts: [Constants.Text.startGameReadyText1,
                                                                           Constants.Text.startGameReadyText2,

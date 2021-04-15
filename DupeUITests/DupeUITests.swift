@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Dupe
 
 class DupeUITests: XCTestCase {
 
@@ -20,13 +21,18 @@ class DupeUITests: XCTestCase {
       
     }
 
-    func testHitAbout() throws {
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+//    func testPlay() throws {
+//        let app = XCUIApplication()
+//        
+//        app.launch()
+//                
+//        app.buttons["START"].tap()
+//        app.collectionViews["SmallGrid"].waitForExistence(timeout: 5)
+//        app.otherElements["0"].tap()
+//        app.otherElements["1"].tap()
+//        app.otherElements["2"].tap()
+//
+//    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {

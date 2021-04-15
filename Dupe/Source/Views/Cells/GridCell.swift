@@ -41,7 +41,7 @@ class GridCell: UICollectionViewCell {
 
             UIView.animate(withDuration: pulseDuration,
                            animations: { [weak self] in
-                            self?.square?.backgroundColor = selected ? GameViewController.activeRubikColor : GameViewController.baseRubikColor
+                            self?.square?.backgroundColor = selected ? UIColor.activeRubik : GameViewController.baseRubikColor
             })
         }
 
