@@ -7,10 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 protocol GameSessionDelegate {
     
     func gameSessionTriggersGameOver(_ gameSession: GameSession)
+    
+    func gameSessionRequestsCollisionGrid(_ gameSession: GameSession) -> Grid?
+        
     func gameSessionRequestsInitialTempo(_ gameSession: GameSession,
                                          initialTempo: @escaping (TimeInterval) -> Void)
     
@@ -18,13 +22,15 @@ protocol GameSessionDelegate {
 
 class GameSession {
     
-    private var delegate: GameSessionDelegate
+    typealias GriddableGameSessionDelegate = GameSessionDelegate & Griddable
+    
+    var delegate: GriddableGameSessionDelegate
     
     var currentScore: Int = 0
     var tempo: TimeInterval = 0
     var grids: [Grid] = []
     
-    required init(withDelegate delegate: GameSessionDelegate) {
+    required init(withDelegate delegate: GriddableGameSessionDelegate) {
         self.delegate = delegate
         
         delegate.gameSessionRequestsInitialTempo(self) { [weak self] (initialTempo) in

@@ -11,6 +11,10 @@ import UIKit
 
 extension GameViewController: GameSessionDelegate {
     
+    func gameSessionRequestsCollisionGrid(_ gameSession: GameSession) -> Grid? {
+        return bigGrid 
+    }
+    
     func gameSessionRequestsInitialTempo(_ gameSession: GameSession,
                                          initialTempo: @escaping (TimeInterval) -> Void) {
         determineInitialTempo { (tempo) in

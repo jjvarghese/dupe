@@ -33,8 +33,19 @@ class Grid: UICollectionView {
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
     var position: Position?
-    
+        
     // MARK: - NSObject -
+    
+    required convenience init(withGriddable griddable: Griddable) {
+        self.init(frame: .zero,
+                  collectionViewLayout: UICollectionViewFlowLayout())
+        
+        gridDelegate = griddable
+        delegate = griddable
+        dataSource = griddable
+        
+        configure()
+    }
     
     convenience init() {
         self.init(frame: .zero,
@@ -123,6 +134,12 @@ class Grid: UICollectionView {
     }
 
     // MARK: - Configuration -
+    
+    func configureDelegates(toGriddable griddable: Griddable) {
+        gridDelegate = griddable
+        delegate = griddable
+        dataSource = griddable
+    }
     
     private func configure() {
         backgroundColor = .clear

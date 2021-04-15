@@ -45,7 +45,7 @@ extension GameViewController: MenuDelegate {
                                                               withTexts: [Constants.Text.startGameReadyText1,
                                                                           Constants.Text.startGameReadyText2,
                                                                           Constants.Text.startGameReadyText3]) { [weak self] in
-                                self?.spawnGrid(in: .center)
+                                self?.session?.spawnGrid(in: .center)
                             }
                          })
         }

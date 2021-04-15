@@ -79,8 +79,7 @@ class GameViewController: UIViewController {
         guard let bigGrid = bigGrid else { return }
                 
         bigGrid.accessibilityIdentifier = "BigGrid"
-        
-        configure(grid: bigGrid)
+        bigGrid.configureDelegates(toGriddable: self)
     }
     
     private func configureMenu() {
@@ -89,10 +88,6 @@ class GameViewController: UIViewController {
         menu?.menuDelegate = self
     }
     
-    func configure(grid: Grid?) {
-        grid?.delegate = self
-        grid?.dataSource = self
-        grid?.gridDelegate = self 
-    }
+
 
 }

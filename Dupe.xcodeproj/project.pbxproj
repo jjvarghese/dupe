@@ -102,6 +102,8 @@
 		A4F902312621B981008814CA /* GameViewController+StateHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902302621B981008814CA /* GameViewController+StateHandling.swift */; };
 		A4F9024726289D11008814CA /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9024626289D11008814CA /* GameSession.swift */; };
 		A4F9024C2628AEBB008814CA /* GameViewController+GameSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9024B2628AEBB008814CA /* GameViewController+GameSessionDelegate.swift */; };
+		A4F902512628BAB3008814CA /* GameSession+Spawning.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902502628BAB3008814CA /* GameSession+Spawning.swift */; };
+		A4F9025A2628BD3A008814CA /* Griddable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902592628BD3A008814CA /* Griddable.swift */; };
 		F70F4E4918E06217E2DA1ADB /* Pods_Dupe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B2D29805767CA83750AF10 /* Pods_Dupe.framework */; };
 /* End PBXBuildFile section */
 
@@ -230,6 +232,8 @@
 		A4F902302621B981008814CA /* GameViewController+StateHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+StateHandling.swift"; sourceTree = "<group>"; };
 		A4F9024626289D11008814CA /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		A4F9024B2628AEBB008814CA /* GameViewController+GameSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameSessionDelegate.swift"; sourceTree = "<group>"; };
+		A4F902502628BAB3008814CA /* GameSession+Spawning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameSession+Spawning.swift"; sourceTree = "<group>"; };
+		A4F902592628BD3A008814CA /* Griddable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Griddable.swift; sourceTree = "<group>"; };
 		F8E299E850DF0471388E8494 /* Pods-DupeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DupeTests.debug.xcconfig"; path = "Target Support Files/Pods-DupeTests/Pods-DupeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -425,6 +429,7 @@
 		A49B974F24747AE3007BF29A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A4F902552628BCDB008814CA /* Typedefs */,
 				A453CE95261B13BB0049A6E2 /* Protocols */,
 				A4A217E12617AAD700DB7C7C /* Utility */,
 				A4BC1CED2606654A009A2AA0 /* Types */,
@@ -476,6 +481,7 @@
 				A453CEA7261B1BC70049A6E2 /* Constants.swift */,
 				A4A217E22617AAF300DB7C7C /* HighScores.swift */,
 				A4F9024626289D11008814CA /* GameSession.swift */,
+				A4F902502628BAB3008814CA /* GameSession+Spawning.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -565,6 +571,14 @@
 				A4F902152620F651008814CA /* TextSize+Theme.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		A4F902552628BCDB008814CA /* Typedefs */ = {
+			isa = PBXGroup;
+			children = (
+				A4F902592628BD3A008814CA /* Griddable.swift */,
+			);
+			path = Typedefs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -837,6 +851,7 @@
 				A4DBACFD260FDC20006B42B7 /* UITextView+Theme.swift in Sources */,
 				A453CE4526186D1A0049A6E2 /* [Grid]+Operations.swift in Sources */,
 				A4DBACD1260F63D2006B42B7 /* GameViewController+UITableViewDelegate.swift in Sources */,
+				A4F902512628BAB3008814CA /* GameSession+Spawning.swift in Sources */,
 				A49B97552475BC9B007BF29A /* Grid.swift in Sources */,
 				A445390F26163E240000B051 /* Corner.swift in Sources */,
 				A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */,
@@ -846,6 +861,7 @@
 				A453CEC5261B27660049A6E2 /* Bundle+BundleProtocol.swift in Sources */,
 				A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */,
 				A4DBACB8260F5D41006B42B7 /* Menu.swift in Sources */,
+				A4F9025A2628BD3A008814CA /* Griddable.swift in Sources */,
 				A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */,
 				A453CE78261906CE0049A6E2 /* UIDevice+Detection.swift in Sources */,
 				A49B9762247ADF3F007BF29A /* Collection+Operations.swift in Sources */,

@@ -10,43 +10,7 @@ import Foundation
 import UIKit
 
 extension GameViewController {
-    
-    func spawnGrid(in position: Position) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self,
-                  let session = self.session else { return }
-            
-            for grid in session.grids {
-                if grid.position == position {
-                    return
-                }
-            }
-            
-            let grid = Grid()
-            
-            grid.position = position
-            
-            self.configure(grid: grid)
-            session.grids.append(grid)
-            self.view.addSubviewWithConstraints(subview: grid,
-                                                atPosition: position)
-            
-            grid.randomise()
-            grid.accessibilityIdentifier = "SmallGrid"
-            
-            if session.tempo > Constants.Values.DifficultyThreshold.getMaximumTempo(forCurrentScore: session.currentScore) { // Maximum speed
-                session.tempo -= Constants.Values.incrementTempo
-            }
-            
-            if let bigGrid = self.bigGrid {
-                let threshold = position == .center ? 0.0 : 0.01
-                
-                grid.startFalling(collisionGrid: bigGrid,
-                                  withTempo: session.tempo + threshold)
-            }
-        }
-    }
-    
+
     func triggerMatch(matchedGrid: Grid) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self,
@@ -59,7 +23,7 @@ extension GameViewController {
             }
             
             if matchedGrid.position == .center {
-                self.spawnGrid(in: .center)
+                self.session?.spawnGrid(in: .center)
             }
             
             let numberOfPointsToGain = self.getNumberOfPointsToGain(matchedGrid: matchedGrid)
@@ -136,13 +100,13 @@ extension GameViewController {
         if hasExistingRightGrid && hasExistingLeftGrid {
             return
         } else if hasExistingRightGrid {
-            spawnGrid(in: .left)
+            session.spawnGrid(in: .left)
         } else if hasExistingLeftGrid {
-            spawnGrid(in: .right)
+            session.spawnGrid(in: .right)
         } else {
             let coinFlip = Int.random(in: 0..<2)
             
-            spawnGrid(in: coinFlip == 0 ? .left : .right)
+            session.spawnGrid(in: coinFlip == 0 ? .left : .right)
         }
     }
     
