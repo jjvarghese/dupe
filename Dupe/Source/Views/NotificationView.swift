@@ -26,7 +26,10 @@ class NotificationView: UIView {
     
     // MARK: - Methods -
     
-    func popin(withText text: String) {
+    static func popin(withText text: String) {
+        guard let notificationView: NotificationView = UINib(nibName: Constants.NibNames.NotificationView,
+                                                               bundle: nil).instantiate(withOwner: nil,
+                                                                                        options: nil).first as? NotificationView else { return }
         var attributes = EKAttributes()
         
         attributes.name = "NotificationView"
@@ -54,11 +57,11 @@ class NotificationView: UIView {
             attributes.positionConstraints.safeArea = .overridden
         }
                         
-        SwiftEntryKit.display(entry: self, using: attributes)
+        SwiftEntryKit.display(entry: notificationView, using: attributes)
         
-        textView?.text = text
+        notificationView.textView?.text = text
         
-        textView?.backgroundColor = GameViewController.baseRubikColor
+        notificationView.textView?.backgroundColor = GameViewController.baseRubikColor
     }
     
     // MARK: - Configuration -

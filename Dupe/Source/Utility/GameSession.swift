@@ -40,6 +40,18 @@ class GameSession {
         for grid in grids {
             grid.removeFromSuperview()
         }
+        
+        showScore()
     }
     
+    // MARK: - Gameplay -
+
+    private func showScore() {
+        let scoreString = String(format: "%@%d\n\n%@",
+                                 Constants.Text.gameOverHeadline,
+                                 currentScore,
+                                 Constants.Text.ScoreJudgements.getJudgement(forScore: currentScore))
+        
+        NotificationView.popin(withText: scoreString)
+    }
 }

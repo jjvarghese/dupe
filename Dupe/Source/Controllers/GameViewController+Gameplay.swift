@@ -101,7 +101,6 @@ extension GameViewController {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             
-            self.showScore()
             self.session = nil
             self.soundProvider.play(sfx: .gameOver)
             self.soundProvider.stopAllTunes()
@@ -118,19 +117,6 @@ extension GameViewController {
     
     func startNewRound() {
         menu?.alpha = 1.0
-    }
-    
-    
-    private func showScore() {
-        guard let session = session else { return }
-        
-        // TODO: Move to GameSession, make NotificationView static
-        let scoreString = String(format: "%@%d\n\n%@",
-                                 Constants.Text.gameOverHeadline,
-                                 session.currentScore,
-                                 Constants.Text.ScoreJudgements.getJudgement(forScore: session.currentScore))
-        
-        notificationView?.popin(withText: scoreString)
     }
     
     @objc private func spawnSideGrid() {

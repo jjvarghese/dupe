@@ -13,12 +13,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var bigGrid: Grid?
     @IBOutlet weak var logoLabel: UILabel?
     @IBOutlet weak var menu: Menu?
-    
-    var notificationView: NotificationView? = UINib(nibName: Constants.NibNames.NotificationView,
-                                                    bundle: nil).instantiate(withOwner: self,
-                                                                             options: nil).first as? NotificationView
-
-  
+   
     let soundProvider: SoundProvider = SoundProvider()
    
     private static var _baseRubikColor: UIColor = UIColor(withHex: RubikColor.yellow.rawValue)

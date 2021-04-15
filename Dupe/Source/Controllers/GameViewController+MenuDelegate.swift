@@ -52,13 +52,13 @@ extension GameViewController: MenuDelegate {
     }
     
     private func handleAboutPressed() {
-        notificationView?.popin(withText: Constants.Text.aboutDescription)
+        NotificationView.popin(withText: Constants.Text.aboutDescription)
     }
     
     private func handleHighScoresPressed() {
         let text = HighScores.getHighScoreText()
         
-        notificationView?.popin(withText: text)
+        NotificationView.popin(withText: text)
     }
     
 }
