@@ -16,17 +16,7 @@ class GameViewController: UIViewController {
    
     let soundProvider: SoundProvider = SoundProvider()
    
-    private static var _baseRubikColor: UIColor = UIColor(withHex: RubikColor.yellow.rawValue)
-    static var baseRubikColor: UIColor {
-        get { return _baseRubikColor }
-        set {
-            if baseRubikColor == newValue {
-                _baseRubikColor = RubikColor.getRandomRubikColor()
-            } else {
-                _baseRubikColor = newValue
-            }
-        }
-    }
+
     
     var session: GameSession?
         

@@ -42,7 +42,7 @@ extension GameViewController: GridDelegate {
                 let gridIndices = grid.selectedIndices.sorted()
                 
                 if bigGridIndices.elementsEqual(gridIndices) {
-                    self.triggerMatch(matchedGrid: grid)
+                    session.triggerMatch(matchedGrid: grid)
                 }
             }
         }

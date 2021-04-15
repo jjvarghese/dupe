@@ -104,6 +104,8 @@
 		A4F9024C2628AEBB008814CA /* GameViewController+GameSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9024B2628AEBB008814CA /* GameViewController+GameSessionDelegate.swift */; };
 		A4F902512628BAB3008814CA /* GameSession+Spawning.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902502628BAB3008814CA /* GameSession+Spawning.swift */; };
 		A4F9025A2628BD3A008814CA /* Griddable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902592628BD3A008814CA /* Griddable.swift */; };
+		A4F9025F2628C7D6008814CA /* GameSession+Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9025E2628C7D6008814CA /* GameSession+Gameplay.swift */; };
+		A4F9026A2628CD4A008814CA /* GameSession+ScoreKeeping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902692628CD4A008814CA /* GameSession+ScoreKeeping.swift */; };
 		F70F4E4918E06217E2DA1ADB /* Pods_Dupe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B2D29805767CA83750AF10 /* Pods_Dupe.framework */; };
 /* End PBXBuildFile section */
 
@@ -234,6 +236,8 @@
 		A4F9024B2628AEBB008814CA /* GameViewController+GameSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameSessionDelegate.swift"; sourceTree = "<group>"; };
 		A4F902502628BAB3008814CA /* GameSession+Spawning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameSession+Spawning.swift"; sourceTree = "<group>"; };
 		A4F902592628BD3A008814CA /* Griddable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Griddable.swift; sourceTree = "<group>"; };
+		A4F9025E2628C7D6008814CA /* GameSession+Gameplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameSession+Gameplay.swift"; sourceTree = "<group>"; };
+		A4F902692628CD4A008814CA /* GameSession+ScoreKeeping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameSession+ScoreKeeping.swift"; sourceTree = "<group>"; };
 		F8E299E850DF0471388E8494 /* Pods-DupeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DupeTests.debug.xcconfig"; path = "Target Support Files/Pods-DupeTests/Pods-DupeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -399,14 +403,14 @@
 				A49B974424745BA1007BF29A /* GameViewController.swift */,
 				A49B974524745BA1007BF29A /* GameViewController.xib */,
 				A4364AD9247EED7200D7AF78 /* GameViewController+Gameplay.swift */,
+				A4F9024B2628AEBB008814CA /* GameViewController+GameSessionDelegate.swift */,
 				A49B975B2475C467007BF29A /* GameViewController+GridDelegate.swift */,
+				A4DBACE2260F9778006B42B7 /* GameViewController+MenuDelegate.swift */,
+				A4F902302621B981008814CA /* GameViewController+StateHandling.swift */,
 				A49B974C247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift */,
 				A49B974824747859007BF29A /* GameViewController+UICollectionViewDelegateFlowLayout.swift */,
 				A4DBACD5260F63E0006B42B7 /* GameViewController+UITableViewDataSource.swift */,
 				A4DBACD0260F63D2006B42B7 /* GameViewController+UITableViewDelegate.swift */,
-				A4DBACE2260F9778006B42B7 /* GameViewController+MenuDelegate.swift */,
-				A4F902302621B981008814CA /* GameViewController+StateHandling.swift */,
-				A4F9024B2628AEBB008814CA /* GameViewController+GameSessionDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -482,6 +486,8 @@
 				A4A217E22617AAF300DB7C7C /* HighScores.swift */,
 				A4F9024626289D11008814CA /* GameSession.swift */,
 				A4F902502628BAB3008814CA /* GameSession+Spawning.swift */,
+				A4F9025E2628C7D6008814CA /* GameSession+Gameplay.swift */,
+				A4F902692628CD4A008814CA /* GameSession+ScoreKeeping.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -857,6 +863,7 @@
 				A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */,
 				A4BC1CB12602A0AE009A2AA0 /* UIColor+Theme.swift in Sources */,
 				A4DBACC7260F5FE1006B42B7 /* MenuOption.swift in Sources */,
+				A4F9025F2628C7D6008814CA /* GameSession+Gameplay.swift in Sources */,
 				A4DBACCC260F60DA006B42B7 /* MenuOption+Text.swift in Sources */,
 				A453CEC5261B27660049A6E2 /* Bundle+BundleProtocol.swift in Sources */,
 				A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */,
@@ -869,6 +876,7 @@
 				A4A217E32617AAF300DB7C7C /* HighScores.swift in Sources */,
 				A49B975224747B7B007BF29A /* GridCell.swift in Sources */,
 				A4BC1CDE26054FB5009A2AA0 /* SoundProvider+AVAudioPlayerDelegate.swift in Sources */,
+				A4F9026A2628CD4A008814CA /* GameSession+ScoreKeeping.swift in Sources */,
 				A4BC1CD626054D47009A2AA0 /* SoundProvider.swift in Sources */,
 				A453CE8E261B13660049A6E2 /* UserDefaultsProtocol.swift in Sources */,
 				A453CE97261B13FB0049A6E2 /* UserDefaults+UserDefaultsProtocol.swift in Sources */,

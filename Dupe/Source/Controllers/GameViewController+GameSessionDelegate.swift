@@ -22,6 +22,9 @@ extension GameViewController: GameSessionDelegate {
         }
     }
     
+    func gameSessionTriggersMatch(_ gameSession: GameSession) {
+        self.soundProvider.play(sfx: .matched)
+    }
     
     func gameSessionTriggersGameOver(_ gameSession: GameSession) {
         

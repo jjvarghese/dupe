@@ -26,7 +26,7 @@ class GridCell: UICollectionViewCell {
         
         isUserInteractionEnabled = true
         
-        square?.backgroundColor = GameViewController.baseRubikColor
+        square?.backgroundColor = UIColor.baseRubikColor
         
         styleCorners()
     }
@@ -41,7 +41,7 @@ class GridCell: UICollectionViewCell {
 
             UIView.animate(withDuration: pulseDuration,
                            animations: { [weak self] in
-                            self?.square?.backgroundColor = selected ? UIColor.activeRubik : GameViewController.baseRubikColor
+                            self?.square?.backgroundColor = selected ? UIColor.activeRubik : UIColor.baseRubikColor
             })
         }
 

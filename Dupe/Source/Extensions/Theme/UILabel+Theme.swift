@@ -21,7 +21,7 @@ extension UILabel {
     
     func themeAsLogo() {
         backgroundColor = .clear
-        textColor = GameViewController.baseRubikColor
+        textColor = UIColor.baseRubikColor
         font = UIFont(name: "8-bit",
                         size: TextSize.size(textSize: .large))
         textAlignment = .center

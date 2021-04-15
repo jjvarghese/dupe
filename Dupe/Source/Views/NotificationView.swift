@@ -48,7 +48,7 @@ class NotificationView: UIView {
         if UIDevice.current.hasNotch {
             attributes.positionConstraints.safeArea = .empty(fillSafeArea: true)
             
-            if let baseRgb = GameViewController.baseRubikColor.rgb() {
+            if let baseRgb = UIColor.baseRubikColor.rgb() {
                 let baseEKColor = EKColor(rgb: baseRgb)
 
                 attributes.entryBackground = .color(color: baseEKColor)
@@ -61,7 +61,7 @@ class NotificationView: UIView {
         
         notificationView.textView?.text = text
         
-        notificationView.textView?.backgroundColor = GameViewController.baseRubikColor
+        notificationView.textView?.backgroundColor = UIColor.baseRubikColor
     }
     
     // MARK: - Configuration -
@@ -73,7 +73,7 @@ class NotificationView: UIView {
     
     private func configureTextViews() {
         textView?.theme()
-        textView?.backgroundColor = GameViewController.baseRubikColor
+        textView?.backgroundColor = UIColor.baseRubikColor
     }
     
     private func configureCorners() {
