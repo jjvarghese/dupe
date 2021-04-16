@@ -33,7 +33,7 @@ class Grid: UICollectionView {
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
     var position: Position?
-        
+
     // MARK: - NSObject -
     
     required convenience init(withGriddable griddable: Griddable) {
@@ -119,7 +119,8 @@ class Grid: UICollectionView {
         }
     }
     
-    func startFalling(withTempo tempo: TimeInterval) {
+    func startFalling(withTempo tempo: TimeInterval,
+                      withSharedGridSpace sharedGridSpace: Int) {
         let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
         
         topConstraint?.constant = Grid.START_POSITION
@@ -127,7 +128,8 @@ class Grid: UICollectionView {
         updateConstraints()
         
         if !descentInProgress {
-            descend(withTempo: tempo)
+            descend(withTempo: tempo,
+                    withSharedGridSpace: sharedGridSpace)
         }
     }
 

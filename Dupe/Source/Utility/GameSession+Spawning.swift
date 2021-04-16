@@ -16,16 +16,19 @@ extension GameSession {
             guard let self = self else { return }
             
             for grid in self.grids {
-                if grid.position == position {
+                if grid.position == position && grid.descentInProgress {
                     return
                 }
             }
-                        
+                                    
             let grid = self.generateNewGrid(in: position)
             
             self.increaseTempoIfNeeded()
-                                    
-            grid.startFalling(withTempo: self.tempo)
+                                 
+            let numExistingGrids = self.grids.numberOfGrids(in: position)
+            
+            grid.startFalling(withTempo: self.tempo,
+                              withSharedGridSpace: numExistingGrids - 1)
         }
     }
     

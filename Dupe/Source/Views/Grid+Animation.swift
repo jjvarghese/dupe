@@ -25,9 +25,8 @@ extension Grid {
         }
     }
     
-    func descend(withTempo tempo: TimeInterval) {
-        guard let vc = UIApplication.topViewController() else { return }
-
+    func descend(withTempo tempo: TimeInterval,
+                 withSharedGridSpace sharedGridSpace: Int) {
         let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
         
         guard let topLayoutConstraint = topConstraint else { return }
@@ -35,9 +34,12 @@ extension Grid {
         descentInProgress = true
          
         let gridBottom = frame.origin.y + frame.size.height
-        let stopPoint = vc.view.frame.size.height
         
-        if gridBottom < stopPoint {
+        var stoppingPoint: CGFloat = UIApplication.topViewController()?.view.frame.size.height ?? 0
+
+        stoppingPoint -= (CGFloat(sharedGridSpace) * frame.size.height)
+        
+        if gridBottom < stoppingPoint {
             topLayoutConstraint.constant += 1
                                     
             UIView.animate(withDuration: tempo,
@@ -46,11 +48,13 @@ extension Grid {
             }) { [weak self] (finished) in
                 if finished {
                     DispatchQueue.main.asyncAfter(deadline: .now() + tempo) {
-                        self?.descend(withTempo: tempo)
+                        self?.descend(withTempo: tempo,
+                                      withSharedGridSpace: sharedGridSpace)
                     }
                 }
             }
         } else {
+            descentInProgress = false
             gridDelegate?.gridDidCollide(self)
         }
     }

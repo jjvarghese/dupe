@@ -24,4 +24,16 @@ extension Array where Element == Grid {
         }
     }
     
+    func numberOfGrids(in position: Position) -> Int {
+        var gridsOfPosition: [Grid] = []
+        
+        for grid in self {
+            if grid.position == position {
+                gridsOfPosition.append(grid)
+            }
+        }
+        
+        return gridsOfPosition.count
+    }
+    
 }
