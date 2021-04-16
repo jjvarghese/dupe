@@ -38,7 +38,7 @@ extension TextSize {
         case .medium:
             return 20
         case .large:
-            return 70
+            return 40
         }
     }
 

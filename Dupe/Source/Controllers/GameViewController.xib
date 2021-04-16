@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -19,11 +19,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5YU-iq-uwr" customClass="Grid" customModule="Dupe" customModuleProvider="target">
-                    <rect key="frame" x="70.5" y="281" width="179" height="179"/>
+                    <rect key="frame" x="137" y="57" width="206" height="206"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="5YU-iq-uwr" secondAttribute="height" multiplier="1:1" id="ytA-f4-6x3"/>
                     </constraints>
@@ -35,17 +35,14 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DUPE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nw9-PJ-5OV">
-                    <rect key="frame" x="40" y="100" width="240" height="117"/>
+                    <rect key="frame" x="40" y="10" width="400" height="37"/>
                     <color key="backgroundColor" systemColor="systemRedColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="117" id="TVz-Df-ydI"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V7r-pZ-kJK" customClass="Menu" customModule="Dupe" customModuleProvider="target">
-                    <rect key="frame" x="81" y="291.5" width="158" height="158"/>
+                    <rect key="frame" x="149" y="69" width="182" height="182"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="V7r-pZ-kJK" secondAttribute="height" multiplier="1:1" id="JGZ-Xv-qAR"/>
@@ -56,16 +53,17 @@
             <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="V7r-pZ-kJK" firstAttribute="centerX" secondItem="5YU-iq-uwr" secondAttribute="centerX" id="3fj-Ey-qac"/>
-                <constraint firstItem="5YU-iq-uwr" firstAttribute="top" secondItem="Nw9-PJ-5OV" secondAttribute="bottom" constant="64" id="7Bi-XI-oA7"/>
                 <constraint firstItem="Nw9-PJ-5OV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="9dk-FQ-zhu"/>
                 <constraint firstItem="V7r-pZ-kJK" firstAttribute="width" secondItem="5YU-iq-uwr" secondAttribute="height" multiplier="150:170" id="Cw4-9b-fPS"/>
-                <constraint firstItem="5YU-iq-uwr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-20" id="DOh-jD-Kzs"/>
                 <constraint firstItem="V7r-pZ-kJK" firstAttribute="centerY" secondItem="5YU-iq-uwr" secondAttribute="centerY" id="Enp-bo-ERH"/>
-                <constraint firstItem="5YU-iq-uwr" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="167:448" id="MB3-el-ekh"/>
+                <constraint firstItem="Nw9-PJ-5OV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="GgK-Hh-RB6"/>
+                <constraint firstItem="5YU-iq-uwr" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="103:160" id="RLt-59-iUa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nw9-PJ-5OV" secondAttribute="trailing" constant="40" id="ZEA-iP-VD8"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iY2-EC-wdG"/>
+                <constraint firstItem="5YU-iq-uwr" firstAttribute="top" secondItem="Nw9-PJ-5OV" secondAttribute="bottom" constant="10" id="nwM-Dm-nDj"/>
+                <constraint firstItem="5YU-iq-uwr" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="to8-e8-BCH"/>
             </constraints>
-            <point key="canvasLocation" x="136.875" y="152.5"/>
+            <point key="canvasLocation" x="136.25" y="151.875"/>
         </view>
     </objects>
     <resources>
