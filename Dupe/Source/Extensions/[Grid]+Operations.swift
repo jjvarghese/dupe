@@ -22,9 +22,17 @@ extension Array where Element == Grid {
         removeAll { (existingGrid) -> Bool in
             return grid == existingGrid
         }
+        
+        guard let position = grid.position else { return }
+        
+        let remainingGrids = grids(in: position)
+        
+        for remainingGrid in remainingGrids {
+            remainingGrid.startFalling(withSharedGridSpace: remainingGrids.count - 1)
+        }
     }
     
-    func numberOfGrids(in position: Position) -> Int {
+    func grids(in position: Position) -> [Grid] {
         var gridsOfPosition: [Grid] = []
         
         for grid in self {
@@ -33,7 +41,11 @@ extension Array where Element == Grid {
             }
         }
         
-        return gridsOfPosition.count
+        return gridsOfPosition
+    }
+    
+    func numberOfGrids(in position: Position) -> Int {
+        return grids(in: position).count
     }
     
 }
