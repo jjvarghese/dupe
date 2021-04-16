@@ -119,8 +119,7 @@ class Grid: UICollectionView {
         }
     }
     
-    func startFalling(collisionGrid: Grid,
-                      withTempo tempo: TimeInterval) {
+    func startFalling(withTempo tempo: TimeInterval) {
         let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
         
         topConstraint?.constant = Grid.START_POSITION
@@ -128,8 +127,7 @@ class Grid: UICollectionView {
         updateConstraints()
         
         if !descentInProgress {
-            descend(collisionGrid: collisionGrid,
-                    withTempo: tempo)
+            descend(withTempo: tempo)
         }
     }
 

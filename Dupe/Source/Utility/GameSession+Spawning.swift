@@ -13,8 +13,7 @@ extension GameSession {
     
     func spawnGrid(in position: Position) {
         DispatchQueue.main.async { [weak self] in
-            guard let self = self,
-                  let collisionGrid = self.delegate.gameSessionRequestsCollisionGrid(self) else { return }
+            guard let self = self else { return }
             
             for grid in self.grids {
                 if grid.position == position {
@@ -25,53 +24,23 @@ extension GameSession {
             let grid = self.generateNewGrid(in: position)
             
             self.increaseTempoIfNeeded()
-                        
-            let threshold = position == .center ? 0.0 : 0.01
-            
-            grid.startFalling(collisionGrid: collisionGrid,
-                              withTempo: self.tempo + threshold)
+                                    
+            grid.startFalling(withTempo: self.tempo)
         }
     }
     
     func spawnExtraGridsIfDetermined() {
-        if self.tempo <= Constants.Values.thresholdTempoForExtraSpawns {
-            let randomNumber = Int.random(in: 0..<5)
-            
-            if randomNumber == 0 {
-                Timer.scheduledTimer(timeInterval: Constants.Values.sideGridSpawnDelay,
-                                     target: self,
-                                     selector: #selector(self.spawnSideGrid),
-                                     userInfo: nil,
-                                     repeats: false)
-            }
-        }
+        Timer.scheduledTimer(timeInterval: Constants.Values.sideGridSpawnDelay,
+                             target: self,
+                             selector: #selector(self.spawnRandomGrid),
+                             userInfo: nil,
+                             repeats: false)
     }
     
     // MARK: - Private -
     
-    @objc private func spawnSideGrid() {
-        var hasExistingLeftGrid = false
-        var hasExistingRightGrid = false
-        
-        for grid in grids {
-            if grid.position == .left {
-                hasExistingLeftGrid = true
-            } else if grid.position == .right {
-                hasExistingRightGrid = true
-            }
-        }
-        
-        if hasExistingRightGrid && hasExistingLeftGrid {
-            return
-        } else if hasExistingRightGrid {
-            spawnGrid(in: .left)
-        } else if hasExistingLeftGrid {
-            spawnGrid(in: .right)
-        } else {
-            let coinFlip = Int.random(in: 0..<2)
-            
-            spawnGrid(in: coinFlip == 0 ? .left : .right)
-        }
+    @objc private func spawnRandomGrid() {
+        spawnGrid(in: Position.random())
     }
     
     private func generateNewGrid(in position: Position) -> Grid {

@@ -30,7 +30,7 @@ class GameViewController: UIViewController {
                                                                   withTexts: [Constants.Text.startGameReadyText1,
                                                                               Constants.Text.startGameReadyText2,
                                                                               Constants.Text.startGameReadyText3]) {
-                                    newValue?.spawnGrid(in: .center)
+                                    newValue?.spawnGrid(in: Position.random())
                                 }
                              })
             }

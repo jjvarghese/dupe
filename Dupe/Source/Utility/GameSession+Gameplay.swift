@@ -60,9 +60,7 @@ extension GameSession {
             
             self.grids.remove(grid: matchedGrid)
             
-            if matchedGrid.position == .center {
-                self.spawnGrid(in: .center)
-            }
+            self.spawnGrid(in: Position.random())
             
             let numberOfPointsToGain = self.getNumberOfPointsToGain(matchedGrid: matchedGrid)
             

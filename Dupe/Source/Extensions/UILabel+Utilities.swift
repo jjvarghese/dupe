@@ -22,6 +22,8 @@ extension UILabel {
         label.text = text
         label.theme()
         
+        label.frame.origin.y = 10
+        
         superview.addSubview(label)
         
         let duration = 0.75

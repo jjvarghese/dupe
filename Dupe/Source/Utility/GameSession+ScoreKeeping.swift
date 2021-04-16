@@ -13,9 +13,8 @@ extension GameSession {
     func getNumberOfPointsToGain(matchedGrid: Grid) -> Int {
         let baseline = 100
         let amountToSubtract = tempo * 500
-        let positionModifier = matchedGrid.position == .center ? 0 : 100
         
-        return (baseline - Int(amountToSubtract) + positionModifier)
+        return (baseline - Int(amountToSubtract))
     }
     
 }

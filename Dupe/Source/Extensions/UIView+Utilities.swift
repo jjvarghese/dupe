@@ -36,14 +36,14 @@ extension UIView {
                                                  toItem: nil,
                                                  attribute: NSLayoutConstraint.Attribute.notAnAttribute,
                                                  multiplier: 1,
-                                                 constant: width ?? frame.size.width / 5)
+                                                 constant: width ?? frame.size.height / 5)
         let heightConstraint = NSLayoutConstraint(item: subview,
                                                   attribute: NSLayoutConstraint.Attribute.height,
                                                   relatedBy: NSLayoutConstraint.Relation.equal,
                                                   toItem: nil,
                                                   attribute: NSLayoutConstraint.Attribute.notAnAttribute,
                                                   multiplier: 1,
-                                                  constant: height ?? frame.size.width / 5)
+                                                  constant: height ?? frame.size.height / 5)
         
         if verticalOffset == Grid.START_POSITION {
             addConstraints([xConstraint,

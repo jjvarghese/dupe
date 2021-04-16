@@ -8,12 +8,14 @@
 
 import Foundation
 
-enum Position: Int {
+@objc enum Position: Int, CaseIterable {
     
-    case left = 0
+    case outerLeft = 0
     
-    case center
+    case innerLeft
     
-    case right
+    case innerRight
+    
+    case outerRight
     
 }
