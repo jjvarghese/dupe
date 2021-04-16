@@ -29,6 +29,23 @@ extension GameSession {
         }
     }
     
+    func triggerGameOver(withCompletion completion:@escaping () -> Void) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            self.grids.removeAllGrids()
+
+            let collisionGrid = self.delegate.gameSessionRequestsCollisionGrid(self)
+            
+            collisionGrid?.reset()
+            
+            UILabel.spawnFloatingFadingLabel(toSuperview: self.delegate.view,
+                                             withText: Constants.Text.collisionText)
+            
+            completion()
+        }
+    }
+    
     // MARK: - Private -
     
     private func triggerMatch(matchedGrid: Grid) {
@@ -41,9 +58,7 @@ extension GameSession {
             
             collisionGrid?.reset()
             
-            self.grids.removeAll { (onScreenGrid) -> Bool in
-                return matchedGrid == onScreenGrid
-            }
+            self.grids.remove(grid: matchedGrid)
             
             if matchedGrid.position == .center {
                 self.spawnGrid(in: .center)

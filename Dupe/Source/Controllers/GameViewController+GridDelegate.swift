@@ -3,9 +3,12 @@ import Foundation
 extension GameViewController: GridDelegate {
     
     func gridDidCollide(_ grid: Grid) {
-        session?.grids.removeAllGrids()
-        
-        triggerGameOver()
+        soundProvider.play(sfx: .gameOver)
+        soundProvider.stopAllTunes()
+        logoLabel?.themeAsLogo()
+        session?.triggerGameOver(withCompletion: { [weak self] in
+            self?.session = nil
+        })
     }
     
     func grid(_ grid: Grid,

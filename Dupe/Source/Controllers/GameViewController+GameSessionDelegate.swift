@@ -26,10 +26,6 @@ extension GameViewController: GameSessionDelegate {
         self.soundProvider.play(sfx: .matched)
     }
     
-    func gameSessionTriggersGameOver(_ gameSession: GameSession) {
-        
-    }
-    
     // MARK: - Private -
     
     private func determineInitialTempo(withCompletion completion: @escaping (TimeInterval) -> Void) {

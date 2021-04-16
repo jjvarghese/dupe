@@ -18,4 +18,10 @@ extension Array where Element == Grid {
         removeAll()
     }
     
+    mutating func remove(grid: Grid) {
+        removeAll { (existingGrid) -> Bool in
+            return grid == existingGrid
+        }
+    }
+    
 }

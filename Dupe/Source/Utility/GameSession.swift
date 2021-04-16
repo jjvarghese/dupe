@@ -10,9 +10,7 @@ import Foundation
 import UIKit
 
 protocol GameSessionDelegate {
-    
-    func gameSessionTriggersGameOver(_ gameSession: GameSession)
-    
+        
     func gameSessionTriggersMatch(_ gameSession: GameSession)
     
     func gameSessionRequestsCollisionGrid(_ gameSession: GameSession) -> Grid?
