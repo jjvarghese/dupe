@@ -5,7 +5,9 @@ extension GameViewController: GridDelegate {
     func gridDidCollide(_ grid: Grid) {
         soundProvider.play(sfx: .gameOver)
         soundProvider.stopAllTunes()
+        
         logoLabel?.themeAsLogo()
+        
         session?.triggerGameOver(withCompletion: { [weak self] in
             self?.session = nil
         })
@@ -33,9 +35,5 @@ extension GameViewController: GridDelegate {
         
         session.checkForMatch()
     }
-    
-    // MARK: - Helper -
-    
-    
     
 }
