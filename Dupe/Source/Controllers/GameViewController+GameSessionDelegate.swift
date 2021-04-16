@@ -34,8 +34,8 @@ extension GameViewController: GameSessionDelegate {
             
             let window = UIApplication.shared.windows.first
             let top = (window?.safeAreaInsets.top ?? 0) + Grid.START_POSITION
-            let collisionPoint = self.bigGrid?.frame.origin.y ?? 0
-            let bottom = top + (self.view.frame.size.width / 5)
+            let collisionPoint = self.view.frame.size.height
+            let bottom = top + (self.view.frame.size.height / 5)
             let distanceToFall = collisionPoint - bottom
             let timeToFall: CGFloat = Constants.Values.initialTimeToFall
             let pixelsPerSecond = distanceToFall / timeToFall
