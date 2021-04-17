@@ -14,6 +14,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var logoLabel: UILabel?
     @IBOutlet weak var menu: Menu?
        
+    @IBOutlet weak var bottomRightColorPicker: ColorPicker?
+    @IBOutlet weak var bottomLeftColorPicker: ColorPicker?
+    @IBOutlet weak var topLeftColorPicker: ColorPicker?
+    @IBOutlet weak var topRightColorPicker: ColorPicker?
+    
+    var colorPickers: [ColorPicker?] = []
+    
     let soundProvider: SoundProvider = SoundProvider()
     
     var session: GameSession? {
@@ -22,15 +29,27 @@ class GameViewController: UIViewController {
                 menu?.backgroundColor = bigGrid?.rubikColor.color() ?? .clear
                 menu?.fade(out: false,
                            for: 0.4)
+                
+                for colorPicker in colorPickers {
+                    colorPicker?.fade(out: true,
+                                      for: 0.4)
+                }
             } else {
                 menu?.fade(out: true,
                            for: 0.4,
-                             completion: {
+                             completion: { [weak self] in
+                                guard let self = self else { return }
+                                
                                 UILabel.spawnFloatingFadingLabels(toSuperview: self.view,
                                                                   withTexts: [Constants.Text.startGameReadyText1,
                                                                               Constants.Text.startGameReadyText2,
                                                                               Constants.Text.startGameReadyText3]) {
                                     newValue?.spawnGrid(in: Position.random())
+                                    
+                                    for colorPicker in self.colorPickers {
+                                        colorPicker?.fade(out: false,
+                                                          for: 0.4)
+                                    }
                                 }
                              })
             }
@@ -42,13 +61,13 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        session = nil
-        
         view.backgroundColor = UIColor.background
         
         configureSubviews()
         configureNavigationBar()
         configureNotifications()
+        
+        session = nil
     }
     
     deinit {
@@ -83,6 +102,20 @@ class GameViewController: UIViewController {
     }
     
     private func configureCollectionViews() {
+        bottomLeftColorPicker?.configure(toGriddable: self,
+                                         withRubikColor: .blue)
+        bottomRightColorPicker?.configure(toGriddable: self,
+                                          withRubikColor: .orange)
+        topLeftColorPicker?.configure(toGriddable: self,
+                                      withRubikColor: .red)
+        topRightColorPicker?.configure(toGriddable: self,
+                                       withRubikColor: .yellow)
+        
+        colorPickers = [bottomLeftColorPicker,
+                        bottomRightColorPicker,
+                        topLeftColorPicker,
+                        topRightColorPicker]
+        
         guard let bigGrid = bigGrid else { return }
                 
         bigGrid.accessibilityIdentifier = "BigGrid"

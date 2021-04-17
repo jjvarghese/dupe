@@ -18,9 +18,7 @@ enum RubikColor: String, CaseIterable {
     case red = "#BE2E36"
     
     case orange = "#FF7D3E"
-    
-    case green = "#096A3F"
-        
+            
 }
 
 extension RubikColor {

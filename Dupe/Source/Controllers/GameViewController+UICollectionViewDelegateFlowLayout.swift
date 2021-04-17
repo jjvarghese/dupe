@@ -5,10 +5,17 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size: CGFloat = (collectionView.frame.size.width / 4)
+        if collectionView is Grid {
+            let size: CGFloat = (collectionView.frame.size.width / 4)
 
-        return CGSize(width: size,
-                      height: size)
+            return CGSize(width: size,
+                          height: size)
+        } else if collectionView is ColorPicker {
+            return CGSize(width: collectionView.frame.size.width,
+                          height: collectionView.frame.size.height)
+        } else {
+            return CGSize(width: 0, height: 0)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,

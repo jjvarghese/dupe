@@ -32,7 +32,8 @@ class GridCell: UICollectionViewCell {
     // MARK: - Updating -
     
     func update(asSelected selected: Bool,
-                withRubikColor rubikColor: RubikColor) {
+                withRubikColor rubikColor: RubikColor,
+                withAllClearCorners allClearCorners: Bool = false) {
         let pulseDuration = 0.4
         
         DispatchQueue.main.async { [weak self] in
@@ -44,7 +45,12 @@ class GridCell: UICollectionViewCell {
             })
         }
 
-        styleCorners()
+        if allClearCorners {
+            style(clearCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight],
+                  standardCorners: [])
+        } else {
+            styleCorners()
+        }
     }
     
     // MARK: - Helper -

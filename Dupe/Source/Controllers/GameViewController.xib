@@ -12,8 +12,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController" customModule="Dupe" customModuleProvider="target">
             <connections>
                 <outlet property="bigGrid" destination="5YU-iq-uwr" id="MwB-mu-yOg"/>
+                <outlet property="bottomLeftColorPicker" destination="u6N-bw-jK9" id="zuj-hJ-LcT"/>
+                <outlet property="bottomRightColorPicker" destination="1LT-EL-0R8" id="fdu-jn-MY1"/>
                 <outlet property="logoLabel" destination="Nw9-PJ-5OV" id="7pT-DE-RoW"/>
                 <outlet property="menu" destination="V7r-pZ-kJK" id="PKM-8E-oBF"/>
+                <outlet property="topLeftColorPicker" destination="lUf-vt-Do4" id="PVX-BN-GdJ"/>
+                <outlet property="topRightColorPicker" destination="FEH-XH-6l5" id="ljd-Fe-BFp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -48,20 +52,89 @@
                         <constraint firstAttribute="width" secondItem="V7r-pZ-kJK" secondAttribute="height" multiplier="1:1" id="JGZ-Xv-qAR"/>
                     </constraints>
                 </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="u6N-bw-jK9" customClass="ColorPicker" customModule="Dupe" customModuleProvider="target">
+                    <rect key="frame" x="157" y="271" width="40" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="u6N-bw-jK9" secondAttribute="height" multiplier="1:1" id="5Fb-lz-Cno"/>
+                        <constraint firstAttribute="width" constant="40" id="U9B-kc-I1X"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fVX-5t-tJ3">
+                        <size key="itemSize" width="40" height="40"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lUf-vt-Do4" customClass="ColorPicker" customModule="Dupe" customModuleProvider="target">
+                    <rect key="frame" x="157" y="8" width="40" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="lUf-vt-Do4" secondAttribute="height" multiplier="1:1" id="70F-P9-Ld1"/>
+                        <constraint firstAttribute="width" constant="40" id="dLO-GR-Bgc"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m5V-UW-4r9">
+                        <size key="itemSize" width="40" height="40"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1LT-EL-0R8" customClass="ColorPicker" customModule="Dupe" customModuleProvider="target">
+                    <rect key="frame" x="283" y="271" width="40" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="1LT-EL-0R8" secondAttribute="height" multiplier="1:1" id="cAc-GC-9dr"/>
+                        <constraint firstAttribute="width" constant="40" id="quj-lm-Grq"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CuH-Vi-qYz">
+                        <size key="itemSize" width="40" height="40"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FEH-XH-6l5" customClass="ColorPicker" customModule="Dupe" customModuleProvider="target">
+                    <rect key="frame" x="283" y="9" width="40" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="FEH-XH-6l5" secondAttribute="height" multiplier="1:1" id="Iql-zL-Cz7"/>
+                        <constraint firstAttribute="width" constant="40" id="xLK-Up-mUc"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="asB-9E-EU9">
+                        <size key="itemSize" width="40" height="40"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="u6N-bw-jK9" firstAttribute="top" secondItem="5YU-iq-uwr" secondAttribute="bottom" constant="8" symbolic="YES" id="3DS-Fl-Ma2"/>
                 <constraint firstItem="V7r-pZ-kJK" firstAttribute="centerX" secondItem="5YU-iq-uwr" secondAttribute="centerX" id="3fj-Ey-qac"/>
+                <constraint firstItem="5YU-iq-uwr" firstAttribute="top" secondItem="lUf-vt-Do4" secondAttribute="bottom" constant="9" id="7Lp-ol-IlK"/>
                 <constraint firstItem="Nw9-PJ-5OV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="9dk-FQ-zhu"/>
+                <constraint firstItem="1LT-EL-0R8" firstAttribute="top" secondItem="5YU-iq-uwr" secondAttribute="bottom" constant="8" symbolic="YES" id="BA4-Kb-JHn"/>
                 <constraint firstItem="V7r-pZ-kJK" firstAttribute="width" secondItem="5YU-iq-uwr" secondAttribute="height" multiplier="150:170" id="Cw4-9b-fPS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1LT-EL-0R8" secondAttribute="bottom" constant="9" id="DCk-HR-nfN"/>
                 <constraint firstItem="V7r-pZ-kJK" firstAttribute="centerY" secondItem="5YU-iq-uwr" secondAttribute="centerY" id="Enp-bo-ERH"/>
                 <constraint firstItem="Nw9-PJ-5OV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="GgK-Hh-RB6"/>
+                <constraint firstItem="lUf-vt-Do4" firstAttribute="width" secondItem="lUf-vt-Do4" secondAttribute="height" multiplier="1:1" id="IgD-6H-wxE"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="103:160" id="RLt-59-iUa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nw9-PJ-5OV" secondAttribute="trailing" constant="40" id="ZEA-iP-VD8"/>
+                <constraint firstItem="lUf-vt-Do4" firstAttribute="leading" secondItem="5YU-iq-uwr" secondAttribute="leading" constant="20" id="ZmM-E0-v9Q"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iY2-EC-wdG"/>
+                <constraint firstItem="u6N-bw-jK9" firstAttribute="leading" secondItem="5YU-iq-uwr" secondAttribute="leading" constant="20" id="mFh-Q9-Irc"/>
+                <constraint firstItem="5YU-iq-uwr" firstAttribute="top" secondItem="FEH-XH-6l5" secondAttribute="bottom" constant="8" id="n2d-Uy-huz"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="top" secondItem="Nw9-PJ-5OV" secondAttribute="bottom" constant="10" id="nwM-Dm-nDj"/>
+                <constraint firstItem="lUf-vt-Do4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="qf2-ey-ZbP"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="to8-e8-BCH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="u6N-bw-jK9" secondAttribute="bottom" constant="9" id="u7b-rZ-346"/>
+                <constraint firstItem="FEH-XH-6l5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="9" id="ulG-0K-ePE"/>
+                <constraint firstItem="1LT-EL-0R8" firstAttribute="trailing" secondItem="5YU-iq-uwr" secondAttribute="trailing" constant="-20" id="xZj-uU-m5o"/>
+                <constraint firstItem="FEH-XH-6l5" firstAttribute="trailing" secondItem="5YU-iq-uwr" secondAttribute="trailing" constant="-20" id="yCR-RP-WA3"/>
             </constraints>
             <point key="canvasLocation" x="136.25" y="151.875"/>
         </view>

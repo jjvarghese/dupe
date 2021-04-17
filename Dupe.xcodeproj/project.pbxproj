@@ -107,6 +107,7 @@
 		A4F9026A2628CD4A008814CA /* GameSession+ScoreKeeping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902692628CD4A008814CA /* GameSession+ScoreKeeping.swift */; };
 		A4F902802629F941008814CA /* Position+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9027F2629F941008814CA /* Position+Utilities.swift */; };
 		A4F90285262A065C008814CA /* UIApplication+TopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F90284262A065C008814CA /* UIApplication+TopController.swift */; };
+		A4F9029A262AEBA7008814CA /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F90299262AEBA7008814CA /* ColorPicker.swift */; };
 		F70F4E4918E06217E2DA1ADB /* Pods_Dupe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B2D29805767CA83750AF10 /* Pods_Dupe.framework */; };
 /* End PBXBuildFile section */
 
@@ -240,6 +241,7 @@
 		A4F902692628CD4A008814CA /* GameSession+ScoreKeeping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameSession+ScoreKeeping.swift"; sourceTree = "<group>"; };
 		A4F9027F2629F941008814CA /* Position+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Position+Utilities.swift"; sourceTree = "<group>"; };
 		A4F90284262A065C008814CA /* UIApplication+TopController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopController.swift"; sourceTree = "<group>"; };
+		A4F90299262AEBA7008814CA /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
 		F8E299E850DF0471388E8494 /* Pods-DupeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DupeTests.debug.xcconfig"; path = "Target Support Files/Pods-DupeTests/Pods-DupeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -427,6 +429,7 @@
 				A4DBACDA260F647F006B42B7 /* Menu+MenuCellDelegate.swift */,
 				A4DBACE7260FD860006B42B7 /* NotificationView.swift */,
 				A4DBACEC260FD871006B42B7 /* NotificationView.xib */,
+				A4F90299262AEBA7008814CA /* ColorPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -866,6 +869,7 @@
 				A445390F26163E240000B051 /* Corner.swift in Sources */,
 				A49B974D247479D4007BF29A /* GameViewController+UICollectionViewDataSource.swift in Sources */,
 				A4BC1CB12602A0AE009A2AA0 /* UIColor+Theme.swift in Sources */,
+				A4F9029A262AEBA7008814CA /* ColorPicker.swift in Sources */,
 				A4DBACC7260F5FE1006B42B7 /* MenuOption.swift in Sources */,
 				A4F9025F2628C7D6008814CA /* GameSession+Gameplay.swift in Sources */,
 				A4DBACCC260F60DA006B42B7 /* MenuOption+Text.swift in Sources */,
