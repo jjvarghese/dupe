@@ -69,7 +69,8 @@ extension Grid {
             for cell in self.visibleCells {
                 if let gridCell = cell as? GridCell {
                     
-                    gridCell.update(asSelected: on)
+                    gridCell.update(asSelected: on,
+                                    withRubikColor: self.rubikColor)
                 }
             }
         }

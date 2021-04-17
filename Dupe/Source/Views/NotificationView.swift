@@ -16,6 +16,8 @@ class NotificationView: UIView {
     @IBOutlet private weak var brCorner: UIView?
     @IBOutlet private weak var textView: UITextView?
     
+    var notificationBackground: UIColor = RubikColor.getRandomRubikColor().color()
+    
     // MARK: - UIView -
     
     override func awakeFromNib() {
@@ -48,7 +50,7 @@ class NotificationView: UIView {
         if UIDevice.current.hasNotch {
             attributes.positionConstraints.safeArea = .empty(fillSafeArea: true)
             
-            if let baseRgb = UIColor.baseRubikColor.rgb() {
+            if let baseRgb = notificationView.notificationBackground.rgb() {
                 let baseEKColor = EKColor(rgb: baseRgb)
 
                 attributes.entryBackground = .color(color: baseEKColor)
@@ -61,7 +63,7 @@ class NotificationView: UIView {
         
         notificationView.textView?.text = text
         
-        notificationView.textView?.backgroundColor = UIColor.baseRubikColor
+        notificationView.textView?.backgroundColor = notificationView.notificationBackground
     }
     
     // MARK: - Configuration -
@@ -73,7 +75,7 @@ class NotificationView: UIView {
     
     private func configureTextViews() {
         textView?.theme()
-        textView?.backgroundColor = UIColor.baseRubikColor
+        textView?.backgroundColor = notificationBackground
     }
     
     private func configureCorners() {

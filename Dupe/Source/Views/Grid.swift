@@ -34,6 +34,7 @@ class Grid: UICollectionView {
     var swipedIndices: [Int] = []
     var position: Position?
     var velocity: TimeInterval = 0
+    var rubikColor: RubikColor
 
     // MARK: - NSObject -
     
@@ -57,13 +58,17 @@ class Grid: UICollectionView {
     
     override init(frame: CGRect,
                   collectionViewLayout layout: UICollectionViewLayout) {
+        rubikColor = RubikColor.getRandomRubikColor()
+        
         super.init(frame: frame,
                    collectionViewLayout: layout)
                 
         configure()
     }
     
-    required init?(coder: NSCoder) {        
+    required init?(coder: NSCoder) {
+        rubikColor = RubikColor.getRandomRubikColor()
+
         super.init(coder: coder)
         
         configure()

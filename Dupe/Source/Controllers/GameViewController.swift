@@ -13,13 +13,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var bigGrid: Grid?
     @IBOutlet weak var logoLabel: UILabel?
     @IBOutlet weak var menu: Menu?
-   
+       
     let soundProvider: SoundProvider = SoundProvider()
     
     var session: GameSession? {
         willSet {
             if newValue == nil {
-                menu?.backgroundColor = UIColor.baseRubikColor
+                menu?.backgroundColor = bigGrid?.rubikColor.color() ?? .clear
                 menu?.fade(out: false,
                            for: 0.4)
             } else {
@@ -41,6 +41,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        session = nil
         
         view.backgroundColor = UIColor.background
         
@@ -73,7 +75,7 @@ class GameViewController: UIViewController {
     }
     
     private func configureLogo() {
-        logoLabel?.themeAsLogo()
+        logoLabel?.themeAsLogo(withColor: bigGrid?.rubikColor.color())
     }
     
     private func configureNavigationBar() {

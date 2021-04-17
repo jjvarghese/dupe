@@ -19,9 +19,9 @@ extension UILabel {
         textAlignment = .center
     }
     
-    func themeAsLogo() {
+    func themeAsLogo(withColor color: UIColor? = nil) {
         backgroundColor = .clear
-        textColor = UIColor.baseRubikColor
+        textColor = color ?? RubikColor.getRandomRubikColor().color()
         font = UIFont(name: "8-bit",
                         size: TextSize.size(textSize: .large))
         textAlignment = .center

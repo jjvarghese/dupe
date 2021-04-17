@@ -25,15 +25,14 @@ class GridCell: UICollectionViewCell {
         super.awakeFromNib()
         
         isUserInteractionEnabled = true
-        
-        square?.backgroundColor = UIColor.baseRubikColor
-        
+                
         styleCorners()
     }
     
     // MARK: - Updating -
     
-    func update(asSelected selected: Bool) {
+    func update(asSelected selected: Bool,
+                withRubikColor rubikColor: RubikColor) {
         let pulseDuration = 0.4
         
         DispatchQueue.main.async { [weak self] in
@@ -41,7 +40,7 @@ class GridCell: UICollectionViewCell {
 
             UIView.animate(withDuration: pulseDuration,
                            animations: { [weak self] in
-                            self?.square?.backgroundColor = selected ? UIColor.activeRubik : UIColor.baseRubikColor
+                            self?.square?.backgroundColor = selected ? UIColor.activeRubik : rubikColor.color()
             })
         }
 

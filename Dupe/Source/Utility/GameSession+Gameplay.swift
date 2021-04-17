@@ -78,15 +78,15 @@ extension GameSession {
     }
         
     private func rotateColors() {
-        UIColor.baseRubikColor = RubikColor.getRandomRubikColor()
-        
-        let collisionGrid = delegate.gameSessionRequestsCollisionGrid(self)
-        
-        collisionGrid?.reloadData()
-        
-        for grid in grids {
-            grid.reloadData()
-        }
+//        UIColor.baseRubikColor = RubikColor.getRandomRubikColor()
+//
+//        let collisionGrid = delegate.gameSessionRequestsCollisionGrid(self)
+//
+//        collisionGrid?.reloadData()
+//
+//        for grid in grids {
+//            grid.reloadData()
+//        }
     }
     
 }

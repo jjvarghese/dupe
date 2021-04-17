@@ -25,11 +25,17 @@ enum RubikColor: String, CaseIterable {
 
 extension RubikColor {
     
-    static func getRandomRubikColor() -> UIColor {
+    static func getRandomRubikColor() -> RubikColor {
         let randomSelectionIndex = Int.random(in: 0..<RubikColor.allCases.count)
         let randomSelection = RubikColor.allCases[randomSelectionIndex]
         
-        return UIColor(withHex: randomSelection.rawValue)
+        return randomSelection
+    }
+    
+    func color() -> UIColor {
+        let rubikColor = UIColor(withHex: rawValue)
+        
+        return rubikColor
     }
     
 }

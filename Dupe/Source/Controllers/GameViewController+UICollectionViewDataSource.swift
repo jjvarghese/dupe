@@ -18,7 +18,8 @@ extension GameViewController: UICollectionViewDataSource {
         let isSelected = gridCollectionView.selectedIndices.contains(indexPath.item)
                    
         gridCell.index = indexPath.row
-        gridCell.update(asSelected: isSelected)
+        gridCell.update(asSelected: isSelected,
+                        withRubikColor: gridCollectionView.rubikColor)
         
         if isSelected {
             soundProvider.play(sfx: .touch)
