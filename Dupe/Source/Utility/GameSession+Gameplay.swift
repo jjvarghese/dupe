@@ -22,7 +22,7 @@ extension GameSession {
             for grid in self.grids {
                 let gridIndices = grid.selectedIndices.sorted()
                 
-                if collisionGridIndices.elementsEqual(gridIndices) {
+                if collisionGridIndices.elementsEqual(gridIndices) && collisionGrid.rubikColor == grid.rubikColor {
                     self.triggerMatch(matchedGrid: grid)
                 }
             }
@@ -72,21 +72,7 @@ extension GameSession {
             self.spawnExtraGridsIfDetermined()
             
             matchedGrid.removeFromSuperview()
-            
-            self.rotateColors()
         }
-    }
-        
-    private func rotateColors() {
-//        UIColor.baseRubikColor = RubikColor.getRandomRubikColor()
-//
-//        let collisionGrid = delegate.gameSessionRequestsCollisionGrid(self)
-//
-//        collisionGrid?.reloadData()
-//
-//        for grid in grids {
-//            grid.reloadData()
-//        }
     }
     
 }

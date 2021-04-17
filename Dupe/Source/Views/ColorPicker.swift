@@ -9,8 +9,15 @@
 import Foundation
 import UIKit
 
+protocol ColorPickerDelegate {
+    
+    func colorPickerWasPressed(_ colorPicker: ColorPicker)
+    
+}
+
 class ColorPicker: UICollectionView {
     
+    var colorPickerDelegate: ColorPickerDelegate?
     var rubikColor: RubikColor?
     
     // MARK: - Init  -
@@ -34,12 +41,14 @@ class ColorPicker: UICollectionView {
     
     private func configure() {
         configureRegistration()
+        configureTouchGestures()
     }
     
-    func configure(toGriddable griddable: Griddable,
+    func configure(toColorPickable colorPickable: ColorPickable,
                    withRubikColor rubikColor: RubikColor) {
-        delegate = griddable
-        dataSource = griddable
+        delegate = colorPickable
+        dataSource = colorPickable
+        colorPickerDelegate = colorPickable
         self.rubikColor = rubikColor
     }
     
@@ -49,6 +58,19 @@ class ColorPicker: UICollectionView {
         
         register(nib,
                  forCellWithReuseIdentifier: Constants.CellIdentifiers.GridCell)
+    }
+    
+    private func configureTouchGestures() {
+        removeAllExistingGestureRecognizers()
+        
+        let touchGesture: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self,
+                                                                               action: #selector(didTap(touchGesture:)))
+        touchGesture.delegate = self
+        touchGesture.numberOfTapsRequired = 1
+        touchGesture.numberOfTouchesRequired = 1
+        touchGesture.cancelsTouchesInView = false
+        
+        addGestureRecognizer(touchGesture)
     }
     
 }

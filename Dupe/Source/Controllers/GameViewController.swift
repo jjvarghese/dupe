@@ -102,13 +102,13 @@ class GameViewController: UIViewController {
     }
     
     private func configureCollectionViews() {
-        bottomLeftColorPicker?.configure(toGriddable: self,
+        bottomLeftColorPicker?.configure(toColorPickable: self,
                                          withRubikColor: .blue)
-        bottomRightColorPicker?.configure(toGriddable: self,
+        bottomRightColorPicker?.configure(toColorPickable: self,
                                           withRubikColor: .orange)
-        topLeftColorPicker?.configure(toGriddable: self,
+        topLeftColorPicker?.configure(toColorPickable: self,
                                       withRubikColor: .red)
-        topRightColorPicker?.configure(toGriddable: self,
+        topRightColorPicker?.configure(toColorPickable: self,
                                        withRubikColor: .yellow)
         
         colorPickers = [bottomLeftColorPicker,
