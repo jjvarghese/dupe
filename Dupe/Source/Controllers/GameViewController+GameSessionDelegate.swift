@@ -15,34 +15,8 @@ extension GameViewController: GameSessionDelegate {
         return bigGrid 
     }
     
-    func gameSessionRequestsInitialTempo(_ gameSession: GameSession,
-                                         initialTempo: @escaping (TimeInterval) -> Void) {
-        determineInitialTempo { (tempo) in
-            initialTempo(tempo)
-        }
-    }
-    
     func gameSessionTriggersMatch(_ gameSession: GameSession) {
         self.soundProvider.play(sfx: .matched)
-    }
-    
-    // MARK: - Private -
-    
-    private func determineInitialTempo(withCompletion completion: @escaping (TimeInterval) -> Void) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            
-            let window = UIApplication.shared.windows.first
-            let top = (window?.safeAreaInsets.top ?? 0) + Grid.START_POSITION
-            let collisionPoint = self.view.frame.size.height
-            let bottom = top + (self.view.frame.size.height / 5)
-            let distanceToFall = collisionPoint - bottom
-            let timeToFall: CGFloat = Constants.Values.initialTimeToFall
-            let pixelsPerSecond = distanceToFall / timeToFall
-            let finalTempo = TimeInterval(1 / pixelsPerSecond)
-            
-            completion(finalTempo)
-        }
     }
     
 }

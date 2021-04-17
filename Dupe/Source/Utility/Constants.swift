@@ -74,33 +74,8 @@ struct Constants {
     }
     
     struct Values {
-        static let initialTimeToFall: CGFloat = 30
-        static let incrementTempo: TimeInterval = 0.01
-        static let thresholdTempoForExtraSpawns: TimeInterval = 0.1
+        static let initialTimeToFall: CGFloat = 10
         static let sideGridSpawnDelay: TimeInterval = 1.2
-        
-        enum DifficultyThreshold: TimeInterval, CaseIterable {
-            case easy = 0.04
-            case medium = 0.03
-            case hard = 0.02
-            case insane = 0.01
-            case legendary = 0.005
-            
-            static func getMaximumTempo(forCurrentScore score: Int) -> TimeInterval {
-                let threshold = 1000
-                var scoreCheck = 0
-                
-                for difficulty in DifficultyThreshold.allCases {
-                    if score <= scoreCheck {
-                        return difficulty.rawValue
-                    }
-                    
-                    scoreCheck += threshold
-                }
-                
-                return DifficultyThreshold.allCases.last?.rawValue ?? DifficultyThreshold.legendary.rawValue
-            }
-        }
     }
     
     private init() {}

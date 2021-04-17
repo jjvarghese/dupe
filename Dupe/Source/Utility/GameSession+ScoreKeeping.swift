@@ -11,10 +11,7 @@ import Foundation
 extension GameSession {
     
     func getNumberOfPointsToGain(matchedGrid: Grid) -> Int {
-        let baseline = 100
-        let amountToSubtract = tempo * 500
-        
-        return (baseline - Int(amountToSubtract))
+        return 100
     }
     
 }

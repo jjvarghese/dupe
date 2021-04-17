@@ -22,13 +22,10 @@ extension GameSession {
             }
                                     
             let grid = self.generateNewGrid(in: position)
-            
-            self.increaseTempoIfNeeded()
-                                 
+                                             
             let numExistingGrids = self.grids.numberOfGrids(in: position)
             
-            grid.startFalling(withTempo: self.tempo,
-                              withSharedGridSpace: numExistingGrids - 1)
+            grid.startFalling(withSharedGridSpace: numExistingGrids - 1)
         }
     }
     
@@ -62,14 +59,4 @@ extension GameSession {
         return grid
     }
     
-    private func increaseTempoIfNeeded() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            
-            if self.tempo > Constants.Values.DifficultyThreshold.getMaximumTempo(forCurrentScore: self.currentScore) { // Maximum speed
-                self.tempo -= Constants.Values.incrementTempo
-            }
-        }
-        
-    }
 }

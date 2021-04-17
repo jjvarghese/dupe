@@ -14,9 +14,6 @@ protocol GameSessionDelegate {
     func gameSessionTriggersMatch(_ gameSession: GameSession)
     
     func gameSessionRequestsCollisionGrid(_ gameSession: GameSession) -> Grid?
-        
-    func gameSessionRequestsInitialTempo(_ gameSession: GameSession,
-                                         initialTempo: @escaping (TimeInterval) -> Void)
     
 }
 
@@ -27,15 +24,11 @@ class GameSession {
     var delegate: GriddableGameSessionDelegate
     
     var currentScore: Int = 0
-    var tempo: TimeInterval = 0
+    var velocity: TimeInterval = 0.1
     var grids: [Grid] = []
     
     required init(withDelegate delegate: GriddableGameSessionDelegate) {
         self.delegate = delegate
-        
-        delegate.gameSessionRequestsInitialTempo(self) { [weak self] (initialTempo) in
-            self?.tempo = initialTempo
-        }
     }
     
     deinit {
