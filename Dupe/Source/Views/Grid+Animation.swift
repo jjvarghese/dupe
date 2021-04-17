@@ -26,6 +26,8 @@ extension Grid {
     }
     
     func descend(withSharedGridSpace sharedGridSpace: Int) {
+        guard let velocity = velocity else { return }
+        
         let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
         
         guard let topLayoutConstraint = topConstraint else { return }
@@ -48,7 +50,7 @@ extension Grid {
                 guard let self = self else { return }
                 
                 if finished {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + self.velocity) { [weak self] in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + velocity) { [weak self] in
                         self?.descend(withSharedGridSpace: sharedGridSpace)
                     }
                 }

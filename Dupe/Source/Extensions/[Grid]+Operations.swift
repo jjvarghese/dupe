@@ -23,14 +23,14 @@ extension Array where Element == Grid {
             return grid == existingGrid
         }
         
-        guard let position = grid.position else { return }
+        restackFallingGrids()
         
-        let remainingGrids = grids(in: position)
-        
-        for remainingGrid in remainingGrids {
-            remainingGrid.startFalling(withSharedGridSpace: remainingGrids.count - 1)
+        if let position = grid.position {
+            stack(in: position)
         }
     }
+    
+    
     
     func grids(in position: Position) -> [Grid] {
         var gridsOfPosition: [Grid] = []
@@ -46,6 +46,48 @@ extension Array where Element == Grid {
     
     func numberOfGrids(in position: Position) -> Int {
         return grids(in: position).count
+    }
+    
+    // MARK: - Private -
+    
+    private func stack(in position: Position) {
+        DispatchQueue.main.async {
+            let remainingGrids = grids(in: position)
+            
+            var i = 0
+            for remainingGrid in remainingGrids {
+                remainingGrid.startFalling(withSharedGridSpaceBelow: i)
+                
+                i = i + 1
+            }
+        }
+    }
+    
+    private func restackFallingGrids() {
+        DispatchQueue.main.async {
+            let fallingGrids = falling()
+            
+            var i = 0
+            for fallingGrid in fallingGrids {
+                fallingGrid.descentInProgress = false
+                
+                fallingGrid.startFalling(withSharedGridSpaceBelow: i)
+                
+                i = i + 1
+            }
+        }
+    }
+    
+    private func falling() -> [Grid] {
+        var fallingGrids: [Grid] = []
+        
+        for grid in self {
+            if grid.descentInProgress {
+                fallingGrids.append(grid)
+            }
+        }
+        
+        return fallingGrids
     }
     
 }

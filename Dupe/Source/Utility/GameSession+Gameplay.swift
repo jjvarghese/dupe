@@ -59,18 +59,14 @@ extension GameSession {
             collisionGrid?.reset()
             
             self.grids.remove(grid: matchedGrid)
-            
-            self.spawnGrid(in: Position.random())
-            
+                        
             let numberOfPointsToGain = self.getNumberOfPointsToGain(matchedGrid: matchedGrid)
             
             UILabel.spawnFloatingFadingLabel(toSuperview: self.delegate.view,
                                              withText: String(format: "%d", numberOfPointsToGain))
             
             self.currentScore += numberOfPointsToGain
-            
-            self.spawnExtraGridsIfDetermined()
-            
+                        
             matchedGrid.removeFromSuperview()
         }
     }

@@ -22,16 +22,19 @@ class GameSession {
     typealias GriddableGameSessionDelegate = GameSessionDelegate & Griddable
     
     var delegate: GriddableGameSessionDelegate
-    
     var currentScore: Int = 0
     var velocity: TimeInterval = 0.1
     var grids: [Grid] = []
+    var spawnTime: TimeInterval = 3
+    var spawnTimer: Timer?
     
     required init(withDelegate delegate: GriddableGameSessionDelegate) {
         self.delegate = delegate
     }
     
     deinit {
+        spawnTimer?.invalidate()
+        
         if currentScore > 0 {
             HighScores.save(score: currentScore)
         }

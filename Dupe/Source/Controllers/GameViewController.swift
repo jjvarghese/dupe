@@ -44,7 +44,8 @@ class GameViewController: UIViewController {
                                                                   withTexts: [Constants.Text.startGameReadyText1,
                                                                               Constants.Text.startGameReadyText2,
                                                                               Constants.Text.startGameReadyText3]) {
-                                    newValue?.spawnGrid(in: Position.random())
+                                    newValue?.startSpawning()
+                                    newValue?.spawnGrid()
                                     
                                     for colorPicker in self.colorPickers {
                                         colorPicker?.fade(out: false,

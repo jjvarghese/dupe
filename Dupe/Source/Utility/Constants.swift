@@ -75,7 +75,6 @@ struct Constants {
     
     struct Values {
         static let initialTimeToFall: CGFloat = 10
-        static let sideGridSpawnDelay: TimeInterval = 1.2
     }
     
     private init() {}

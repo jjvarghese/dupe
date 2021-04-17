@@ -33,7 +33,7 @@ class Grid: UICollectionView {
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
     var position: Position?
-    var velocity: TimeInterval = 0
+    var velocity: TimeInterval?
     var rubikColor: RubikColor
     
     private var isFreshSpawn: Bool = true
@@ -127,9 +127,11 @@ class Grid: UICollectionView {
         }
     }
     
-    func startFalling(withSharedGridSpace sharedGridSpace: Int) {
+    func startFalling(withSharedGridSpaceBelow sharedGridSpace: Int) {
         TimeInterval.determineVelocity { [weak self] (determinedVelocity) in
-            self?.velocity = determinedVelocity
+            if self?.velocity == nil {
+                self?.velocity = determinedVelocity
+            }
             
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }

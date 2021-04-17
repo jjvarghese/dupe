@@ -11,36 +11,40 @@ import UIKit
 
 extension GameSession {
     
-    func spawnGrid(in position: Position) {
+    func startSpawning() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             
-            for grid in self.grids {
-                if grid.position == position && grid.descentInProgress {
-                    return
-                }
-            }
+            self.spawnTimer = Timer.scheduledTimer(timeInterval: self.spawnTime,
+                                 target: self,
+                                 selector: #selector(self.spawnGrid),
+                                 userInfo: nil,
+                                 repeats: true)
+        }
+    }
+
+    // MARK: - Private -
+    
+    @objc func spawnGrid() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            self.spawnTime -= 0.1
+            
+            let position = Position.random()
+            
+//            for grid in self.grids {
+//                if grid.position == position && grid.descentInProgress {
+//                    return
+//                }
+//            }
                                     
             let grid = self.generateNewGrid(in: position)
                                              
             let numExistingGrids = self.grids.numberOfGrids(in: position)
             
-            grid.startFalling(withSharedGridSpace: numExistingGrids - 1)
+            grid.startFalling(withSharedGridSpaceBelow: numExistingGrids - 1)
         }
-    }
-    
-    func spawnExtraGridsIfDetermined() {
-        Timer.scheduledTimer(timeInterval: Constants.Values.sideGridSpawnDelay,
-                             target: self,
-                             selector: #selector(self.spawnRandomGrid),
-                             userInfo: nil,
-                             repeats: false)
-    }
-    
-    // MARK: - Private -
-    
-    @objc private func spawnRandomGrid() {
-        spawnGrid(in: Position.random())
     }
     
     private func generateNewGrid(in position: Position) -> Grid {

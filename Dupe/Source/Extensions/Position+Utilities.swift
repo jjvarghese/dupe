@@ -14,7 +14,7 @@ extension Position {
     static func random() -> Position {
         let randomSelection = Int.random(in: 0..<Position.allCases.count)
 
-        return Position(rawValue: randomSelection) ?? .innerLeft
+        return Position.allCases[randomSelection]
     }
     
     func getXPositionOffset() -> CGFloat {
