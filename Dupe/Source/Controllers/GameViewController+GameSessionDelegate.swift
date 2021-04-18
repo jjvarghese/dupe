@@ -11,6 +11,12 @@ import UIKit
 
 extension GameViewController: GameSessionDelegate {
     
+    func gameSessionTriggersGameOver(_ gameSession: GameSession) {
+        session?.finishSession()
+        
+        session = nil
+    }
+    
     func gameSessionRequestsCollisionGrid(_ gameSession: GameSession) -> Grid? {
         return bigGrid 
     }

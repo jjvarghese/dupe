@@ -11,6 +11,8 @@ import UIKit
 
 protocol GameSessionDelegate {
         
+    func gameSessionTriggersGameOver(_ gameSession: GameSession)
+    
     func gameSessionTriggersMatch(_ gameSession: GameSession)
     
     func gameSessionRequestsCollisionGrid(_ gameSession: GameSession) -> Grid?
@@ -33,6 +35,23 @@ class GameSession {
     }
     
     deinit {
+        finishSession()
+    }
+    
+    // MARK: - Gameplay -
+
+    private func showScore() {
+        let scoreString = String(format: "%@%d\n\n%@",
+                                 Constants.Text.gameOverHeadline,
+                                 currentScore,
+                                 Constants.Text.ScoreJudgements.getJudgement(forScore: currentScore))
+        
+        NotificationView.popin(withText: scoreString)
+    }
+    
+    // MARK: - Helper -
+    
+    func finishSession() {
         spawnTimer?.invalidate()
         
         if currentScore > 0 {
@@ -46,14 +65,4 @@ class GameSession {
         showScore()
     }
     
-    // MARK: - Gameplay -
-
-    private func showScore() {
-        let scoreString = String(format: "%@%d\n\n%@",
-                                 Constants.Text.gameOverHeadline,
-                                 currentScore,
-                                 Constants.Text.ScoreJudgements.getJudgement(forScore: currentScore))
-        
-        NotificationView.popin(withText: scoreString)
-    }
 }

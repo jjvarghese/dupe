@@ -26,7 +26,7 @@ protocol GridDelegate {
 class Grid: UICollectionView {
 
     private static let MATCH_DURATION: TimeInterval = 0.3
-    static let START_POSITION: CGFloat = 14
+    static let START_POSITION: CGFloat = 0
     
     var descentInProgress: Bool = false
     var gridDelegate: GridDelegate?

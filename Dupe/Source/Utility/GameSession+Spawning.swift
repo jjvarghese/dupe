@@ -32,16 +32,20 @@ extension GameSession {
             self.spawnTime -= 0.1
             
             let position = Position.random()
-            
-//            for grid in self.grids {
-//                if grid.position == position && grid.descentInProgress {
-//                    return
-//                }
-//            }
                                     
             let grid = self.generateNewGrid(in: position)
                                              
             let numExistingGrids = self.grids.numberOfGrids(in: position)
+            
+            if numExistingGrids > 5 {
+                self.triggerGameOver { [weak self] in
+                    guard let self = self else { return }
+                    
+                    self.delegate.gameSessionTriggersGameOver(self)
+                }
+                
+                return
+            }
             
             grid.startFalling(withSharedGridSpaceBelow: numExistingGrids - 1)
         }
