@@ -24,9 +24,6 @@ protocol GridDelegate {
 }
 
 class Grid: UICollectionView {
-
-    private static let MATCH_DURATION: TimeInterval = 0.3
-    static let START_POSITION: CGFloat = 0
     
     var descentInProgress: Bool = false
     var gridDelegate: GridDelegate?
@@ -96,7 +93,7 @@ class Grid: UICollectionView {
 
     func randomise() {
         DispatchQueue.main.async { [weak self] in
-            let duration = Grid.MATCH_DURATION
+            let duration = Constants.Values.matchDuration
             
             self?.flash(for: duration - 0.1)
             self?.shake(count: 1,
@@ -141,7 +138,7 @@ class Grid: UICollectionView {
                                 
                     let topConstraint = self.superview?.constraints.getTopConstraint(forObject: self)
                     
-                    topConstraint?.constant = Grid.START_POSITION
+                    topConstraint?.constant = Constants.Values.gridStartPosition
                     
                     self.updateConstraints()
                 }

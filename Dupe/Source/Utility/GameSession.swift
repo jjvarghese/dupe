@@ -26,9 +26,8 @@ class GameSession {
     var delegate: GriddableGameSessionDelegate
     var currentScore: Int = 0
     var velocity: TimeInterval = 0.1
+    var currentSpawnSpeed: TimeInterval = Constants.Values.initialSpawnTime
     var grids: [Grid] = []
-    var spawnTime: TimeInterval = 3
-    var spawnTimer: Timer?
     
     required init(withDelegate delegate: GriddableGameSessionDelegate) {
         self.delegate = delegate
@@ -51,9 +50,7 @@ class GameSession {
     
     // MARK: - Helper -
     
-    func finishSession() {
-        spawnTimer?.invalidate()
-        
+    func finishSession() {        
         if currentScore > 0 {
             HighScores.save(score: currentScore)
         }

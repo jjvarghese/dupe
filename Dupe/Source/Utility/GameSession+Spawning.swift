@@ -11,25 +11,13 @@ import UIKit
 
 extension GameSession {
     
-    func startSpawning() {
+    func spawnGrid() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             
-            self.spawnTimer = Timer.scheduledTimer(timeInterval: self.spawnTime,
-                                 target: self,
-                                 selector: #selector(self.spawnGrid),
-                                 userInfo: nil,
-                                 repeats: true)
-        }
-    }
-
-    // MARK: - Private -
-    
-    @objc func spawnGrid() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            
-            self.spawnTime -= 0.1
+            if self.currentSpawnSpeed > Constants.Values.minimumSpawnTime {
+                self.currentSpawnSpeed = self.currentSpawnSpeed - Constants.Values.spawnTimeReduction
+            }
             
             let position = Position.random()
                                     
@@ -48,8 +36,14 @@ extension GameSession {
             }
             
             grid.startFalling(withSharedGridSpaceBelow: numExistingGrids - 1)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.currentSpawnSpeed) { [weak self] in
+                self?.spawnGrid()
+            }
         }
     }
+    
+    // MARK: - Private -
     
     private func generateNewGrid(in position: Position) -> Grid {
         let grid = Grid(withGriddable: delegate)

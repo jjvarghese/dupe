@@ -16,7 +16,7 @@ extension TimeInterval {
             guard let vc = UIApplication.topViewController() else { return }
             
             let window = UIApplication.shared.windows.first
-            let top = (window?.safeAreaInsets.top ?? 0) + Grid.START_POSITION
+            let top = (window?.safeAreaInsets.top ?? 0) + Constants.Values.gridStartPosition
             let collisionPoint = vc.view.frame.size.height
             let bottom = top + (vc.view.frame.size.height / 5)
             let distanceToFall = collisionPoint - bottom

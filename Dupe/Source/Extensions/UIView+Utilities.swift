@@ -15,7 +15,7 @@ extension UIView {
                                    atPosition position: Position,
                                    withWidth width: CGFloat? = nil,
                                    withHeight height: CGFloat? = nil,
-                                   withVerticalOffset verticalOffset: CGFloat = Grid.START_POSITION) {
+                                   withVerticalOffset verticalOffset: CGFloat = Constants.Values.gridStartPosition) {
         addSubview(subview)
         
         subview.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +45,7 @@ extension UIView {
                                                   multiplier: 1,
                                                   constant: height ?? frame.size.height / 5)
         
-        if verticalOffset == Grid.START_POSITION {
+        if verticalOffset == Constants.Values.gridStartPosition {
             addConstraints([xConstraint,
                             widthConstraint,
                             heightConstraint])
