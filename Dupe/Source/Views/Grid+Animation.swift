@@ -25,7 +25,7 @@ extension Grid {
         }
     }
     
-    func descend(withSharedGridSpace sharedGridSpace: Int) {
+    @objc func descend(withSharedGridSpace sharedGridSpace: Int) {
         guard let velocity = velocity else { return }
         
         let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
@@ -42,23 +42,36 @@ extension Grid {
         
         if gridBottom < stoppingPoint {
             topLayoutConstraint.constant += 1
-                                    
-            UIView.animate(withDuration: velocity,
-                           animations: { [weak self] in
-                            self?.updateConstraints()
-            }) { [weak self] (finished) in
+                             
+            UIView.animateKeyframes(withDuration: velocity,
+                                    delay: 0,
+                                    options: .beginFromCurrentState) { [weak self] in
+                self?.layoutIfNeeded()
+
+            } completion: { [weak self] (finished) in
                 guard let self = self else { return }
                 
                 if finished {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + velocity) { [weak self] in
-                        self?.descend(withSharedGridSpace: sharedGridSpace)
-                    }
+                    self.continueDescent(withSharedGridSpace: sharedGridSpace)
                 }
             }
         } else {
             descentInProgress = false
             gridDelegate?.gridDidCollide(self)
         }
+    }
+    
+    private func continueDescent(withSharedGridSpace sharedGridSpace: Int) {
+        guard let velocity = velocity else { return }
+        
+        if descentTimer == nil {
+            descentTimer = Timer.scheduledTimer(withTimeInterval: velocity,
+                                                repeats: true,
+                                                block: { [weak self] (timer) in
+                self?.descend(withSharedGridSpace: sharedGridSpace)
+            })
+        }
+        
     }
 
     

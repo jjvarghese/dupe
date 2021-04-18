@@ -32,6 +32,7 @@ class Grid: UICollectionView {
     var position: Position?
     var velocity: TimeInterval?
     var rubikColor: RubikColor
+    var descentTimer: Timer?
     
     private var isFreshSpawn: Bool = true
 

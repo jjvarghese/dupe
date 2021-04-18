@@ -70,6 +70,8 @@ extension Array where Element == Grid {
             var i = 0
             for fallingGrid in fallingGrids {
                 fallingGrid.descentInProgress = false
+                fallingGrid.descentTimer?.invalidate()
+                fallingGrid.descentTimer = nil
                 
                 fallingGrid.startFalling(withSharedGridSpaceBelow: i)
                 
