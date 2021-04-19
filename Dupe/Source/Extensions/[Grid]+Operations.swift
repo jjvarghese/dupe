@@ -25,7 +25,7 @@ extension Array where Element == Grid {
         }
   
         if let position = grid.position {
-            grids(in: position).restack()
+           updateStackRanks(in: position)
         }
     }
     
@@ -45,57 +45,52 @@ extension Array where Element == Grid {
         return grids(in: position).count
     }
     
-//    func restackIfNeeded() {
-//        var i = 0
-//        for grid in self {
-//            guard !grid.descentInProgress else { continue }
-//
-//            let gridBottom = grid.frame.origin.y + grid.frame.size.height
-//
-//            if let nextGrid = self[safe: i + 1] {
-//                let nextGridTop = nextGrid.frame.origin.y + grid.frame.size.height
-//
-//                if gridBottom - nextGridTop != 0 {
-//                    grid.startFalling(withSharedGridSpaceBelow: i)
-//                }
-//            } else {
-//                let bottomOfScreen = UIApplication.topViewController()?.view.frame.size.height ?? 0
-//
-//                if gridBottom - bottomOfScreen != 0 {
-//                    grid.startFalling(withSharedGridSpaceBelow: i)
-//                }
-//            }
-//
-//            i = i + 1
-//        }
-//    }
-    
+    mutating func add(grid: Grid) {
+        append(grid)
+        
+        guard let position = grid.position else { return }
+        
+        updateStackRanks(in: position)
+    }
+
     // MARK: - Private -
     
-    private func restack() {
-        DispatchQueue.main.async {
-            var i = 0
-            for grid in self {
-                grid.descentInProgress = false
-                grid.descentTimer?.invalidate()
-                grid.descentTimer = nil
-                grid.startFalling(withSharedGridSpaceBelow: i)
-                
-                i = i + 1
+    private func updateStackRanks(in position: Position) {
+        var i = 0
+        
+        for grid in grids(in: position) {
+            if let stackRank = StackRank(rawValue: i) {
+                grid.stackRank = stackRank
             }
+            
+            i = i + 1
         }
     }
     
-    private func falling() -> [Grid] {
-        var fallingGrids: [Grid] = []
-        
-        for grid in self {
-            if grid.descentInProgress {
-                fallingGrids.append(grid)
-            }
-        }
-        
-        return fallingGrids
-    }
-    
+//    private func restack() {
+//        DispatchQueue.main.async {
+//            var i = 0
+//            for grid in self {
+//                grid.descentInProgress = false
+//                grid.descentTimer?.invalidate()
+//                grid.descentTimer = nil
+//                grid.startFalling(withSharedGridSpaceBelow: i)
+//
+//                i = i + 1
+//            }
+//        }
+//    }
+//
+//    private func falling() -> [Grid] {
+//        var fallingGrids: [Grid] = []
+//
+//        for grid in self {
+//            if grid.descentInProgress {
+//                fallingGrids.append(grid)
+//            }
+//        }
+//
+//        return fallingGrids
+//    }
+//
 }

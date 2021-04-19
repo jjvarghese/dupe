@@ -25,52 +25,88 @@ extension Grid {
         }
     }
     
-    @objc func descend(withSharedGridSpace sharedGridSpace: Int) {
-        guard let velocity = velocity else { return }
+    private func getStoppingPoint() -> CGFloat {
+        guard let bottom: CGFloat = UIApplication.topViewController()?.view.frame.size.height,
+              let rank = stackRank else { return 0 }
         
-        let topConstraint = superview?.constraints.getTopConstraint(forObject: self)
+        let rankValue = rank.rawValue
         
-        guard let topLayoutConstraint = topConstraint else { return }
-                
-        descentInProgress = true
-         
-        let gridBottom = frame.origin.y + frame.size.height
-        
-        var stoppingPoint: CGFloat = UIApplication.topViewController()?.view.frame.size.height ?? 0
-
-        stoppingPoint -= (CGFloat(sharedGridSpace) * frame.size.height)
-        
-        if gridBottom < stoppingPoint {
-            topLayoutConstraint.constant += 1
-                             
-            UIView.animateKeyframes(withDuration: velocity,
-                                    delay: 0,
-                                    options: .beginFromCurrentState) { [weak self] in
-                self?.layoutIfNeeded()
-            } completion: { [weak self] (finished) in
-                guard let self = self else { return }
-                
-                if finished {
-                    self.continueDescent(withSharedGridSpace: sharedGridSpace)
-                }
-            }
-        } else {
-            descentInProgress = false
-            descentTimer?.invalidate()
+        return bottom - (CGFloat(rankValue) * frame.size.height)
+    }
+    
+    @objc func descend() {
+        configureVelocityAndStartPosition { [weak self] in
+            guard let self = self,
+                  let velocity = self.velocity else { return }
             
-            gridDelegate?.gridDidFinishDescending(self)
+            let topConstraint = self.superview?.constraints.getTopConstraint(forObject: self)
+            
+            guard let topLayoutConstraint = topConstraint else { return }
+                    
+            self.descentInProgress = true
+             
+            let gridBottom = self.frame.origin.y + self.frame.size.height
+                    
+            if gridBottom < self.getStoppingPoint() {
+                topLayoutConstraint.constant += 1
+                                 
+                UIView.animateKeyframes(withDuration: velocity,
+                                        delay: 0,
+                                        options: .beginFromCurrentState) { [weak self] in
+                    self?.layoutIfNeeded()
+                } completion: { [weak self] (finished) in
+                    guard let self = self else { return }
+                    
+                    if finished {
+                        self.continueDescent()
+                    }
+                }
+            } else {
+                self.descentInProgress = false
+                self.descentTimer?.invalidate()
+                
+                self.gridDelegate?.gridDidFinishDescending(self)
+            }
         }
     }
     
-    private func continueDescent(withSharedGridSpace sharedGridSpace: Int) {
+    private func continueDescent() {
         guard let velocity = velocity else { return }
         
         if descentTimer == nil {
             descentTimer = Timer.scheduledTimer(withTimeInterval: velocity,
                                                 repeats: true,
                                                 block: { [weak self] (timer) in
-                self?.descend(withSharedGridSpace: sharedGridSpace)
+                self?.descend()
             })
+        }
+    }
+    
+    private func configureVelocityAndStartPosition(withCompletion completion: @escaping () -> Void) {
+        TimeInterval.determineVelocity { [weak self] (determinedVelocity) in
+            if self?.velocity == nil {
+                self?.velocity = determinedVelocity
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                if self.isFreshSpawn {
+                    self.isFreshSpawn = false
+                                
+                    let topConstraint = self.superview?.constraints.getTopConstraint(forObject: self)
+                    
+                    topConstraint?.constant = Constants.Values.gridStartPosition
+                    
+                    self.updateConstraints()
+                }
+
+//                if !self.descentInProgress {
+//                    self.descend(withSharedGridSpace: sharedGridSpace)
+//                }
+                
+                completion()
+            }
         }
     }
     

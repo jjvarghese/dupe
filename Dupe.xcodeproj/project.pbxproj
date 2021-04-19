@@ -37,6 +37,7 @@
 		A453CEE1261B73400049A6E2 /* UIView+UtilitiesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CEE0261B73400049A6E2 /* UIView+UtilitiesTest.swift */; };
 		A453CEE6261B76120049A6E2 /* MenuOption+TextTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453CEE5261B76120049A6E2 /* MenuOption+TextTest.swift */; };
 		A47286F8262B6E8800E495D4 /* TimeInterval+Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47286F7262B6E8800E495D4 /* TimeInterval+Velocity.swift */; };
+		A47286FD262E19AA00E495D4 /* StackRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47286FC262E19AA00E495D4 /* StackRank.swift */; };
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
@@ -169,6 +170,7 @@
 		A453CEE0261B73400049A6E2 /* UIView+UtilitiesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+UtilitiesTest.swift"; sourceTree = "<group>"; };
 		A453CEE5261B76120049A6E2 /* MenuOption+TextTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuOption+TextTest.swift"; sourceTree = "<group>"; };
 		A47286F7262B6E8800E495D4 /* TimeInterval+Velocity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Velocity.swift"; sourceTree = "<group>"; };
+		A47286FC262E19AA00E495D4 /* StackRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackRank.swift; sourceTree = "<group>"; };
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Detection.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 				A445390926163A910000B051 /* RubikColor.swift */,
 				A445390E26163E240000B051 /* Corner.swift */,
 				A4F902102620F60B008814CA /* TextSize.swift */,
+				A47286FC262E19AA00E495D4 /* StackRank.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -906,6 +909,7 @@
 				A453CEA8261B1BC70049A6E2 /* Constants.swift in Sources */,
 				A4DBACBD260F5D8D006B42B7 /* MenuCell.swift in Sources */,
 				A49B97582475BF5D007BF29A /* [Int]+Operations.swift in Sources */,
+				A47286FD262E19AA00E495D4 /* StackRank.swift in Sources */,
 				A49B97132474556D007BF29A /* AppDelegate.swift in Sources */,
 				A4F902A4262B05F1008814CA /* GameViewController+ColorPickerDelegate.swift in Sources */,
 				A49B9760247AD38D007BF29A /* Int+Operations.swift in Sources */,

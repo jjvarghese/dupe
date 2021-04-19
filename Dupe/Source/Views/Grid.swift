@@ -33,9 +33,17 @@ class Grid: UICollectionView {
     var velocity: TimeInterval?
     var rubikColor: RubikColor
     var descentTimer: Timer?
-    var shouldFallFurther: Bool = false
     
-    private var isFreshSpawn: Bool = true
+    var stackRank: StackRank? {
+        willSet {
+            descentTimer?.invalidate()
+            descentTimer = nil
+            
+            descend()
+        }
+    }
+    
+    var isFreshSpawn: Bool = true
 
     // MARK: - NSObject -
     
@@ -123,32 +131,6 @@ class Grid: UICollectionView {
             
             self?.shake(count: 1,
                   for: 0.2)
-        }
-    }
-    
-    func startFalling(withSharedGridSpaceBelow sharedGridSpace: Int) {
-        TimeInterval.determineVelocity { [weak self] (determinedVelocity) in
-            if self?.velocity == nil {
-                self?.velocity = determinedVelocity
-            }
-            
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                
-                if self.isFreshSpawn {
-                    self.isFreshSpawn = false
-                                
-                    let topConstraint = self.superview?.constraints.getTopConstraint(forObject: self)
-                    
-                    topConstraint?.constant = Constants.Values.gridStartPosition
-                    
-                    self.updateConstraints()
-                }
-
-                if !self.descentInProgress {
-                    self.descend(withSharedGridSpace: sharedGridSpace)
-                }
-            }
         }
     }
 

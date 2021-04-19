@@ -35,7 +35,7 @@ extension GameSession {
                 return
             }
             
-            grid.startFalling(withSharedGridSpaceBelow: numExistingGrids - 1)
+            grid.descend()
             
 //            DispatchQueue.main.asyncAfter(deadline: .now() + self.currentSpawnSpeed) { [weak self] in
 //                self?.spawnGrid()
@@ -50,7 +50,7 @@ extension GameSession {
         
         grid.position = position
         
-        grids.append(grid)
+        grids.add(grid: grid)
         
         delegate.view.addSubviewWithConstraints(subview: grid,
                                                 atPosition: position)
