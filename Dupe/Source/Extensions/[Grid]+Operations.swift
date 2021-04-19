@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension Array where Element == Grid {
     
@@ -22,15 +23,11 @@ extension Array where Element == Grid {
         removeAll { (existingGrid) -> Bool in
             return grid == existingGrid
         }
-        
-        restackFallingGrids()
-        
+  
         if let position = grid.position {
-            stack(in: position)
+            grids(in: position).restack()
         }
     }
-    
-    
     
     func grids(in position: Position) -> [Grid] {
         var gridsOfPosition: [Grid] = []
@@ -48,32 +45,41 @@ extension Array where Element == Grid {
         return grids(in: position).count
     }
     
+//    func restackIfNeeded() {
+//        var i = 0
+//        for grid in self {
+//            guard !grid.descentInProgress else { continue }
+//
+//            let gridBottom = grid.frame.origin.y + grid.frame.size.height
+//
+//            if let nextGrid = self[safe: i + 1] {
+//                let nextGridTop = nextGrid.frame.origin.y + grid.frame.size.height
+//
+//                if gridBottom - nextGridTop != 0 {
+//                    grid.startFalling(withSharedGridSpaceBelow: i)
+//                }
+//            } else {
+//                let bottomOfScreen = UIApplication.topViewController()?.view.frame.size.height ?? 0
+//
+//                if gridBottom - bottomOfScreen != 0 {
+//                    grid.startFalling(withSharedGridSpaceBelow: i)
+//                }
+//            }
+//
+//            i = i + 1
+//        }
+//    }
+    
     // MARK: - Private -
     
-    private func stack(in position: Position) {
+    private func restack() {
         DispatchQueue.main.async {
-            let remainingGrids = grids(in: position)
-            
             var i = 0
-            for remainingGrid in remainingGrids {
-                remainingGrid.startFalling(withSharedGridSpaceBelow: i)
-                
-                i = i + 1
-            }
-        }
-    }
-    
-    private func restackFallingGrids() {
-        DispatchQueue.main.async {
-            let fallingGrids = falling()
-            
-            var i = 0
-            for fallingGrid in fallingGrids {
-                fallingGrid.descentInProgress = false
-                fallingGrid.descentTimer?.invalidate()
-                fallingGrid.descentTimer = nil
-                
-                fallingGrid.startFalling(withSharedGridSpaceBelow: i)
+            for grid in self {
+                grid.descentInProgress = false
+                grid.descentTimer?.invalidate()
+                grid.descentTimer = nil
+                grid.startFalling(withSharedGridSpaceBelow: i)
                 
                 i = i + 1
             }

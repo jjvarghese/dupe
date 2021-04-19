@@ -47,7 +47,6 @@ extension Grid {
                                     delay: 0,
                                     options: .beginFromCurrentState) { [weak self] in
                 self?.layoutIfNeeded()
-
             } completion: { [weak self] (finished) in
                 guard let self = self else { return }
                 
@@ -57,7 +56,9 @@ extension Grid {
             }
         } else {
             descentInProgress = false
-            gridDelegate?.gridDidCollide(self)
+            descentTimer?.invalidate()
+            
+            gridDelegate?.gridDidFinishDescending(self)
         }
     }
     
@@ -71,9 +72,7 @@ extension Grid {
                 self?.descend(withSharedGridSpace: sharedGridSpace)
             })
         }
-        
     }
-
     
     // MARK: - Animation Helpers -
     

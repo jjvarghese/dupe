@@ -18,8 +18,8 @@ protocol GridDelegate {
     
     func grid(_ grid: Grid,
               didSelect indexPath: IndexPath)
-            
-    func gridDidCollide(_ grid: Grid)
+                
+    func gridDidFinishDescending(_ grid: Grid)
     
 }
 
@@ -33,6 +33,7 @@ class Grid: UICollectionView {
     var velocity: TimeInterval?
     var rubikColor: RubikColor
     var descentTimer: Timer?
+    var shouldFallFurther: Bool = false
     
     private var isFreshSpawn: Bool = true
 

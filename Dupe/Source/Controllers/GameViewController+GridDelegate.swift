@@ -2,15 +2,8 @@ import Foundation
 
 extension GameViewController: GridDelegate {
     
-    func gridDidCollide(_ grid: Grid) {
-//        soundProvider.play(sfx: .gameOver)
-//        soundProvider.stopAllTunes()
-//
-//        logoLabel?.themeAsLogo()
-//
-//        session?.triggerGameOver(withCompletion: { [weak self] in
-//            self?.session = nil
-//        })
+    func gridDidFinishDescending(_ grid: Grid) {
+//        session?.grids.restackIfNeeded()
     }
     
     func grid(_ grid: Grid,

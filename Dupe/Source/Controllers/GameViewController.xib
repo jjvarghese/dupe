@@ -108,6 +108,16 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRq-Rt-g3E">
+                    <rect key="frame" x="217" y="276" width="46" height="30"/>
+                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                    <state key="normal" title="spawn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="spawnTouched:" destination="-1" eventType="touchUpInside" id="IbR-3U-lpD"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -123,16 +133,20 @@
                 <constraint firstItem="Nw9-PJ-5OV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="GgK-Hh-RB6"/>
                 <constraint firstItem="lUf-vt-Do4" firstAttribute="width" secondItem="lUf-vt-Do4" secondAttribute="height" multiplier="1:1" id="IgD-6H-wxE"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="103:160" id="RLt-59-iUa"/>
+                <constraint firstItem="NRq-Rt-g3E" firstAttribute="top" secondItem="5YU-iq-uwr" secondAttribute="bottom" constant="13" id="YEI-gf-f5m"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nw9-PJ-5OV" secondAttribute="trailing" constant="40" id="ZEA-iP-VD8"/>
                 <constraint firstItem="lUf-vt-Do4" firstAttribute="leading" secondItem="5YU-iq-uwr" secondAttribute="leading" constant="20" id="ZmM-E0-v9Q"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iY2-EC-wdG"/>
+                <constraint firstItem="1LT-EL-0R8" firstAttribute="leading" secondItem="NRq-Rt-g3E" secondAttribute="trailing" constant="20" id="kKf-i9-Xp1"/>
                 <constraint firstItem="u6N-bw-jK9" firstAttribute="leading" secondItem="5YU-iq-uwr" secondAttribute="leading" constant="20" id="mFh-Q9-Irc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NRq-Rt-g3E" secondAttribute="bottom" constant="14" id="mX5-e6-MPM"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="top" secondItem="FEH-XH-6l5" secondAttribute="bottom" constant="8" id="n2d-Uy-huz"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="top" secondItem="Nw9-PJ-5OV" secondAttribute="bottom" constant="10" id="nwM-Dm-nDj"/>
                 <constraint firstItem="lUf-vt-Do4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="qf2-ey-ZbP"/>
                 <constraint firstItem="5YU-iq-uwr" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="to8-e8-BCH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="u6N-bw-jK9" secondAttribute="bottom" constant="9" id="u7b-rZ-346"/>
                 <constraint firstItem="FEH-XH-6l5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="9" id="ulG-0K-ePE"/>
+                <constraint firstItem="NRq-Rt-g3E" firstAttribute="leading" secondItem="u6N-bw-jK9" secondAttribute="trailing" constant="20" id="vE5-ky-Y8t"/>
                 <constraint firstItem="1LT-EL-0R8" firstAttribute="trailing" secondItem="5YU-iq-uwr" secondAttribute="trailing" constant="-20" id="xZj-uU-m5o"/>
                 <constraint firstItem="FEH-XH-6l5" firstAttribute="trailing" secondItem="5YU-iq-uwr" secondAttribute="trailing" constant="-20" id="yCR-RP-WA3"/>
             </constraints>
@@ -142,6 +156,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

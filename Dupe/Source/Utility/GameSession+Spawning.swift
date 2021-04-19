@@ -37,9 +37,9 @@ extension GameSession {
             
             grid.startFalling(withSharedGridSpaceBelow: numExistingGrids - 1)
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + self.currentSpawnSpeed) { [weak self] in
-                self?.spawnGrid()
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + self.currentSpawnSpeed) { [weak self] in
+//                self?.spawnGrid()
+//            }
         }
     }
     

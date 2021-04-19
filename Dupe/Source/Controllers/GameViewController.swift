@@ -129,5 +129,8 @@ class GameViewController: UIViewController {
     }
     
 
-
+    @IBAction func spawnTouched(_ sender: Any) {
+        session?.spawnGrid()
+    }
+    
 }
