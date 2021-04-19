@@ -14,38 +14,50 @@ extension GameSession {
     func spawnGrid() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+                        
+            let position = Position.random()
+            
+            guard !self.checkPositionForGameOver(in: position) else { return }
+            guard !self.grids.previousGridIsInTheWay(in: position) else {
+                self.respawn()
+                
+                return
+            }
             
             if self.currentSpawnSpeed > Constants.Values.minimumSpawnTime {
                 self.currentSpawnSpeed = self.currentSpawnSpeed - Constants.Values.spawnTimeReduction
             }
             
-            let position = Position.random()
-                                    
-            let grid = self.generateNewGrid(in: position)
-                                             
-            let numExistingGrids = self.grids.numberOfGrids(in: position)
-            
-            if numExistingGrids > 5 {
-                self.triggerGameOver { [weak self] in
-                    guard let self = self else { return }
-                    
-                    self.delegate.gameSessionTriggersGameOver(self)
-                }
-                
-                return
-            }
-            
-            grid.descend()
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + self.currentSpawnSpeed) { [weak self] in
-                self?.spawnGrid()
-            }
+            self.generateNewGrid(in: position)
+            self.respawn()
         }
     }
     
     // MARK: - Private -
     
-    private func generateNewGrid(in position: Position) -> Grid {
+    private func respawn() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + self.currentSpawnSpeed) { [weak self] in
+            self?.spawnGrid()
+        }
+    }
+    
+    private func checkPositionForGameOver(in position: Position) -> Bool {
+        let numberOfExistingGrids = self.grids.numberOfGrids(in: position)
+        
+        if numberOfExistingGrids > (Constants.Values.maxNumberOfGridStacks - 1) {
+            self.triggerGameOver { [weak self] in
+                guard let self = self else { return }
+                
+                self.delegate.gameSessionTriggersGameOver(self)
+            }
+            
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    private func generateNewGrid(in position: Position) {
         let grid = Grid(withGriddable: delegate)
         
         grid.position = position
@@ -57,8 +69,6 @@ extension GameSession {
         
         grid.randomise()
         grid.accessibilityIdentifier = "SmallGrid"
-        
-        return grid
     }
     
 }

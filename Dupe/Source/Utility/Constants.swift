@@ -77,10 +77,11 @@ struct Constants {
         static let initialTimeToFall: CGFloat = 10
         static let matchDuration: TimeInterval = 0.3
         static let gridStartPosition: CGFloat = 0
+        static let gridOverlapBuffer: CGFloat = 5
         static let initialSpawnTime: TimeInterval = 4
         static let spawnTimeReduction: TimeInterval = 0.1
-        static let minimumSpawnTime: TimeInterval = 0.65
-
+        static let minimumSpawnTime: TimeInterval = 1.5
+        static let maxNumberOfGridStacks: Int = 5
     }
     
     private init() {}

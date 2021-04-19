@@ -52,6 +52,17 @@ extension Array where Element == Grid {
         
         updateStackRanks(in: position)
     }
+    
+    func previousGridIsInTheWay(in position: Position) -> Bool {
+        if let previousGridInStack = grids(in: position).last {
+            let previousGridSpot = previousGridInStack.frame.origin.y + Constants.Values.gridOverlapBuffer
+            let newGridSpace = Constants.Values.gridStartPosition + previousGridInStack.frame.size.height
+            
+            return previousGridSpot < newGridSpace
+        } else {
+            return false
+        }
+    }
 
     // MARK: - Private -
     
