@@ -25,7 +25,6 @@ protocol GridDelegate {
 
 class Grid: UICollectionView {
     
-    var descentInProgress: Bool = false
     var gridDelegate: GridDelegate?
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
@@ -33,7 +32,8 @@ class Grid: UICollectionView {
     var velocity: TimeInterval?
     var rubikColor: RubikColor
     var descentTimer: Timer?
-    
+    var isFreshSpawn: Bool = true
+
     var stackRank: StackRank? {
         willSet {
             descentTimer?.invalidate()
@@ -42,8 +42,6 @@ class Grid: UICollectionView {
             descend()
         }
     }
-    
-    var isFreshSpawn: Bool = true
 
     // MARK: - NSObject -
     

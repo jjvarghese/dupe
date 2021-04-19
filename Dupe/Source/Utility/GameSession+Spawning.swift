@@ -37,9 +37,9 @@ extension GameSession {
             
             grid.descend()
             
-//            DispatchQueue.main.asyncAfter(deadline: .now() + self.currentSpawnSpeed) { [weak self] in
-//                self?.spawnGrid()
-//            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.currentSpawnSpeed) { [weak self] in
+                self?.spawnGrid()
+            }
         }
     }
     

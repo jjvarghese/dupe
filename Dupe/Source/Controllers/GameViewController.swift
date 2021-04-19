@@ -128,9 +128,4 @@ class GameViewController: UIViewController {
         menu?.menuDelegate = self
     }
     
-
-    @IBAction func spawnTouched(_ sender: Any) {
-        session?.spawnGrid()
-    }
-    
 }

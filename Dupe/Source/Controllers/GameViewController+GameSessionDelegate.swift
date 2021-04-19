@@ -15,6 +15,9 @@ extension GameViewController: GameSessionDelegate {
         session?.finishSession()
         
         session = nil
+        
+        soundProvider.play(sfx: .gameOver)
+        soundProvider.stopAllTunes()
     }
     
     func gameSessionRequestsCollisionGrid(_ gameSession: GameSession) -> Grid? {

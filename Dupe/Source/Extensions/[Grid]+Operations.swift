@@ -67,30 +67,4 @@ extension Array where Element == Grid {
         }
     }
     
-//    private func restack() {
-//        DispatchQueue.main.async {
-//            var i = 0
-//            for grid in self {
-//                grid.descentInProgress = false
-//                grid.descentTimer?.invalidate()
-//                grid.descentTimer = nil
-//                grid.startFalling(withSharedGridSpaceBelow: i)
-//
-//                i = i + 1
-//            }
-//        }
-//    }
-//
-//    private func falling() -> [Grid] {
-//        var fallingGrids: [Grid] = []
-//
-//        for grid in self {
-//            if grid.descentInProgress {
-//                fallingGrids.append(grid)
-//            }
-//        }
-//
-//        return fallingGrids
-//    }
-//
 }

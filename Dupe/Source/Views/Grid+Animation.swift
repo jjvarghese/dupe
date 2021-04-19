@@ -42,9 +42,7 @@ extension Grid {
             let topConstraint = self.superview?.constraints.getTopConstraint(forObject: self)
             
             guard let topLayoutConstraint = topConstraint else { return }
-                    
-            self.descentInProgress = true
-             
+                                 
             let gridBottom = self.frame.origin.y + self.frame.size.height
                     
             if gridBottom < self.getStoppingPoint() {
@@ -62,7 +60,6 @@ extension Grid {
                     }
                 }
             } else {
-                self.descentInProgress = false
                 self.descentTimer?.invalidate()
                 
                 self.gridDelegate?.gridDidFinishDescending(self)
@@ -101,10 +98,6 @@ extension Grid {
                     self.updateConstraints()
                 }
 
-//                if !self.descentInProgress {
-//                    self.descend(withSharedGridSpace: sharedGridSpace)
-//                }
-                
                 completion()
             }
         }
