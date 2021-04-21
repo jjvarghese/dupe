@@ -13,6 +13,9 @@ extension ColorPicker: UIGestureRecognizerDelegate {
     
     @objc func didTap(touchGesture: UITapGestureRecognizer) {
         delegate?.colorPickerWasPressed(self)
+        
+        self.animation = "squeeze"
+        self.animate()
     }
     
 }

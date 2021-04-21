@@ -23,6 +23,11 @@ extension Array where Element == Grid {
         removeAll { (existingGrid) -> Bool in
             return grid == existingGrid
         }
+        
+        grid.animation = "zoomOut"
+        grid.animateNext {
+            grid.removeFromSuperview()
+        }
   
         if let position = grid.position {
            updateStackRanks(in: position)

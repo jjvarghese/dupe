@@ -95,8 +95,8 @@ class Grid: SpringView {
             let duration = Constants.Values.matchDuration
             
             self?.flash(for: duration - 0.1)
-            self?.shake(count: 1,
-                        for: 0.1)
+            self?.animation = "pop"
+            self?.animate()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
                 guard let self = self else { return }
@@ -118,8 +118,8 @@ class Grid: SpringView {
                     self?.isUserInteractionEnabled = true
                   })
             
-            self?.shake(count: 1,
-                  for: 0.2)
+            self?.animation = "morph"
+            self?.animate()
         }
     }
 

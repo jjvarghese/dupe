@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Spring
 
 class GridCell: UICollectionViewCell {
     
-    @IBOutlet private weak var square: UIView?
+    @IBOutlet private weak var square: SpringView?
     
     @IBOutlet weak var brCorner: UIView?
     @IBOutlet weak var blCorner: UIView?
@@ -34,6 +35,11 @@ class GridCell: UICollectionViewCell {
     func update(asSelected selected: Bool,
                 withRubikColor rubikColor: RubikColor,
                 withAllClearCorners allClearCorners: Bool = false) {
+        if selected {
+            square?.animation = "pop"
+            square?.animate()
+        }
+        
         let pulseDuration = 0.4
         
         DispatchQueue.main.async { [weak self] in

@@ -61,8 +61,6 @@ extension GameSession {
                                                    withGainedScore: numberOfPointsToGain)
             
             self.currentScore += numberOfPointsToGain
-                        
-            matchedGrid.removeFromSuperview()
         }
     }
     
