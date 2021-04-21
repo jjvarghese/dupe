@@ -8,12 +8,7 @@ extension GameViewController: GridDelegate {
     
     func grid(_ grid: Grid,
               didPanAt indexPath: IndexPath) {
-        guard grid == bigGrid,
-              let session = session else { return }
-        
-        grid.touch(indexPath: indexPath)
-        
-        session.checkForMatch()
+        handleSelection(forIndexPath: indexPath)
     }
     
     func grid(_ grid: Grid,
@@ -22,18 +17,28 @@ extension GameViewController: GridDelegate {
     func grid(_ grid: Grid,
               didSelect indexPath: IndexPath) {
         if grid == bigGrid {
-            guard let session = session else { return }
-            
-            grid.touch(indexPath: indexPath)
-            
-            session.checkForMatch()
+            handleSelection(forIndexPath: indexPath)
         } else {
             flipColor(to: grid.rubikColor)
         }
-       
     }
     
     // MARK: - Private -
+    
+    private func handleSelection(forIndexPath indexPath: IndexPath) {
+        guard let session = session,
+              let bigGrid = bigGrid else { return }
+
+        bigGrid.touch(indexPath: indexPath)
+        
+        DispatchQueue.global().async { [weak self] in
+            if bigGrid.selectedIndices.contains(indexPath.row) {
+                self?.soundProvider.play(sfx: .touch)
+            }
+        }
+        
+        session.checkForMatch()
+    }
     
     private func flipColor(to rubikColor: RubikColor) {
         guard bigGrid?.rubikColor != rubikColor else { return }
@@ -43,6 +48,8 @@ extension GameViewController: GridDelegate {
         let coinFlip = Int.random(in: 0...1)
         
         bigGrid?.reset(withAnimation: coinFlip == 0 ? .flipX : .flipY)
+        
+        soundProvider.play(sfx: .touch)
     }
     
 }
