@@ -47,6 +47,8 @@
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Utilities.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
+		A49A681B2630C5B400FA4039 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49A681A2630C5B400FA4039 /* Animation.swift */; };
+		A49A68202630C65500FA4039 /* SpringView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49A681F2630C65500FA4039 /* SpringView+Animation.swift */; };
 		A49B97132474556D007BF29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97122474556D007BF29A /* AppDelegate.swift */; };
 		A49B97152474556D007BF29A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97142474556D007BF29A /* SceneDelegate.swift */; };
 		A49B971A2474556D007BF29A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49B97182474556D007BF29A /* Main.storyboard */; };
@@ -183,6 +185,8 @@
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Utilities.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
+		A49A681A2630C5B400FA4039 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		A49A681F2630C65500FA4039 /* SpringView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpringView+Animation.swift"; sourceTree = "<group>"; };
 		A49B970F2474556D007BF29A /* Dupe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dupe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49B97122474556D007BF29A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A49B97142474556D007BF29A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -493,6 +497,7 @@
 				A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */,
 				A453CE96261B13FB0049A6E2 /* UserDefaults+UserDefaultsProtocol.swift */,
 				A47286F7262B6E8800E495D4 /* TimeInterval+Velocity.swift */,
+				A49A681F2630C65500FA4039 /* SpringView+Animation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -583,6 +588,7 @@
 				A445390E26163E240000B051 /* Corner.swift */,
 				A4F902102620F60B008814CA /* TextSize.swift */,
 				A47286FC262E19AA00E495D4 /* StackRank.swift */,
+				A49A681A2630C5B400FA4039 /* Animation.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -904,6 +910,7 @@
 				A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */,
 				A453CE78261906CE0049A6E2 /* UIDevice+Detection.swift in Sources */,
 				A49B9762247ADF3F007BF29A /* Collection+Operations.swift in Sources */,
+				A49A681B2630C5B400FA4039 /* Animation.swift in Sources */,
 				A47286F8262B6E8800E495D4 /* TimeInterval+Velocity.swift in Sources */,
 				A47287292630930A00E495D4 /* ColorPicker+UICollectionViewDataSource.swift in Sources */,
 				A4A217E32617AAF300DB7C7C /* HighScores.swift in Sources */,
@@ -940,6 +947,7 @@
 				A4F9024726289D11008814CA /* GameSession.swift in Sources */,
 				A49B975C2475C467007BF29A /* GameViewController+GridDelegate.swift in Sources */,
 				A4F9024C2628AEBB008814CA /* GameViewController+GameSessionDelegate.swift in Sources */,
+				A49A68202630C65500FA4039 /* SpringView+Animation.swift in Sources */,
 				A453CEC0261B274B0049A6E2 /* BundleProtocol.swift in Sources */,
 				A4DBACE3260F9778006B42B7 /* GameViewController+MenuDelegate.swift in Sources */,
 				A49B975A2475C3EB007BF29A /* Grid+UIGestureRecognizerDelegate.swift in Sources */,

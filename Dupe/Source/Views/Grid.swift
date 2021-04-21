@@ -95,8 +95,7 @@ class Grid: SpringView {
             let duration = Constants.Values.matchDuration
             
             self?.flash(for: duration - 0.1)
-            self?.animation = "pop"
-            self?.animate()
+            self?.animate(withAnimation: .pop)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
                 guard let self = self else { return }
@@ -106,7 +105,7 @@ class Grid: SpringView {
         }
     }
     
-    func reset() {
+    func reset(withAnimation animation: Animation = .morph) {
         DispatchQueue.main.async { [weak self] in
             self?.isUserInteractionEnabled = false
 
@@ -118,8 +117,7 @@ class Grid: SpringView {
                     self?.isUserInteractionEnabled = true
                   })
             
-            self?.animation = "morph"
-            self?.animate()
+            self?.animate(withAnimation: animation)
         }
     }
 

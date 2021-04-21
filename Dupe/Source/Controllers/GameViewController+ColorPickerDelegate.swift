@@ -15,7 +15,9 @@ extension GameViewController: ColorPickerDelegate {
         
         bigGrid?.rubikColor = colorPickerColor
         
-        bigGrid?.reset()
+        let coinFlip = Int.random(in: 0...1)
+        
+        bigGrid?.reset(withAnimation: coinFlip == 0 ? .flipX : .flipY)
     }
     
 }

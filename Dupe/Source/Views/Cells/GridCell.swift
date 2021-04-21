@@ -36,8 +36,7 @@ class GridCell: UICollectionViewCell {
                 withRubikColor rubikColor: RubikColor,
                 withAllClearCorners allClearCorners: Bool = false) {
         if selected {
-            square?.animation = "pop"
-            square?.animate()
+            square?.animate(withAnimation: .pop)
         }
         
         let pulseDuration = 0.4
