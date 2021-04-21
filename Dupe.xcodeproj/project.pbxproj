@@ -41,9 +41,6 @@
 		A472871A262F7B0500E495D4 /* Grid+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4728719262F7B0500E495D4 /* Grid+UICollectionViewDelegate.swift */; };
 		A472871F262F7B1B00E495D4 /* Grid+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472871E262F7B1B00E495D4 /* Grid+UICollectionViewDataSource.swift */; };
 		A4728724262F7B4900E495D4 /* Grid+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4728723262F7B4900E495D4 /* Grid+UICollectionViewDelegateFlowLayout.swift */; };
-		A47287292630930A00E495D4 /* ColorPicker+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47287282630930A00E495D4 /* ColorPicker+UICollectionViewDataSource.swift */; };
-		A472872E2630931A00E495D4 /* ColorPicker+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472872D2630931A00E495D4 /* ColorPicker+UICollectionViewDelegate.swift */; };
-		A47287332630932800E495D4 /* ColorPicker+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47287322630932800E495D4 /* ColorPicker+UICollectionViewDelegateFlowLayout.swift */; };
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Utilities.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
@@ -114,10 +111,6 @@
 		A4F9026A2628CD4A008814CA /* GameSession+ScoreKeeping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902692628CD4A008814CA /* GameSession+ScoreKeeping.swift */; };
 		A4F902802629F941008814CA /* Position+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9027F2629F941008814CA /* Position+Utilities.swift */; };
 		A4F90285262A065C008814CA /* UIApplication+TopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F90284262A065C008814CA /* UIApplication+TopController.swift */; };
-		A4F9029A262AEBA7008814CA /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F90299262AEBA7008814CA /* ColorPicker.swift */; };
-		A4F9029F262B0590008814CA /* ColorPickable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9029E262B0590008814CA /* ColorPickable.swift */; };
-		A4F902A4262B05F1008814CA /* GameViewController+ColorPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902A3262B05F1008814CA /* GameViewController+ColorPickerDelegate.swift */; };
-		A4F902AC262B06F0008814CA /* ColorPicker+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F902AB262B06F0008814CA /* ColorPicker+UIGestureRecognizerDelegate.swift */; };
 		F70F4E4918E06217E2DA1ADB /* Pods_Dupe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B2D29805767CA83750AF10 /* Pods_Dupe.framework */; };
 /* End PBXBuildFile section */
 
@@ -179,9 +172,6 @@
 		A4728719262F7B0500E495D4 /* Grid+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grid+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		A472871E262F7B1B00E495D4 /* Grid+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grid+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		A4728723262F7B4900E495D4 /* Grid+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grid+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
-		A47287282630930A00E495D4 /* ColorPicker+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPicker+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
-		A472872D2630931A00E495D4 /* ColorPicker+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPicker+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
-		A47287322630932800E495D4 /* ColorPicker+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPicker+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Utilities.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
@@ -258,10 +248,6 @@
 		A4F902692628CD4A008814CA /* GameSession+ScoreKeeping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameSession+ScoreKeeping.swift"; sourceTree = "<group>"; };
 		A4F9027F2629F941008814CA /* Position+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Position+Utilities.swift"; sourceTree = "<group>"; };
 		A4F90284262A065C008814CA /* UIApplication+TopController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopController.swift"; sourceTree = "<group>"; };
-		A4F90299262AEBA7008814CA /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
-		A4F9029E262B0590008814CA /* ColorPickable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickable.swift; sourceTree = "<group>"; };
-		A4F902A3262B05F1008814CA /* GameViewController+ColorPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+ColorPickerDelegate.swift"; sourceTree = "<group>"; };
-		A4F902AB262B06F0008814CA /* ColorPicker+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorPicker+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
 		F8E299E850DF0471388E8494 /* Pods-DupeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DupeTests.debug.xcconfig"; path = "Target Support Files/Pods-DupeTests/Pods-DupeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -426,7 +412,6 @@
 			children = (
 				A49B974424745BA1007BF29A /* GameViewController.swift */,
 				A49B974524745BA1007BF29A /* GameViewController.xib */,
-				A4F902A3262B05F1008814CA /* GameViewController+ColorPickerDelegate.swift */,
 				A4F9024B2628AEBB008814CA /* GameViewController+GameSessionDelegate.swift */,
 				A49B975B2475C467007BF29A /* GameViewController+GridDelegate.swift */,
 				A4DBACE2260F9778006B42B7 /* GameViewController+MenuDelegate.swift */,
@@ -441,11 +426,6 @@
 			isa = PBXGroup;
 			children = (
 				A4A1D1E125FFDF9100FA1E4E /* Cells */,
-				A4F90299262AEBA7008814CA /* ColorPicker.swift */,
-				A47287282630930A00E495D4 /* ColorPicker+UICollectionViewDataSource.swift */,
-				A472872D2630931A00E495D4 /* ColorPicker+UICollectionViewDelegate.swift */,
-				A47287322630932800E495D4 /* ColorPicker+UICollectionViewDelegateFlowLayout.swift */,
-				A4F902AB262B06F0008814CA /* ColorPicker+UIGestureRecognizerDelegate.swift */,
 				A49B97542475BC9B007BF29A /* Grid.swift */,
 				A4364AD3247DA13300D7AF78 /* Grid+Animation.swift */,
 				A472871E262F7B1B00E495D4 /* Grid+UICollectionViewDataSource.swift */,
@@ -463,7 +443,6 @@
 		A49B974F24747AE3007BF29A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				A4F902552628BCDB008814CA /* Typedefs */,
 				A453CE95261B13BB0049A6E2 /* Protocols */,
 				A4A217E12617AAD700DB7C7C /* Utility */,
 				A4BC1CED2606654A009A2AA0 /* Types */,
@@ -613,14 +592,6 @@
 				A4F902152620F651008814CA /* TextSize+Theme.swift */,
 			);
 			path = Theme;
-			sourceTree = "<group>";
-		};
-		A4F902552628BCDB008814CA /* Typedefs */ = {
-			isa = PBXGroup;
-			children = (
-				A4F9029E262B0590008814CA /* ColorPickable.swift */,
-			);
-			path = Typedefs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -889,7 +860,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4F90285262A065C008814CA /* UIApplication+TopController.swift in Sources */,
-				A472872E2630931A00E495D4 /* ColorPicker+UICollectionViewDelegate.swift in Sources */,
 				A4BC1CEF26066564009A2AA0 /* SFX.swift in Sources */,
 				A4F902312621B981008814CA /* GameViewController+StateHandling.swift in Sources */,
 				A4DBACFD260FDC20006B42B7 /* UITextView+Theme.swift in Sources */,
@@ -897,10 +867,8 @@
 				A4DBACD1260F63D2006B42B7 /* GameViewController+UITableViewDelegate.swift in Sources */,
 				A4F902512628BAB3008814CA /* GameSession+Spawning.swift in Sources */,
 				A49B97552475BC9B007BF29A /* Grid.swift in Sources */,
-				A4F902AC262B06F0008814CA /* ColorPicker+UIGestureRecognizerDelegate.swift in Sources */,
 				A445390F26163E240000B051 /* Corner.swift in Sources */,
 				A4BC1CB12602A0AE009A2AA0 /* UIColor+Theme.swift in Sources */,
-				A4F9029A262AEBA7008814CA /* ColorPicker.swift in Sources */,
 				A4DBACC7260F5FE1006B42B7 /* MenuOption.swift in Sources */,
 				A4F9025F2628C7D6008814CA /* GameSession+Gameplay.swift in Sources */,
 				A4DBACCC260F60DA006B42B7 /* MenuOption+Text.swift in Sources */,
@@ -912,7 +880,6 @@
 				A49B9762247ADF3F007BF29A /* Collection+Operations.swift in Sources */,
 				A49A681B2630C5B400FA4039 /* Animation.swift in Sources */,
 				A47286F8262B6E8800E495D4 /* TimeInterval+Velocity.swift in Sources */,
-				A47287292630930A00E495D4 /* ColorPicker+UICollectionViewDataSource.swift in Sources */,
 				A4A217E32617AAF300DB7C7C /* HighScores.swift in Sources */,
 				A49B975224747B7B007BF29A /* GridCell.swift in Sources */,
 				A4BC1CDE26054FB5009A2AA0 /* SoundProvider+AVAudioPlayerDelegate.swift in Sources */,
@@ -927,13 +894,11 @@
 				A472871A262F7B0500E495D4 /* Grid+UICollectionViewDelegate.swift in Sources */,
 				A47286FD262E19AA00E495D4 /* StackRank.swift in Sources */,
 				A49B97132474556D007BF29A /* AppDelegate.swift in Sources */,
-				A4F902A4262B05F1008814CA /* GameViewController+ColorPickerDelegate.swift in Sources */,
 				A49B9760247AD38D007BF29A /* Int+Operations.swift in Sources */,
 				A4DBAD07260FE128006B42B7 /* UILabel+Utilities.swift in Sources */,
 				A4DBAC94260D4257006B42B7 /* Position.swift in Sources */,
 				A49B974624745BA1007BF29A /* GameViewController.swift in Sources */,
 				A4DBACF8260FDB6B006B42B7 /* UILabel+Theme.swift in Sources */,
-				A47287332630932800E495D4 /* ColorPicker+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				A4DBACDB260F647F006B42B7 /* Menu+MenuCellDelegate.swift in Sources */,
 				A4364ADC2480529200D7AF78 /* UIView+Animation.swift in Sources */,
 				A445390A26163A910000B051 /* RubikColor.swift in Sources */,
@@ -951,7 +916,6 @@
 				A453CEC0261B274B0049A6E2 /* BundleProtocol.swift in Sources */,
 				A4DBACE3260F9778006B42B7 /* GameViewController+MenuDelegate.swift in Sources */,
 				A49B975A2475C3EB007BF29A /* Grid+UIGestureRecognizerDelegate.swift in Sources */,
-				A4F9029F262B0590008814CA /* ColorPickable.swift in Sources */,
 				A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Utilities.swift in Sources */,
 				A4F902162620F651008814CA /* TextSize+Theme.swift in Sources */,
 				A4364AD4247DA13300D7AF78 /* Grid+Animation.swift in Sources */,

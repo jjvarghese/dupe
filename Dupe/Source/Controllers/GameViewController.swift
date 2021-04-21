@@ -14,13 +14,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var logoLabel: UILabel?
     @IBOutlet weak var menu: Menu?
        
-    @IBOutlet weak var bottomRightColorPicker: ColorPicker?
-    @IBOutlet weak var bottomLeftColorPicker: ColorPicker?
-    @IBOutlet weak var topLeftColorPicker: ColorPicker?
-    @IBOutlet weak var topRightColorPicker: ColorPicker?
-    
-    var colorPickers: [ColorPicker?] = []
-    
     let soundProvider: SoundProvider = SoundProvider()
     
     var session: GameSession? {
@@ -29,11 +22,6 @@ class GameViewController: UIViewController {
                 menu?.backgroundColor = bigGrid?.rubikColor.color() ?? .clear
                 menu?.fade(out: false,
                            for: 0.4)
-                
-                for colorPicker in colorPickers {
-                    colorPicker?.fade(out: true,
-                                      for: 0.4)
-                }
             } else {
                 menu?.fade(out: true,
                            for: 0.4,
@@ -45,11 +33,6 @@ class GameViewController: UIViewController {
                                                                               Constants.Text.startGameReadyText2,
                                                                               Constants.Text.startGameReadyText3]) {
                                     newValue?.spawnGrid()
-                                    
-                                    for colorPicker in self.colorPickers {
-                                        colorPicker?.fade(out: false,
-                                                          for: 0.4)
-                                    }
                                 }
                              })
             }
@@ -102,20 +85,6 @@ class GameViewController: UIViewController {
     }
     
     private func configureCollectionViews() {
-        bottomLeftColorPicker?.configure(withDelegate: self,
-                                         withRubikColor: .blue)
-        bottomRightColorPicker?.configure(withDelegate: self,
-                                          withRubikColor: .orange)
-        topLeftColorPicker?.configure(withDelegate: self,
-                                      withRubikColor: .red)
-        topRightColorPicker?.configure(withDelegate: self,
-                                       withRubikColor: .yellow)
-        
-        colorPickers = [bottomLeftColorPicker,
-                        bottomRightColorPicker,
-                        topLeftColorPicker,
-                        topRightColorPicker]
-        
         guard let bigGrid = bigGrid else { return }
                 
         bigGrid.accessibilityIdentifier = "BigGrid"

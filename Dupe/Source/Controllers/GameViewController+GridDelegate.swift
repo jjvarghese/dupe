@@ -21,12 +21,28 @@ extension GameViewController: GridDelegate {
     
     func grid(_ grid: Grid,
               didSelect indexPath: IndexPath) {
-        guard grid == bigGrid,
-              let session = session else { return }
+        if grid == bigGrid {
+            guard let session = session else { return }
+            
+            grid.touch(indexPath: indexPath)
+            
+            session.checkForMatch()
+        } else {
+            flipColor(to: grid.rubikColor)
+        }
+       
+    }
+    
+    // MARK: - Private -
+    
+    private func flipColor(to rubikColor: RubikColor) {
+        guard bigGrid?.rubikColor != rubikColor else { return }
         
-        grid.touch(indexPath: indexPath)
+        bigGrid?.rubikColor = rubikColor
         
-        session.checkForMatch()
+        let coinFlip = Int.random(in: 0...1)
+        
+        bigGrid?.reset(withAnimation: coinFlip == 0 ? .flipX : .flipY)
     }
     
 }
