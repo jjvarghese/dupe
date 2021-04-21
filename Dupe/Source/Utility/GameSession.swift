@@ -13,23 +13,24 @@ protocol GameSessionDelegate {
         
     func gameSessionTriggersGameOver(_ gameSession: GameSession)
     
-    func gameSessionTriggersMatch(_ gameSession: GameSession)
+    func gameSessionTriggersMatch(_ gameSession: GameSession,
+                                  withGainedScore gainedScore: Int)
     
     func gameSessionRequestsCollisionGrid(_ gameSession: GameSession) -> Grid?
+    
+    func gameSessionTriggersNewGridSpawn(_ gameSession: GameSession, in position: Position)
     
 }
 
 class GameSession {
-    
-    typealias GriddableGameSessionDelegate = GameSessionDelegate & Griddable
-    
-    var delegate: GriddableGameSessionDelegate
+        
+    var delegate: GameSessionDelegate
     var currentScore: Int = 0
     var velocity: TimeInterval = 0.1
     var currentSpawnSpeed: TimeInterval = Constants.Values.initialSpawnTime
     var grids: [Grid] = []
     
-    required init(withDelegate delegate: GriddableGameSessionDelegate) {
+    required init(withDelegate delegate: GameSessionDelegate) {
         self.delegate = delegate
     }
     

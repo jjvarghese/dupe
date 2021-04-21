@@ -1,21 +1,23 @@
+//
+//  Grid+UICollectionViewDelegateFlowLayout.swift
+//  Dupe
+//
+//  Created by Joshua James on 20.04.21.
+//  Copyright © 2021 Cosmic. All rights reserved.
+//
+
+import Foundation
 import UIKit
 
-extension GameViewController: UICollectionViewDelegateFlowLayout {
+extension Grid: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView is Grid {
-            let size: CGFloat = (collectionView.frame.size.width / 4)
+        let size: CGFloat = (collectionView.frame.size.width / 4)
 
-            return CGSize(width: size,
-                          height: size)
-        } else if collectionView is ColorPicker {
-            return CGSize(width: collectionView.frame.size.width,
-                          height: collectionView.frame.size.height)
-        } else {
-            return CGSize(width: 0, height: 0)
-        }
+        return CGSize(width: size,
+                      height: size)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -40,4 +42,3 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
     }
     
 }
-

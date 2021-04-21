@@ -11,39 +11,49 @@ import UIKit
 
 extension UIView {
     
+    func addWrappedSubview(subview: UIView) {
+        addSubviewAndRemoveAutotranslation(subview: subview)
+        
+        let centerConstraint = NSLayoutConstraint.centerConstraint(forSubview: subview,
+                                                                   forSuperview: self)
+        
+        let topConstraint = NSLayoutConstraint.topConstraint(forSubview: subview,
+                                                             forSuperview: self)
+        
+        let widthConstraint = NSLayoutConstraint.widthConstraint(forSubview: subview,
+                                                                 forSuperview: self)
+        
+        let heightConstraint = NSLayoutConstraint.heightConstraint(forSubview: subview,
+                                                                   forSuperview: self)
+        
+        addConstraints([centerConstraint,
+                        topConstraint,
+                        widthConstraint,
+                        heightConstraint])
+    }
+    
     func addSubviewWithConstraints(subview: UIView,
                                    atPosition position: Position,
                                    withWidth width: CGFloat? = nil,
                                    withHeight height: CGFloat? = nil,
                                    withVerticalOffset verticalOffset: CGFloat = Constants.Values.gridStartPosition) {
-        addSubview(subview)
+        addSubviewAndRemoveAutotranslation(subview: subview)
         
-        subview.translatesAutoresizingMaskIntoConstraints = false
+        let xConstraint = NSLayoutConstraint.xLayoutConstraint(forSubview: subview,
+                                                               forSuperview: self,
+                                                               forPosition: position)
+        let topConstraint = NSLayoutConstraint.topConstraint(forSubview: subview,
+                                                             forSuperview: self,
+                                                             withOffset: verticalOffset)
         
-        let xConstraint: NSLayoutConstraint = NSLayoutConstraint.xLayoutConstraint(forSubview: subview,
-                                                                                   forSuperview: self,
-                                                                                   forPosition: position)
-        let topConstraint = NSLayoutConstraint(item: subview,
-                                               attribute: NSLayoutConstraint.Attribute.top,
-                                               relatedBy: NSLayoutConstraint.Relation.equal,
-                                               toItem: self,
-                                               attribute: NSLayoutConstraint.Attribute.top,
-                                               multiplier: 1,
-                                               constant: verticalOffset)
-        let widthConstraint = NSLayoutConstraint(item: subview,
-                                                 attribute: NSLayoutConstraint.Attribute.width,
-                                                 relatedBy: NSLayoutConstraint.Relation.equal,
-                                                 toItem: nil,
-                                                 attribute: NSLayoutConstraint.Attribute.notAnAttribute,
-                                                 multiplier: 1,
-                                                 constant: width ?? frame.size.height / 5)
-        let heightConstraint = NSLayoutConstraint(item: subview,
-                                                  attribute: NSLayoutConstraint.Attribute.height,
-                                                  relatedBy: NSLayoutConstraint.Relation.equal,
-                                                  toItem: nil,
-                                                  attribute: NSLayoutConstraint.Attribute.notAnAttribute,
-                                                  multiplier: 1,
-                                                  constant: height ?? frame.size.height / 5)
+        
+        let widthConstraint = NSLayoutConstraint.widthConstraint(forSubview: subview,
+                                                                 forSuperview: self,
+                                                                 withStaticWidth: width)
+        
+        let heightConstraint = NSLayoutConstraint.heightConstraint(forSubview: subview,
+                                                                   forSuperview: self,
+                                                                   withStaticHeight: height)
         
         if verticalOffset == Constants.Values.gridStartPosition {
             addConstraints([xConstraint,
@@ -65,6 +75,14 @@ extension UIView {
                 removeGestureRecognizer(existingRecognizer)
             }
         }
+    }
+    
+    // MARK: - Private -
+    
+    private func addSubviewAndRemoveAutotranslation(subview: UIView) {
+        addSubview(subview)
+        
+        subview.translatesAutoresizingMaskIntoConstraints = false
     }
     
 }

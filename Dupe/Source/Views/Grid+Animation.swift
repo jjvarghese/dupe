@@ -37,7 +37,7 @@ extension Grid {
     @objc func descend() {
         configureVelocityAndStartPosition { [weak self] in
             guard let self = self,
-                  let velocity = self.velocity else { return }
+                  let velocity = self.fallVelocity else { return }
             
             let topConstraint = self.superview?.constraints.getTopConstraint(forObject: self)
             
@@ -62,13 +62,13 @@ extension Grid {
             } else {
                 self.descentTimer?.invalidate()
                 
-                self.gridDelegate?.gridDidFinishDescending(self)
+                self.delegate?.gridDidFinishDescending(self)
             }
         }
     }
     
     private func continueDescent() {
-        guard let velocity = velocity else { return }
+        guard let velocity = fallVelocity else { return }
         
         if descentTimer == nil {
             descentTimer = Timer.scheduledTimer(withTimeInterval: velocity,
@@ -81,8 +81,8 @@ extension Grid {
     
     private func configureVelocityAndStartPosition(withCompletion completion: @escaping () -> Void) {
         TimeInterval.determineVelocity { [weak self] (determinedVelocity) in
-            if self?.velocity == nil {
-                self?.velocity = determinedVelocity
+            if self?.fallVelocity == nil {
+                self?.fallVelocity = determinedVelocity
             }
             
             DispatchQueue.main.async { [weak self] in
@@ -109,7 +109,7 @@ extension Grid {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             
-            for cell in self.visibleCells {
+            for cell in self.collectionView.visibleCells {
                 if let gridCell = cell as? GridCell {
                     
                     gridCell.update(asSelected: on,

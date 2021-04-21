@@ -102,13 +102,13 @@ class GameViewController: UIViewController {
     }
     
     private func configureCollectionViews() {
-        bottomLeftColorPicker?.configure(toColorPickable: self,
+        bottomLeftColorPicker?.configure(withDelegate: self,
                                          withRubikColor: .blue)
-        bottomRightColorPicker?.configure(toColorPickable: self,
+        bottomRightColorPicker?.configure(withDelegate: self,
                                           withRubikColor: .orange)
-        topLeftColorPicker?.configure(toColorPickable: self,
+        topLeftColorPicker?.configure(withDelegate: self,
                                       withRubikColor: .red)
-        topRightColorPicker?.configure(toColorPickable: self,
+        topRightColorPicker?.configure(withDelegate: self,
                                        withRubikColor: .yellow)
         
         colorPickers = [bottomLeftColorPicker,
@@ -119,7 +119,7 @@ class GameViewController: UIViewController {
         guard let bigGrid = bigGrid else { return }
                 
         bigGrid.accessibilityIdentifier = "BigGrid"
-        bigGrid.configureDelegates(toGriddable: self)
+        bigGrid.delegate = self
     }
     
     private func configureMenu() {

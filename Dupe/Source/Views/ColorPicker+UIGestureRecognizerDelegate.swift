@@ -12,7 +12,7 @@ import UIKit
 extension ColorPicker: UIGestureRecognizerDelegate {
     
     @objc func didTap(touchGesture: UITapGestureRecognizer) {
-        colorPickerDelegate?.colorPickerWasPressed(self)
+        delegate?.colorPickerWasPressed(self)
     }
     
 }

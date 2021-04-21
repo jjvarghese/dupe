@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 protocol GridDelegate {
     
@@ -23,16 +24,18 @@ protocol GridDelegate {
     
 }
 
-class Grid: UICollectionView {
+class Grid: SpringView {
     
-    var gridDelegate: GridDelegate?
     var selectedIndices: [Int] = []
     var swipedIndices: [Int] = []
+    var delegate: GridDelegate?
     var position: Position?
-    var velocity: TimeInterval?
+    var fallVelocity: TimeInterval?
     var rubikColor: RubikColor
     var descentTimer: Timer?
     var isFreshSpawn: Bool = true
+    var collectionView: UICollectionView = UICollectionView(frame: .zero,
+                                            collectionViewLayout: UICollectionViewFlowLayout())
 
     var stackRank: StackRank? {
         willSet {
@@ -45,31 +48,19 @@ class Grid: UICollectionView {
 
     // MARK: - NSObject -
     
-    required convenience init(withGriddable griddable: Griddable) {
-        self.init(frame: .zero,
-                  collectionViewLayout: UICollectionViewFlowLayout())
-        
-        gridDelegate = griddable
-        delegate = griddable
-        dataSource = griddable
-        
+    required convenience init(withDelegate delegate: GridDelegate) {
+        self.init(frame: .zero)
+
+        self.delegate = delegate
+
         configure()
     }
     
-    convenience init() {
-        self.init(frame: .zero,
-                   collectionViewLayout: UICollectionViewFlowLayout())
-        
-        configure()
-    }
-    
-    override init(frame: CGRect,
-                  collectionViewLayout layout: UICollectionViewLayout) {
+    override init(frame: CGRect) {
         rubikColor = RubikColor.getRandomRubikColor()
+
+        super.init(frame: frame)
         
-        super.init(frame: frame,
-                   collectionViewLayout: layout)
-                
         configure()
     }
     
@@ -96,7 +87,7 @@ class Grid: UICollectionView {
         
         selectedIndices.toggle(element: indexPath.item)
 
-        reloadItems(at: [indexPath])
+        collectionView.reloadItems(at: [indexPath])
     }
 
     func randomise() {
@@ -123,7 +114,7 @@ class Grid: UICollectionView {
                   withCompletion: { [weak self] in
                     self?.selectedIndices = []
                     self?.swipedIndices = []
-                    self?.reloadData()
+                    self?.collectionView.reloadData()
                     self?.isUserInteractionEnabled = true
                   })
             
@@ -134,14 +125,14 @@ class Grid: UICollectionView {
 
     // MARK: - Configuration -
     
-    func configureDelegates(toGriddable griddable: Griddable) {
-        gridDelegate = griddable
-        delegate = griddable
-        dataSource = griddable
-    }
-    
     private func configure() {
         backgroundColor = .clear
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.frame = bounds
+        
+        addWrappedSubview(subview: collectionView)
         
         configureRegistration()
         configureGestures()
@@ -151,7 +142,7 @@ class Grid: UICollectionView {
         let nib = UINib.init(nibName: Constants.NibNames.GridCell,
                              bundle: nil)
         
-        register(nib,
+        collectionView.register(nib,
                  forCellWithReuseIdentifier: Constants.CellIdentifiers.GridCell)
     }
     
@@ -177,7 +168,7 @@ class Grid: UICollectionView {
             i += 1
         }
         
-        reloadData()
+        collectionView.reloadData()
     }
     
 }

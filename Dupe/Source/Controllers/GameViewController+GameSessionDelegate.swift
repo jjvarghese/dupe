@@ -11,7 +11,32 @@ import UIKit
 
 extension GameViewController: GameSessionDelegate {
     
+    func gameSessionTriggersNewGridSpawn(_ gameSession: GameSession,
+                                         in position: Position) {
+        let grid = Grid(withDelegate: self)
+        
+        grid.position = position
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            gameSession.grids.add(grid: grid)
+            
+            self.view.addSubviewWithConstraints(subview: grid,
+                                                    atPosition: position,
+                                                    withWidth: self.view.frame.size.height / 5,
+                                                    withHeight: self.view.frame.size.height / 5)
+            
+            grid.randomise()
+            grid.accessibilityIdentifier = "SmallGrid"
+        }
+        
+    }
+    
     func gameSessionTriggersGameOver(_ gameSession: GameSession) {
+        UILabel.spawnFloatingFadingLabel(toSuperview: view,
+                                         withText: Constants.Text.collisionText)
+        
         session?.finishSession()
         
         session = nil
@@ -24,8 +49,12 @@ extension GameViewController: GameSessionDelegate {
         return bigGrid 
     }
     
-    func gameSessionTriggersMatch(_ gameSession: GameSession) {
+    func gameSessionTriggersMatch(_ gameSession: GameSession,
+                                  withGainedScore gainedScore: Int) {
         self.soundProvider.play(sfx: .matched)
+        
+        UILabel.spawnFloatingFadingLabel(toSuperview: view,
+                                         withText: String(format: "%d", gainedScore))
     }
     
 }

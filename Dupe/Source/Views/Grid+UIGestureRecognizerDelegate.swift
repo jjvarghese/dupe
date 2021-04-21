@@ -17,28 +17,32 @@ extension Grid: UIGestureRecognizerDelegate {
     @objc private func didTap(touchGesture: UITapGestureRecognizer) {
         let location = touchGesture.location(in: self)
         
-        if let indexPath = indexPathForItem(at: location) {
-            gridDelegate?.grid(self, didSelect: indexPath)
+        if let indexPath = collectionView.indexPathForItem(at: location) {
+            delegate?.grid(self,
+                           didSelect: indexPath)
         }
     }
     
     @objc private func didPan(panGesture: UIPanGestureRecognizer) {
         let location = panGesture.location(in: self)
         
-        if let indexPath = indexPathForItem(at: location) {
+        if let indexPath = collectionView.indexPathForItem(at: location) {
             if panGesture.state == .began {
-                gridDelegate?.grid(self, didSelect: indexPath)
+                delegate?.grid(self,
+                                   didSelect: indexPath)
                 
                 swipedIndices.addIfNotAlreadyThere(element: indexPath.item)
             } else if panGesture.state == .changed {                
-                gridDelegate?.grid(self, didPanAt: indexPath)
+                delegate?.grid(self,
+                               didPanAt: indexPath)
                 
                 swipedIndices.addIfNotAlreadyThere(element: indexPath.item)
             } else if panGesture.state == .ended {
 
                 swipedIndices = []
                 
-                gridDelegate?.grid(self, didEndPanningAt: indexPath)
+                delegate?.grid(self,
+                               didEndPanningAt: indexPath)
             }
         }
     }

@@ -39,9 +39,6 @@ extension GameSession {
             
             collisionGrid?.reset()
             
-            UILabel.spawnFloatingFadingLabel(toSuperview: self.delegate.view,
-                                             withText: Constants.Text.collisionText)
-            
             completion()
         }
     }
@@ -51,9 +48,7 @@ extension GameSession {
     private func triggerMatch(matchedGrid: Grid) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            
-            self.delegate.gameSessionTriggersMatch(self)
-            
+                        
             let collisionGrid = self.delegate.gameSessionRequestsCollisionGrid(self)
             
             collisionGrid?.reset()
@@ -62,8 +57,8 @@ extension GameSession {
                         
             let numberOfPointsToGain = self.getNumberOfPointsToGain(matchedGrid: matchedGrid)
             
-            UILabel.spawnFloatingFadingLabel(toSuperview: self.delegate.view,
-                                             withText: String(format: "%d", numberOfPointsToGain))
+            self.delegate.gameSessionTriggersMatch(self,
+                                                   withGainedScore: numberOfPointsToGain)
             
             self.currentScore += numberOfPointsToGain
                         

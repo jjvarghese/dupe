@@ -28,7 +28,9 @@ extension GameSession {
                 self.currentSpawnSpeed = self.currentSpawnSpeed - Constants.Values.spawnTimeReduction
             }
             
-            self.generateNewGrid(in: position)
+            self.delegate.gameSessionTriggersNewGridSpawn(self,
+                                                          in: position)
+            
             self.respawn()
         }
     }
@@ -56,19 +58,5 @@ extension GameSession {
             return false
         }
     }
-    
-    private func generateNewGrid(in position: Position) {
-        let grid = Grid(withGriddable: delegate)
-        
-        grid.position = position
-        
-        grids.add(grid: grid)
-        
-        delegate.view.addSubviewWithConstraints(subview: grid,
-                                                atPosition: position)
-        
-        grid.randomise()
-        grid.accessibilityIdentifier = "SmallGrid"
-    }
-    
+
 }
