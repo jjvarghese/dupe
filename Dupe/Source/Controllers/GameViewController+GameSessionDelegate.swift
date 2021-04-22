@@ -37,6 +37,8 @@ extension GameViewController: GameSessionDelegate {
         UILabel.spawnFloatingFadingLabel(toSuperview: view,
                                          withText: Constants.Text.collisionText)
         
+        showScore(score: gameSession.currentScore)
+        
         session?.finishSession()
         
         session = nil
@@ -55,6 +57,20 @@ extension GameViewController: GameSessionDelegate {
         
         UILabel.spawnFloatingFadingLabel(toSuperview: view,
                                          withText: String(format: "%d", gainedScore))
+    }
+    
+    // MARK: - Private -
+    
+    private func showScore(score: Int) {
+        guard let color = bigGrid?.rubikColor else { return }
+
+        let scoreString = String(format: "%@%d\n\n%@",
+                                 Constants.Text.gameOverHeadline,
+                                 score,
+                                 Constants.Text.ScoreJudgements.getJudgement(forScore: score))
+        
+        NotificationView.popin(withText: scoreString,
+                               withColor: color)
     }
     
 }

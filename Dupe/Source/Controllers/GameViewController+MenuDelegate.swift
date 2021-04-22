@@ -43,13 +43,19 @@ extension GameViewController: MenuDelegate {
     }
     
     private func handleAboutPressed() {
-        NotificationView.popin(withText: Constants.Text.aboutDescription)
+        guard let color = bigGrid?.rubikColor else { return }
+        
+        NotificationView.popin(withText: Constants.Text.aboutDescription,
+                               withColor: color)
     }
     
     private func handleHighScoresPressed() {
+        guard let color = bigGrid?.rubikColor else { return }
+        
         let text = HighScores.getHighScoreText()
         
-        NotificationView.popin(withText: text)
+        NotificationView.popin(withText: text,
+                               withColor: color)
     }
     
 }
