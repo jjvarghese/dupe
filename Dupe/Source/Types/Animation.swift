@@ -22,4 +22,10 @@ enum Animation: String {
     
     case squeeze = "squeeze"
     
+    case shake = "shake"
+    
+    case wobble = "wobble"
+    
+    case swing = "swing"
+    
 }

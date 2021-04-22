@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Spring
 
 extension UILabel {
     
@@ -16,7 +17,7 @@ extension UILabel {
                                          withColor color: UIColor? = nil,
                                          withText text: String,
                                   withCompletion completion: (() -> Void)? = nil) {
-        let label: UILabel = UILabel(frame: CGRect(x: 0,
+        let label: SpringLabel = SpringLabel(frame: CGRect(x: 0,
                                                     y: 0,
                                                     width: superview.frame.size.width,
                                                     height: 50))
@@ -39,6 +40,7 @@ extension UILabel {
         
         label.floatUp(for: duration)
         label.fade(out: true, for: duration)
+        label.animate(withAnimation: .swing)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             label.removeFromSuperview()
@@ -48,6 +50,8 @@ extension UILabel {
     }
     
     static func spawnFloatingFadingLabels(toSuperview superview: UIView,
+                                          withFrame frame: CGRect? = nil,
+                                          withColor color: UIColor? = nil,
                                           withTexts texts: [String],
                                    withCompletion finalCompletion: (() -> Void)?) {
         guard texts.count > 0 else {
@@ -61,9 +65,13 @@ extension UILabel {
         let firstText = remainingTexts.removeFirst()
                     
         UILabel.spawnFloatingFadingLabel(toSuperview: superview,
+                                         withFrame: frame,
+                                         withColor: color,
                                          withText: firstText,
                                  withCompletion: {
                                     UILabel.spawnFloatingFadingLabels(toSuperview: superview,
+                                                                      withFrame: frame,
+                                                                      withColor: color,
                                                                       withTexts: remainingTexts,
                                                                       withCompletion: finalCompletion)
         })

@@ -29,6 +29,7 @@ class GameViewController: UIViewController {
                                 guard let self = self else { return }
                                 
                                 UILabel.spawnFloatingFadingLabels(toSuperview: self.view,
+                                                                  withColor: self.bigGrid?.rubikColor.color(),
                                                                   withTexts: [Constants.Text.startGameReadyText1,
                                                                               Constants.Text.startGameReadyText2,
                                                                               Constants.Text.startGameReadyText3]) {

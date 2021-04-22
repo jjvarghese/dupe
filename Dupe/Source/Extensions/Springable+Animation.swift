@@ -9,7 +9,7 @@
 import Foundation
 import Spring
 
-extension SpringView {
+extension Springable {
     
     func animate(withAnimation animation: Animation,
                  withCompletion completion: (() -> Void)? = nil) {
