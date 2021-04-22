@@ -12,17 +12,26 @@ import UIKit
 extension UILabel {
     
     static func spawnFloatingFadingLabel(toSuperview superview: UIView,
+                                         withFrame frame: CGRect? = nil,
+                                         withColor color: UIColor? = nil,
                                          withText text: String,
                                   withCompletion completion: (() -> Void)? = nil) {
         let label: UILabel = UILabel(frame: CGRect(x: 0,
                                                     y: 0,
                                                     width: superview.frame.size.width,
                                                     height: 50))
-        label.center = superview.center
-        label.text = text
-        label.theme()
+        if let frame = frame {
+            label.frame.origin = frame.origin
+            label.frame.size = CGSize(width: frame.size.width,
+                                      height: 50)
+            label.frame.origin.y += frame.size.height / 2
+        } else {
+            label.center = superview.center
+            label.frame.origin.y = 10
+        }
         
-        label.frame.origin.y = 10
+        label.text = text
+        label.theme(withColor: color)
         
         superview.addSubview(label)
         

@@ -11,9 +11,10 @@ import UIKit
 
 extension UILabel {
     
-    func theme(withSize size: TextSize = .medium) {
+    func theme(withSize size: TextSize = .medium,
+               withColor color: UIColor? = .text) {
         backgroundColor = .clear
-        textColor = UIColor.text
+        textColor = color
         font = UIFont(name: "PressStart2P-Regular",
                         size: TextSize.size(textSize: size))
         textAlignment = .center

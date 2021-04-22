@@ -52,10 +52,13 @@ extension GameViewController: GameSessionDelegate {
     }
     
     func gameSessionTriggersMatch(_ gameSession: GameSession,
-                                  withGainedScore gainedScore: Int) {
+                                  withGainedScore gainedScore: Int,
+                                  withMatchedGrid matchedGrid: Grid) {
         self.soundProvider.play(sfx: .matched)
         
         UILabel.spawnFloatingFadingLabel(toSuperview: view,
+                                         withFrame: matchedGrid.frame,
+                                         withColor: matchedGrid.rubikColor.color(),
                                          withText: String(format: "%d", gainedScore))
     }
     

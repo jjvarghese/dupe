@@ -14,7 +14,8 @@ protocol GameSessionDelegate {
     func gameSessionTriggersGameOver(_ gameSession: GameSession)
     
     func gameSessionTriggersMatch(_ gameSession: GameSession,
-                                  withGainedScore gainedScore: Int)
+                                  withGainedScore gainedScore: Int,
+                                  withMatchedGrid matchedGrid: Grid)
     
     func gameSessionRequestsCollisionGrid(_ gameSession: GameSession) -> Grid?
     

@@ -60,9 +60,10 @@ extension GameSession {
             let numberOfPointsToGain = self.getNumberOfPointsToGain(matchedGrid: matchedGrid)
             
             self.delegate.gameSessionTriggersMatch(self,
-                                                   withGainedScore: numberOfPointsToGain)
+                                                   withGainedScore: numberOfPointsToGain, withMatchedGrid: matchedGrid)
             
             self.currentScore += numberOfPointsToGain
+            
         }
     }
     
