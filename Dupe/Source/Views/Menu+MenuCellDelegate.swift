@@ -13,7 +13,7 @@ extension Menu: MenuCellDelegate {
     
     func menuCellSelectedOption(_ cell: MenuCell,
                                 option: MenuOption) {
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.global().async { [weak self] in
             guard let self = self else { return }
             
             self.menuDelegate?.menu(self,

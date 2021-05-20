@@ -49,6 +49,8 @@ extension GameSession {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
                         
+            self.scoreMultiplier += 1
+            
             let collisionGrid = self.delegate.gameSessionRequestsCollisionGrid(self)
             
             collisionGrid?.reset()

@@ -13,9 +13,9 @@ extension GameViewController: MenuDelegate {
     
     func menu(_ menu: Menu,
               selectedOption menuOption: MenuOption) {
-        soundProvider.play(sfx: .matched)
-                
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.global().async { [weak self] in
+            self?.soundProvider.play(sfx: .matched)
+
             switch menuOption {
             case .start:
                 self?.handleStartPressed(menu: menu)

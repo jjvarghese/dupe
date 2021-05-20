@@ -3,7 +3,7 @@ import Foundation
 extension GameViewController: GridDelegate {
     
     func gridDidFinishDescending(_ grid: Grid) {
-//        session?.grids.restackIfNeeded()
+//        grid.animate(withAnimation: .wobble)
     }
     
     func grid(_ grid: Grid,
@@ -42,6 +42,8 @@ extension GameViewController: GridDelegate {
     
     private func flipColor(to rubikColor: RubikColor) {
         guard bigGrid?.rubikColor != rubikColor else { return }
+        
+        session?.scoreMultiplier = 0
         
         bigGrid?.rubikColor = rubikColor
         

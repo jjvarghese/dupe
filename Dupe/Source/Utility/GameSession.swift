@@ -30,6 +30,8 @@ class GameSession {
     var velocity: TimeInterval = 0.1
     var currentSpawnSpeed: TimeInterval = Constants.Values.initialSpawnTime
     var grids: [Grid] = []
+    var scoreMultiplier: Int = 1
+    var difficulty: Difficulty = .tutorial
     
     required init(withDelegate delegate: GameSessionDelegate) {
         self.delegate = delegate

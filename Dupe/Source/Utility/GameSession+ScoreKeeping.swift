@@ -11,7 +11,9 @@ import Foundation
 extension GameSession {
     
     func getNumberOfPointsToGain(matchedGrid: Grid) -> Int {
-        return 100
+        let baseAmount = 10
+        
+        return baseAmount * scoreMultiplier
     }
     
 }
