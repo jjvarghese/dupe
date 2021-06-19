@@ -40,7 +40,7 @@ extension UILabel {
         
         label.floatUp(for: duration)
         label.fade(out: true, for: duration)
-        label.animate(withAnimation: .swing)
+        label.animate(withAnimation: .Swing)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             label.removeFromSuperview()

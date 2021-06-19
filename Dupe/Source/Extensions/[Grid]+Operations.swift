@@ -24,7 +24,7 @@ extension Array where Element == Grid {
             return grid == existingGrid
         }
         
-        grid.animate(withAnimation: .zoomOut) {
+        grid.animate(withAnimation: .ZoomOut) {
             grid.removeFromSuperview()
         }
   

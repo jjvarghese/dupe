@@ -11,7 +11,7 @@ import Spring
 
 extension Springable {
     
-    func animate(withAnimation animation: Animation,
+    func animate(withAnimation animation: Spring.AnimationPreset,
                  withCompletion completion: (() -> Void)? = nil) {
         self.animation = animation.rawValue
         self.animateNext {

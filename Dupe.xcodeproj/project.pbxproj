@@ -44,7 +44,6 @@
 		A4943F8A260BD7B2001D3C0C /* NSLayoutConstraint+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Utilities.swift */; };
 		A4943F8F260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */; };
 		A4943FA4260BE6CF001D3C0C /* UIView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */; };
-		A49A681B2630C5B400FA4039 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49A681A2630C5B400FA4039 /* Animation.swift */; };
 		A49A68202630C65500FA4039 /* Springable+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49A681F2630C65500FA4039 /* Springable+Animation.swift */; };
 		A49A68342631FD8800FA4039 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49A68332631FD8800FA4039 /* Difficulty.swift */; };
 		A49B97132474556D007BF29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49B97122474556D007BF29A /* AppDelegate.swift */; };
@@ -176,7 +175,6 @@
 		A4943F89260BD7B2001D3C0C /* NSLayoutConstraint+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Utilities.swift"; sourceTree = "<group>"; };
 		A4943F8E260BD7C3001D3C0C /* [NSLayoutConstraint]+Detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[NSLayoutConstraint]+Detection.swift"; sourceTree = "<group>"; };
 		A4943FA3260BE6CF001D3C0C /* UIView+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utilities.swift"; sourceTree = "<group>"; };
-		A49A681A2630C5B400FA4039 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		A49A681F2630C65500FA4039 /* Springable+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Springable+Animation.swift"; sourceTree = "<group>"; };
 		A49A68332631FD8800FA4039 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		A49B970F2474556D007BF29A /* Dupe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dupe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -569,7 +567,6 @@
 				A445390E26163E240000B051 /* Corner.swift */,
 				A4F902102620F60B008814CA /* TextSize.swift */,
 				A47286FC262E19AA00E495D4 /* StackRank.swift */,
-				A49A681A2630C5B400FA4039 /* Animation.swift */,
 				A49A68332631FD8800FA4039 /* Difficulty.swift */,
 			);
 			path = Types;
@@ -882,7 +879,6 @@
 				A49A68342631FD8800FA4039 /* Difficulty.swift in Sources */,
 				A453CE78261906CE0049A6E2 /* UIDevice+Detection.swift in Sources */,
 				A49B9762247ADF3F007BF29A /* Collection+Operations.swift in Sources */,
-				A49A681B2630C5B400FA4039 /* Animation.swift in Sources */,
 				A47286F8262B6E8800E495D4 /* TimeInterval+Velocity.swift in Sources */,
 				A4A217E32617AAF300DB7C7C /* HighScores.swift in Sources */,
 				A49B975224747B7B007BF29A /* GridCell.swift in Sources */,

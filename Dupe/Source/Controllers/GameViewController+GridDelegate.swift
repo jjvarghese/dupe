@@ -49,7 +49,7 @@ extension GameViewController: GridDelegate {
         
         let coinFlip = Int.random(in: 0...1)
         
-        bigGrid?.reset(withAnimation: coinFlip == 0 ? .flipX : .flipY)
+        bigGrid?.reset(withAnimation: coinFlip == 0 ? .FlipX : .FlipY)
         
         soundProvider.play(sfx: .touch)
     }
