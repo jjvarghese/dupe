@@ -5,7 +5,7 @@ PODS:
     - QuickLayout (= 3.0.0)
 
 DEPENDENCIES:
-  - Spring (from `https://github.com/MengTo/Spring.git`)
+  - Spring (from `https://github.com/jjvarghese/Spring.git`)
   - SwiftEntryKit (= 1.2.7)
 
 SPEC REPOS:
@@ -15,18 +15,18 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Spring:
-    :git: https://github.com/MengTo/Spring.git
+    :git: https://github.com/jjvarghese/Spring.git
 
 CHECKOUT OPTIONS:
   Spring:
-    :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
-    :git: https://github.com/MengTo/Spring.git
+    :commit: aaf43b638128cbf6eba9f31bcddd689672fbf3f5
+    :git: https://github.com/jjvarghese/Spring.git
 
 SPEC CHECKSUMS:
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
 
-PODFILE CHECKSUM: 48ddba215c49735506b901d5896344b62a17920a
+PODFILE CHECKSUM: 1b83b149324711e5a96aaab7dcbc45c836956d8a
 
 COCOAPODS: 1.8.4
