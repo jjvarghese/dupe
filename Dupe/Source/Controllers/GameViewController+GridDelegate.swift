@@ -19,6 +19,8 @@ extension GameViewController: GridDelegate {
         if grid == bigGrid {
             handleSelection(forIndexPath: indexPath)
         } else {
+            grid.animate(withAnimation: .Squeeze)
+            
             flipColor(to: grid.rubikColor)
         }
     }
