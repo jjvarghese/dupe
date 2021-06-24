@@ -12,7 +12,7 @@ import UIKit
 extension GameViewController {
     
     @objc func appWillEnterForegroundNotificationReceived(_ notification: Notification) {
-        logoLabel?.bob()
+        logoLabel.bob()
     }
     
 }

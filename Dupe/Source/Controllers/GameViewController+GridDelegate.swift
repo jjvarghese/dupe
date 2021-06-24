@@ -43,15 +43,15 @@ extension GameViewController: GridDelegate {
     }
     
     private func flipColor(to rubikColor: RubikColor) {
-        guard bigGrid?.rubikColor != rubikColor else { return }
+        guard bigGrid.rubikColor != rubikColor else { return }
         
         session?.scoreMultiplier = 0
         
-        bigGrid?.rubikColor = rubikColor
+        bigGrid.rubikColor = rubikColor
         
         let coinFlip = Int.random(in: 0...1)
         
-        bigGrid?.reset(withAnimation: coinFlip == 0 ? .FlipX : .FlipY)
+        bigGrid.reset(withAnimation: coinFlip == 0 ? .FlipX : .FlipY)
         
         soundProvider.play(sfx: .touch)
     }

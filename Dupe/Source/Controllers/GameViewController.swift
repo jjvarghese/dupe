@@ -10,26 +10,26 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    @IBOutlet weak var bigGrid: Grid?
-    @IBOutlet weak var logoLabel: UILabel?
-    @IBOutlet weak var menu: Menu?
+    @IBOutlet var bigGrid: Grid!
+    @IBOutlet var logoLabel: UILabel!
+    @IBOutlet var menu: Menu!
        
     let soundProvider: SoundProvider = SoundProvider()
     
     var session: GameSession? {
         willSet {
             if newValue == nil {
-                menu?.backgroundColor = bigGrid?.rubikColor.color() ?? .clear
-                menu?.fade(out: false,
+                menu.backgroundColor = bigGrid.rubikColor.color()
+                menu.fade(out: false,
                            for: 0.4)
             } else {
-                menu?.fade(out: true,
+                menu.fade(out: true,
                            for: 0.4,
                              completion: { [weak self] in
                                 guard let self = self else { return }
                                 
                                 UILabel.spawnFloatingFadingLabels(toSuperview: self.view,
-                                                                  withColor: self.bigGrid?.rubikColor.color(),
+                                                                  withColor: self.bigGrid.rubikColor.color(),
                                                                   withTexts: [Constants.Text.startGameReadyText1,
                                                                               Constants.Text.startGameReadyText2,
                                                                               Constants.Text.startGameReadyText3]) {
@@ -78,7 +78,7 @@ class GameViewController: UIViewController {
     }
     
     private func configureLogo() {
-        logoLabel?.themeAsLogo(withColor: bigGrid?.rubikColor.color())
+        logoLabel.themeAsLogo(withColor: bigGrid?.rubikColor.color())
     }
     
     private func configureNavigationBar() {
@@ -93,9 +93,9 @@ class GameViewController: UIViewController {
     }
     
     private func configureMenu() {
-        menu?.delegate = self
-        menu?.dataSource = self
-        menu?.menuDelegate = self
+        menu.delegate = self
+        menu.dataSource = self
+        menu.menuDelegate = self
     }
     
 }

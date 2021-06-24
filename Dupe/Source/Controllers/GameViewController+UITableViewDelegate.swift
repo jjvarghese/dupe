@@ -12,9 +12,7 @@ import UIKit
 extension GameViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
-                   heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let bigGrid = bigGrid else { return 0 }
-        
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {        
         let numberOfElements: CGFloat = CGFloat(tableView.numberOfRows(inSection: 0))
         
         return (bigGrid.frame.size.height / numberOfElements) - 12

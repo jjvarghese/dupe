@@ -34,28 +34,24 @@ extension GameViewController: MenuDelegate {
             guard let self = self else { return }
             
             self.session = GameSession(withDelegate: self)
-            self.bigGrid?.reset()
+            self.bigGrid.reset()
             self.soundProvider.playRandomTune()
             self.soundProvider.play(sfx: .start)
-            self.logoLabel?.fade(out: true,
+            self.logoLabel.fade(out: true,
                                  for: 0.4)
         }
     }
     
     private func handleAboutPressed() {
-        guard let color = bigGrid?.rubikColor else { return }
-        
         NotificationView.popin(withText: Constants.Text.aboutDescription,
-                               withColor: color)
+                               withColor: bigGrid.rubikColor)
     }
     
     private func handleHighScoresPressed() {
-        guard let color = bigGrid?.rubikColor else { return }
-        
         let text = HighScores.getHighScoreText()
         
         NotificationView.popin(withText: text,
-                               withColor: color)
+                               withColor: bigGrid.rubikColor)
     }
     
 }
