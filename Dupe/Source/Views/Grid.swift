@@ -134,6 +134,7 @@ class Grid: SpringView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.frame = bounds
+        collectionView.backgroundColor = .clear
         
         addWrappedSubview(subview: collectionView)
         
