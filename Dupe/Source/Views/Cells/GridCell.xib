@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAr-vh-eLi" userLabel="Border">
+                    <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAr-vh-eLi" userLabel="Border">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -28,7 +28,7 @@
                                 <rect key="frame" x="-3" y="-3" width="9" height="9"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOH-S4-I87" userLabel="tlCorner">
-                                        <rect key="frame" x="0.0" y="0.0" width="6" height="6"/>
+                                        <rect key="frame" x="-1" y="-1" width="7" height="7"/>
                                         <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bOH-S4-I87" secondAttribute="height" multiplier="1:1" id="rqL-i2-iZg"/>
@@ -37,52 +37,52 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="bOH-S4-I87" firstAttribute="leading" secondItem="p7M-cT-QGq" secondAttribute="leading" id="Ffa-AS-MS5"/>
-                                    <constraint firstItem="bOH-S4-I87" firstAttribute="top" secondItem="p7M-cT-QGq" secondAttribute="top" id="p4n-3a-PYb"/>
+                                    <constraint firstItem="bOH-S4-I87" firstAttribute="leading" secondItem="p7M-cT-QGq" secondAttribute="leading" constant="-1" id="Ffa-AS-MS5"/>
+                                    <constraint firstItem="bOH-S4-I87" firstAttribute="top" secondItem="p7M-cT-QGq" secondAttribute="top" constant="-1" id="p4n-3a-PYb"/>
                                     <constraint firstAttribute="width" secondItem="p7M-cT-QGq" secondAttribute="height" multiplier="1:1" id="p9A-nl-ic4"/>
-                                    <constraint firstItem="bOH-S4-I87" firstAttribute="width" secondItem="p7M-cT-QGq" secondAttribute="height" multiplier="2:3" id="wZc-pN-YdT"/>
+                                    <constraint firstItem="bOH-S4-I87" firstAttribute="width" secondItem="p7M-cT-QGq" secondAttribute="height" multiplier="2:3" constant="1" id="wZc-pN-YdT"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BfS-c3-Lfn" userLabel="topRightCorner">
-                                <rect key="frame" x="38" y="-3" width="9" height="9"/>
+                                <rect key="frame" x="39" y="-3" width="9" height="9"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5H-cE-VfS" userLabel="trCorner">
-                                        <rect key="frame" x="3" y="0.0" width="6" height="6"/>
+                                        <rect key="frame" x="2" y="-1" width="7" height="7"/>
                                         <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="S5H-cE-VfS" secondAttribute="trailing" id="5dM-bm-rYH"/>
-                                    <constraint firstItem="S5H-cE-VfS" firstAttribute="top" secondItem="BfS-c3-Lfn" secondAttribute="top" id="ZCE-b0-e55"/>
+                                    <constraint firstItem="S5H-cE-VfS" firstAttribute="top" secondItem="BfS-c3-Lfn" secondAttribute="top" constant="-1" id="ZCE-b0-e55"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N51-es-M4t" userLabel="bottomLeftCorner">
                                 <rect key="frame" x="-3" y="38" width="9" height="9"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKK-dA-0x6" userLabel="blCorner">
-                                        <rect key="frame" x="0.0" y="3" width="6" height="6"/>
+                                        <rect key="frame" x="-1" y="3" width="7" height="7"/>
                                         <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="yKK-dA-0x6" firstAttribute="leading" secondItem="N51-es-M4t" secondAttribute="leading" id="bcO-Fq-anZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="yKK-dA-0x6" secondAttribute="bottom" id="h8e-6e-juz"/>
+                                    <constraint firstItem="yKK-dA-0x6" firstAttribute="leading" secondItem="N51-es-M4t" secondAttribute="leading" constant="-1" id="bcO-Fq-anZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="yKK-dA-0x6" secondAttribute="bottom" constant="-1" id="h8e-6e-juz"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hH-J2-X8Y" userLabel="bottomRightCorner">
                                 <rect key="frame" x="38" y="38" width="9" height="9"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkt-g1-h8b" userLabel="brCorner">
-                                        <rect key="frame" x="3" y="3" width="6" height="6"/>
+                                        <rect key="frame" x="3" y="3" width="7" height="7"/>
                                         <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Gkt-g1-h8b" secondAttribute="bottom" id="QIf-eE-U9g"/>
-                                    <constraint firstAttribute="trailing" secondItem="Gkt-g1-h8b" secondAttribute="trailing" id="UKv-0G-dex"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gkt-g1-h8b" secondAttribute="bottom" constant="-1" id="QIf-eE-U9g"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gkt-g1-h8b" secondAttribute="trailing" constant="-1" id="UKv-0G-dex"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -109,7 +109,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="iAr-vh-eLi" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="3by-a3-zfB"/>
-                <constraint firstItem="BfS-c3-Lfn" firstAttribute="trailing" secondItem="iAr-vh-eLi" secondAttribute="trailing" id="6JO-cs-Aqa"/>
+                <constraint firstItem="BfS-c3-Lfn" firstAttribute="trailing" secondItem="iAr-vh-eLi" secondAttribute="trailing" constant="1" id="6JO-cs-Aqa"/>
                 <constraint firstItem="iAr-vh-eLi" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="DlE-nR-j5D"/>
                 <constraint firstItem="rCi-yb-kiq" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="IiE-g2-Yja"/>
                 <constraint firstItem="2hH-J2-X8Y" firstAttribute="trailing" secondItem="iAr-vh-eLi" secondAttribute="trailing" id="OcM-Cj-zGB"/>
@@ -131,7 +131,7 @@
                 <outlet property="tlCorner" destination="bOH-S4-I87" id="SOk-iW-DrR"/>
                 <outlet property="trCorner" destination="S5H-cE-VfS" id="SI4-Oj-xZC"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="145.98214285714286"/>
+            <point key="canvasLocation" x="137.59999999999999" y="145.56650246305421"/>
         </collectionViewCell>
     </objects>
     <resources>
