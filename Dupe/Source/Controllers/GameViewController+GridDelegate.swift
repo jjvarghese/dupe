@@ -2,6 +2,10 @@ import Foundation
 
 extension GameViewController: GridDelegate {
     
+    func grid(_ grid: Grid, wasUpdatedAt indexPath: IndexPath) {
+        playTouchedSound(forIndexPath: indexPath)
+    }
+    
     func gridDidFinishDescending(_ grid: Grid) {
 //        grid.animate(withAnimation: .wobble)
     }
@@ -28,18 +32,21 @@ extension GameViewController: GridDelegate {
     // MARK: - Private -
     
     private func handleSelection(forIndexPath indexPath: IndexPath) {
-        guard let session = session,
-              let bigGrid = bigGrid else { return }
+        guard let session = session else { return }
 
         bigGrid.touch(indexPath: indexPath)
         
+        session.checkForMatch()
+    }
+    
+    private func playTouchedSound(forIndexPath indexPath: IndexPath) {
         DispatchQueue.global().async { [weak self] in
+            guard let bigGrid = self?.bigGrid else { return }
+            
             if bigGrid.selectedIndices.contains(indexPath.row) {
                 self?.soundProvider.play(sfx: .touch)
             }
         }
-        
-        session.checkForMatch()
     }
     
     private func flipColor(to rubikColor: RubikColor) {

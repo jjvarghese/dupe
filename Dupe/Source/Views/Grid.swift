@@ -22,6 +22,9 @@ protocol GridDelegate {
                 
     func gridDidFinishDescending(_ grid: Grid)
     
+    func grid(_ grid: Grid,
+              wasUpdatedAt indexPath: IndexPath)
+    
 }
 
 class Grid: SpringView {
@@ -86,6 +89,8 @@ class Grid: SpringView {
         guard !swipedIndices.contains(indexPath.item) else { return }
         
         selectedIndices.toggle(element: indexPath.item)
+        
+        delegate?.grid(self, wasUpdatedAt: indexPath)
 
         collectionView.reloadItems(at: [indexPath])
     }
