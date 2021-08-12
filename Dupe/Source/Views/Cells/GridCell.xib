@@ -44,10 +44,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BfS-c3-Lfn" userLabel="topRightCorner">
-                                <rect key="frame" x="39" y="-3" width="9" height="9"/>
+                                <rect key="frame" x="38" y="-3" width="10" height="9"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5H-cE-VfS" userLabel="trCorner">
-                                        <rect key="frame" x="2" y="-1" width="7" height="7"/>
+                                        <rect key="frame" x="3" y="-1" width="7" height="7"/>
                                         <color key="backgroundColor" red="0.17678216099999999" green="0.29771471020000001" blue="0.45885759590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                 </subviews>
@@ -92,7 +92,7 @@
                             <constraint firstItem="p7M-cT-QGq" firstAttribute="width" secondItem="rCi-yb-kiq" secondAttribute="height" multiplier="9:44" id="Khv-6k-mop"/>
                             <constraint firstAttribute="width" secondItem="rCi-yb-kiq" secondAttribute="height" multiplier="1:1" id="LS2-Px-vhm"/>
                             <constraint firstItem="2hH-J2-X8Y" firstAttribute="width" secondItem="p7M-cT-QGq" secondAttribute="width" id="PbH-qY-mBB"/>
-                            <constraint firstItem="BfS-c3-Lfn" firstAttribute="width" secondItem="p7M-cT-QGq" secondAttribute="width" id="Rvw-Ak-gpC"/>
+                            <constraint firstItem="BfS-c3-Lfn" firstAttribute="width" secondItem="p7M-cT-QGq" secondAttribute="width" constant="1" id="Rvw-Ak-gpC"/>
                             <constraint firstItem="S5H-cE-VfS" firstAttribute="height" secondItem="bOH-S4-I87" secondAttribute="height" id="Tpw-UU-PXU"/>
                             <constraint firstItem="2hH-J2-X8Y" firstAttribute="height" secondItem="p7M-cT-QGq" secondAttribute="height" id="aSX-vX-AEp"/>
                             <constraint firstItem="N51-es-M4t" firstAttribute="width" secondItem="p7M-cT-QGq" secondAttribute="width" id="gru-e6-d1r"/>
