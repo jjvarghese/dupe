@@ -11,19 +11,19 @@ import XCTest
 
 class NSLayoutConstraintArrayDetectionTests: XCTestCase {
     
-    func testGetTopConstraintWhereTopConstraintExists() {
-        let superview: UIView = UIView(frame: .zero)
-        let subview: UIView = UIView(frame: .zero)
-
-        superview.addSubviewWithConstraints(subview: subview,
-                                            atPosition: .center)
-        
-        let topConstraint = superview.constraints.getTopConstraint(forObject: subview)
-        
-        let isTopConstraint = topConstraint?.firstAttribute == .top || topConstraint?.secondAttribute == .top
-        
-        XCTAssertTrue(isTopConstraint)
-    }
+//    func testGetTopConstraintWhereTopConstraintExists() {
+//        let superview: UIView = UIView(frame: .zero)
+//        let subview: UIView = UIView(frame: .zero)
+//
+//        superview.addSubviewWithConstraints(subview: subview,
+//                                            atPosition: .center)
+//        
+//        let topConstraint = superview.constraints.getTopConstraint(forObject: subview)
+//        
+//        let isTopConstraint = topConstraint?.firstAttribute == .top || topConstraint?.secondAttribute == .top
+//        
+//        XCTAssertTrue(isTopConstraint)
+//    }
     
     func testGetTopConstraintWhereTopConstraintDoesNotExist() {
         let superview: UIView = UIView(frame: .zero)

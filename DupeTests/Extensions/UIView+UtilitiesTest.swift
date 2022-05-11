@@ -22,23 +22,23 @@ class UIViewUtilitiesTest: XCTestCase {
         }
     }
     
-    func testAddSubviewWithConstraintsHasCorrectSubview() {
-        superview.addSubviewWithConstraints(subview: subview,
-                                            atPosition: .center)
-        
-        let containsSubview: Bool = superview.subviews.contains { (element) -> Bool in
-            return element == subview
-        }
-        
-        XCTAssertTrue(containsSubview)
-    }
-    
-    func testSubviewTranslatesAutoresizingMaskIntoConstraintsDisabled() {
-        superview.addSubviewWithConstraints(subview: subview,
-                                            atPosition: .center)
-        
-        XCTAssertFalse(subview.translatesAutoresizingMaskIntoConstraints)
-    }
+//    func testAddSubviewWithConstraintsHasCorrectSubview() {
+//        superview.addSubviewWithConstraints(subview: subview,
+//                                            atPosition: .center)
+//        
+//        let containsSubview: Bool = superview.subviews.contains { (element) -> Bool in
+//            return element == subview
+//        }
+//        
+//        XCTAssertTrue(containsSubview)
+//    }
+//    
+//    func testSubviewTranslatesAutoresizingMaskIntoConstraintsDisabled() {
+//        superview.addSubviewWithConstraints(subview: subview,
+//                                            atPosition: .center)
+//        
+//        XCTAssertFalse(subview.translatesAutoresizingMaskIntoConstraints)
+//    }
     
     func testRemoveAllExistingGestureRecognizers() {
         let view = UIView(frame: .zero)

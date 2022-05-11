@@ -57,10 +57,8 @@ class HighScores {
         
         return text
     }
-    
-    // MARK: - Private -
-    
-    private static func getScores(storage: UserDefaultsProtocol = UserDefaults.standard) -> [Int] {
+        
+    static func getScores(storage: UserDefaultsProtocol = UserDefaults.standard) -> [Int] {
         let existingHighScores = storage.getObject(forKey: Constants.Keys.highScores) as? [Int]
         
         return existingHighScores?.sorted().reversed() ?? []

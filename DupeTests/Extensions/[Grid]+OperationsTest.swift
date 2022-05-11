@@ -12,9 +12,9 @@ import XCTest
 class GridArrayOperationsTest: XCTestCase {
     
     func testRemoveAllGrids() {
-        var grids: [Grid] = [Grid(withSize: .small),
-                             Grid(withSize: .small),
-                             Grid(withSize: .small)]
+        var grids: [Grid] = [Grid(frame: .zero),
+                             Grid(frame: .zero),
+                             Grid(frame: .zero)]
         
         grids.removeAllGrids()
         
@@ -24,9 +24,9 @@ class GridArrayOperationsTest: XCTestCase {
     func testRemoveFromSuperviewOnRemoveAllGrids() {
         let superview: UIView = UIView(frame: .zero)
         
-        let grid1 = Grid(withSize: .small)
-        let grid2 = Grid(withSize: .small)
-        let grid3 = Grid(withSize: .small)
+        let grid1 = Grid(frame: .zero)
+        let grid2 = Grid(frame: .zero)
+        let grid3 = Grid(frame: .zero)
         
         superview.addSubview(grid1)
         superview.addSubview(grid2)
