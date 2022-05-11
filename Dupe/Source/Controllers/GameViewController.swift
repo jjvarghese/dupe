@@ -34,6 +34,8 @@ class GameViewController: UIViewController {
                                                                               Constants.Text.startGameReadyText2,
                                                                               Constants.Text.startGameReadyText3]) {
                                     newValue?.spawnGrid()
+                                    
+                                    self.soundProvider.playRandomTune()
                                 }
                              })
             }

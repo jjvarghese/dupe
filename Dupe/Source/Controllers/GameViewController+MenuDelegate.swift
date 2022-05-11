@@ -35,7 +35,6 @@ extension GameViewController: MenuDelegate {
             
             self.session = GameSession(withDelegate: self)
             self.bigGrid.reset()
-            self.soundProvider.playRandomTune()
             self.soundProvider.play(sfx: .start)
             self.logoLabel.fade(out: true,
                                  for: 0.4)
