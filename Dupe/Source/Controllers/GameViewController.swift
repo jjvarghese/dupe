@@ -22,6 +22,7 @@ class GameViewController: UIViewController {
                 menu.backgroundColor = bigGrid.rubikColor.color()
                 menu.fade(out: false,
                            for: 0.4)
+                bigGrid.bob()
             } else {
                 menu.fade(out: true,
                            for: 0.4,
