@@ -54,8 +54,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let entryVc: GameViewController = GameViewController()
         let nc: UINavigationController = UINavigationController(rootViewController: entryVc)
         
-        window?.rootViewController = nc
-        window?.makeKeyAndVisible()
+        entryVc.soundProvider.play(sfx: .matched) { [weak self] in
+            DispatchQueue.main.async { [weak self] in
+                self?.window?.rootViewController = nc
+                self?.window?.makeKeyAndVisible()
+            }
+        }
     }
 
 }

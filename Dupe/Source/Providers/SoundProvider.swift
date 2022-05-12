@@ -18,20 +18,26 @@ class SoundProvider: NSObject {
     var justPlayed: String?
     
     func play(sfx: SFX,
-              bundle: BundleProtocol = Bundle.main) {
-        guard let sfxUrl = bundle.url(forResource: sfx.rawValue) else {
-            return
+              bundle: BundleProtocol = Bundle.main,
+              withCompletion completion: (() -> Void)? = nil) {
+        DispatchQueue.global().async { [weak self] in
+            guard let sfxUrl = bundle.url(forResource: sfx.rawValue) else {
+                return
+            }
+            
+            self?.playAudio(url: sfxUrl,
+                      asTune: false,
+                            withCompletion: completion)
         }
         
-        playAudio(url: sfxUrl,
-                  asTune: false)
     }
     
     func stopAllTunes() {
         musicPlayer?.stop()
     }
     
-    func playRandomTune(bundle: BundleProtocol = Bundle.main) {
+    func playRandomTune(bundle: BundleProtocol = Bundle.main,
+                        withCompletion completion: (() -> Void)? = nil) {
         let randomMusicSelection = getRandomTuneName()
 
         justPlayed = randomMusicSelection
@@ -39,13 +45,15 @@ class SoundProvider: NSObject {
         guard let url = bundle.url(forResource: randomMusicSelection) else { return }
 
         playAudio(url: url,
-                  asTune: true)
+                  asTune: true,
+                  withCompletion: completion)
     }
     
     // MARK: - Private -
     
     private func playAudio(url: URL,
-                           asTune: Bool) {
+                           asTune: Bool,
+                           withCompletion completion: (() -> Void)?) {
         let category: AVAudioSession.Category = asTune ? .playback : .ambient
         var player: AVAudioPlayer?
         
@@ -72,8 +80,16 @@ class SoundProvider: NSObject {
             }
             
             player.play()
+            
+            if let completion = completion {
+                completion()
+            }
         } catch let error {
             print(error.localizedDescription)
+            
+            if let completion = completion {
+                completion()
+            }
         }
     }
     
